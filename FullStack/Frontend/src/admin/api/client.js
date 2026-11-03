@@ -1,0 +1,37 @@
+import { API_BASE } from "../../apiBase";
+
+export const API_URL = API_BASE;
+
+export async function request(path, { method = "GET", body } = {}) {
+  let res;
+  try {
+    res = await fetch(`${API_URL}${path}`, {
+      method,
+      credentials: "include", // backend uses an httpOnly cookie
+      headers: body ? { "Content-Type": "application/json" } : undefined,
+      body: body ? JSON.stringify(body) : undefined,
+    });
+  } catch {
+    throw new Error(`Cannot reach the server at ${API_URL}. Is the backend running?`);
+  }
+
+  const text = await res.text();
+  let json = {};
+  try {
+    json = text ? JSON.parse(text) : {};
+  } catch {
+    json = { message: text };
+  }
+
+  if (!res.ok) {
+    // session expired while using the app -> let PermissionGate log the user out.
+    // (login / register / otp calls also return 401 for wrong input, so skip /api/auth/*)
+    if (res.status === 401 && !path.startsWith("/api/auth/")) {
+      window.dispatchEvent(new Event("auth:expired"));
+    }
+    const err = new Error(json.message || `Request failed (${res.status})`);
+    err.status = res.status;
+    throw err;
+  }
+  return json;
+}

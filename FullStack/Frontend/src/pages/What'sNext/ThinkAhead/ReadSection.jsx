@@ -1,0 +1,126 @@
+import React from "react";
+
+export default function TechHeroSection() {
+  return (
+    <section
+      className="
+        relative
+        w-full
+        min-h-[400px]
+        overflow-hidden
+        bg-slate-950
+        sm:min-h-[440px]
+        md:min-h-[480px]
+        lg:min-h-[520px]
+        xl:min-h-[560px]
+      "
+    >
+      {/* ================= BACKGROUND IMAGE ================= */}
+      <div
+        className="
+          absolute
+          inset-0
+          bg-cover
+          bg-center
+          bg-no-repeat
+        "
+        style={{
+          backgroundImage: "url('/Modernexecutive.png')",
+        }}
+      />
+
+      {/* ================= DARK OVERLAY ================= */}
+      <div className="absolute inset-0 bg-black/60" />
+
+      {/* ================= CONTENT =================
+          Left/right padding same as Hero: 16 / 24 / 40 / 100
+      ============================================ */}
+      <div
+        className="
+          relative
+          z-10
+          flex
+          min-h-[400px]
+          w-full
+          flex-col
+          items-center
+          justify-center
+          px-4
+          py-12
+          text-center
+          sm:min-h-[440px]
+          sm:px-6
+          sm:py-16
+          md:min-h-[480px]
+          md:px-10
+          md:py-20
+          lg:min-h-[520px]
+          lg:px-[100px]
+          lg:py-24
+          xl:min-h-[560px]
+        "
+      >
+        {/* ================= MAIN HEADING ================= */}
+        <h1
+          className="
+            w-full
+            max-w-[330px]
+            text-[24px]
+            font-bold
+            leading-[1.25]
+            text-white
+            sm:max-w-xl
+            sm:text-[30px]
+            md:max-w-2xl
+            md:text-[38px]
+            lg:max-w-3xl
+            lg:text-[44px]
+            xl:text-[48px]
+          "
+          style={{
+            fontFamily: "'Plus Jakarta Sans', sans-serif",
+          }}
+        >
+          Technology Is Changing How Business Gets Done
+        </h1>
+
+        {/* ================= SUB HEADING ================= */}
+        <p
+          className="
+            mt-4
+            w-full
+            max-w-[320px]
+            text-[13px]
+            font-medium
+            leading-[1.7]
+            text-slate-300
+            sm:mt-5
+            sm:max-w-xl
+            sm:text-[14px]
+            md:mt-6
+            md:max-w-2xl
+            md:text-[15px]
+            lg:max-w-3xl
+            lg:text-[16px]
+            lg:leading-[1.75]
+          "
+          style={{
+            fontFamily: "'Plus Jakarta Sans', sans-serif",
+          }}
+        >
+          Technology is becoming an essential part of how businesses operate,
+          make decisions and respond to changing needs. Artificial
+          Intelligence, Cloud Infrastructure, Cybersecurity and modern
+          Software Engineering are creating new opportunities for
+          organizations to improve the way they work.
+        </p>
+
+        
+          
+
+          
+    
+      </div>
+    </section>
+  );
+}
