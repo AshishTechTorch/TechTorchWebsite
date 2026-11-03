@@ -2,9 +2,9 @@ import React, { useEffect, useState } from "react";
 
 import heroBg from "/leadership.png";
 import visionImg from "/meetingroom.png";
-import siddharthImg from "/sidhart1.png";
-import amitImg from "/amitkaur1.png";
-import pradipImg from "/pradeep1.png";
+import siddharthImg from "/Sidhhart.jpeg";
+import amitImg from "/AmitSir.png";
+import riyaImg from "/riyaImg.jpeg";
 import anshikaImg from "/anshika.png";
 import futureBg from "/future.png";
 
@@ -24,11 +24,11 @@ const leaders = [
     href: "https://www.linkedin.com/in/amit-gaur-4754a278/",
   },
   {
-    img: pradipImg,
-    name: "Pradip Pandey",
-    role: "Operations Director (BPO | BPS)",
-    text: "Spearheading business process outsourcing, workflow optimization, client delivery, and operational performance.",
-    href: "https://www.linkedin.com/in/pradip-pandey-3a8116154/",
+    img: "/riyaImg.jpeg",
+    name: "Riya Mishra",
+    role: "Director of Human Resource",
+    text: "Leading talent management, employee engagement, workplace culture, and people strategy across the organization.",
+    href: "https://www.linkedin.com/in/riya-mishra-235588244/",
   },
 ];
 
@@ -68,15 +68,15 @@ const articles = {
     ],
   },
 
-  "Pradip Pandey": {
-    title: "Pradip Pandey: Operations, Collaboration, and Continuous Improvement",
+  "Riya Mishra": {
+    title: "Riya Mishra: People, Culture, and Organizational Growth",
     paragraphs: [
-      "In a business environment where customer expectations and operational demands continue to grow, effective operations are essential to consistent service delivery. Pradip Pandey's professional role highlights business process outsourcing, workflow optimization, client delivery, and scalable enterprise performance.",
-      "Operations leadership connects strategy with execution. Well-designed workflows help teams understand their responsibilities, manage resources, and deliver services with greater consistency.",
-      "In business process outsourcing, client communication and reliability are particularly important. Understanding client requirements, setting clear expectations, and maintaining service standards help build trust and long-term working relationships.",
-      "Continuous improvement is another important principle. By learning from feedback, monitoring results, and adapting to changing requirements, organizations can strengthen delivery without losing focus on customer needs.",
-      "Leadership in operations requires planning and practical problem-solving. It involves supporting teams, coordinating priorities, and translating business objectives into repeatable processes.",
-      "When people, processes, and performance are aligned, organizations are better positioned to deliver value and grow sustainably.",
+      "In every growing organization, people are the foundation of progress. Riya Mishra's role as Director of Human Resource at TechTorch Solutions highlights the importance of talent management, workplace culture, employee engagement, and people-focused leadership.",
+      "Human resource leadership connects an organization's goals with the people who work to achieve them. Thoughtful hiring, clear onboarding, and well-defined roles help new team members understand expectations and contribute with confidence.",
+      "Employee engagement and communication are equally important. When people feel heard, supported, and recognized, teams collaborate better and are more motivated to take ownership of their work.",
+      "Learning and development also play a key role. Training opportunities, constructive feedback, and clear career pathways help employees build skills and grow alongside the organization.",
+      "Fair policies, transparent processes, and a respectful workplace help maintain trust. Strong HR practices also support compliance, consistency, and a positive experience across every stage of the employee journey.",
+      "When an organization invests in its people, it builds a culture that supports innovation, resilience, and sustainable growth.",
     ],
   },
 
@@ -597,7 +597,14 @@ const styles = `
 
 .lp-team__note {
   font-size: 12px !important;
-  max-width: 260px !important;
+  max-width: none !important;
+  white-space: nowrap;
+}
+
+@media (max-width: 480px) {
+  .lp-team__note {
+    white-space: normal;
+  }
 }
 
 .lp-team__note::before {
@@ -1218,6 +1225,24 @@ const styles = `
     animation-duration: 0.01ms !important;
     transition-duration: 0.01ms !important;
   }
+}
+
+/* EQUAL-SIZE TEAM PHOTOS */
+.lp .lp-card__img {
+  width: 100% !important;
+  height: auto !important;
+  aspect-ratio: 4 / 5 !important;
+  display: block !important;
+  overflow: hidden !important;
+}
+
+.lp .lp-card__img img {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 100% !important;
+  object-fit: cover !important;
+  object-position: center top !important;
 }
 `;
 

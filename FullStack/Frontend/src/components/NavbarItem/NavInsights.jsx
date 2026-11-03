@@ -1,13 +1,38 @@
 import { routeFor } from "./navRoutes";
+import { Link } from "react-router-dom";
 import { useState, useRef, useEffect, useCallback } from "react";
+import {
+  Briefcase,
+  Newspaper,
+  Building2,
+  FileText,
+  ArrowRight,
+} from "lucide-react";
 import image2 from "../../assets/image2.png";
 import image3 from "../../assets/image3.png";
 
+/* Edit the short descriptions freely */
 const links = [
-  "Case Studies",
-  "Media",
-  "Company Profile",
-  "Quick Brochure",
+  {
+    title: "Case Studies",
+    text: "See how we solved real business challenges.",
+    Icon: Briefcase,
+  },
+  {
+    title: "Media",
+    text: "News, press and updates from TechTorch.",
+    Icon: Newspaper,
+  },
+  {
+    title: "Company Profile",
+    text: "Learn who we are and what we do.",
+    Icon: Building2,
+  },
+  {
+    title: "Quick Brochure",
+    text: "A short overview of our services.",
+    Icon: FileText,
+  },
 ];
 
 const CLOSE_DELAY = 150;
@@ -56,6 +81,14 @@ function NavInsights() {
     }, CLOSE_DELAY);
   }, [cancelClose]);
 
+  /* Close with the Escape key */
+  useEffect(() => {
+    if (!isOpen) return;
+    const onKey = (e) => e.key === "Escape" && setIsOpen(false);
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, [isOpen]);
+
   useEffect(() => {
     return () => cancelClose();
   }, [cancelClose]);
@@ -85,99 +118,116 @@ function NavInsights() {
           style={{ top: navBottom }}
           onMouseEnter={openMenu}
           onMouseLeave={closeMenu}
-          className="fixed left-0 right-0 w-full 
-          h-[78vh] min-h-[420px] max-h-[620px] 
-          bg-white shadow-2xl z-[9999] overflow-y-auto"
+          className="fixed left-0 right-0 w-full max-h-[85vh] overflow-y-auto
+          bg-white shadow-2xl z-[9999] border-t border-gray-100"
         >
-          <div className="h-px bg-gray-100 mx-[5px]" />
+          <div className="grid gap-10 px-[6%] py-12 lg:grid-cols-[1fr_minmax(320px,32%)] lg:gap-14">
+            {/* ================= LEFT: LINKS ================= */}
+            <div>
+              <p className="m-0 mb-2 text-[11px] font-bold uppercase tracking-[0.14em] text-[#8a1538]">
+                Insights
+              </p>
+              <h3 className="m-0 mb-2 font-plus-jakarta text-[26px] font-semibold leading-[1.2] text-gray-900">
+                Explore our work and ideas
+              </h3>
+              <p className="m-0 mb-8 max-w-[520px] font-inter text-[14px] leading-[1.6] text-gray-500">
+                Stories, updates and resources from the TechTorch team.
+              </p>
 
-          {/* LEFT CONTENT */}
-          <div className="px-[11%] pt-[65px]">
-            <h3 className=" text-[22px]
-                  md:text-[25px]
-                  font-semibold
-                  text-gray-900
-                  font-plus-jakarta
-                  text-left
-                  m-0
-                  leading-[1.2] mb-[32px]">
-              Insights
-            </h3>
-
-            <div className="flex flex-col gap-[22px]">
-              {links.map((title) => (
-                <a
-                  key={title}
-                  href={routeFor(title)}
-                  className="text-[15px]
-                        md:text-[15px]
-                        text-gray-800
-                        font-inter
-                        leading-[1.35]
-                        hover:text-[#8a1538]
-                        transition-colors
-                        duration-200"
-                >
-                  {title}
-                </a>
-              ))}
-            </div>
-          </div>
-
-          {/* RIGHT IMAGES */}
-          <div className="absolute top-0 right-[20px] h-full w-[27%] flex flex-col">
-
-            {/* TOP IMAGE */}
-            <div className="relative w-full h-1/2 overflow-hidden">
-              <img
-                src={image3}
-                alt=""
-                className="w-full h-full object-cover"
-              />
-
-              <div className="absolute inset-0 p-4 flex flex-col justify-between text-white">
-                <span className="text-[16px] font-plus-jakarta">
-                  LATEST UPDATE
-                </span>
-
-                <div>
-                  <p className="text-[16px] font-inter  ">
-                    TorchX Suite: Bringing
-                    <br />
-                    Business Operations
-                    <br />
-                    Together
-                  </p>
-
-                  <a
-                    href="/field-note"
-                    className="inline-block mt-[20px] text-[16px] font-bold font-inter text-white hover:text-gray-300 transition-colors"
+              <div className="grid gap-4 sm:grid-cols-2">
+                {links.map(({ title, text, Icon }) => (
+                  <Link
+                    key={title}
+                    to={routeFor(title)}
+                    onClick={() => setIsOpen(false)}
+                    className="group flex items-start gap-4 rounded-xl border border-gray-100 
+                    bg-white p-5 no-underline transition-all duration-200 
+                    hover:border-[#8a1538]/30 hover:bg-[#fdf5f8] hover:shadow-md"
                   >
-                    READ MORE →
-                  </a>
-                </div>
+                    <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-[#fdf0f6] text-[#8a1538]">
+                      <Icon size={20} strokeWidth={1.7} />
+                    </span>
+
+                    <span className="min-w-0 flex-1">
+                      <span className="flex items-center justify-between gap-2 font-plus-jakarta text-[16px] font-semibold text-gray-900 group-hover:text-[#8a1538]">
+                        {title}
+                        <ArrowRight
+                          size={16}
+                          className="shrink-0 -translate-x-1 opacity-0 transition-all duration-200 group-hover:translate-x-0 group-hover:opacity-100"
+                        />
+                      </span>
+                      <span className="mt-1 block font-inter text-[13px] leading-[1.5] text-gray-500">
+                        {text}
+                      </span>
+                    </span>
+                  </Link>
+                ))}
               </div>
             </div>
 
-            {/* BOTTOM IMAGE */}
-            <div className="relative w-full h-1/2 overflow-hidden">
-              <img
-                src={image2}
-                alt=""
-                className="w-full h-full object-cover"
-              />
+            {/* ================= RIGHT: FEATURED CARDS ================= */}
+            <div className="flex flex-col gap-5">
+              {/* LATEST UPDATE */}
+              <div className="relative min-h-[240px] flex-1 overflow-hidden rounded-2xl">
+                <img
+                  src={image3}
+                  alt=""
+                  className="absolute inset-0 h-full w-full object-cover"
+                />
+                <div
+                  className="absolute inset-0"
+                  style={{
+                    background:
+                      "linear-gradient(to top, rgba(0,0,0,0.78) 0%, rgba(0,0,0,0.25) 55%, rgba(0,0,0,0.05) 100%)",
+                  }}
+                />
+                <div className="relative flex h-full min-h-[240px] flex-col justify-between p-6 text-white">
+                  <span className="w-fit rounded-full bg-white/15 px-3 py-1 font-plus-jakarta text-[11px] font-semibold uppercase tracking-[0.1em] backdrop-blur">
+                    Latest Update
+                  </span>
 
-              <div className="absolute inset-0 p-4 flex flex-col justify-between text-white">
-                <span className="text-[16px] font-plus-jakarta">
-                  UPCOMING EVENT
-                </span>
+                  <div>
+                    <p className="m-0 font-plus-jakarta text-[18px] font-semibold leading-[1.35]">
+                      TorchX Suite: Bringing Business Operations Together
+                    </p>
+                    <Link
+                      to="/field-note"
+                      onClick={() => setIsOpen(false)}
+                      className="mt-4 inline-flex items-center gap-2 font-inter text-[13px] font-bold uppercase tracking-wide text-white no-underline hover:text-gray-200"
+                    >
+                      Read more <ArrowRight size={15} />
+                    </Link>
+                  </div>
+                </div>
+              </div>
 
-                <a
-                  href="/think-ahead"
-                  className="text-[16px] font-inter text-white hover:text-gray-300 transition-colors"
-                >
-                  VIEW EVENT →
-                </a>
+              {/* UPCOMING EVENT */}
+              <div className="relative min-h-[170px] overflow-hidden rounded-2xl">
+                <img
+                  src={image2}
+                  alt=""
+                  className="absolute inset-0 h-full w-full object-cover"
+                />
+                <div
+                  className="absolute inset-0"
+                  style={{
+                    background:
+                      "linear-gradient(to top, rgba(0,0,40,0.75) 0%, rgba(0,0,40,0.15) 60%, rgba(0,0,40,0) 100%)",
+                  }}
+                />
+                <div className="relative flex h-full min-h-[170px] flex-col justify-between p-6 text-white">
+                  <span className="w-fit rounded-full bg-white/15 px-3 py-1 font-plus-jakarta text-[11px] font-semibold uppercase tracking-[0.1em] backdrop-blur">
+                    Upcoming Event
+                  </span>
+
+                  <Link
+                    to="/think-ahead"
+                    onClick={() => setIsOpen(false)}
+                    className="inline-flex items-center gap-2 font-inter text-[13px] font-bold uppercase tracking-wide text-white no-underline hover:text-gray-200"
+                  >
+                    View event <ArrowRight size={15} />
+                  </Link>
+                </div>
               </div>
             </div>
           </div>

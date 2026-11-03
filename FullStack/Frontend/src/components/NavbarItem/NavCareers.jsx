@@ -1,9 +1,28 @@
 import { routeFor } from "./navRoutes";
+import { Link } from "react-router-dom";
 import { useState, useRef, useEffect, useCallback } from "react";
+import { Compass, Users, UserPlus, ArrowRight } from "lucide-react";
 import image4 from "../../assets/image4.png";
 import image5 from "../../assets/image5.png";
 
-const links = ["The TechTorch Way", "Culture & Inclusion", "Join Us"];
+/* Edit the short descriptions freely */
+const links = [
+  {
+    title: "The TechTorch Way",
+    text: "How we think, work and deliver.",
+    Icon: Compass,
+  },
+  {
+    title: "Culture & Inclusion",
+    text: "The people and values behind TechTorch.",
+    Icon: Users,
+  },
+  {
+    title: "Join Us",
+    text: "Explore open roles and grow with us.",
+    Icon: UserPlus,
+  },
+];
 
 const CLOSE_DELAY = 150;
 
@@ -51,6 +70,14 @@ function NavCareers() {
     }, CLOSE_DELAY);
   }, [cancelClose]);
 
+  /* Close with the Escape key */
+  useEffect(() => {
+    if (!isOpen) return;
+    const onKey = (e) => e.key === "Escape" && setIsOpen(false);
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, [isOpen]);
+
   useEffect(() => {
     return () => cancelClose();
   }, [cancelClose]);
@@ -62,140 +89,136 @@ function NavCareers() {
       onMouseEnter={openMenu}
       onMouseLeave={closeMenu}
     >
-      {/* NAV LABEL */}
       <span
-        className={`relative inline-flex items-center h-full cursor-pointer text-[17px]
-          transition-colors duration-200
-          ${isOpen ? "text-[#8a1538]" : "text-gray-900"}
-          after:absolute after:left-0 after:bottom-0 after:h-[2px]
-          after:bg-[#8a1538] after:transition-all after:duration-200
-          ${isOpen ? "after:w-full" : "after:w-0"}`}
+        className="relative inline-flex items-center h-full cursor-pointer text-[17px] 
+        text-gray-900 hover:text-[#8a1538] 
+        transition-colors duration-200 
+        after:absolute after:left-0 after:bottom-0 
+        after:h-[2px] after:w-0 
+        after:bg-[#8a1538] 
+        after:transition-all after:duration-200 
+        hover:after:w-full"
       >
         Careers
       </span>
 
-      {/* CAREERS MEGA MENU */}
       {isOpen && (
         <div
           style={{ top: navBottom }}
           onMouseEnter={openMenu}
           onMouseLeave={closeMenu}
-          className="fixed left-0 right-0 w-full 
-            h-[78vh] min-h-[420px] max-h-[620px] 
-            bg-white shadow-2xl z-[9999] overflow-y-auto"
+          className="fixed left-0 right-0 w-full max-h-[85vh] overflow-y-auto
+          bg-white shadow-2xl z-[9999] border-t border-gray-100"
         >
-          <div className="h-px bg-gray-100 mx-[5px]" />
+          <div className="grid gap-10 px-[6%] py-12 lg:grid-cols-[1fr_minmax(320px,32%)] lg:gap-14">
+            {/* ================= LEFT: LINKS ================= */}
+            <div>
+              <p className="m-0 mb-2 text-[11px] font-bold uppercase tracking-[0.14em] text-[#8a1538]">
+                Careers
+              </p>
+              <h3 className="m-0 mb-2 font-plus-jakarta text-[26px] font-semibold leading-[1.2] text-gray-900">
+                Build your career with us
+              </h3>
+              <p className="m-0 mb-8 max-w-[520px] font-inter text-[14px] leading-[1.6] text-gray-500">
+                Our people, our culture and the opportunities at TechTorch.
+              </p>
 
-          {/* CONTENT */}
-          <div className="px-[11%] pt-[65px] flex gap-[120px]">
-            {/* CAREERS HEADING */}
-            <h3 className="text-[22px]
-                  md:text-[25px]
-                  font-semibold
-                  text-gray-900
-                  font-plus-jakarta
-                  text-left
-                  m-0
-                  leading-[1.2]">
-              Careers
-            </h3>
+              <div className="grid gap-4 sm:grid-cols-2">
+                {links.map(({ title, text, Icon }) => (
+                  <Link
+                    key={title}
+                    to={routeFor(title)}
+                    onClick={() => setIsOpen(false)}
+                    className="group flex items-start gap-4 rounded-xl border border-gray-100 
+                    bg-white p-5 no-underline transition-all duration-200 
+                    hover:border-[#8a1538]/30 hover:bg-[#fdf5f8] hover:shadow-md"
+                  >
+                    <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-[#fdf0f6] text-[#8a1538]">
+                      <Icon size={20} strokeWidth={1.7} />
+                    </span>
 
-            {/* SUBHEADINGS */}
-            <div className="flex flex-col gap-[22px] pt-2">
-              {links.map((title) => (
-                <a
-                  key={title}
-                  href={routeFor(title)}
-                  className=" text-[15px]
-                        md:text-[15px]
-                        text-gray-800
-                        font-inter
-                        leading-[1.35]
-                        hover:text-[#8a1538]
-                        transition-colors
-                        duration-200"
-                >
-                  {title}
-                </a>
-              ))}
-            </div>
-          </div>
-
-          {/* RIGHT IMAGES */}
-          <div className="absolute top-0 right-[20px] h-full w-[27%] flex flex-col">
-
-            {/* TOP IMAGE */}
-            <div className="relative w-full h-1/2 overflow-hidden">
-              <img
-                src={image4}
-                alt=""
-                className="w-full h-full object-cover"
-              />
-
-              <div className="absolute inset-0 p-5 flex flex-col text-white">
-                <span className="text-[16px] font-plus-jakarta">
-                  Featured Story
-                </span>
-
-                <div className="mt-[65px]">
-                  <h2 className="text-[18px] font-medium font-plus-jakarta">
-                    Life & Culture at TechTorch
-                  </h2>
-
-                  <p className="text-[16px] font-inter mt-[20px] max-w-[330px]">
-                    Discover our people, culture and the
-                    <br />
-                    values that shape the way we work
-                    <br />
-                    and grow together.
-                  </p>
-                </div>
-
-                <a
-                  href="/careers"
-                  className="mt-[10px] text-[16px] font-bold font-inter text-white hover:text-gray-300 transition-colors"
-                >
-                  READ MORE
-                </a>
+                    <span className="min-w-0 flex-1">
+                      <span className="flex items-center justify-between gap-2 font-plus-jakarta text-[16px] font-semibold text-gray-900 group-hover:text-[#8a1538]">
+                        {title}
+                        <ArrowRight
+                          size={16}
+                          className="shrink-0 -translate-x-1 opacity-0 transition-all duration-200 group-hover:translate-x-0 group-hover:opacity-100"
+                        />
+                      </span>
+                      <span className="mt-1 block font-inter text-[13px] leading-[1.5] text-gray-500">
+                        {text}
+                      </span>
+                    </span>
+                  </Link>
+                ))}
               </div>
             </div>
 
-            {/* BOTTOM IMAGE */}
-            <div className="relative w-full h-1/2 overflow-hidden">
-              <img
-                src={image5}
-                alt=""
-                className="w-full h-full object-cover"
-              />
+            {/* ================= RIGHT: FEATURED CARDS ================= */}
+            <div className="flex flex-col gap-5">
+              {/* FEATURED STORY */}
+              <div className="relative min-h-[240px] flex-1 overflow-hidden rounded-2xl">
+                <img
+                  src={image4}
+                  alt=""
+                  className="absolute inset-0 h-full w-full object-cover"
+                />
+                <div
+                  className="absolute inset-0"
+                  style={{
+                    background:
+                      "linear-gradient(to top, rgba(0,0,0,0.78) 0%, rgba(0,0,0,0.25) 55%, rgba(0,0,0,0.05) 100%)",
+                  }}
+                />
+                <div className="relative flex h-full min-h-[240px] flex-col justify-between p-6 text-white">
+                  <span className="w-fit rounded-full bg-white/15 px-3 py-1 font-plus-jakarta text-[11px] font-semibold uppercase tracking-[0.1em] backdrop-blur">
+                    Featured Story
+                  </span>
 
-              <div className="absolute inset-0 p-5 flex flex-col text-white">
-                <span className="text-[16px] font-plus-jakarta">
-                  Featured Story
-                </span>
-
-                <div className="mt-[65px]">
-                  <h2 className="text-[18px] font-medium font-plus-jakarta">
-                    Opportunities at TechTorch
-                  </h2>
-
-                  <p className="text-[16px] font-inter mt-[20px] max-w-[330px]">
-                    Explore opportunities to learn, contribute
-                    <br />
-                    and build your career with a growing
-                    <br />
-                    technology company.
-                  </p>
+                  <div>
+                    <p className="m-0 font-plus-jakarta text-[18px] font-semibold leading-[1.35]">
+                      Life & Culture at TechTorch
+                    </p>
+                    <Link
+                      to={routeFor("Culture & Inclusion")}
+                      onClick={() => setIsOpen(false)}
+                      className="mt-4 inline-flex items-center gap-2 font-inter text-[13px] font-bold uppercase tracking-wide text-white no-underline hover:text-gray-200"
+                    >
+                      Read more <ArrowRight size={15} />
+                    </Link>
+                  </div>
                 </div>
+              </div>
 
-                <a
-                  href="/careers"
-                  className="mt-[10px] text-[16px] font-bold font-inter text-white hover:text-gray-300 transition-colors"
-                >
-                  READ MORE
-                </a>
+              {/* OPPORTUNITIES */}
+              <div className="relative min-h-[170px] overflow-hidden rounded-2xl">
+                <img
+                  src={image5}
+                  alt=""
+                  className="absolute inset-0 h-full w-full object-cover"
+                />
+                <div
+                  className="absolute inset-0"
+                  style={{
+                    background:
+                      "linear-gradient(to top, rgba(20,0,40,0.75) 0%, rgba(20,0,40,0.15) 60%, rgba(20,0,40,0) 100%)",
+                  }}
+                />
+                <div className="relative flex h-full min-h-[170px] flex-col justify-between p-6 text-white">
+                  <span className="w-fit rounded-full bg-white/15 px-3 py-1 font-plus-jakarta text-[11px] font-semibold uppercase tracking-[0.1em] backdrop-blur">
+                    Opportunities
+                  </span>
+
+                  <Link
+                    to={routeFor("Join Us")}
+                    onClick={() => setIsOpen(false)}
+                    className="inline-flex items-center gap-2 font-inter text-[13px] font-bold uppercase tracking-wide text-white no-underline hover:text-gray-200"
+                  >
+                    View opportunities <ArrowRight size={15} />
+                  </Link>
+                </div>
               </div>
             </div>
-
           </div>
         </div>
       )}

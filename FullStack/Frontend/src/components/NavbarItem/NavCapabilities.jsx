@@ -291,7 +291,14 @@ function NavCapabilities() {
                   flex flex-col items-end text-right min-h-[200px]
                 "
               >
-                {/* AI CAPABILITIES CONTENT CAN BE ADDED HERE */}
+                <img
+                  src="/AICapabilities.jpg"
+                  alt="AI capabilities: understand language, work with images, process speech, analyze data, automate tasks, solve problems, generate content and make predictions"
+                  className="
+                    w-full max-w-[640px] h-auto
+                    rounded-xl border border-gray-100 shadow-sm
+                  "
+                />
               </div>
             </div>
           </div>
