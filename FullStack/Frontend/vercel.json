@@ -2,7 +2,7 @@
   "rewrites": [
     {
       "source": "/api/:path*",
-      "destination": "https://techtorchweb.onrender.com/api/:path*"
+      "destination": "https://techtorchwebsite.onrender.com/api/:path*"
     },
     {
       "source": "/((?!api/).*)",
