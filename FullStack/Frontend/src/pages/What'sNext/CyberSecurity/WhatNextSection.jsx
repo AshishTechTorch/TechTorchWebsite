@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const cards = [
   {
@@ -6,28 +7,24 @@ const cards = [
     title: "Security Shouldn't Be an Afterthought",
     description:
       "Security is most effective when it is considered from the beginning. Build protection into your applications, systems and everyday business processes.",
-    link: "Explore Cybersecurity",
   },
   {
     tags: ["SECURITY", "THREAT PROTECTION"],
     title: "Stay Ahead of Emerging Threats",
     description:
       "The threat landscape keeps changing. A proactive approach can help organizations identify weakness, improve visibility and respond to risks with greater confidence.",
-    link: "Explore Threat Protection",
   },
   {
     tags: ["DATA", "INFORMATION SECURITY"],
     title: "Protect What Your Business Depends On",
     description:
       "Your business data carries real value. The right security controls help protect sensitive information while keeping access practical for the people who need it.",
-    link: "Protect Your Data",
   },
   {
     tags: ["RESILIENCE", "BUSINESS CONTINUITY"],
     title: "Keep Your Business Moving",
     description:
       "Security is also about resilience. Prepare your organization to respond to incidents, reduce disruption and recover with greater confidence.",
-    link: "Build Cyber Resilience",
   },
 ];
 
@@ -206,39 +203,41 @@ export default function WhatsNextSection() {
 
               {/* ================= LINK ================= */}
 
-              <a
-                href="#"
-                className="
-                  mt-5
-                  inline-flex
-                  w-fit
-                  items-center
-                  gap-1
-                  text-[12px]
-                  font-semibold
-                  text-fuchsia-900
-                  transition-colors
-                  duration-200
-                  hover:text-fuchsia-700
-                  sm:text-[13px]
-                "
-                style={{
-                  fontFamily: "'Inter', sans-serif",
-                }}
-              >
-                {c.link}
-
-                <span
-                  aria-hidden="true"
+              {c.to && c.link && (
+                <Link
+                  to={c.to}
                   className="
-                    transition-transform
+                    mt-5
+                    inline-flex
+                    w-fit
+                    items-center
+                    gap-1
+                    text-[12px]
+                    font-semibold
+                    text-fuchsia-900
+                    transition-colors
                     duration-200
-                    group-hover:translate-x-1
+                    hover:text-fuchsia-700
+                    sm:text-[13px]
                   "
+                  style={{
+                    fontFamily: "'Inter', sans-serif",
+                  }}
                 >
-                  &rarr;
-                </span>
-              </a>
+                  {c.link}
+
+                  <span
+                    aria-hidden="true"
+                    className="
+                      transition-transform
+                      duration-200
+                      group-hover:translate-x-1
+                    "
+                  >
+                    &rarr;
+                  </span>
+                </Link>
+              )}
             </div>
           ))}
         </div>
