@@ -7,7 +7,7 @@ import { useLogout, useProfile } from "../hooks/useAuth";
 import { useList } from "../hooks/useResource";
 import { useQueryStats } from "../hooks/useQueries";
 import { useMe } from "../../account/useAccount";
-import { ACCENT, PageLoader } from "../components/ui";
+import { ACCENT, PageLoader } from "../../components/ui";
 
 // Logo public folder se serve hota hai (public/Tech-Torch2.png)
 const LOGO_SRC = "/logo.png";

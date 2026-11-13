@@ -19,7 +19,7 @@ import {
   PageLoader,
   Spinner,
   useToast,
-} from "../components/ui.jsx";
+} from "../../components/ui.jsx";
 
 import { formatDate } from "../utils/india.js";
 

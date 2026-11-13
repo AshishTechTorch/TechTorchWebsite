@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Power, Trash2, ShieldCheck } from "lucide-react";
 import { useAdmins, useDeleteAdmin, useProfile, useToggleAdmin } from "../hooks/useAuth";
-import { Badge, ConfirmDialog, ErrorBox, PageLoader, StatusBadge, useToast } from "../components/ui";
+import { Badge, ConfirmDialog, ErrorBox, PageLoader, StatusBadge, useToast } from "../../components/ui";
 import { formatDate } from "../utils/india";
 
 export default function Admins() {

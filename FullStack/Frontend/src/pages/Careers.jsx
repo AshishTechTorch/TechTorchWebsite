@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Briefcase, MapPin } from "lucide-react";
-import { Badge, Button, ErrorBox, Modal, PageLoader, useToast } from "../admin/components/ui";
+import { Badge, Button, ErrorBox, Modal, PageLoader, useToast } from "../components/ui";
 import { formatLPA } from "../admin/utils/india";
 import { useMe, useMyInterests, usePublicJobs, useShowInterest } from "../account/useAccount";
 

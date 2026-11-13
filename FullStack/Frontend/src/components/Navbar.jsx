@@ -39,6 +39,8 @@ import NavCapabilities from "./NavbarItem/NavCapabilities";
 import NavIndustries from "./NavbarItem/NavIndustries";
 import NavInsights from "./NavbarItem/NavInsights";
 import NavCareers from "./NavbarItem/NavCareers";
+import SearchOverlay from "./NavbarItem/SearchOverlay";
+
 
 // =====================================================
 // SEARCH ICON
@@ -325,6 +327,7 @@ function NavbarInner() {
   const location = useLocation();
 
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [searchOpen, setSearchOpen] =useState(false);
 
   // Prevent hover-based reopening immediately after navigation.
   const [hoverLocked, setHoverLocked] = useState(false);
@@ -610,12 +613,13 @@ function NavbarInner() {
           <button
             type="button"
             aria-label="Search"
-            onClick={() => setActiveMenu(null)}
+            onClick={() => { setActiveMenu(null); setSearchOpen(true); }}
             className="flex items-center justify-center bg-transparent border-none cursor-pointer p-0"
           >
             <SearchIcon />
           </button>
 
+          {searchOpen && <SearchOverlay onClose={() => setSearchOpen(false)} />}
           <AccountButton onNavigate={closeAllMenus} />
         </div>
 
