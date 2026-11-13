@@ -51,7 +51,8 @@ export default function FormAuthGuard() {
       );
 
       if (!field || !document.contains(field)) return;
-
+      if (!field.hasAttribute("data-on-auth-guard")) return;
+      
       const loggedIn = await checkAuth();
 
       if (cancelled || loggedIn) return;
