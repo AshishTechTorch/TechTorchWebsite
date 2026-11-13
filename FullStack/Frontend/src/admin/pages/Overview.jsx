@@ -15,7 +15,7 @@ import {
 import { useList } from "../hooks/useResource";
 import { useProfile } from "../hooks/useAuth";
 import { useQueryStats } from "../hooks/useQueries";
-import { PageLoader, StatusBadge } from "../components/ui";
+import { PageLoader, StatusBadge } from "../../components/ui";
 import { formatDate, formatNumber } from "../utils/india";
 
 const isLive = (r) =>

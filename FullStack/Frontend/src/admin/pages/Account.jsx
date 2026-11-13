@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useChangePassword, useProfile, useUpdateAccount } from "../hooks/useAuth";
-import { Badge, Button, PageLoader, useToast } from "../components/ui";
+import { Badge, Button, PageLoader, useToast } from "../../components/ui";
 import { formatDate } from "../utils/india";
 
 const input = "w-full rounded-lg border border-stone-300 px-3 py-2 text-sm outline-none focus:border-[#780042]";

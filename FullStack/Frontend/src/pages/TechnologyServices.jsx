@@ -526,17 +526,38 @@ const VISIBLE_CARDS = 3;
 const CARD_WIDTH = 280;
 const CARD_GAP = 37;
 
-const totalPages = Math.ceil(cards.length / VISIBLE_CARDS);
+const STEP = VISIBLE_CARDS * (CARD_WIDTH + CARD_GAP);
+const TRACK_WIDTH = cards.length * CARD_WIDTH + (cards.length - 1) * CARD_GAP;
 
 export function TechnologyServicesSection() {
   const [page, setPage] = useState(0);
+  const [viewportWidth, setViewportWidth] = useState(0);
+  const viewportRef = useRef(null);
+
+  useEffect(() => {
+    const measure = () => {
+      if (viewportRef.current) {
+        setViewportWidth(viewportRef.current.offsetWidth);
+      }
+    };
+
+    measure();
+    window.addEventListener("resize", measure);
+    return () => window.removeEventListener("resize", measure);
+  }, []);
+
+  // The track may only move far enough for the last card to end
+  // at the right edge, so no blank space is left on the right.
+  const maxOffset = Math.max(0, TRACK_WIDTH - viewportWidth);
+  const maxPage = maxOffset > 0 ? Math.ceil(maxOffset / STEP) : 0;
+  const offset = Math.min(page * STEP, maxOffset);
 
   const goPrev = () => {
     setPage((p) => Math.max(0, p - 1));
   };
 
   const goNext = () => {
-    setPage((p) => Math.min(totalPages - 1, p + 1));
+    setPage((p) => Math.min(maxPage, p + 1));
   };
 
   return (
@@ -570,7 +591,7 @@ export function TechnologyServicesSection() {
 
             <button
               onClick={goNext}
-              disabled={page === totalPages - 1}
+              disabled={page >= maxPage}
               className="slider-control"
               aria-label="Next cards"
             >
@@ -581,13 +602,11 @@ export function TechnologyServicesSection() {
 
         {/* ================= SLIDER ================= */}
 
-        <div className="cards-viewport">
+        <div className="cards-viewport" ref={viewportRef}>
           <div
             className="cards-track"
             style={{
-              transform: `translateX(-${
-                page * VISIBLE_CARDS * (CARD_WIDTH + CARD_GAP)
-              }px)`,
+              transform: `translateX(-${offset}px)`,
             }}
           >
             {cards.map((card) => {
@@ -604,11 +623,7 @@ export function TechnologyServicesSection() {
                   {/* ================= ICON ================= */}
 
                   <div className="service-icon">
-                    <Icon
-                      size={23}
-                      color="#ffffff"
-                      strokeWidth={1.8}
-                    />
+                    <Icon size={23} color="#ffffff" strokeWidth={1.8} />
                   </div>
 
                   {/* ================= TITLE ================= */}

@@ -1,5 +1,5 @@
 import React from "react";
-import ResourcePage from "../components/ResourcePage";
+import ResourcePage from "../../components/ResourcePage";
 import { eventsConfig, jobsConfig, newsConfig, updatesConfig, whitepapersConfig } from "../config/resources.jsx";
 
 export const NewsPage = () => <ResourcePage config={newsConfig} />;

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import { BookOpen, Briefcase, LogOut, Pencil, Plus, Trash2, UserRound } from "lucide-react";
-import { Badge, Button, ConfirmDialog, ErrorBox, Modal, PageLoader, useToast } from "../admin/components/ui";
+import { Badge, Button, ConfirmDialog, ErrorBox, Modal, PageLoader, useToast } from "../components/ui";
 import { formatDate } from "../admin/utils/india";
 import {
   useDeleteBlog, useMe, useMyBlogs, useMyInterests, useSaveBlog, useSignOut, useWithdrawInterest,

@@ -23,6 +23,9 @@ const leaders = [
     text: "Overseeing organizational governance, corporate infrastructure, and administrative efficiency.",
     href: "https://www.linkedin.com/in/amit-gaur-4754a278/",
   },
+];
+
+const serviceTeam = [
   {
     img: "/riyaImg.jpeg",
     name: "Riya Mishra",
@@ -30,9 +33,6 @@ const leaders = [
     text: "Leading talent management, employee engagement, workplace culture, and people strategy across the organization.",
     href: "https://www.linkedin.com/in/riya-mishra-235588244/",
   },
-];
-
-const serviceTeam = [
   {
     img: anshikaImg,
     name: "Anshika Pandey",
@@ -597,14 +597,7 @@ const styles = `
 
 .lp-team__note {
   font-size: 12px !important;
-  max-width: none !important;
-  white-space: nowrap;
-}
-
-@media (max-width: 480px) {
-  .lp-team__note {
-    white-space: normal;
-  }
+  max-width: 260px !important;
 }
 
 .lp-team__note::before {
@@ -1244,6 +1237,36 @@ const styles = `
   object-fit: cover !important;
   object-position: center top !important;
 }
+
+/* 4 PEOPLE CARDS, 2 PER ROW */
+.lp-grid--people {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
+}
+
+/* wide screens: photo on the left, text on the right */
+@media (min-width: 1400px) {
+  .lp-grid--people .lp-card {
+    flex-direction: row;
+  }
+
+  .lp .lp-grid--people .lp-card__img {
+    flex: 0 0 42% !important;
+    width: 42% !important;
+    align-self: flex-start;
+  }
+
+  .lp-grid--people .lp-card__body {
+    padding: 28px;
+  }
+}
+
+/* phones: one card per row */
+@media (max-width: 700px) {
+  .lp-grid--people {
+    grid-template-columns: 1fr;
+  }
+}
 `;
 
 export default function Leadership() {
@@ -1254,10 +1277,7 @@ export default function Leadership() {
       <style>{styles}</style>
 
       {/* HERO SECTION */}
-      <section
-        className="lp-hero"
-        style={{ "--img": `url("${heroBg}")` }}
-      >
+      <section className="lp-hero" style={{ "--img": `url("${heroBg}")` }}>
         <div className="lp-wrap">
           <div className="lp-hero__grid">
             <div>
@@ -1300,11 +1320,11 @@ export default function Leadership() {
               </h2>
 
               <p>
-                At TechTorch Solutions, we believe strong leadership starts
-                with a clear vision, responsible decisions, and a commitment
-                to people. Our team brings together different strengths to
-                help organizations navigate business challenges and embrace
-                digital opportunities.
+                At TechTorch Solutions, we believe strong leadership starts with
+                a clear vision, responsible decisions, and a commitment to
+                people. Our team brings together different strengths to help
+                organizations navigate business challenges and embrace digital
+                opportunities.
               </p>
 
               <p>
@@ -1341,8 +1361,8 @@ export default function Leadership() {
 
               <p>
                 Our leadership team brings together strategic direction,
-                organizational management, and operational expertise to
-                support our shared goals.
+                organizational management, and operational expertise to support
+                our shared goals.
               </p>
             </div>
 
@@ -1351,7 +1371,7 @@ export default function Leadership() {
             </p>
           </div>
 
-          <div className="lp-grid lp-grid--3">
+          <div className="lp-grid lp-grid--people">
             {leaders.map((person) => (
               <PersonCard
                 key={person.name}
@@ -1367,7 +1387,7 @@ export default function Leadership() {
             <div className="lp-eyebrow">Our Team</div>
           </div>
 
-          <div className="lp-grid lp-grid--2">
+          <div className="lp-grid lp-grid--people">
             {serviceTeam.map((person) => (
               <PersonCard
                 key={person.name}
@@ -1409,9 +1429,7 @@ export default function Leadership() {
       >
         <div className="lp-wrap">
           <div className="lp-future__copy">
-            <div className="lp-eyebrow lp-eyebrow--pink">
-              Looking Ahead
-            </div>
+            <div className="lp-eyebrow lp-eyebrow--pink">Looking Ahead</div>
 
             <h2 className="lp-h2">
               Building the Future, One Meaningful Solution at a Time
@@ -1419,16 +1437,15 @@ export default function Leadership() {
 
             <p>
               We believe progress happens when people share a vision, embrace
-              change, and turn ideas into practical solutions. Our focus
-              remains on building strong relationships, improving how work
-              gets done, and creating technology that serves real business
-              needs.
+              change, and turn ideas into practical solutions. Our focus remains
+              on building strong relationships, improving how work gets done,
+              and creating technology that serves real business needs.
             </p>
 
             <p>
               Together, we continue learning, adapting, and working toward
-              sustainable growth for our team, our clients, and the
-              businesses we support.
+              sustainable growth for our team, our clients, and the businesses
+              we support.
             </p>
 
             <div className="lp-future__brand">

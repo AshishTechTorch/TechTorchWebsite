@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { ErrorBox, PageLoader } from "../admin/components/ui";
+import { ErrorBox, PageLoader } from "../components/ui";
 import { formatDate } from "../admin/utils/india";
 import { useMe, usePublishedBlogs } from "../account/useAccount";
 

@@ -136,7 +136,7 @@ export default function DataDecisions() {
             {/* EXPLORE DIGITAL SOLUTIONS */}
 
             <Link
-              to="/talk-to-expert"
+              to="/digitalsolution"
               className="data-decisions-primary-btn"
             >
               Explore Digital Solutions

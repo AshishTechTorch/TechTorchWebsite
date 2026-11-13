@@ -46,11 +46,27 @@ export default function OperationsManagement() {
           </h1>
 
           <div className="operations-hero-buttons">
-            <button className="operations-primary-btn">
+            <button
+              type="button"
+              className="operations-primary-btn"
+              onClick={() =>
+                document
+                  .getElementById("workflow-automation")
+                  ?.scrollIntoView({ behavior: "smooth", block: "start" })
+              }
+            >
               Automate Workflows
             </button>
 
-            <button className="operations-secondary-btn">
+            <button
+              type="button"
+              className="operations-secondary-btn"
+              onClick={() =>
+                document
+                  .getElementById("operations-analytics")
+                  ?.scrollIntoView({ behavior: "smooth", block: "start" })
+              }
+            >
               View Analytics
             </button>
           </div>
@@ -76,7 +92,11 @@ export default function OperationsManagement() {
       <section className="operations-features">
         {/* WORKFLOW AUTOMATION */}
 
-        <div className="workflow-card">
+        <div
+          className="workflow-card"
+          id="workflow-automation"
+          style={{ scrollMarginTop: "110px" }}
+        >
           <div className="workflow-content">
             <div className="feature-icon workflow-icon">
               <svg
@@ -116,7 +136,11 @@ export default function OperationsManagement() {
 
         {/* PREDICTIVE MAINTENANCE */}
 
-        <div className="maintenance-card">
+        <div
+          className="maintenance-card"
+          id="operations-analytics"
+          style={{ scrollMarginTop: "110px" }}
+        >
           <div className="feature-icon maintenance-icon">
             <svg
               viewBox="0 0 24 24"
@@ -141,9 +165,8 @@ export default function OperationsManagement() {
 
           <p>
             Anticipate system failures before they occur. TechTorch utilizes
-            machine learning models to analyze operational telemetry,
-            ensuring maximum uptime and reliability for critical
-            infrastructure.
+            machine learning models to analyze operational telemetry, ensuring
+            maximum uptime and reliability for critical infrastructure.
           </p>
 
           <div className="maintenance-chart">

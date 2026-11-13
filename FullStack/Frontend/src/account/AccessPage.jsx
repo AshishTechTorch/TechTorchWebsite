@@ -17,7 +17,7 @@ import {
   ACCENT,
   Button,
   useToast,
-} from "../admin/components/ui";
+} from "../components/ui";
 
 import { authApi } from "../admin/api/endpoints";
 

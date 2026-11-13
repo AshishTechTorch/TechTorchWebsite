@@ -3,7 +3,7 @@ import { Navigate, Outlet, useLocation } from "react-router-dom";
 import { useQueryClient } from "@tanstack/react-query";
 import { useMe, ME_KEY } from "../account/useAccount";
 import { PROFILE_KEY } from "../admin/hooks/useAuth";
-import { PageLoader } from "../admin/components/ui";
+import { PageLoader } from "./ui";
 
 /**
  * One guard for every protected page.
