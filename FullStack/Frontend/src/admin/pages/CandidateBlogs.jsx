@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Check, ExternalLink, Trash2, X } from "lucide-react";
 import { Link } from "react-router-dom";
-import { Badge, Button, ConfirmDialog, ErrorBox, Modal, PageLoader, useToast } from "../components/ui";
+import { Badge, Button, ConfirmDialog, ErrorBox, Modal, PageLoader, useToast } from "../../components/ui";
 import { formatDate } from "../utils/india";
 import { useAdminBlogDelete, useAdminBlogUpdate, useAdminBlogs } from "../../account/useAccount";
 

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Trash2 } from "lucide-react";
-import { ConfirmDialog, ErrorBox, PageLoader, useToast } from "../components/ui";
+import { ConfirmDialog, ErrorBox, PageLoader, useToast } from "../../components/ui";
 import { formatDate } from "../utils/india";
 import { useAdminInterestDelete, useAdminInterestStatus, useAdminInterests } from "../../account/useAccount";
 

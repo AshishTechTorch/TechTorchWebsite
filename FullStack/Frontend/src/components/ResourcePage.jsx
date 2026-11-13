@@ -1,6 +1,6 @@
 import React, { useMemo, useState } from "react";
 import { Pencil, Plus, Search, Trash2 } from "lucide-react";
-import { useList, useRemove, useSave } from "../hooks/useResource";
+import { useList, useRemove, useSave } from "../admin/hooks/useResource";
 import { Button, ConfirmDialog, ErrorBox, Modal, PageLoader, StatusBadge, useToast } from "./ui";
 import { Field, getPath, setPath } from "./FormFields";
 

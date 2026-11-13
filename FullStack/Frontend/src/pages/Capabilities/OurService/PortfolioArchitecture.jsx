@@ -185,14 +185,16 @@ function ServiceCard({ service }) {
         </ul>
 
         {/* CTA */}
+        
+        {/* To comment below part some pages are not available */}
 
-        <div className="service-card-cta-wrap">
+        {/* <div className="service-card-cta-wrap">
           <a href="#" className="service-card-cta">
             <span>{service.cta}</span>
 
             <ArrowRight size={13} strokeWidth={2} />
           </a>
-        </div>
+        </div> */}
       </div>
     </div>
   );

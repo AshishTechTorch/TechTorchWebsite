@@ -1,5 +1,5 @@
 import React from "react";
-import { ACCENT } from "../components/ui";
+import { ACCENT } from "../../components/ui";
 
 export const authInput =
   "w-full rounded-lg border border-stone-300 bg-stone-50 px-3.5 py-3 text-sm outline-none focus:border-[#780042] focus:bg-white";

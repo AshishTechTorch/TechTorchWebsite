@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import AuthShell, { authInput } from "./AuthShell";
-import { Button, useToast } from "../components/ui";
+import { Button, useToast } from "../../components/ui";
 import { authApi } from "../api/endpoints";
 
 // One page, three steps: email -> OTP -> new password

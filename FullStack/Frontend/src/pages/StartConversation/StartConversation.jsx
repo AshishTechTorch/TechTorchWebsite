@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import ContactAccountSection from "../../account/ContactAccountSection";
 import { enquiryApi } from "../../admin/api/endpoints";
+import OfficeMap from "../../components/OfficeMap";
 
 export default function GetInTouch() {
     const navigate = useNavigate();
@@ -777,7 +778,7 @@ case "phone":
                 <div>
                   <b>Our Offices</b>
                   <span>
-                    Noida&nbsp; | &nbsp;Bareilly&nbsp; | &nbsp;Florida, USA
+                    Noida&nbsp; | &nbsp;Bareilly&nbsp; 
                   </span>
                 </div>
               </div>
@@ -959,19 +960,6 @@ case "phone":
 
               </div>
 
-
-              <div className="office-column">
-
-                <h3>
-                  Overseas Office
-                </h3>
-
-                <p>
-                  Florida, USA
-                </p>
-
-              </div>
-
             </div>
 
 
@@ -995,14 +983,7 @@ case "phone":
 
           <div className="map-wrapper">
 
-            <span>
-              GLOBAL PRESENCE
-            </span>
-
-            <img
-              src="/GlobalPresenceMap.png"
-              alt="Global presence map"
-            />
+            <OfficeMap />
 
           </div>
 
@@ -1044,6 +1025,7 @@ case "phone":
             <button
               type="button"
               className="final-white-button"
+              onClick={() => navigate("/talk-to-expert")}
             >
               Talk to Our Experts
               <span>→</span>
@@ -2085,17 +2067,6 @@ case "phone":
 
         .map-wrapper {
           width: 100%;
-
-          position: relative;
-
-          padding: 17px;
-
-          border-radius: 24px;
-
-          background: #f4f8fa;
-          border: 1px solid #e7ecef;
-
-          overflow: hidden;
         }
 
         .map-wrapper > span {
@@ -2379,10 +2350,6 @@ case "phone":
             max-width: 650px;
           }
 
-          .map-wrapper img {
-            height: 300px;
-          }
-
 
           .final-cta {
             padding: 50px 40px;
@@ -2447,8 +2414,8 @@ case "phone":
           }
 
           .question-illustration {
-            width: 145px;
-            height: 145px;
+            width: 245px;
+            height: 245px;
           }
 
 
@@ -2696,15 +2663,6 @@ case "phone":
 
           .business-hours {
             font-size: 10px;
-          }
-
-          .map-wrapper {
-            padding: 10px;
-            border-radius: 17px;
-          }
-
-          .map-wrapper img {
-            height: 210px;
           }
 
 

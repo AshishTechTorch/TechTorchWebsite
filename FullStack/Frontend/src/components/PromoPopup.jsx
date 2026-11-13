@@ -3,22 +3,39 @@ import { useLocation } from "react-router-dom";
 import { X } from "lucide-react";
 
 /* ---------------- Settings (edit these) ---------------- */
+
+// Poster image (put the file in the /public folder).
+// If you use the JPG version, change the ending to .jpg
 const IMAGE_SRC = "/torchx-talent-popup.png";
+
+// Where the website link and the "Get Started for Free" button go
 const LINK_URL = "https://torchxsuite.com/talent/";
-const DELAY_MS = 0; // wait before the pop-up appears
-const STORAGE_KEY = "torchx_talent_popup_seen";
+
+// support@torchxsuite.com opens Gmail with this address filled in
+const EMAIL_URL =
+  "https://mail.google.com/mail/?view=cm&fs=1&to=support@torchxsuite.com&su=TorchX%20Talent%20Enquiry";
+
+// Phone number starts a call
+const PHONE_URL = "tel:+917454098820";
+
+// Wait before the pop-up appears (0 = as soon as the image is loaded)
+const DELAY_MS = 0;
 
 // -1 = show on EVERY page load / refresh (use this while testing)
 //  0 = show once per browser session (again after the tab is closed)
 //  7 = after it is closed, do not show again for 7 days
+// Before you publish the site, change this to 0 or 7.
 const HIDE_FOR_DAYS = -1;
 
 // Largest width of the pop-up on big screens (in pixels).
-// The poster is 1000px wide, so keep this at 1000 or less.
-const POPUP_MAX_WIDTH = 800;
+// The large poster is 1600px wide, so keep this at 1600 or less.
+const POPUP_MAX_WIDTH = 1000;
+
+const STORAGE_KEY = "torchx_talent_popup_seen";
 
 // Pages where the pop-up should not appear
 const HIDE_ON = ["/signin", "/signup", "/talk-to-expert"];
+
 /* -------------------------------------------------------- */
 
 function wasSeen() {
@@ -54,11 +71,30 @@ export default function PromoPopup() {
 
   const hidden = HIDE_ON.includes(pathname.toLowerCase());
 
-  /* Open after a short delay, once */
+  /* Load the poster first, then open (no empty box) */
   useEffect(() => {
     if (hidden || wasSeen()) return;
-    const t = setTimeout(() => setOpen(true), DELAY_MS);
-    return () => clearTimeout(t);
+
+    let timer;
+    const img = new Image();
+    img.src = IMAGE_SRC;
+
+    const show = () => {
+      timer = setTimeout(() => setOpen(true), DELAY_MS);
+    };
+
+    if (img.complete) {
+      show();
+    } else {
+      img.onload = show;
+      img.onerror = show;
+    }
+
+    return () => {
+      clearTimeout(timer);
+      img.onload = null;
+      img.onerror = null;
+    };
   }, [hidden]);
 
   const close = () => {
@@ -111,19 +147,60 @@ export default function PromoPopup() {
           <X size={20} strokeWidth={2.4} />
         </button>
 
-        <a
-          href={LINK_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          onClick={markSeen}
-          className="promo-link"
-        >
+        <div className="promo-link">
           <img
             src={IMAGE_SRC}
             alt="TorchX Talent: HR management, free forever. Get started for free."
             className="promo-image"
           />
-        </a>
+
+          {/* Get Started for Free button */}
+          <a
+            href={LINK_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={markSeen}
+            className="promo-hot"
+            style={{
+              left: "67.5%",
+              top: "87.2%",
+              width: "27%",
+              height: "4.6%",
+            }}
+            aria-label="Get started for free"
+          />
+
+          {/* support@torchxsuite.com: opens Gmail */}
+          <a
+            href={EMAIL_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={markSeen}
+            className="promo-hot"
+            style={{ left: "3%", top: "96%", width: "27%", height: "3.6%" }}
+            aria-label="Email support@torchxsuite.com"
+          />
+
+          {/* Phone number: starts a call */}
+          <a
+            href={PHONE_URL}
+            onClick={markSeen}
+            className="promo-hot"
+            style={{ left: "38%", top: "96%", width: "20%", height: "3.6%" }}
+            aria-label="Call +91 74540 98820"
+          />
+
+          {/* Website link */}
+          <a
+            href={LINK_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={markSeen}
+            className="promo-hot"
+            style={{ left: "65%", top: "96%", width: "31%", height: "3.6%" }}
+            aria-label="Open torchxsuite.com/talent"
+          />
+        </div>
       </div>
 
       <style>{`
@@ -132,31 +209,42 @@ export default function PromoPopup() {
           inset: 0;
           z-index: 100000;
           display: flex;
+          overflow-y: auto;
+          overscroll-behavior: contain;
           padding: 24px 16px;
           background: rgba(15, 8, 20, 0.62);
           backdrop-filter: blur(3px);
           animation: promoFade 0.3s ease-out;
-
-          /* Pop-up scrolls when the poster is taller than the screen */
-          overflow-y: auto;
-          overscroll-behavior: contain;
-          -webkit-overflow-scrolling: touch;
         }
 
         .promo-box {
           position: relative;
-          width: min(88vw, var(--popup-max, 800px));
-          /* margin:auto centers when it fits, top-aligns when it overflows */
+          width: min(94vw, var(--popup-max, 1000px));
           margin: auto;
           animation: promoPop 0.35s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .promo-link {
+          position: relative;
           display: block;
           line-height: 0;
           border-radius: 18px;
           overflow: hidden;
           box-shadow: 0 30px 70px rgba(0, 0, 0, 0.45);
+        }
+
+        .promo-hot {
+          position: absolute;
+          display: block;
+          border-radius: 8px;
+          cursor: pointer;
+          transition: background 0.2s ease;
+        }
+
+        .promo-hot:hover,
+        .promo-hot:focus-visible {
+          background: rgba(115, 0, 66, 0.1);
+          outline: none;
         }
 
         .promo-image {

@@ -36,7 +36,7 @@ import ResourceStaffingPage from "./pages/ResourceStaffingPage.jsx";
 import CloudInfrastructurePage from "./pages/CloudInfrastructurePage.jsx";
 import SoftwareEngineeringOutsourcingPage from "./pages/SoftwareEngineeringOutsourcingPage.jsx";
 import ITConsultancyPage from "./pages/ITConsultancyPage.jsx";
-import PromoPopup from "./admin/components/PromoPopup.jsx";
+import PromoPopup from "./components/PromoPopup.jsx";
 
 // =================================================
 // COMMON COMPONENTS
