@@ -467,10 +467,43 @@ import OperationsManagementPage from "./pages/OperationsManagementPage.jsx";
 // =================================================
 // SCROLL TO TOP
 // =================================================
+
+// Take scroll control from the browser (runs as soon as the app loads)
+if ("scrollRestoration" in window.history) {
+  window.history.scrollRestoration = "manual";
+}
+
+// True when this page load was a browser refresh
+const isPageReload = (() => {
+  try {
+    return performance.getEntriesByType("navigation")[0]?.type === "reload";
+  } catch {
+    return false;
+  }
+})();
+
+// The history key of the page the visitor refreshed on
+let bootKey = null;
+
 function ScrollToTop() {
   const { pathname, hash, key } = useLocation();
 
+  if (bootKey === null) bootKey = key;
+
   useEffect(() => {
+    // Refresh: always start at the top and drop any leftover #section
+    if (isPageReload && key === bootKey) {
+      if (hash) {
+        window.history.replaceState(
+          window.history.state,
+          "",
+          pathname + window.location.search
+        );
+      }
+      window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+      return;
+    }
+
     // If the link has a #section, scroll to that section
     if (hash) {
       const id = hash.replace("#", "");
@@ -492,7 +525,7 @@ function ScrollToTop() {
       return () => clearInterval(timer);
     }
 
-    // Otherwise behave as before: go to the top of the page
+    // Otherwise go to the top of the page
     window.scrollTo({
       top: 0,
       left: 0,
