@@ -21,6 +21,11 @@ const MAILTO_URL = `mailto:${SUPPORT_EMAIL}?subject=${encodeURIComponent(
   SUPPORT_SUBJECT
 )}&body=${encodeURIComponent(SUPPORT_BODY)}`;
 
+// Support phone number (sirf mobile par click se call dialer khulega,
+// laptop/desktop par is number par click karne se kuch nahi hoga)
+// Poster wale number se match karo: country code ke saath, "+" ke baad spaces nahi
+const SUPPORT_PHONE = "+917454098820";
+
 // Desktop par click karne par kaunsa mail khule:
 //   "gmail"   -> Gmail web compose (new tab)
 //   "outlook" -> Outlook web compose (new tab)
@@ -47,7 +52,7 @@ const DEBUG_HOTSPOT = false;
 // After the visitor closes the pop-up, it comes back after this many minutes
 // (even if they stay on the page, and also after a refresh once time is up).
 // Set to 0 to show it only once per page load (no coming back).
-const REOPEN_AFTER_MINUTES = 1;
+const REOPEN_AFTER_MINUTES = 30;
 
 // Largest width of the pop-up on big screens (in pixels).
 const POPUP_MAX_WIDTH = 800;
@@ -108,6 +113,7 @@ export default function PromoPopup() {
   const shownOnce = useRef(false);
 
   const hidden = HIDE_ON.includes(pathname.toLowerCase());
+  const isMobile = isMobileDevice();
 
   /* Open after a short delay. When it is closed, this runs again and
      schedules the next appearance after REOPEN_AFTER_MINUTES. */
@@ -207,6 +213,26 @@ export default function PromoPopup() {
               aria-label={`Email ${SUPPORT_EMAIL}`}
               title={SUPPORT_EMAIL}
             />
+
+            {/* Phone number: mobile par call dialer, laptop/desktop par kuch nahi */}
+            {isMobile ? (
+              <a
+                href={`tel:${SUPPORT_PHONE}`}
+                onClick={markSeen}
+                className={`promo-hotspot promo-hotspot-phone${
+                  DEBUG_HOTSPOT ? " is-debug" : ""
+                }`}
+                aria-label="Call support"
+              />
+            ) : (
+              <div
+                className={`promo-hotspot promo-hotspot-phone is-static${
+                  DEBUG_HOTSPOT ? " is-debug" : ""
+                }`}
+                onClick={(e) => e.stopPropagation()}
+                aria-hidden="true"
+              />
+            )}
           </div>
         </div>
 
@@ -343,6 +369,19 @@ export default function PromoPopup() {
           bottom: 0.4%;
           width: 26.5%;
           height: 3%;
+        }
+
+        /* phone number ke upar. Position ke liye left/width adjust karo */
+        .promo-hotspot-phone {
+          left: 38%;
+          bottom: 0.4%;
+          width: 19.5%;
+          height: 3%;
+        }
+
+        /* desktop par phone number unclickable (normal cursor, koi action nahi) */
+        .promo-hotspot.is-static {
+          cursor: default;
         }
 
         .promo-hotspot.is-debug {
