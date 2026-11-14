@@ -4,7 +4,7 @@ import heroBg from "/leadership.png";
 import visionImg from "/meetingroom.png";
 import siddharthImg from "/Sidhhart.jpeg";
 import amitImg from "/AmitSir.png";
-import riyaImg from "/riyaImg.jpeg";
+import riyaImg from "/Riyamishra.png";
 import anshikaImg from "/anshika.png";
 import futureBg from "/future.png";
 
@@ -27,7 +27,7 @@ const leaders = [
 
 const serviceTeam = [
   {
-    img: "/riyaImg.jpeg",
+    img: "/Riyamishra.png",
     name: "Riya Mishra",
     role: "Director of Human Resource",
     text: "Leading talent management, employee engagement, workplace culture, and people strategy across the organization.",
@@ -37,6 +37,7 @@ const serviceTeam = [
     img: anshikaImg,
     name: "Anshika Pandey",
     role: "Human Resource Executive",
+    badge: "PEOPLE & CULTURE",
     text: "Managing employee engagement, onboarding, talent management, and day-to-day HR operations.",
     href: "https://www.linkedin.com/in/anshika-pandey-42631832a/",
   },
@@ -194,13 +195,11 @@ const LineIcon = ({ children }) => (
   </svg>
 );
 
-function PersonCard({ p, badge, onReadMore }) {
+function PersonCard({ p, onReadMore }) {
   return (
     <article className="lp-card">
       <div className="lp-card__img">
         <img src={p.img} alt={p.name} loading="lazy" />
-
-        {badge && <span className="lp-card__badge">{badge}</span>}
       </div>
 
       <div className="lp-card__body">
@@ -281,29 +280,41 @@ function ArticleModal({ person, onClose }) {
           ×
         </button>
 
-        <div className="lp-eyebrow">Leadership · Team Profile</div>
-
-        <h2 id="lp-modal-title">{article.title}</h2>
-
-        <p className="lp-modal__role">
-          {person.name} · {person.role}
-        </p>
-
-        <div className="lp-modal__content">
-          {article.paragraphs.map((paragraph, index) => (
-            <p key={index}>{paragraph}</p>
-          ))}
+        <div className="lp-modal__media">
+          <img src={person.img} alt={person.name} />
         </div>
 
-        <a
-          className="lp-modal__linkedin"
-          href={person.href}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <LinkedInIcon />
-          View LinkedIn Profile
-        </a>
+        <div className="lp-modal__body">
+          <div className="lp-modal__top">
+            <div className="lp-eyebrow">Leadership · Team Profile</div>
+
+            {person.badge && (
+              <span className="lp-modal__badge">{person.badge}</span>
+            )}
+          </div>
+
+          <h2 id="lp-modal-title">{article.title}</h2>
+
+          <p className="lp-modal__role">
+            {person.name} · {person.role}
+          </p>
+
+          <div className="lp-modal__content">
+            {article.paragraphs.map((paragraph, index) => (
+              <p key={index}>{paragraph}</p>
+            ))}
+          </div>
+
+          <a
+            className="lp-modal__linkedin"
+            href={person.href}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <LinkedInIcon />
+            View LinkedIn Profile
+          </a>
+        </div>
       </section>
     </div>
   );
@@ -896,29 +907,52 @@ const styles = `
 
 .lp-modal {
   position: relative;
-  width: min(100%, 800px);
-  max-height: min(85vh, 900px);
-  max-height: min(85dvh, 900px);
-  overflow-y: auto;
-  padding: clamp(24px, 5vw, 48px);
-  border: 1px solid rgba(255, 255, 255, 0.6);
+  width: min(100%, 1020px);
+  height: min(86vh, 700px);
+  height: min(86dvh, 700px);
+  display: grid;
+  grid-template-columns: minmax(280px, 38%) minmax(0, 1fr);
+  grid-template-rows: minmax(0, 1fr);
+  overflow: hidden;
+  border: 2px solid var(--pink);
   border-radius: 20px;
   background: #fff;
   box-shadow: 0 30px 100px rgba(0, 0, 0, 0.25);
   animation: lp-modal-up 0.25s ease;
 }
 
+.lp-modal__media {
+  position: relative;
+  min-height: 0;
+  background: #f1f5f9;
+}
+
+.lp-modal__media img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.lp-modal__body {
+  min-width: 0;
+  min-height: 0;
+  overflow-y: auto;
+  padding: clamp(24px, 4vw, 44px);
+}
+
 .lp-modal__close {
-  position: sticky;
-  top: 0;
-  float: right;
-  z-index: 2;
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 3;
   width: 38px;
   height: 38px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  margin: -8px -8px 8px 16px;
   border: 1px solid #e5e7eb;
   border-radius: 50%;
   background: #fff;
@@ -936,11 +970,36 @@ const styles = `
   color: #fff;
 }
 
+.lp-modal__top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 14px;
+  padding-right: 48px;
+  margin-bottom: 20px;
+}
+
+.lp-modal__top .lp-eyebrow {
+  margin-bottom: 0;
+}
+
+.lp-modal__badge {
+  display: inline-block;
+  padding: 4px 12px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--maroon);
+  background: #fdf2f8;
+  border: 1px solid #f9c6dd;
+  border-radius: 999px;
+}
+
 .lp-modal h2 {
-  clear: both;
   max-width: 680px;
   margin-top: 8px;
-  font-size: clamp(1.5rem, 3vw, 2.35rem);
+  padding-right: 40px;
+  font-size: clamp(1.4rem, 2.6vw, 2.1rem);
   line-height: 1.25;
 }
 
@@ -1179,9 +1238,6 @@ const styles = `
   }
 
   .lp-modal {
-    max-height: 92vh;
-    max-height: 92dvh;
-    padding: 24px 20px;
     border-radius: 16px;
   }
 
@@ -1206,7 +1262,7 @@ const styles = `
     padding: 8px;
   }
 
-  .lp-modal {
+  .lp-modal__body {
     padding: 20px 16px;
   }
 }
@@ -1220,11 +1276,11 @@ const styles = `
   }
 }
 
-/* EQUAL-SIZE TEAM PHOTOS */
+/* TEAM PHOTOS - COMPACT SIZE */
 .lp .lp-card__img {
   width: 100% !important;
   height: auto !important;
-  aspect-ratio: 4 / 5 !important;
+  aspect-ratio: 1 / 1 !important;
   display: block !important;
   overflow: hidden !important;
 }
@@ -1244,27 +1300,52 @@ const styles = `
   gap: 28px;
 }
 
-/* wide screens: photo on the left, text on the right */
-@media (min-width: 1400px) {
+/* laptop / desktop: photo left (smaller), text right */
+@media (min-width: 1100px) {
   .lp-grid--people .lp-card {
     flex-direction: row;
   }
 
   .lp .lp-grid--people .lp-card__img {
-    flex: 0 0 42% !important;
-    width: 42% !important;
+    flex: 0 0 38% !important;
+    width: 38% !important;
+    aspect-ratio: 4 / 5 !important;
     align-self: flex-start;
   }
 
   .lp-grid--people .lp-card__body {
-    padding: 28px;
+    padding: 24px;
   }
 }
 
-/* phones: one card per row */
+/* phones: one card per row, controlled photo size */
 @media (max-width: 700px) {
   .lp-grid--people {
     grid-template-columns: 1fr;
+  }
+
+  .lp .lp-card__img {
+    aspect-ratio: 4 / 3.4 !important;
+  }
+}
+
+/* ARTICLE MODAL - STACKED ON SMALL SCREENS */
+@media (max-width: 760px) {
+  .lp-modal {
+    height: min(92vh, 760px);
+    height: min(92dvh, 760px);
+    grid-template-columns: 1fr;
+    grid-template-rows: clamp(190px, 30vh, 250px) minmax(0, 1fr);
+  }
+
+  .lp-modal__close {
+    top: 10px;
+    right: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  .lp-modal h2 {
+    padding-right: 0;
   }
 }
 `;
@@ -1392,7 +1473,6 @@ export default function Leadership() {
               <PersonCard
                 key={person.name}
                 p={person}
-                badge="PEOPLE & CULTURE"
                 onReadMore={setSelectedPerson}
               />
             ))}
