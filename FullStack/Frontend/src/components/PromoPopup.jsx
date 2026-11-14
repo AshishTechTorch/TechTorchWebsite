@@ -11,10 +11,43 @@ const CHAT_LABEL = "Chat Now";
 const DELAY_MS = 0; // wait before the pop-up appears
 const STORAGE_KEY = "torchx_talent_popup_last_closed";
 
+// Support email (poster me jo email dikh rahi hai uspar click karne par
+// user ka mail app khulega aur "To" me ye email apne aap aa jayegi)
+const SUPPORT_EMAIL = "support@torchxsuite.com";
+const SUPPORT_SUBJECT = "Support request - TorchX Talent";
+const SUPPORT_BODY = "Hello TorchX Team,\n\n";
+
+const MAILTO_URL = `mailto:${SUPPORT_EMAIL}?subject=${encodeURIComponent(
+  SUPPORT_SUBJECT
+)}&body=${encodeURIComponent(SUPPORT_BODY)}`;
+
+// Desktop par click karne par kaunsa mail khule:
+//   "gmail"   -> Gmail web compose (new tab)
+//   "outlook" -> Outlook web compose (new tab)
+//   "mailto"  -> computer ka default mail app (agar set nahi hai to kuch nahi hoga)
+// Mobile par hamesha mailto chalega (phone ka default mail app / Gmail app khulega)
+const DESKTOP_MAIL = "gmail";
+
+const GMAIL_URL = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(
+  SUPPORT_EMAIL
+)}&su=${encodeURIComponent(SUPPORT_SUBJECT)}&body=${encodeURIComponent(
+  SUPPORT_BODY
+)}`;
+
+const OUTLOOK_URL = `https://outlook.live.com/mail/0/deeplink/compose?to=${encodeURIComponent(
+  SUPPORT_EMAIL
+)}&subject=${encodeURIComponent(SUPPORT_SUBJECT)}&body=${encodeURIComponent(
+  SUPPORT_BODY
+)}`;
+
+// Email hotspot ki position check karne ke liye true karo (laal box dikhega).
+// Sahi baith jaye to wapas false kar do.
+const DEBUG_HOTSPOT = false;
+
 // After the visitor closes the pop-up, it comes back after this many minutes
 // (even if they stay on the page, and also after a refresh once time is up).
 // Set to 0 to show it only once per page load (no coming back).
-const REOPEN_AFTER_MINUTES = 30;
+const REOPEN_AFTER_MINUTES = 1;
 
 // Largest width of the pop-up on big screens (in pixels).
 const POPUP_MAX_WIDTH = 800;
@@ -48,6 +81,24 @@ function markSeen() {
   } catch {
     /* ignore */
   }
+}
+
+function isMobileDevice() {
+  if (typeof navigator === "undefined") return false;
+  return /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent);
+}
+
+function handleEmailClick(e) {
+  markSeen();
+
+  // Mobile ya "mailto" mode: normal mailto link chalne do
+  if (isMobileDevice() || DESKTOP_MAIL === "mailto") return;
+
+  // Desktop: web mail compose new tab me kholo
+  e.preventDefault();
+  const url = DESKTOP_MAIL === "outlook" ? OUTLOOK_URL : GMAIL_URL;
+  const win = window.open(url, "_blank", "noopener,noreferrer");
+  if (!win) window.location.href = MAILTO_URL; // popup blocked -> mailto fallback
 }
 
 export default function PromoPopup() {
@@ -129,19 +180,34 @@ export default function PromoPopup() {
 
         {/* Poster */}
         <div className="promo-body">
-          <a
-            href={LINK_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={markSeen}
-            className="promo-link"
-          >
+          <div className="promo-poster">
             <img
               src={IMAGE_SRC}
               alt="TorchX Talent: HR management, free forever. Get started for free."
               className="promo-image"
             />
-          </a>
+
+            {/* Poori image par click -> trial page */}
+            <a
+              href={LINK_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={markSeen}
+              className="promo-link"
+              aria-label="Open TorchX Talent"
+            />
+
+            {/* Email par click -> mail app (To: support@torchxsuite.com) */}
+            <a
+              href={MAILTO_URL}
+              onClick={handleEmailClick}
+              className={`promo-hotspot promo-hotspot-email${
+                DEBUG_HOTSPOT ? " is-debug" : ""
+              }`}
+              aria-label={`Email ${SUPPORT_EMAIL}`}
+              title={SUPPORT_EMAIL}
+            />
+          </div>
         </div>
 
         {/* Buttons */}
@@ -243,11 +309,11 @@ export default function PromoPopup() {
           padding: 14px 18px 0;
         }
 
-        .promo-link {
-          display: block;
-          line-height: 0;
+        .promo-poster {
+          position: relative;
           border-radius: 12px;
           overflow: hidden;
+          line-height: 0;
         }
 
         .promo-image {
@@ -255,6 +321,33 @@ export default function PromoPopup() {
           width: 100%;
           height: auto;
           background: #fff;
+        }
+
+        /* poori image clickable (trial page) */
+        .promo-link {
+          position: absolute;
+          inset: 0;
+          z-index: 1;
+        }
+
+        /* email wala invisible clickable area, image link ke upar */
+        .promo-hotspot {
+          position: absolute;
+          z-index: 2;
+          cursor: pointer;
+        }
+
+        /* Position image ke % me hai. Zarurat ho to left/bottom/width/height badlo. */
+        .promo-hotspot-email {
+          left: 3%;
+          bottom: 0.4%;
+          width: 26.5%;
+          height: 3%;
+        }
+
+        .promo-hotspot.is-debug {
+          outline: 2px dashed red;
+          background: rgba(255, 0, 0, 0.15);
         }
 
         .promo-footer {
