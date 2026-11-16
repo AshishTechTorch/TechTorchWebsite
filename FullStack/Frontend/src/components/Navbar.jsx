@@ -17,6 +17,7 @@ import NavCapabilities from "./NavbarItem/NavCapabilities";
 import NavIndustries from "./NavbarItem/NavIndustries";
 import NavInsights from "./NavbarItem/NavInsights";
 import NavCareers from "./NavbarItem/NavCareers";
+import NavSearch from "./NavbarItem/NavSearch";
 
 // =====================================================
 // SEARCH ICON
@@ -542,15 +543,10 @@ function NavbarInner() {
 
         {/* SEARCH AND ACCOUNT */}
         <div className="hidden lg:flex items-center gap-4">
-          <button
-            type="button"
-            aria-label="Search"
-            onClick={() => setActiveMenu(null)}
-            className="flex items-center justify-center bg-transparent border-none cursor-pointer p-0"
-          >
-            <SearchIcon />
-          </button>
-
+          <NavSearch
+            onOpen={() => setActiveMenu(null)}
+            onNavigate={closeAllMenus}
+          />
           <AccountButton onNavigate={closeAllMenus} />
         </div>
 
