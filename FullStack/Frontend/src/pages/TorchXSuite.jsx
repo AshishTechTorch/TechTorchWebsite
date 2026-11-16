@@ -53,7 +53,7 @@ export function TorchXSuiteSection() {
 
         {/* BUTTON */}
 
-        <a href="https://torchxsuite.com/" className="torchx-button">
+        <a href="https://torchxsuite.com/" target="_blank" rel="noopener noreferrer" className="torchx-button">
           Explore TorchX Suite →
         </a>
       </div>
@@ -762,7 +762,6 @@ const CONNECTED_EXPERIENCE_MAROON = "#730042";
 export function ConnectedExperienceSection() {
   return (
     <section className="connected-experience-section">
-
       {/* ================= LEFT IMAGE ================= */}
       <div className="connected-image-wrapper">
         <img
@@ -783,14 +782,21 @@ export function ConnectedExperienceSection() {
         <p>
           TorchX Suite brings Talent, Engage, Finance, Pay and Inventory
           together to help businesses manage their most important operations
-          from one connected platform. From people and customer relationships
-          to financial management, payroll and inventory, each solution is
-          designed to work as part of a broader business ecosystem—giving your
-          teams greater visibility, simpler workflows and a more consistent way
-          to work.
+          from one connected platform. From people and customer relationships to
+          financial management, payroll and inventory, each solution is designed
+          to work as part of a broader business ecosystem—giving your teams
+          greater visibility, simpler workflows and a more consistent way to
+          work.
         </p>
 
-        <a href="https://torchxsuite.com/">Explore TorchX Suite →</a>
+        <a
+          href="https://torchxsuite.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="torchx-button"
+        >
+          Explore TorchX Suite →
+        </a>
       </div>
 
       <style>{`
@@ -1355,7 +1361,8 @@ export function BringBusinessTogetherSection() {
     {
       label: "Email Us",
       Icon: Mail,
-      href: "mailto:contact@techtorch.solutions",
+      href: "https://mail.google.com/mail/?view=cm&fs=1&to=contact@techtorch.solutions&su=Technology%20Services%20Enquiry",
+      external: true,
     },
   ];
 

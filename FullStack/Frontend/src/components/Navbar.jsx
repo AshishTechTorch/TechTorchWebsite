@@ -1,46 +1,22 @@
-import React, {
-  useLayoutEffect,
-  useEffect,
-  useRef,
-  useState,
-} from "react";
+import React, { useLayoutEffect, useEffect, useRef, useState } from "react";
 
-import {
-  Link,
-  useNavigate,
-  useLocation,
-} from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 
-import {
-  ChevronDown,
-  LogOut,
-  UserRound,
-} from "lucide-react";
+import { ChevronDown, LogOut, UserRound } from "lucide-react";
 
-import {
-  MOBILE_MENU,
-  routeFor,
-} from "./NavbarItem/navRoutes";
+import { MOBILE_MENU, routeFor } from "./NavbarItem/navRoutes";
 
-import {
-  useMe,
-  useSignOut,
-} from "../account/useAccount";
+import { useMe, useSignOut } from "../account/useAccount";
 
 import logo from "../assets/TechTorchLogo.png";
 
-import {
-  NavMenuProvider,
-  useNavMenu,
-} from "./NavbarItem/NavMenuContext";
+import { NavMenuProvider, useNavMenu } from "./NavbarItem/NavMenuContext";
 
 import NavAboutUs from "./NavbarItem/NavAboutUs";
 import NavCapabilities from "./NavbarItem/NavCapabilities";
 import NavIndustries from "./NavbarItem/NavIndustries";
 import NavInsights from "./NavbarItem/NavInsights";
 import NavCareers from "./NavbarItem/NavCareers";
-import SearchOverlay from "./NavbarItem/SearchOverlay";
-
 
 // =====================================================
 // SEARCH ICON
@@ -129,9 +105,7 @@ function AccountButton({ onNavigate }) {
   }
 
   const dashboard =
-    me.accountType === "admin"
-      ? "/admin-dashboard"
-      : "/candidate";
+    me.accountType === "admin" ? "/admin-dashboard" : "/candidate";
 
   const logout = async () => {
     setOpen(false);
@@ -157,9 +131,7 @@ function AccountButton({ onNavigate }) {
       >
         <UserRound size={17} />
 
-        <span className="max-w-[110px] truncate">
-          {me.name?.split(" ")[0]}
-        </span>
+        <span className="max-w-[110px] truncate">{me.name?.split(" ")[0]}</span>
 
         <ChevronDown size={15} />
       </button>
@@ -181,9 +153,7 @@ function AccountButton({ onNavigate }) {
               </p>
 
               <p className="truncate text-xs text-gray-500">
-                {me.accountType === "admin"
-                  ? "Admin"
-                  : "Candidate"}
+                {me.accountType === "admin" ? "Admin" : "Candidate"}
               </p>
             </div>
 
@@ -196,9 +166,7 @@ function AccountButton({ onNavigate }) {
               }}
               className="block px-4 py-2.5 text-sm text-gray-800 no-underline hover:bg-gray-50"
             >
-              {me.accountType === "admin"
-                ? "Admin dashboard"
-                : "My dashboard"}
+              {me.accountType === "admin" ? "Admin dashboard" : "My dashboard"}
             </Link>
 
             {me.accountType === "candidate" && (
@@ -260,11 +228,7 @@ function MobileMenu({ navHeight, close }) {
                   type="button"
                   aria-expanded={openKey === item.label}
                   onClick={() =>
-                    setOpenKey(
-                      openKey === item.label
-                        ? null
-                        : item.label
-                    )
+                    setOpenKey(openKey === item.label ? null : item.label)
                   }
                   className="flex w-full items-center justify-between px-6 py-4 text-left text-[17px] text-gray-900 hover:bg-gray-50"
                 >
@@ -273,9 +237,7 @@ function MobileMenu({ navHeight, close }) {
                   <ChevronDown
                     size={18}
                     className={`transition-transform ${
-                      openKey === item.label
-                        ? "rotate-180"
-                        : ""
+                      openKey === item.label ? "rotate-180" : ""
                     }`}
                   />
                 </button>
@@ -284,16 +246,31 @@ function MobileMenu({ navHeight, close }) {
                   <ul className="bg-gray-50 pb-2">
                     {item.children.map((c) => (
                       <li key={c}>
-                        <Link
-                          to={routeFor(c)}
-                          onClick={() => {
-                            setOpenKey(null);
-                            close();
-                          }}
-                          className="block px-10 py-2.5 text-[15px] text-gray-700 no-underline hover:text-[#8a1538]"
-                        >
-                          {c}
-                        </Link>
+                        {c === "TorchX Suite" || c === "TorchX Campus" ? (
+                          <a
+                            href="https://torchxsuite.com/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            onClick={() => {
+                              setOpenKey(null);
+                              close();
+                            }}
+                            className="block px-10 py-2.5 text-[15px] text-gray-700 no-underline hover:text-[#8a1538]"
+                          >
+                            {c}
+                          </a>
+                        ) : (
+                          <Link
+                            to={routeFor(c)}
+                            onClick={() => {
+                              setOpenKey(null);
+                              close();
+                            }}
+                            className="block px-10 py-2.5 text-[15px] text-gray-700 no-underline hover:text-[#8a1538]"
+                          >
+                            {c}
+                          </Link>
+                        )}
                       </li>
                     ))}
                   </ul>
@@ -316,18 +293,13 @@ function MobileMenu({ navHeight, close }) {
 // =====================================================
 
 function NavbarInner() {
-  const {
-    setActiveMenu,
-    navHeight,
-    setNavHeight,
-  } = useNavMenu();
+  const { setActiveMenu, navHeight, setNavHeight } = useNavMenu();
 
   const navRef = useRef(null);
   const navigate = useNavigate();
   const location = useLocation();
 
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [searchOpen, setSearchOpen] =useState(false);
 
   // Prevent hover-based reopening immediately after navigation.
   const [hoverLocked, setHoverLocked] = useState(false);
@@ -353,9 +325,7 @@ function NavbarInner() {
   useLayoutEffect(() => {
     const measure = () => {
       if (navRef.current) {
-        setNavHeight(
-          navRef.current.getBoundingClientRect().height
-        );
+        setNavHeight(navRef.current.getBoundingClientRect().height);
       }
     };
 
@@ -388,9 +358,7 @@ function NavbarInner() {
       const insideNavbar = navRef.current?.contains(anchor);
 
       const insideMegaMenu = Boolean(
-        anchor.closest(
-          '[data-nav-mega-menu], [data-mega-menu]'
-        )
+        anchor.closest("[data-nav-mega-menu], [data-mega-menu]"),
       );
 
       if (!insideNavbar && !insideMegaMenu) return;
@@ -426,18 +394,10 @@ function NavbarInner() {
       }
     };
 
-    document.addEventListener(
-      "click",
-      handleNavigationClick,
-      true
-    );
+    document.addEventListener("click", handleNavigationClick, true);
 
     return () => {
-      document.removeEventListener(
-        "click",
-        handleNavigationClick,
-        true
-      );
+      document.removeEventListener("click", handleNavigationClick, true);
     };
   }, [navigate, setActiveMenu]);
 
@@ -449,24 +409,15 @@ function NavbarInner() {
     const handlePointerMove = (event) => {
       if (!hoverLocked) return;
 
-      if (
-        navRef.current &&
-        !navRef.current.contains(event.target)
-      ) {
+      if (navRef.current && !navRef.current.contains(event.target)) {
         setHoverLocked(false);
       }
     };
 
-    document.addEventListener(
-      "pointermove",
-      handlePointerMove
-    );
+    document.addEventListener("pointermove", handlePointerMove);
 
     return () => {
-      document.removeEventListener(
-        "pointermove",
-        handlePointerMove
-      );
+      document.removeEventListener("pointermove", handlePointerMove);
     };
   }, [hoverLocked]);
 
@@ -476,24 +427,15 @@ function NavbarInner() {
 
   useEffect(() => {
     const handleOutsideClick = (event) => {
-      if (
-        navRef.current &&
-        !navRef.current.contains(event.target)
-      ) {
+      if (navRef.current && !navRef.current.contains(event.target)) {
         closeAllMenus();
       }
     };
 
-    document.addEventListener(
-      "pointerdown",
-      handleOutsideClick
-    );
+    document.addEventListener("pointerdown", handleOutsideClick);
 
     return () => {
-      document.removeEventListener(
-        "pointerdown",
-        handleOutsideClick
-      );
+      document.removeEventListener("pointerdown", handleOutsideClick);
     };
   }, [setActiveMenu]);
 
@@ -508,16 +450,10 @@ function NavbarInner() {
       }
     };
 
-    document.addEventListener(
-      "keydown",
-      handleEscape
-    );
+    document.addEventListener("keydown", handleEscape);
 
     return () => {
-      document.removeEventListener(
-        "keydown",
-        handleEscape
-      );
+      document.removeEventListener("keydown", handleEscape);
     };
   }, [setActiveMenu]);
 
@@ -535,10 +471,7 @@ function NavbarInner() {
     });
 
     return () => {
-      window.removeEventListener(
-        "scroll",
-        handleScroll
-      );
+      window.removeEventListener("scroll", handleScroll);
     };
   }, [setActiveMenu]);
 
@@ -550,8 +483,7 @@ function NavbarInner() {
       <nav
         ref={navRef}
         style={{
-          fontFamily:
-            "Plus Jakarta Sans, 'Times New Roman', serif",
+          fontFamily: "Plus Jakarta Sans, 'Times New Roman', serif",
         }}
         className="fixed top-0 left-0 w-full z-[1000] flex items-center justify-between px-4 sm:px-6 lg:px-10 py-2.5 lg:py-3 border-b border-gray-200 bg-white"
       >
@@ -613,22 +545,19 @@ function NavbarInner() {
           <button
             type="button"
             aria-label="Search"
-            onClick={() => { setActiveMenu(null); setSearchOpen(true); }}
+            onClick={() => setActiveMenu(null)}
             className="flex items-center justify-center bg-transparent border-none cursor-pointer p-0"
           >
             <SearchIcon />
           </button>
 
-          {searchOpen && <SearchOverlay onClose={() => setSearchOpen(false)} />}
           <AccountButton onNavigate={closeAllMenus} />
         </div>
 
         {/* MOBILE BUTTON */}
         <button
           type="button"
-          aria-label={
-            mobileOpen ? "Close menu" : "Open menu"
-          }
+          aria-label={mobileOpen ? "Close menu" : "Open menu"}
           aria-expanded={mobileOpen}
           onClick={() => {
             setActiveMenu(null);
@@ -641,10 +570,7 @@ function NavbarInner() {
 
         {/* MOBILE MENU */}
         {mobileOpen && (
-          <MobileMenu
-            navHeight={navHeight}
-            close={closeAllMenus}
-          />
+          <MobileMenu navHeight={navHeight} close={closeAllMenus} />
         )}
       </nav>
 

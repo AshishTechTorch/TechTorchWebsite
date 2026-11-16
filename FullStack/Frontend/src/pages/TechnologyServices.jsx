@@ -46,10 +46,7 @@ export function TechnologyMovesForward() {
   // Close options on outside click or Escape
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (
-        contactRef.current &&
-        !contactRef.current.contains(event.target)
-      ) {
+      if (contactRef.current && !contactRef.current.contains(event.target)) {
         setShowOptions(false);
       }
     };
@@ -88,7 +85,8 @@ export function TechnologyMovesForward() {
     {
       label: "Email Us",
       Icon: Mail,
-      href: "mailto:contact@techtorch.solutions",
+      href: "https://mail.google.com/mail/?view=cm&fs=1&to=contact@techtorch.solutions&su=Technology%20Services%20Enquiry",
+      external: true,
     },
   ];
 
@@ -159,10 +157,10 @@ export function TechnologyMovesForward() {
                 md:text-[13px] lg:text-[14px]
               "
             >
-              We help businesses use technology to work smarter, solve
-              complex challenges and prepare for what comes next. From
-              software and cloud to AI and cybersecurity, our solutions are
-              built around your business needs.
+              We help businesses use technology to work smarter, solve complex
+              challenges and prepare for what comes next. From software and
+              cloud to AI and cybersecurity, our solutions are built around your
+              business needs.
             </p>
 
             {/* BUTTON + CONTACT ICONS */}
@@ -224,22 +222,17 @@ export function TechnologyMovesForward() {
                   `}
                   aria-hidden={!showOptions}
                 >
-                  {contactOptions.map(
-                    ({ label, Icon, href, external }) => (
-                      <a
-                        key={label}
-                        href={href}
-                        title={label}
-                        aria-label={label}
-                        target={external ? "_blank" : undefined}
-                        rel={
-                          external
-                            ? "noopener noreferrer"
-                            : undefined
-                        }
-                        tabIndex={showOptions ? 0 : -1}
-                        onClick={() => setShowOptions(false)}
-                        className="
+                  {contactOptions.map(({ label, Icon, href, external }) => (
+                    <a
+                      key={label}
+                      href={href}
+                      title={label}
+                      aria-label={label}
+                      target={external ? "_blank" : undefined}
+                      rel={external ? "noopener noreferrer" : undefined}
+                      tabIndex={showOptions ? 0 : -1}
+                      onClick={() => setShowOptions(false)}
+                      className="
                           flex
                           h-10 w-10
                           sm:h-11 sm:w-11
@@ -255,11 +248,10 @@ export function TechnologyMovesForward() {
                           hover:border-[#730042]
                           hover:bg-[#730042]
                         "
-                      >
-                        <Icon size={18} />
-                      </a>
-                    )
-                  )}
+                    >
+                      <Icon size={18} />
+                    </a>
+                  ))}
                 </div>
               </div>
             </div>
@@ -269,7 +261,6 @@ export function TechnologyMovesForward() {
     </section>
   );
 }
-
 
 /* =====================================================================
    2) TECHNOLOGY THAT WORKS
@@ -325,8 +316,7 @@ export function TechnologyThatWorks() {
             xl:text-[34px]
           "
         >
-          <span className="text-[#730042]">Technology</span>{" "}
-          That Works
+          <span className="text-[#730042]">Technology</span> That Works
           <br />
           for Your Business
         </h2>
@@ -379,8 +369,7 @@ export function TechnologyThatWorks() {
             "
           >
             <p>
-              Technology is most effective when it solves a real business
-              need.
+              Technology is most effective when it solves a real business need.
             </p>
 
             <p className="mt-6 sm:mt-7 lg:mt-8">
@@ -392,12 +381,11 @@ export function TechnologyThatWorks() {
 
             <p className="mt-6 sm:mt-7 lg:mt-8">
               Our technology services cover the areas businesses rely on to
-              build and maintain a modern digital environment—from IT
-              consulting and AI to cloud infrastructure, cybersecurity and
-              software engineering. We also provide software development and
-              support, and skilled technology
-              resources to help businesses strengthen both their technology
-              and their teams.
+              build and maintain a modern digital environment—from IT consulting
+              and AI to cloud infrastructure, cybersecurity and software
+              engineering. We also provide software development and support, and
+              skilled technology resources to help businesses strengthen both
+              their technology and their teams.
             </p>
           </div>
 
@@ -430,15 +418,15 @@ export function TechnologyThatWorks() {
               Whether you are looking to improve an existing system, develop a
               new solution, move to the cloud or bring additional technical
               expertise into your organization, we focus on understanding your
-              requirements first and then building a solution that is
-              practical, reliable and ready to grow with your business.
+              requirements first and then building a solution that is practical,
+              reliable and ready to grow with your business.
             </p>
 
             <p className="mt-10 sm:mt-11 lg:mt-12">
               Our approach is simple: understand the challenge, find the right
-              technology and build a solution that delivers lasting value.
-              With the right combination of people, expertise and technology,
-              we help businesses move forward with greater confidence.
+              technology and build a solution that delivers lasting value. With
+              the right combination of people, expertise and technology, we help
+              businesses move forward with greater confidence.
             </p>
           </div>
         </div>
@@ -446,7 +434,6 @@ export function TechnologyThatWorks() {
     </section>
   );
 }
-
 
 /* =====================================================================
    3) TECHNOLOGY SERVICES
@@ -965,7 +952,6 @@ export function TechnologyServicesSection() {
   );
 }
 
-
 /* =====================================================================
    4) HOW WE WORK
 ===================================================================== */
@@ -973,7 +959,6 @@ export function TechnologyServicesSection() {
 export function HowWeWork() {
   return (
     <section className="relative block w-full bg-[#faf9f4] px-0">
-
       {/* OUTER CONTAINER */}
       <div
         className="
@@ -983,7 +968,6 @@ export function HowWeWork() {
           bg-[#faf9f4]
         "
       >
-
         {/* CONTENT + IMAGE */}
         <div
           className="
@@ -997,7 +981,6 @@ export function HowWeWork() {
             xl:h-[570px]
           "
         >
-
           {/* ================= LEFT ================= */}
           {/* Left padding same as Hero: 16 / 24 / 40 / 100 */}
           <div
@@ -1047,9 +1030,7 @@ export function HowWeWork() {
             >
               A Clear Approach to
               <br />
-              <span className="text-[#8b0750]">
-                Better Technology
-              </span>
+              <span className="text-[#8b0750]">Better Technology</span>
             </h2>
 
             <p
@@ -1065,16 +1046,15 @@ export function HowWeWork() {
                 xl:text-[15px]
               "
             >
-              Every business has its own goals, challenges and way of
-              working. We believe technology should be built around those
-              needs rather than forcing businesses to adapt to a fixed
-              solution. That is why we take a clear and collaborative
-              approach, starting with understanding your business and
-              ending with solutions that can continue to evolve with it.
-              We work closely with our clients throughout the process to
-              understand what matters most, define the right direction and
-              deliver technology that is practical, reliable and built for
-              long-term use.
+              Every business has its own goals, challenges and way of working.
+              We believe technology should be built around those needs rather
+              than forcing businesses to adapt to a fixed solution. That is why
+              we take a clear and collaborative approach, starting with
+              understanding your business and ending with solutions that can
+              continue to evolve with it. We work closely with our clients
+              throughout the process to understand what matters most, define the
+              right direction and deliver technology that is practical, reliable
+              and built for long-term use.
             </p>
 
             <h3
@@ -1095,7 +1075,6 @@ export function HowWeWork() {
 
             {/* STEPS */}
             <div className="mt-4 flex flex-col gap-3">
-
               {/* Understand */}
               <div className="flex items-center gap-5">
                 <div
@@ -1235,7 +1214,6 @@ export function HowWeWork() {
                   Grow
                 </span>
               </div>
-
             </div>
           </div>
 
@@ -1301,13 +1279,11 @@ export function HowWeWork() {
               "
             />
           </div>
-
         </div>
       </div>
     </section>
   );
 }
-
 
 /* =====================================================================
    5) LET'S CONNECT
@@ -1337,10 +1313,7 @@ export function LetsConnect() {
   // Close icons on outside click or Escape
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (
-        contactRef.current &&
-        !contactRef.current.contains(event.target)
-      ) {
+      if (contactRef.current && !contactRef.current.contains(event.target)) {
         setShowOptions(false);
       }
     };
@@ -1379,7 +1352,8 @@ export function LetsConnect() {
     {
       label: "Email Us",
       Icon: Mail,
-      href: "mailto:contact@techtorch.solutions",
+      href: "https://mail.google.com/mail/?view=cm&fs=1&to=contact@techtorch.solutions&su=Technology%20Services%20Enquiry",
+      external: true,
     },
   ];
 
@@ -1629,22 +1603,17 @@ export function LetsConnect() {
                 `}
                 aria-hidden={!showOptions}
               >
-                {contactOptions.map(
-                  ({ label, Icon, href, external }) => (
-                    <a
-                      key={label}
-                      href={href}
-                      title={label}
-                      aria-label={label}
-                      target={external ? "_blank" : undefined}
-                      rel={
-                        external
-                          ? "noopener noreferrer"
-                          : undefined
-                      }
-                      tabIndex={showOptions ? 0 : -1}
-                      onClick={() => setShowOptions(false)}
-                      className="
+                {contactOptions.map(({ label, Icon, href, external }) => (
+                  <a
+                    key={label}
+                    href={href}
+                    title={label}
+                    aria-label={label}
+                    target={external ? "_blank" : undefined}
+                    rel={external ? "noopener noreferrer" : undefined}
+                    tabIndex={showOptions ? 0 : -1}
+                    onClick={() => setShowOptions(false)}
+                    className="
                         flex
                         h-10
                         w-10
@@ -1665,11 +1634,10 @@ export function LetsConnect() {
                         hover:border-[#730042]
                         hover:bg-[#730042]
                       "
-                    >
-                      <Icon size={18} />
-                    </a>
-                  )
-                )}
+                  >
+                    <Icon size={18} />
+                  </a>
+                ))}
               </div>
             </div>
           </div>
@@ -1678,7 +1646,6 @@ export function LetsConnect() {
     </section>
   );
 }
-
 
 /* =====================================================================
    MERGED PAGE — renders all five sections one after another
