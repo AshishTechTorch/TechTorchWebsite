@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import {
   Landmark,
   GraduationCap,
@@ -31,60 +32,66 @@ const industries = [
     title: "Finance",
     description:
       "Automated compliance, fraud anomaly detection & risk modeling",
+    path: "/industries/finance",
   },
   {
     icon: GraduationCap,
     title: "Education",
     description:
       "Adaptive learning platforms, student analytics & automated grading",
+    path: "/industries/education",
   },
   {
     icon: HeartPulse,
     title: "Healthcare",
     description:
       "Clinical diagnostic telemetry & secure patient data workflows",
+    path: "/industries/healthcare",
   },
   {
     icon: ShoppingCart,
     title: "E-Commerce",
     description:
       "Real-time hyper-personalization & automated inventory prediction",
+    path: "/industries/e-commerce",
   },
   {
     icon: Settings,
     title: "Information Technology",
     description:
       "Autonomous system observability & intelligent code assistance",
+    path: "/industries/information-technology",
   },
   {
     icon: Cog,
     title: "Manufacturing",
     description:
       "Computer-vision defect analysis & predictive equipment maintenance",
+    path: "/industries/manufacturing",
   },
   {
     icon: Radio,
     title: "Telecommunications",
-    description:
-      "Network bandwidth orchestration & proactive customer care",
+    description: "Network bandwidth orchestration & proactive customer care",
+    path: "/industries/telecommunications",
   },
   {
     icon: Zap,
     title: "Energy",
-    description:
-      "Smart grid load balancing & carbon telemetry optimization",
+    description: "Smart grid load balancing & carbon telemetry optimization",
+    path: "/industries/energy",
   },
   {
     icon: Monitor,
     title: "Transportation",
-    description:
-      "Fleet routing algorithms & predictive supply chain logistics",
+    description: "Fleet routing algorithms & predictive supply chain logistics",
+    path: "/industries/transportation",
   },
   {
     icon: Package,
     title: "FMCG",
-    description:
-      "Multi-echelon demand forecasting & distributor automation",
+    description: "Multi-echelon demand forecasting & distributor automation",
+    path: "/industries/fmcg",
   },
 ];
 
@@ -95,7 +102,6 @@ const industries = [
 export default function AIEcosystemIntegration() {
   return (
     <section className="ai-ecosystem-section">
-
       {/* =================================================
           DIAGONAL STRIPE OVERLAY
       ================================================= */}
@@ -118,7 +124,6 @@ export default function AIEcosystemIntegration() {
       ================================================= */}
 
       <div className="ai-ecosystem-container">
-
         {/* =================================================
             EYEBROW
         ================================================= */}
@@ -144,10 +149,9 @@ export default function AIEcosystemIntegration() {
         ================================================= */}
 
         <p className="ai-ecosystem-description">
-          How TechTorch embeds sovereign artificial intelligence seamlessly
-          into industry-specific digital architectures, ensuring
-          high-compliance execution, data isolation, and immediate domain
-          value.
+          How TechTorch embeds sovereign artificial intelligence seamlessly into
+          industry-specific digital architectures, ensuring high-compliance
+          execution, data isolation, and immediate domain value.
         </p>
 
         {/* =================================================
@@ -155,44 +159,25 @@ export default function AIEcosystemIntegration() {
         ================================================= */}
 
         <div className="ai-ecosystem-grid">
-          {industries.map(
-            ({ icon: Icon, title, description }) => (
-              <div
-                key={title}
-                className="ai-ecosystem-card"
-              >
-
-                {/* =================================================
-                    ICON
-                ================================================= */}
-
-                <div className="ai-ecosystem-icon-wrapper">
-                  <Icon className="ai-ecosystem-icon" />
-                </div>
-
-                {/* =================================================
-                    CONTENT
-                ================================================= */}
-
-                <div className="ai-ecosystem-card-content">
-
-                  <h3 className="ai-ecosystem-card-title">
-                    {title}
-                  </h3>
-
-                  <p className="ai-ecosystem-card-description">
-                    {description}
-                  </p>
-                </div>
-
-                {/* =================================================
-                    ARROW
-                ================================================= */}
-
-                <ArrowUpRight className="ai-ecosystem-arrow" />
+          {industries.map(({ icon: Icon, title, description, path }) => (
+            <Link
+              key={title}
+              to={path}
+              className="ai-ecosystem-card"
+              onClick={() => window.scrollTo({ top: 0, behavior: "instant" })}
+            >
+              <div className="ai-ecosystem-icon-wrapper">
+                <Icon className="ai-ecosystem-icon" />
               </div>
-            )
-          )}
+
+              <div className="ai-ecosystem-card-content">
+                <h3 className="ai-ecosystem-card-title">{title}</h3>
+                <p className="ai-ecosystem-card-description">{description}</p>
+              </div>
+
+              <ArrowUpRight className="ai-ecosystem-arrow" />
+            </Link>
+          ))}
         </div>
       </div>
 
@@ -397,6 +382,9 @@ export default function AIEcosystemIntegration() {
         ================================================= */
 
         .ai-ecosystem-card {
+          text-decoration: none;
+          color: inherit;
+          cursor: pointer;
           min-width: 0;
 
           min-height: 86px;
