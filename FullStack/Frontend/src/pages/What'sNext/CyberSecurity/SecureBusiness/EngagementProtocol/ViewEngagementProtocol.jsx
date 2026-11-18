@@ -1796,7 +1796,7 @@ function Person({
   return (
     <div className="person">
 
-      <img
+      <img loading="lazy" decoding="async"
         src={image}
         alt={name}
       />

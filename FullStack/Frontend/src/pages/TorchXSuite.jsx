@@ -13,7 +13,7 @@ import { Link } from "react-router-dom";
    identical value "#7a1338", so it is declared once here.)
 ===================================================================== */
 
-const backgroundImage = "/hero5slide1.png";
+const backgroundImage = "/hero5slide1.webp";
 
 const MAROON = "#7a1338";
 
@@ -765,8 +765,8 @@ export function ConnectedExperienceSection() {
 
       {/* ================= LEFT IMAGE ================= */}
       <div className="connected-image-wrapper">
-        <img
-          src="/Hero5Slide3.png"
+        <img loading="lazy" decoding="async"
+          src="/Hero5Slide3.webp"
           alt="Connected Experience"
           className="connected-image"
         />
@@ -1287,7 +1287,7 @@ export function ConnectedExperienceSection() {
    so it does not clash with section 1's `backgroundImage`.)
 ===================================================================== */
 
-const bringBusinessBackgroundImage = "/hero5slide4.png";
+const bringBusinessBackgroundImage = "/hero5slide4.webp";
 
 export function BringBusinessTogetherSection() {
   const [showOptions, setShowOptions] = useState(false);
@@ -1363,7 +1363,7 @@ export function BringBusinessTogetherSection() {
     <section className="business-together-section">
 
       {/* BACKGROUND IMAGE */}
-      <img
+      <img loading="lazy" decoding="async"
         src={bringBusinessBackgroundImage}
         alt=""
         className="business-bg-image"

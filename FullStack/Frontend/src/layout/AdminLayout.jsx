@@ -27,7 +27,7 @@ import { useList } from "../hooks/useResource";
 import { useQueryStats } from "../hooks/useQueries";
 import { ACCENT, PageLoader } from "../components/ui";
 
-const LOGO_SRC = "/logo.png";
+const LOGO_SRC = "/logo.webp";
 const LOGO_STYLE = { filter: "brightness(0)" };
 
 const NAV = [
@@ -160,7 +160,7 @@ export default function AdminLayout() {
           <Menu />
         </button>
 
-        <img
+        <img loading="lazy" decoding="async"
           src={LOGO_SRC}
           alt="TechTorch"
           className="h-8 w-[120px] shrink-0 object-contain object-left"
@@ -184,7 +184,7 @@ export default function AdminLayout() {
       >
         {/* Logo */}
         <div className="mb-4 flex items-center gap-2 border-b border-stone-100 px-2 pb-4">
-          <img
+          <img loading="lazy" decoding="async"
             src={LOGO_SRC}
             alt="TechTorch"
             className="h-10 w-[160px] shrink-0 object-contain object-left"

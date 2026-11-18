@@ -60,7 +60,6 @@ export default function CultureInclusion() {
   return (
     <div className="ci-page">
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
 
         .ci-page {
           width: 100%;
@@ -598,9 +597,9 @@ export default function CultureInclusion() {
           </div>
 
           <div className="ci-hero-media">
-            <img
+            <img loading="lazy" decoding="async"
               className="ci-hero-img"
-              src="/CultureInclusion1.png"
+              src="/CultureInclusion1.webp"
               alt="Colleagues collaborating around a table in a modern office"
             />
 
@@ -620,9 +619,9 @@ export default function CultureInclusion() {
       {/* ============ 2. OUR FOUNDATION ============ */}
       <section className="ci-foundation">
         <div className="ci-container ci-foundation-grid">
-          <img
+          <img loading="lazy" decoding="async"
             className="ci-side-img"
-            src="/CultureInclusion2.png"
+            src="/CultureInclusion2.webp"
             alt="Team members discussing ideas at a whiteboard"
           />
 

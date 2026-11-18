@@ -72,7 +72,7 @@ export default function EnterpriseAcceleration() {
           inset: 0;
           width: 100%;
           height: 100%;
-          background-image: url("/Enterprise Acceleration.png");
+          background-image: url("/Enterprise Acceleration.webp");
           background-repeat: no-repeat;
           background-size: 100% 100%;
           background-position: center center;

@@ -171,8 +171,8 @@ export default function ManufacturingTechnology() {
               "
             >
               {/* Manufacturing Image */}
-              <img
-                src="/manufacturingtech.png"
+              <img loading="lazy" decoding="async"
+                src="/manufacturingtech.webp"
                 alt="Manufacturing engineers monitoring plant control systems"
                 className="
                   block

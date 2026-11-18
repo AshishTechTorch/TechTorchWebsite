@@ -917,8 +917,8 @@ function TopNavbar({ search, setSearch, onMenu }) {
 
           {/* TechTorch Favicon */}
           
-  <img
-    src="/Tech-Torch2.png"
+  <img loading="lazy" decoding="async"
+    src="/Tech-Torch2.webp"
     alt="TechTorch"
     className="techtorch-avatar"
   />
@@ -1796,8 +1796,8 @@ function FrankfurtCore() {
   return (
     <div className="ttad-card ttad-cdn-card">
       <div className="ttad-cdn-visual">
-        <img
-          src="/frankfurt-core.png"
+        <img loading="lazy" decoding="async"
+          src="/frankfurt-core.webp"
           alt="Frankfurt Core data center"
           className="ttad-cdn-image"
         />

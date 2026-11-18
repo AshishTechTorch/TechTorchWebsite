@@ -1497,7 +1497,7 @@ export default function ResourceReplacementPage() {
                 <div
                   className="rr-image-background"
                   style={{
-                    backgroundImage: "url('/rrmain.png')",
+                    backgroundImage: "url('/rrmain.webp')",
                   }}
                 />
 

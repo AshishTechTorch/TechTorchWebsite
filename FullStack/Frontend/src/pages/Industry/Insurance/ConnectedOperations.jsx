@@ -15,7 +15,7 @@ const WINE = "#7A1F3D";
 const INK = "#1B1B2A";
 const MUTED = "#5b5a63";
 
-const IMAGE_URL = "/desktop.png";
+const IMAGE_URL = "/desktop.webp";
 
 const quickList = [
   {

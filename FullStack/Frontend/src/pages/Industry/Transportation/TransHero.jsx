@@ -13,7 +13,6 @@ export default function TransportationHeroSection() {
   return (
     <section className="transportation-hero-section">
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
 
         /* =========================================
            MAIN SECTION
@@ -569,7 +568,7 @@ export default function TransportationHeroSection() {
         <div className="transportation-hero-visual">
 
           <img
-            src="/transportationhero.png"
+            src="/transportationhero.webp"
             alt="Connected transportation technology"
             className="transportation-hero-image"
           />

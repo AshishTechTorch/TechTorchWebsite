@@ -14,7 +14,6 @@ export default function CreateTechnologyCtaSection() {
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
 
         .create-tech-cta,
         .create-tech-cta * {
@@ -40,7 +39,7 @@ export default function CreateTechnologyCtaSection() {
               rgba(0, 0, 0, 0.25),
     rgba(0, 0, 0, 0.25)
             ),
-            url("/it.png");
+            url("/it.webp");
 
           background-size: cover;
           background-position: center;

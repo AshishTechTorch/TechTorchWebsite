@@ -1,7 +1,7 @@
 import { routeFor } from "./navRoutes";
 import { useState, useRef, useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
-import Navbarcap from "../../assets/Navbarcap.png";
+import Navbarcap from "../../assets/Navbarcap.webp";
 
 const columns = [
   {
@@ -292,7 +292,7 @@ function NavCapabilities() {
                 "
               >
                 <img
-                  src="/AICapabilities.jpg"
+                  src="/AICapabilities.webp"
                   alt="AI capabilities: understand language, work with images, process speech, analyze data, automate tasks, solve problems, generate content and make predictions"
                   className="
                     w-full max-w-[640px] h-auto

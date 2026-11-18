@@ -38,7 +38,7 @@ const MUTED = "#6F6368";
 const BORDER = "#E8E1E5";
 const CREAM = "#FBFAF5";
 
-const HERO_IMAGE = "/EducationSolutions.png";
+const HERO_IMAGE = "/EducationSolutions.webp";
 
 /* =========================================================
    FONT SYSTEM
@@ -255,7 +255,7 @@ function HeroSection() {
             <div className="hero-image-column">
               <div className="relative h-full w-full max-w-[420px]">
                 <div className="hero-image-wrapper">
-                  <img
+                  <img loading="lazy" decoding="async"
                     src={HERO_IMAGE}
                     alt="Modern university education environment"
                     className="hero-image"
@@ -1122,7 +1122,6 @@ export default function EducationSolutions() {
   return (
     <main className="education-page">
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
 
         * {
           box-sizing: border-box;

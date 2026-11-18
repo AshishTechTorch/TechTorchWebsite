@@ -624,8 +624,8 @@ export default function AddEventStudio() {
             {/* Preview column */}
             <div className="rounded-lg overflow-hidden border border-stone-200">
               <div className="h-40 overflow-hidden bg-stone-100">
-                <img
-                  src={form.image || "/event-hall-image.png"}
+                <img loading="lazy" decoding="async"
+                  src={form.image || "/event-hall-image.webp"}
                   alt="TechTorch Enterprise Event"
                   className="w-full h-full object-cover"
                 />

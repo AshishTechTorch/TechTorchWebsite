@@ -106,8 +106,8 @@ export function TechnologyMovesForward() {
           xl:h-[480px]
         "
       >
-        <img
-          src="/Slide4.1.png"
+        <img loading="lazy" decoding="async"
+          src="/Slide4.1.webp"
           alt="Technology moving business forward"
           className="absolute inset-0 h-full w-full object-cover object-center"
         />
@@ -1269,8 +1269,8 @@ export function HowWeWork() {
               xl:py-0
             "
           >
-            <img
-              src="/Slide4.2.png"
+            <img loading="lazy" decoding="async"
+              src="/Slide4.2.webp"
               alt="How we work"
               className="
                 block
@@ -1398,8 +1398,8 @@ export function LetsConnect() {
       "
     >
       {/* IMAGE */}
-      <img
-        src="/Slide4.3.png"
+      <img loading="lazy" decoding="async"
+        src="/Slide4.3.webp"
         alt="Let's Connect"
         className="
           absolute

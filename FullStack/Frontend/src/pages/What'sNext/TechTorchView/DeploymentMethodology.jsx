@@ -186,7 +186,7 @@ export default function DeploymentMethodology() {
           {/* Image */}
           <div className="w-full overflow-hidden rounded-lg sm:rounded-xl">
             <img
-              src="/DeploymentMethodology.png"
+              src="/DeploymentMethodology.webp"
               alt="Team collaborating around a model architecture presentation"
               loading="lazy"
               className="

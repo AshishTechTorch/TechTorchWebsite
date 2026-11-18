@@ -66,19 +66,19 @@ const features = [
 
 const industries = [
   {
-    image: "/PaymentIndustry1.png",
+    image: "/PaymentIndustry1.webp",
     icon: ShoppingCart,
     title: "E-Commerce",
     body: "Support convenient online transactions.",
   },
   {
-    image: "/PaymentIndustry2.png",
+    image: "/PaymentIndustry2.webp",
     icon: ShoppingBag,
     title: "Retail",
     body: "Organize payment processing across sales channels.",
   },
   {
-    image: "/PaymentIndustry3.png",
+    image: "/PaymentIndustry3.webp",
     icon: ConciergeBell,
     title: "Hospitality",
     body: "Manage payments related to bookings and customer services.",
@@ -90,7 +90,7 @@ const industries = [
     body: "Support payment records and related workflows.",
   },
   {
-    image: "/PaymentIndustry5.png",
+    image: "/PaymentIndustry5.webp",
     icon: Landmark,
     title: "Financial Services",
     body: "Organize transaction information and reporting.",
@@ -129,7 +129,6 @@ export default function PaymentManagement() {
   return (
     <div className="pm-page">
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
 
         .pm-page {
           width: 100%;
@@ -865,9 +864,9 @@ export default function PaymentManagement() {
           </div>
 
           <div className="pm-hero-frame">
-            <img
+            <img loading="lazy" decoding="async"
               className="pm-hero-photo"
-              src="/PaymentManagement1.png"
+              src="/PaymentManagement1.webp"
               alt="Payment performance dashboard on a monitor"
             />
 
@@ -903,9 +902,9 @@ export default function PaymentManagement() {
       <section className="pm-smart">
         <div className="pm-container pm-smart-grid">
           <div className="pm-smart-media">
-            <img
+            <img loading="lazy" decoding="async"
               className="pm-smart-photo"
-              src="/PaymentManagement2.png"
+              src="/PaymentManagement2.webp"
               alt="Finance professional reviewing payment data on dual monitors"
             />
 

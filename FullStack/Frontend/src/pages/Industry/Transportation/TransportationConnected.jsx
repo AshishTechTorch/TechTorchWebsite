@@ -9,7 +9,6 @@ export default function ConnectedTransportationSection() {
   return (
     <section className="connected-transportation-section">
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
 
         /* =========================================
            MAIN SECTION
@@ -553,8 +552,8 @@ export default function ConnectedTransportationSection() {
 
           <div className="connected-transportation-image-wrapper">
 
-            <img
-              src="/transportation2.png"
+            <img loading="lazy" decoding="async"
+              src="/transportation2.webp"
               alt="Connected transportation operations"
               className="connected-transportation-image"
             />

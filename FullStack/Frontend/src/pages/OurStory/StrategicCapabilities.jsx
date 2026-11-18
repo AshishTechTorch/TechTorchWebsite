@@ -2,25 +2,25 @@ import React from "react";
 
 const capabilities = [
   {
-    img: "/AI visualization.png",
+    img: "/AI visualization.webp",
     title: "AI-Delivered Right",
     description:
       "Ethical, scalable artificial intelligence implementations that drive measurable operational efficiency.",
   },
   {
-    img: "/Cloud visualization.png",
+    img: "/Cloud visualization.webp",
     title: "Cloud Infrastructure",
     description:
       "Resilient, multi-cloud architectures built for high availability and stringent security compliance.",
   },
   {
-    img: "/Engineering visualization.png",
+    img: "/Engineering visualization.webp",
     title: "Engineering Services",
     description:
       "Precision software development utilizing modern stacks to construct robust enterprise applications.",
   },
   {
-    img: "/Digital apps visualization.png",
+    img: "/Digital apps visualization.webp",
     title: "Digital Applications",
     description:
       "End-to-end transformation of legacy systems into unified, high-performance digital ecosystems.",
@@ -55,7 +55,7 @@ export default function StrategicCapabilities() {
           >
             {/* Image */}
             <div className="mb-4 h-36 w-full overflow-hidden rounded-lg sm:h-32 md:h-36 lg:h-28 xl:h-32">
-              <img
+              <img loading="lazy" decoding="async"
                 src={img}
                 alt={title}
                 className="h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"

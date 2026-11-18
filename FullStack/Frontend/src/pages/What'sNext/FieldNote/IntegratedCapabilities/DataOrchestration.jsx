@@ -7,8 +7,8 @@ export default function DataOrchestration() {
       {/* ================= HERO ================= */}
       <section className="data-orchestration-hero">
 
-        <img
-          src="/DataOrchestration.png"
+        <img loading="lazy" decoding="async"
+          src="/DataOrchestration.webp"
           alt="Advanced Data Orchestration"
           className="data-orchestration-hero-image"
         />
@@ -254,8 +254,8 @@ export default function DataOrchestration() {
         {/* FLOW IMAGE */}
         <div className="data-flow-image-box">
 
-          <img
-            src="/DataOrchestration1.png"
+          <img loading="lazy" decoding="async"
+            src="/DataOrchestration1.webp"
             alt="Enterprise Data Flow"
             className="data-flow-image"
           />

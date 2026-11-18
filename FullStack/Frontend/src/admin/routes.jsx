@@ -1,16 +1,20 @@
-import React from "react";
+import React, { lazy } from "react";
 import { Navigate, Route } from "react-router-dom";
-import AdminLayout from "./layout/AdminLayout";
-import Overview from "./pages/Overview";
-import Account from "./pages/Account";
-import Admins from "./pages/Admins";
-import Login from "./pages/Login";
-import Signup from "./pages/Signup";
-import ForgotPassword from "./pages/ForgotPassword";
-import CandidateBlogs from "./pages/CandidateBlogs";
-import CandidateInterests from "./pages/CandidateInterests";
-import { EventsPage, JobsPage, NewsPage, UpdatesPage, WhitepapersPage } from "./pages/ContentPages";
-import Queries from "./pages/Queries.jsx";
+const AdminLayout = lazy(() => import("./layout/AdminLayout"));
+const Overview = lazy(() => import("./pages/Overview"));
+const Account = lazy(() => import("./pages/Account"));
+const Admins = lazy(() => import("./pages/Admins"));
+const Login = lazy(() => import("./pages/Login"));
+const Signup = lazy(() => import("./pages/Signup"));
+const ForgotPassword = lazy(() => import("./pages/ForgotPassword"));
+const CandidateBlogs = lazy(() => import("./pages/CandidateBlogs"));
+const CandidateInterests = lazy(() => import("./pages/CandidateInterests"));
+const EventsPage = lazy(() => import("./pages/ContentPages").then((m) => ({ default: m.EventsPage })));
+const JobsPage = lazy(() => import("./pages/ContentPages").then((m) => ({ default: m.JobsPage })));
+const NewsPage = lazy(() => import("./pages/ContentPages").then((m) => ({ default: m.NewsPage })));
+const UpdatesPage = lazy(() => import("./pages/ContentPages").then((m) => ({ default: m.UpdatesPage })));
+const WhitepapersPage = lazy(() => import("./pages/ContentPages").then((m) => ({ default: m.WhitepapersPage })));
+const Queries = lazy(() => import("./pages/Queries.jsx"));
 import PermissionGate from "../components/PermissionGate.jsx";
 
 // Drop this into <Routes> in App.jsx:  {adminRoutes}

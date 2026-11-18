@@ -172,8 +172,8 @@ export default function EcommerceSolutionsPage() {
               style={{ background: PLUM }}
             />
             <div className="relative rounded-2xl bg-white p-1.5 shadow-[0_24px_50px_rgba(15,23,42,0.22)]">
-              <img
-                src="/ecommerce-hero.png"
+              <img loading="lazy" decoding="async"
+                src="/ecommerce-hero.webp"
                 alt="Team member managing an online store on a laptop"
                 className="h-[300px] w-full rounded-xl object-cover md:h-[340px]"
               />
@@ -273,8 +273,8 @@ export default function EcommerceSolutionsPage() {
           <div className="relative mx-auto w-full max-w-[520px]">
             <div className="absolute -left-4 -top-4 hidden h-[60%] w-[30%] rounded-tl-3xl bg-[#efe3e8] sm:block" />
             <div className="relative rounded-3xl bg-white p-2 shadow-[0_20px_40px_rgba(15,23,42,0.15)]">
-              <img
-                src="/ecommerce-about.png"
+              <img loading="lazy" decoding="async"
+                src="/ecommerce-about.webp"
                 alt="Team member packing and managing online orders"
                 className="h-[320px] w-full rounded-2xl object-cover md:h-[380px]"
               />
@@ -361,8 +361,8 @@ export default function EcommerceSolutionsPage() {
             </p>
 
             <div className="relative max-w-[440px]">
-              <img
-                src="/ecommerce-team.png"
+              <img loading="lazy" decoding="async"
+                src="/ecommerce-team.webp"
                 alt="TechTorch team collaborating in the office"
                 className="h-[200px] w-[88%] rounded-3xl object-cover shadow-[0_16px_32px_rgba(15,23,42,0.18)]"
               />

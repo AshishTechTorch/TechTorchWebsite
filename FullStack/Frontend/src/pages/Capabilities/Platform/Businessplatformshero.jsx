@@ -110,7 +110,7 @@ export default function BusinessPlatformsHero() {
           inset: 0;
           width: 100%;
           height: 100%;
-          background-image: url("/platformhero.png");
+          background-image: url("/platformhero.webp");
           background-repeat: no-repeat;
           background-size: cover;
           background-position: 80% center;

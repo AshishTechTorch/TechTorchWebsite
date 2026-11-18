@@ -8,7 +8,6 @@ export default function TransportationImageCtaSection() {
   return (
     <section className="transportation-cta-section">
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
 
         /* =========================================
            MAIN SECTION
@@ -46,7 +45,7 @@ export default function TransportationImageCtaSection() {
           width: 100%;
           height: 100%;
 
-          background-image: url("/OpManagement.png");
+          background-image: url("/OpManagement.webp");
           background-size: cover;
           background-position: center center;
           background-repeat: no-repeat;

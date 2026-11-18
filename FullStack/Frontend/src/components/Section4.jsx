@@ -12,7 +12,7 @@ const cards = [
     ),
     desc:
       "AI is becoming part of everyday business, changing how teams work, make decisions and create better experiences.",
-    bg: "url('sec4.1.png')",
+    bg: "url('sec4.1.webp')",
     bgColor: "#2b2620",
     link: "/TechTorchView",
   },
@@ -27,7 +27,7 @@ const cards = [
     ),
     desc:
       "When teams, information and processes work together, everyday business becomes easier to manage.",
-    bg: "url('sec4.2.png')",
+    bg: "url('sec4.2.webp')",
     bgColor: "#050810",
     link: "/field-note",
   },
@@ -42,7 +42,7 @@ const cards = [
     ),
     desc:
       "New technologies are opening up different ways to solve problems, create value and rethink what's possible.",
-    bg: "url('sec4.3.png')",
+    bg: "url('sec4.3.webp')",
     bgColor: "#c9d3da",
     link: "/think-ahead",
   },
@@ -57,7 +57,7 @@ const cards = [
     ),
     desc:
       "As more work moves online, building security into everyday technology is becoming more important than ever.",
-    bg: "url('sec4.4.png')",
+    bg: "url('sec4.4.webp')",
     bgColor: "#04070d",
     link: "/cyber-security",
   },
@@ -72,7 +72,7 @@ const cards = [
     ),
     desc:
       "Businesses have more data than ever. The real challenge is finding what matters and turning it into useful decisions.",
-    bg: "url('sec4.5.png')",
+    bg: "url('sec4.5.webp')",
     bgColor: "#020306",
     link: "/data-decisions",
   },
@@ -87,7 +87,7 @@ const cards = [
     ),
     desc:
       "As business needs change, technology should be flexible enough to adapt, scale and keep supporting what comes next.",
-    bg: "url('sec4.6.png')",
+    bg: "url('sec4.6.webp')",
     bgColor: "#0a0a0a",
     link: "/Business-growth",
   },

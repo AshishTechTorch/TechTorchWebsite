@@ -100,8 +100,8 @@ export default function FinalCtaSection() {
           =================================================== */}
 
           <div className="final-cta-image-card">
-            <img
-              src="/desktop3.png"
+            <img loading="lazy" decoding="async"
+              src="/desktop3.webp"
               alt="Executive office overlooking a city skyline at dusk"
               className="final-cta-image"
             />

@@ -197,8 +197,8 @@ export default function ResourceStaffingPage() {
           <div className="relative mx-auto w-full max-w-[540px] pb-8">
             <div className="absolute -bottom-2 right-0 h-24 w-[40%] rounded-2xl bg-[#f6e9f0]" />
             <div className="relative rounded-2xl bg-white p-1.5 shadow-[0_24px_50px_rgba(15,23,42,0.22)]">
-              <img
-                src="/staffing-hero.png"
+              <img loading="lazy" decoding="async"
+                src="/staffing-hero.webp"
                 alt="TechTorch team collaborating around a display"
                 className="h-[260px] w-full rounded-xl object-cover md:h-[300px]"
               />
@@ -215,8 +215,8 @@ export default function ResourceStaffingPage() {
               className="absolute inset-0 translate-x-2 translate-y-2 -rotate-2 rounded-2xl"
               style={{ background: PLUM }}
             />
-            <img
-              src="/staffing-connect.png"
+            <img loading="lazy" decoding="async"
+              src="/staffing-connect.webp"
               alt="Professionals networking at a talent summit"
               className="relative h-[240px] w-full rounded-2xl border-4 border-white object-cover"
             />

@@ -27,7 +27,6 @@ export default function SupplyChainConnectSection() {
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
 
         .supply-chain-connect,
         .supply-chain-connect * {
@@ -483,8 +482,8 @@ export default function SupplyChainConnectSection() {
           ========================= */}
 
           <div className="supply-chain-image-wrapper">
-            <img
-              src="/fmcgconnected.png"
+            <img loading="lazy" decoding="async"
+              src="/fmcgconnected.webp"
               alt="Warehouse team reviewing supply chain inventory"
               className="supply-chain-image"
             />

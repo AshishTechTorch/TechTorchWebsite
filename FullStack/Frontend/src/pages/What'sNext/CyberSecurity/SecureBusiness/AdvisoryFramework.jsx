@@ -179,8 +179,8 @@ export default function AdvisoryFramework() {
             {/* IMAGE */}
 
             <div className="advisory-image-wrapper">
-              <img
-                src="/AdvisoryFramework.png"
+              <img loading="lazy" decoding="async"
+                src="/AdvisoryFramework.webp"
                 alt="TechTorch Security Operations Center"
                 className="advisory-image"
               />

@@ -16,7 +16,7 @@ const services = [
     icon: ClipboardList,
     title: "IT Consultancy",
     description: "Technology guidance based on business requirements.",
-    image: "/fmcgtech1.png",
+    image: "/fmcgtech1.webp",
   },
   {
     number: "02",
@@ -24,7 +24,7 @@ const services = [
     title: "Artificial Intelligence",
     description:
       "AI services designed to help businesses use AI capabilities without building and maintaining their own infrastructure.",
-    image: "/fmcgtech2.png",
+    image: "/fmcgtech2.webp",
   },
   {
     number: "03",
@@ -32,7 +32,7 @@ const services = [
     title: "Cloud Infrastructure",
     description:
       "Cloud infrastructure services for business technology environments.",
-    image: "/fmcgtech3.png",
+    image: "/fmcgtech3.webp",
     dark: true,
   },
   {
@@ -41,7 +41,7 @@ const services = [
     title: "Cyber Security",
     description:
       "Cybersecurity services focused on protecting digital assets and technology environments.",
-    image: "/Diversemodern engineeringteam.png",
+    image: "/Diversemodern engineeringteam.webp",
     dark: true,
   },
   {
@@ -50,14 +50,14 @@ const services = [
     title: "Software Engineering",
     description:
       "Engineering services covering software, systems and product development.",
-    image: "/benchhiring.png",
+    image: "/benchhiring.webp",
   },
   // {
   //   number: "06",
   //   icon: Briefcase,
   //   title: "Business Process Outsourcing",
   //   description: "BPO services designed to support business operations.",
-  //   image: "/DeploymentMethodology.png",
+  //   image: "/DeploymentMethodology.webp",
   // },
   {
     number: "07",
@@ -65,7 +65,7 @@ const services = [
     title: "Software Development & Support",
     description:
       "Development and ongoing support for business software.",
-    image: "/fmcgtech7.png",
+    image: "/fmcgtech7.webp",
   },
   {
     number: "08",
@@ -73,7 +73,7 @@ const services = [
     title: "Resource & Staffing",
     description:
       "Technology resources and flexible workforce solutions.",
-    image: "/fmcgtech8.png",
+    image: "/fmcgtech8.webp",
   },
 ];
 
@@ -132,7 +132,6 @@ export default function TechServicesSection() {
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
 
         /* =========================
            SCOPED BOX SIZING

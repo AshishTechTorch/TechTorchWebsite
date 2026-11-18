@@ -14,8 +14,8 @@ import {
 
 
 const IMAGES = {
-  hero: "/Investors1.png",
-  growth: "/Investors2.png",
+  hero: "/Investors1.webp",
+  growth: "/Investors2.webp",
 };
  
 
@@ -140,7 +140,7 @@ export default function InvestorsPage() {
           </div>
 
           <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/5">
-            <img
+            <img loading="lazy" decoding="async"
               src={IMAGES.hero}
               alt="Modern glass building with illuminated light streaks"
               className="aspect-[16/10] w-full object-cover object-center"
@@ -192,7 +192,7 @@ export default function InvestorsPage() {
           </div>
 
           <div className="overflow-hidden rounded-2xl bg-white shadow-xl ring-1 ring-black/5">
-            <img
+            <img loading="lazy" decoding="async"
               src={IMAGES.growth}
               alt="Team collaborating around a presentation in a modern office"
               className="aspect-[16/10] w-full object-cover object-center"

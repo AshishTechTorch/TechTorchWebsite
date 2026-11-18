@@ -9,8 +9,8 @@ import { useQueryStats } from "../hooks/useQueries";
 import { useMe } from "../../account/useAccount";
 import { ACCENT, PageLoader } from "../../components/ui";
 
-// Logo public folder se serve hota hai (public/Tech-Torch2.png)
-const LOGO_SRC = "/logo.png";
+// Logo public folder se serve hota hai (public/Tech-Torch2.webp)
+const LOGO_SRC = "/logo.webp";
 // brightness(0) logo ko pura black bana deta hai
 const LOGO_STYLE = { filter: "brightness(0)" };
 
@@ -96,7 +96,7 @@ export default function AdminLayout() {
       {/* mobile top bar */}
       <div className="sticky top-0 z-30 flex items-center gap-3 border-b border-stone-200 bg-white px-4 py-3 lg:hidden">
         <button onClick={() => setOpen(true)} aria-label="Open menu"><Menu /></button>
-        <img src={LOGO_SRC} alt="TechTorch" className="h-8 w-[120px] shrink-0 object-contain object-left" style={LOGO_STYLE} />
+        <img loading="lazy" decoding="async" src={LOGO_SRC} alt="TechTorch" className="h-8 w-[120px] shrink-0 object-contain object-left" style={LOGO_STYLE} />
       </div>
 
       {open && <div className="fixed inset-0 z-40 bg-black/40 lg:hidden" onClick={() => setOpen(false)} />}
@@ -108,7 +108,7 @@ export default function AdminLayout() {
       >
         {/* logo (replaces the "T" box and the "ADMIN · INDIA" text) */}
         <div className="mb-4 flex items-center gap-2 border-b border-stone-100 px-2 pb-4">
-          <img src={LOGO_SRC} alt="TechTorch" className="h-10 w-[160px] shrink-0 object-contain object-left" style={LOGO_STYLE} />
+          <img loading="lazy" decoding="async" src={LOGO_SRC} alt="TechTorch" className="h-10 w-[160px] shrink-0 object-contain object-left" style={LOGO_STYLE} />
           <button className="ml-auto lg:hidden" onClick={() => setOpen(false)} aria-label="Close menu"><X size={18} /></button>
         </div>
 

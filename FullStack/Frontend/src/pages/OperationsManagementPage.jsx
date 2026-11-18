@@ -203,8 +203,8 @@ export default function OperationsManagementPage() {
               className="absolute bottom-4 right-[-14px] top-10 hidden w-[60%] rounded-3xl sm:block"
               style={{ background: PLUM }}
             />
-            <img
-              src="/operations-hero.png"
+            <img loading="lazy" decoding="async"
+              src="/operations-hero.webp"
               alt="Operations manager reviewing dashboards"
               className="relative h-[300px] w-full rounded-2xl object-cover shadow-[0_20px_40px_rgba(15,23,42,0.2)] md:h-[340px]"
             />
@@ -258,8 +258,8 @@ export default function OperationsManagementPage() {
               className="absolute -left-3 -top-3 h-24 w-[45%] rounded-tl-2xl"
               style={{ background: PLUM }}
             />
-            <img
-              src="/operations-warehouse.png"
+            <img loading="lazy" decoding="async"
+              src="/operations-warehouse.webp"
               alt="Forklift operating in a distribution warehouse"
               className="relative h-[420px] w-full rounded-2xl border-4 border-white object-cover shadow-[0_20px_40px_rgba(15,23,42,0.18)] md:h-[500px]"
             />
@@ -417,8 +417,8 @@ export default function OperationsManagementPage() {
         </p>
 
         {/* Replace this image with your real partner logos */}
-        <img
-          src="/operations-partners.png"
+        <img loading="lazy" decoding="async"
+          src="/operations-partners.webp"
           alt="Technology partners: AWS, Google Cloud, DELL and others"
           className="h-auto w-full max-w-[640px] object-contain"
         />

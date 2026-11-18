@@ -15,8 +15,8 @@ const WINE = "#7A1F3D";
 const WINE_DARK = "#5C1730";
 const INK = "#1B1B2A";
 
-const IMAGE_1_URL = "/Educationhelp.png";
-const IMAGE_2_URL = "/Education2.png";
+const IMAGE_1_URL = "/Educationhelp.webp";
+const IMAGE_2_URL = "/Education2.webp";
 
 /* =====================================================
    EYEBROW
@@ -82,7 +82,6 @@ export default function EducationSection() {
       }}
     >
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
 
         /* =====================================================
            MAIN SECTION

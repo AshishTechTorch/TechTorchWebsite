@@ -7,7 +7,7 @@ import {
 } from "lucide-react";
 import { Link } from "react-router-dom";
 
-const BG_IMAGE = "/Enterprise.png";
+const BG_IMAGE = "/Enterprise.webp";
 
 export default function EnterpriseHero() {
   const [showOptions, setShowOptions] = useState(false);

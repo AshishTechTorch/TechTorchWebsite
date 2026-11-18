@@ -115,8 +115,8 @@ export function SoftwareDevelopmentHero() {
       "
     >
       {/* BACKGROUND IMAGE */}
-      <img
-        src="/Slide3.1.png"
+      <img loading="lazy" decoding="async"
+        src="/Slide3.1.webp"
         alt="Software Development"
         className="
           absolute
@@ -462,8 +462,8 @@ export function SoftwareThatWorks() {
             {/* IMAGE */}
 
             <div className="software-works-image">
-              <img
-                src="/Slide3.2.png"
+              <img loading="lazy" decoding="async"
+                src="/Slide3.2.webp"
                 alt="Business team working together"
               />
             </div>
@@ -2369,7 +2369,7 @@ export function StructuredApproachSection() {
 ===================================================================== */
 
 // Public folder image
-const apartmentImage = "/Apartment2.png";
+const apartmentImage = "/Apartment2.webp";
 
 export function SoftwareGrowthSection() {
   return (
@@ -2416,7 +2416,7 @@ export function SoftwareGrowthSection() {
 
         {/* ================= IMAGE ================= */}
         <div className="apartment-image-wrapper">
-          <img
+          <img loading="lazy" decoding="async"
             src={apartmentImage}
             alt="Residential apartment towers"
           />
@@ -3056,8 +3056,8 @@ export function TechnologyBusinessValue() {
    7) BUSINESS CHALLENGE
 ===================================================================== */
 
-const bgImage = "/bgslide07.png";
-const photoImage = "/hero03slide07.png";
+const bgImage = "/bgslide07.webp";
+const photoImage = "/hero03slide07.webp";
 
 export function BusinessChallengeSection() {
   const [showOptions, setShowOptions] = useState(false);
@@ -3208,7 +3208,7 @@ export function BusinessChallengeSection() {
 
         {/* ================= IMAGE ================= */}
         <div className="business-challenge-image-wrapper">
-          <img
+          <img loading="lazy" decoding="async"
             className="business-challenge-image"
             src={photoImage}
             alt="Team discussing business challenge"

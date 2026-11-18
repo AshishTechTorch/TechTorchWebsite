@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 
-import heroBg from "/leadership.png";
-import visionImg from "/meetingroom.png";
-import siddharthImg from "/Sidhhart.jpeg";
-import amitImg from "/AmitSir.png";
-import riyaImg from "/Riyamishra.png";
-import anshikaImg from "/anshika.png";
-import futureBg from "/future.png";
+import heroBg from "/leadership.webp";
+import visionImg from "/meetingroom.webp";
+import siddharthImg from "/Sidhhart.webp";
+import amitImg from "/AmitSir.webp";
+import riyaImg from "/Riyamishra.webp";
+import anshikaImg from "/anshika.webp";
+import futureBg from "/future.webp";
 
 const leaders = [
   {
@@ -27,7 +27,7 @@ const leaders = [
 
 const serviceTeam = [
   {
-    img: "/Riyamishra.png",
+    img: "/Riyamishra.webp",
     name: "Riya Mishra",
     role: "Director of Human Resource",
     text: "Leading talent management, employee engagement, workplace culture, and people strategy across the organization.",
@@ -281,7 +281,7 @@ function ArticleModal({ person, onClose }) {
         </button>
 
         <div className="lp-modal__media">
-          <img src={person.img} alt={person.name} />
+          <img loading="lazy" decoding="async" src={person.img} alt={person.name} />
         </div>
 
         <div className="lp-modal__body">
@@ -321,7 +321,6 @@ function ArticleModal({ person, onClose }) {
 }
 
 const styles = `
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap");
 
 .lp {
   --pink: #ec4899;

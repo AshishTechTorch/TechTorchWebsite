@@ -7,7 +7,7 @@ const COLORS = {
 };
 
 export default function CtaSection({
-  backgroundImage = "/sec9.png",
+  backgroundImage = "/sec9.webp",
 }) {
   const navigate = useNavigate();
   return (

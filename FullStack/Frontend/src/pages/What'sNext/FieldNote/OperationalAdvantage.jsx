@@ -45,8 +45,8 @@ export default function OperationalAdvantage() {
               "radial-gradient(ellipse 120% 80% at 30% 0%, #4a3527 0%, transparent 55%), linear-gradient(155deg, #3B2A22 0%, #171310 55%, #0d0b09 100%)",
           }}
         >
-          <img
-            src="/Overlay+Shadow-1.png"
+          <img loading="lazy" decoding="async"
+            src="/Overlay+Shadow-1.webp"
             alt="Operational Advantage"
             className="absolute inset-0 w-full h-full object-cover"
           />

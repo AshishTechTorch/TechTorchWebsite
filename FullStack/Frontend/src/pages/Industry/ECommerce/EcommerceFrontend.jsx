@@ -65,7 +65,6 @@ export default function ShoppingExperienceSection() {
       className="shopping-experience-section"
     >
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
 
         /* =========================================
            SECTION
@@ -543,8 +542,8 @@ export default function ShoppingExperienceSection() {
         {/* ================= LEFT IMAGE ================= */}
         <div className="shopping-image-wrapper">
           <div className="shopping-image-container">
-            <img
-              src="/ecommerce2.png"
+            <img loading="lazy" decoding="async"
+              src="/ecommerce2.webp"
               alt="Warehouse staff verifying dispatch inventory"
               className="shopping-main-image"
             />

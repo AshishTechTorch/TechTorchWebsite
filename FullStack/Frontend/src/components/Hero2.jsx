@@ -6,7 +6,7 @@ export default function BuildConnectGrow() {
     <section
       className="w-full h-full grid grid-cols-1 lg:grid-cols-2 items-start relative"
       style={{
-        backgroundImage: "url('/Section.png')",
+        backgroundImage: "url('/Section.webp')",
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
@@ -70,7 +70,7 @@ export default function BuildConnectGrow() {
         "
       >
         <img
-          src="/frame2.png"
+          src="/frame2.webp"
           alt="TechTorch Solutions office building"
           className="
             w-full

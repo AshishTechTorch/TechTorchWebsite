@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const slides = [
   {
-    image: "/Slide1.png",
+    image: "/Slide1.webp",
     headline: "Turning Business Challenges Into Digital Possibilities",
     body:
       "We bring technology, business processes and people together to create practical digital solutions that help businesses work smarter and grow with confidence.",
@@ -12,7 +12,7 @@ const slides = [
     focus: "center",
   },
   {
-    image: "/Slide2.png",
+    image: "/Slide2.webp",
     headline: "One Connected System for Your Business",
     body:
       "From custom applications to enterprise platforms, we create software that fits the way your business works today—and gives you room to grow tomorrow.",
@@ -21,7 +21,7 @@ const slides = [
     focus: "65% 40%",
   },
   {
-    image: "/Slide3.png",
+    image: "/Slide3.webp",
     headline: "Software Built Around Your Business",
     body:
       "From custom applications to enterprise platforms, we create software that fits the way your business works today—and gives you room to grow tomorrow.",
@@ -30,7 +30,7 @@ const slides = [
     focus: "70% 50%",
   },
   {
-    image: "/Slide4.png",
+    image: "/Slide4.webp",
     headline: "Technology That Keeps You Ready for What’s Next",
     body:
       "From AI and cloud to cybersecurity, we help businesses adopt modern technology with the reliability, security and flexibility they need to grow.",
@@ -39,7 +39,7 @@ const slides = [
     focus: "100% 45%",
   },
   {
-    image: "/Slide6.png",
+    image: "/Slide6.webp",
     headline: "Everything Your Business Needs, Working Together",
     body:
       "TorchX Suite brings key business functions into one connected platform, helping teams manage people, customers, finance and operations with greater clarity.",
@@ -88,6 +88,8 @@ const Hero = () => {
           }`}
           style={{ objectPosition: slide.focus }}
           decoding="async"
+          loading={index === 0 ? "eager" : "lazy"}
+          fetchPriority={index === 0 ? "high" : "auto"}
         />
       ))}
 

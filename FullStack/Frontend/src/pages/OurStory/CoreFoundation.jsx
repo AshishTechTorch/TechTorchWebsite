@@ -1,8 +1,8 @@
 import React from "react";
 import { ShieldCheck, BadgeCheck, Heart } from "lucide-react";
 
-const MISSION_IMG = "/Mission visualization.png";
-const VISION_IMG = "/Vision visualization.png";
+const MISSION_IMG = "/Mission visualization.webp";
+const VISION_IMG = "/Vision visualization.webp";
 
 const values = [
   { icon: ShieldCheck, label: "Integrity" },
@@ -48,7 +48,7 @@ export default function CoreFoundation() {
             <div className="overflow-hidden rounded-xl bg-white shadow-sm">
               {/* Reduced image height */}
               <div className="aspect-[16/8] w-full sm:aspect-[16/8] lg:aspect-[16/8]">
-                <img
+                <img loading="lazy" decoding="async"
                   src={MISSION_IMG}
                   alt="Mission"
                   className="h-full w-full object-cover"
@@ -76,7 +76,7 @@ export default function CoreFoundation() {
             <div className="overflow-hidden rounded-xl bg-white shadow-sm">
               {/* Reduced image height */}
               <div className="aspect-[16/8] w-full sm:aspect-[16/8] lg:aspect-[16/8]">
-                <img
+                <img loading="lazy" decoding="async"
                   src={VISION_IMG}
                   alt="Vision"
                   className="h-full w-full object-cover"

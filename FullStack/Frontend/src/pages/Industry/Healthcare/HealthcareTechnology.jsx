@@ -7,7 +7,7 @@ const MUTED = "#5b5a63";
 // ========================================
 // IMAGE URL
 // ========================================
-const IMAGE_URL = "/healthcarehero.png";
+const IMAGE_URL = "/healthcarehero.webp";
 
 export default function ConnectHealthcareSection() {
   return (

@@ -42,7 +42,6 @@ export default function SupplyChainManagementSection() {
   return (
     <div className="supply-chain-section">
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
 
         * {
           box-sizing: border-box;

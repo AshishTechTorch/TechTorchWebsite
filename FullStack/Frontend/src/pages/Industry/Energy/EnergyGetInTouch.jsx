@@ -152,7 +152,6 @@ export default function EnergyGetInTouch() {
   return (
     <div className="energy-page">
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
 
         /* =================================================
            BASE
@@ -1933,9 +1932,9 @@ export default function EnergyGetInTouch() {
 
               <div className="energy-image-media">
 
-                <img
+                <img loading="lazy" decoding="async"
                   className="energy-image"
-                  src="/EnergyGetInTouch.png"
+                  src="/EnergyGetInTouch.webp"
                   alt="Energy technology consultation"
                 />
 

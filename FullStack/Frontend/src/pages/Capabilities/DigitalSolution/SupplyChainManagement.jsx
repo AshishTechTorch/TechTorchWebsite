@@ -90,25 +90,25 @@ const approach = [
 
 const industries = [
   {
-    image: "/SupplyChainIndustry1.png",
+    image: "/SupplyChainIndustry1.webp",
     icon: Factory,
     title: "Manufacturing",
     body: "Support production and materials flow across the value chain.",
   },
   {
-    image: "/SupplyChainIndustry2.png",
+    image: "/SupplyChainIndustry2.webp",
     icon: ShoppingCart,
     title: "Retail",
     body: "Improve inventory availability and replenishment.",
   },
   {
-    image: "/SupplyChainIndustry3.png",
+    image: "/SupplyChainIndustry3.webp",
     icon: FlaskConical,
     title: "Pharmaceuticals",
     body: "Meet compliance needs with reliable supply coordination.",
   },
   {
-    image: "/SupplyChainIndustry4.png",
+    image: "/SupplyChainIndustry4.webp",
     icon: Wheat,
     title: "Food & Beverage",
     body: "Maintain product availability and timely distribution.",
@@ -119,7 +119,6 @@ export default function SupplyChainManagement() {
   return (
     <div className="scm-page">
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
 
         .scm-page {
           width: 100%;
@@ -846,9 +845,9 @@ export default function SupplyChainManagement() {
             <div className="scm-hero-shape-2" aria-hidden="true" />
 
             <div className="scm-hero-frame">
-              <img
+              <img loading="lazy" decoding="async"
                 className="scm-hero-photo"
-                src="/SupplyChainHero.png"
+                src="/SupplyChainHero.webp"
                 alt="Aerial view of a container port and logistics yard"
               />
 
@@ -874,9 +873,9 @@ export default function SupplyChainManagement() {
             <div className="scm-shape-a" aria-hidden="true" />
             <div className="scm-shape-b" aria-hidden="true" />
             <div className="scm-intro-frame">
-              <img
+              <img loading="lazy" decoding="async"
                 className="scm-intro-photo"
-                src="/SupplyChainWarehouse.png"
+                src="/SupplyChainWarehouse.webp"
                 alt="Warehouse manager reviewing inventory on a tablet"
               />
             </div>
@@ -942,9 +941,9 @@ export default function SupplyChainManagement() {
             </div>
 
             <div className="scm-truck-wrap">
-              <img
+              <img loading="lazy" decoding="async"
                 className="scm-truck-photo"
-                src="/SupplyChainTruck.png"
+                src="/SupplyChainTruck.webp"
                 alt="Freight truck on a mountain highway"
               />
               <div className="scm-truck-shape" aria-hidden="true" />

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-const LOGO_IMAGE = "/logo.png";
+const LOGO_IMAGE = "/logo.webp";
 
 const EXPLORE_LINKS = [
   { label: "Industries", to: "/#industries" },
@@ -766,7 +766,7 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <div className="mb-6">
-              <img
+              <img loading="lazy" decoding="async"
                 src={LOGO_IMAGE}
                 alt="TechTorch Solutions"
                 className="h-auto w-[180px] object-contain"

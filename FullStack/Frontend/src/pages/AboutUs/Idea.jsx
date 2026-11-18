@@ -80,7 +80,6 @@ export default function IdeasPage() {
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
 
         .ideas-page {
           width: 100%;
@@ -123,7 +122,7 @@ export default function IdeasPage() {
           overflow: hidden;
           color: #fff;
           background-color: #0d1017;
-          background-image: url("/Idea1.png");
+          background-image: url("/Idea1.webp");
           background-repeat: no-repeat;
           background-position: right center;
           background-size: 80% auto;
@@ -834,7 +833,7 @@ export default function IdeasPage() {
 
             <div className="ideas-approach-image">
               <img
-                src="/Idea2.png"
+                src="/Idea2.webp"
                 alt="Colleagues collaborating in a modern office"
                 loading="lazy"
               />
@@ -878,7 +877,7 @@ export default function IdeasPage() {
           <div className="ideas-container ideas-vision-grid">
             <div className="ideas-vision-image">
               <img
-                src="/Idea3.png"
+                src="/Idea3.webp"
                 alt="Colorful mind map representing ideas"
                 loading="lazy"
               />

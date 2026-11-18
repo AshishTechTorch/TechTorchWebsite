@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
-const ctaBackground = "/energy2.png";
+const ctaBackground = "/energy2.webp";
 
 const WINE = "#7A1F3D";
 const INK = "#1B1B2A";
@@ -36,7 +36,6 @@ export default function ApproachAndImageCtaSections() {
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
 
         /* =========================
            BASE

@@ -207,8 +207,8 @@ export default function DevelopmentConsultation() {
 
             <div className="consultation-hero-image">
 
-              <img
-                src="/DevelopmentTeam.png"
+              <img loading="lazy" decoding="async"
+                src="/DevelopmentTeam.webp"
                 alt="Development Consultation"
               />
 

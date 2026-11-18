@@ -15,7 +15,7 @@ const WINE = "#7A1F3D";
 const INK = "#1B1B2A";
 const MUTED = "#5b5a63";
 
-const TORCHX_IMAGE = "/financeentprise.png";
+const TORCHX_IMAGE = "/financeentprise.webp";
 
 const areas = [
   {
@@ -169,7 +169,6 @@ export default function KeyAreasAndTorchXSections() {
   return (
     <div className="finance-page">
       <style>{`
-        @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap");
 
         .finance-page,
         .finance-page *,
@@ -781,7 +780,7 @@ export default function KeyAreasAndTorchXSections() {
       <section className="finance-torchx-section">
         <div className="finance-container finance-torchx-container">
           <div className="finance-image-wrapper">
-            <img
+            <img loading="lazy" decoding="async"
               src={TORCHX_IMAGE}
               alt="TorchX financial management dashboard"
               className="finance-image"

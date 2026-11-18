@@ -79,7 +79,6 @@ export default function SupplyChainProcurementSection() {
   return (
     <section ref={sectionRef} className="supply-chain-section">
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
 
         /* =========================================
            MAIN SECTION
@@ -669,8 +668,8 @@ export default function SupplyChainProcurementSection() {
         <div className="supply-chain-image-card">
           <div className="supply-chain-image-wrapper">
 
-            <img
-              src="/transportation3.png"
+            <img loading="lazy" decoding="async"
+              src="/transportation3.webp"
               alt="Supply chain and logistics operations"
               className="supply-chain-image"
             />

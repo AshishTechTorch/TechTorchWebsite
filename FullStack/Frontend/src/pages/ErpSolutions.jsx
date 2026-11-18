@@ -276,8 +276,8 @@ export default function ErpSolutions() {
 
           {/* Hero visual: photo + floating chips + growth card */}
           <div className="relative mx-auto w-full max-w-[560px] rounded-3xl bg-white/60 p-6 pl-28 pb-10 shadow-[0_10px_40px_rgba(107,12,54,0.08)]">
-            <img
-              src="/erp-hero.png"
+            <img loading="lazy" decoding="async"
+              src="/erp-hero.webp"
               alt="Business professional using an ERP dashboard"
               className="h-[260px] w-full rounded-lg object-cover md:h-[300px]"
             />
@@ -362,8 +362,8 @@ export default function ErpSolutions() {
           </div>
 
           <div className="relative mx-auto w-full max-w-[460px]">
-            <img
-              src="/erp-building.png"
+            <img loading="lazy" decoding="async"
+              src="/erp-building.webp"
               alt="Modern enterprise building"
               className="h-[320px] w-full rounded-2xl border-4 border-white object-cover shadow-[0_20px_40px_rgba(15,23,42,0.18)] md:h-[400px]"
             />
@@ -482,8 +482,8 @@ export default function ErpSolutions() {
         <H2 className="mt-6 mb-8">Delivering Solutions Powered By</H2>
 
         {/* Replace this image with your real partner logos */}
-        <img
-          src="/erp-partners.png"
+        <img loading="lazy" decoding="async"
+          src="/erp-partners.webp"
           alt="Technology partners: AWS, Google, DELL and others"
           className="h-auto w-full max-w-[1200px] object-contain"
         />

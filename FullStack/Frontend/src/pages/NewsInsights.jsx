@@ -394,7 +394,7 @@ export default function TechTorchCMS() {
       document.execCommand(
         "insertHTML",
         false,
-        `<img src="${e.target.result}" style="max-width:100%;border-radius:6px;margin:8px 0;" />`
+        `<img loading="lazy" decoding="async" src="${e.target.result}" style="max-width:100%;border-radius:6px;margin:8px 0;" />`
       );
       updateWordCount();
     };
@@ -896,7 +896,7 @@ export default function TechTorchCMS() {
     <>
       {/* Selected image */}
       {coverImage.startsWith("url(") ? (
-        <img
+        <img loading="lazy" decoding="async"
           src={coverImage.slice(4, -1)}
           alt="Cover preview"
           className="absolute inset-0 w-full h-full object-cover"

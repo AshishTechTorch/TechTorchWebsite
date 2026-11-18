@@ -95,8 +95,8 @@ export default function TechTorchFinalCTA() {
           <div className="techtorch-final-cta-image-wrap">
             {/* Image */}
 
-            <img
-              src="/roadmap.png"
+            <img loading="lazy" decoding="async"
+              src="/roadmap.webp"
               alt="TechTorch technology consultation"
               className="techtorch-final-cta-image"
             />

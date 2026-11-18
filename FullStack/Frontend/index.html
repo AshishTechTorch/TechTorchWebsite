@@ -2,29 +2,40 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/fabicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TechTorch</title>
 
+    <!-- Faster connection setup for third-party origins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+
+    <!-- First hero slide = LCP image: start downloading immediately -->
+    <link rel="preload" as="image" href="/Slide1.webp" fetchpriority="high" />
+
+    <!-- Google Fonts (loaded once, non-blocking) -->
     <link
-      rel="icon"
-      type="image/png"
-      href="/fabicon.png"
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      media="print"
+      onload="this.media='all'"
     />
-
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0"
-    />
-
+    <!-- Font Awesome (non-blocking so it never delays first paint) -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      media="print"
+      onload="this.media='all'"
     />
-
-    <title>TechTorch</title>
+    <noscript>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" />
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+    </noscript>
   </head>
 
   <body>
     <div id="root"></div>
-
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

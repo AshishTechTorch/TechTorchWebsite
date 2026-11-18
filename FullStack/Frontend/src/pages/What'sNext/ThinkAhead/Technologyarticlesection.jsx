@@ -12,7 +12,7 @@ const sections = [
     navLabel: "From technology adoption to practical business value",
     heading: "From technology adoption to practical business value",
     body: "As organizations navigate the complexities of the digital age, the integration of technology into every facet of business strategy becomes paramount. It is no longer about having a digital department, but about being a digital business at its core. We help organizations identify the technologies that will actually make a difference to their operations, not just the ones making headlines.",
-    image: "/Professionalmodern.png",
+    image: "/Professionalmodern.webp",
   },
   {
     id: "ai",
@@ -25,7 +25,7 @@ const sections = [
     navLabel: "Cloud Infrastructure",
     heading: "Cloud Infrastructure",
     body: "Modern business requires flexible, scalable foundations. Cloud infrastructure provides the agility necessary to respond to market changes quickly. However, a successful cloud strategy requires more than just migrating servers; it involves optimizing architecture for performance, cost, and security. We design cloud environments that align with business goals, providing a robust platform for growth and innovation.",
-    image: "/Professionalenterprise.png",
+    image: "/Professionalenterprise.webp",
   },
   {
     id: "cybersecurity",
@@ -38,7 +38,7 @@ const sections = [
     navLabel: "Software Engineering and Development",
     heading: "Software Engineering and Development",
     body: "Custom software solutions are often the key differentiator in a competitive market. We approach software engineering with a focus on building scalable, maintainable, and user-centric applications. By employing modern development practices, we ensure that the software we build not only solves immediate challenges but also adapts to future business requirements.",
-    image: "/Diversemodern engineeringteam.png",
+    image: "/Diversemodern engineeringteam.webp",
   },
   {
     id: "work-together",

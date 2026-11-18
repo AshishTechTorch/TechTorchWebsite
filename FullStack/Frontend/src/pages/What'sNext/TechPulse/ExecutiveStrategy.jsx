@@ -127,7 +127,7 @@ export default function ExecutiveStrategy() {
 
         {/* IMAGE */}
         <div className="executive-strategy-image">
-          <img src="/ExecutiveStrategy.png" alt="Executive Strategy" />
+          <img loading="lazy" decoding="async" src="/ExecutiveStrategy.webp" alt="Executive Strategy" />
         </div>
       </div>
 

@@ -25,7 +25,7 @@ export default function TechHeroSection() {
           bg-no-repeat
         "
         style={{
-          backgroundImage: "url('/Modernexecutive.png')",
+          backgroundImage: "url('/Modernexecutive.webp')",
         }}
       />
 

@@ -184,8 +184,8 @@ export default function CrmSolutionsPage() {
               className="absolute -right-6 bottom-4 hidden h-[75%] w-[70%] rounded-full sm:block"
               style={{ background: PLUM }}
             />
-            <img
-              src="/crm-hero.png"
+            <img loading="lazy" decoding="async"
+              src="/crm-hero.webp"
               alt="Sales professional reviewing CRM dashboards"
               className="relative h-[320px] w-full rounded-[40px] object-cover shadow-[0_24px_50px_rgba(15,23,42,0.22)] md:h-[360px]"
             />
@@ -287,8 +287,8 @@ export default function CrmSolutionsPage() {
               className="absolute -bottom-4 -left-4 hidden h-[45%] w-[55%] rounded-bl-3xl sm:block"
               style={{ background: PLUM }}
             />
-            <img
-              src="/crm-about.png"
+            <img loading="lazy" decoding="async"
+              src="/crm-about.webp"
               alt="Team reviewing customer analytics together"
               className="relative h-[320px] w-full rounded-3xl object-cover shadow-[0_20px_40px_rgba(15,23,42,0.2)] md:h-[340px]"
             />
@@ -399,8 +399,8 @@ export default function CrmSolutionsPage() {
             </p>
           </div>
 
-          <img
-            src="/crm-engagement.png"
+          <img loading="lazy" decoding="async"
+            src="/crm-engagement.webp"
             alt="Colleagues discussing customer engagement results"
             className="h-[240px] w-full rounded-[40px] object-cover shadow-[0_20px_40px_rgba(15,23,42,0.18)] md:h-[270px]"
           />

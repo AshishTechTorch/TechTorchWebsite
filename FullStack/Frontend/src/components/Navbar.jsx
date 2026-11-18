@@ -27,7 +27,7 @@ import {
   useSignOut,
 } from "../account/useAccount";
 
-import logo from "../assets/TechTorchLogo.png";
+import logo from "../assets/TechTorchLogo.webp";
 
 import {
   NavMenuProvider,

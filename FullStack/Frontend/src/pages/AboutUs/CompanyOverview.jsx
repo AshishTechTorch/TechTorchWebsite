@@ -10,7 +10,7 @@ const sections = [
       "We believe technology is more than a tool for progress — it is a foundation for new ideas, better possibilities, and meaningful transformation.",
       "At TechTorch, our philosophy is built around understanding change, embracing innovation, and continuously evolving with the digital world. We value forward-thinking ideas, purposeful execution, and a business mindset that places long-term growth at the center of everything we do.",
     ],
-    image: "/CompanyOverview2.png",
+    image: "/CompanyOverview2.webp",
     imageAlt: "TechTorch team collaborating in a modern office",
     className: "co-about",
   },
@@ -21,7 +21,7 @@ const sections = [
       "At TechTorch, we believe lasting progress is built through clarity of purpose, thoughtful decisions, and a willingness to keep learning.",
       "We recognize that the business environment is constantly changing. Our philosophy is to approach that change with an open mind, a forward-looking perspective, and a commitment to building a strong and sustainable organization.",
     ],
-    image: "/CompanyOverview3.png",
+    image: "/CompanyOverview3.webp",
     imageAlt: "Workspace with laptop and notebook",
     className: "co-philosophy",
   },
@@ -32,7 +32,7 @@ const sections = [
       "As TechTorch continues its journey, our focus remains on strengthening our identity, embracing new opportunities, and building a future grounded in innovation, trust, and continuous development.",
       "We believe that a strong organization is built over time through consistent values, a clear direction, and the ability to adapt while staying true to its purpose.",
     ],
-    image: "/CompanyOverview4.png",
+    image: "/CompanyOverview4.webp",
     imageAlt: "Hiker looking toward a mountain sunrise",
     className: "co-looking-ahead",
   },
@@ -292,7 +292,7 @@ export default function CompanyOverview() {
           position: absolute;
           z-index: -2;
           inset: 0;
-          background-image: url("/CompanyOverview1.png");
+          background-image: url("/CompanyOverview1.webp");
           background-position: center 48%;
           background-size: cover;
           background-repeat: no-repeat;

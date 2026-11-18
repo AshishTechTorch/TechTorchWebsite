@@ -276,8 +276,8 @@ export default function EnterpriseHero() {
             sm:rounded-2xl
           "
         >
-          <img
-  src="/digital solution.png"
+          <img loading="lazy" decoding="async"
+  src="/digital solution.webp"
   alt="Enterprise operations team reviewing a live data command center"
   className="
     block

@@ -302,7 +302,7 @@ export default function RemoteEngineersHero() {
         .remote-image-bg {
           position: absolute;
           inset: 0;
-          background-image: url("/dd.png");
+          background-image: url("/dd.webp");
           background-position: center;
           background-size: cover;
           background-repeat: no-repeat;

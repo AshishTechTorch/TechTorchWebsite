@@ -24,7 +24,7 @@ export default function TechTorchView() {
         "
         style={{
           backgroundImage:
-            "linear-gradient(180deg, rgba(10,14,20,0.35) 0%, rgba(10,14,20,0.15) 40%, rgba(8,12,18,0.55) 100%), url('/Enterprise AI command center.png')",
+            "linear-gradient(180deg, rgba(10,14,20,0.35) 0%, rgba(10,14,20,0.15) 40%, rgba(8,12,18,0.55) 100%), url('/Enterprise AI command center.webp')",
         }}
       />
 

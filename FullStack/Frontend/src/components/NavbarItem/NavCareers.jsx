@@ -2,8 +2,8 @@ import { routeFor } from "./navRoutes";
 import { Link } from "react-router-dom";
 import { useState, useRef, useEffect, useCallback } from "react";
 import { Compass, Users, UserPlus, ArrowRight } from "lucide-react";
-import image4 from "../../assets/image4.png";
-import image5 from "../../assets/image5.png";
+import image4 from "../../assets/image4.webp";
+import image5 from "../../assets/image5.webp";
 
 /* Edit the short descriptions freely */
 const links = [

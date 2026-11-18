@@ -156,8 +156,8 @@ export default function TechTorchWay() {
             </div>
           </div>
 
-          <img
-            src="/techtorch-way-hero.png"
+          <img loading="lazy" decoding="async"
+            src="/techtorch-way-hero.webp"
             alt="TechTorch team collaborating around a digital display"
             className="h-auto w-full rounded-xl object-cover shadow-[0_20px_40px_rgba(15,23,42,0.18)]"
           />
@@ -296,8 +296,8 @@ export default function TechTorchWay() {
       <section className="w-full px-4 py-16 md:px-6 md:py-20">
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
           <div className="relative overflow-hidden rounded-xl shadow-[0_20px_40px_rgba(15,23,42,0.18)]">
-            <img
-              src="/desktop.png"
+            <img loading="lazy" decoding="async"
+              src="/desktop.webp"
               alt=""
               className="h-[300px] w-full object-cover md:h-[370px]"
             />

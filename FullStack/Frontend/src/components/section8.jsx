@@ -102,7 +102,7 @@ const industries = [
 function IndustryImage({ src, alt, hovered }) {
   return (
     <div className="industry-image-wrapper">
-      <img
+      <img loading="lazy" decoding="async"
         src={src}
         alt={alt}
         className={`industry-image ${

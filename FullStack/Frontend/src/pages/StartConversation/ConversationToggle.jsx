@@ -1481,8 +1481,8 @@ export default function StartConversation() {
             </div>
 
             <div className="map-wrapper">
-              <img
-                src="/GlobalPresenceMap.png"
+              <img loading="lazy" decoding="async"
+                src="/GlobalPresenceMap.webp"
                 alt="TechTorch Global Presence"
                 className="map-image"
               />

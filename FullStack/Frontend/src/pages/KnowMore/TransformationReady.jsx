@@ -9,8 +9,8 @@ export default function TransformationReady() {
 
         <div className="transformation-image-wrap">
           <div className="transformation-image-box">
-            <img
-              src="/Transformation Ready.png"
+            <img loading="lazy" decoding="async"
+              src="/Transformation Ready.webp"
               alt="Transformation Ready"
               className="transformation-image"
             />

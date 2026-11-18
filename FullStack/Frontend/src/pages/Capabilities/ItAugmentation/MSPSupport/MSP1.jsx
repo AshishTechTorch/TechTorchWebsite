@@ -1230,8 +1230,8 @@ const MSPSupport = () => {
             <div className="msp-hero-image-area">
               <div className="msp-hero-image-wrapper">
 
-                <img
-                  src="/MSPSupport1.png"
+                <img loading="lazy" decoding="async"
+                  src="/MSPSupport1.webp"
                   alt="MSP Support operations team"
                 />
 
@@ -1277,8 +1277,8 @@ const MSPSupport = () => {
             <div className="msp-resilience-image">
 
               <div className="msp-resilience-image-frame">
-                <img
-                  src="/MSPSupport2.png"
+                <img loading="lazy" decoding="async"
+                  src="/MSPSupport2.webp"
                   alt="IT support team collaboration"
                 />
               </div>

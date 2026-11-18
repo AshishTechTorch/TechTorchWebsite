@@ -186,8 +186,8 @@ export default function AviationManagement() {
           </div>
 
           <div className="relative mx-auto w-full max-w-[600px]">
-            <img
-              src="/supply-chain-hero.png"
+            <img loading="lazy" decoding="async"
+              src="/supply-chain-hero.webp"
               alt="Container terminal and logistics operations"
               className="h-[300px] w-full rounded-2xl border-4 border-white object-cover shadow-[0_20px_40px_rgba(15,23,42,0.2)] md:h-[360px]"
             />
@@ -231,8 +231,8 @@ export default function AviationManagement() {
           </div>
 
           <div>
-            <img
-              src="/supply-chain-warehouse.png"
+            <img loading="lazy" decoding="async"
+              src="/supply-chain-warehouse.webp"
               alt="Warehouse team reviewing inventory on a tablet"
               className="h-[240px] w-full rounded-xl border-4 border-white object-cover shadow-[0_14px_30px_rgba(15,23,42,0.15)] md:h-[290px]"
             />
@@ -391,8 +391,8 @@ export default function AviationManagement() {
         </p>
 
         {/* Replace this image with your real partner logos */}
-        <img
-          src="/supply-chain-partners.png"
+        <img loading="lazy" decoding="async"
+          src="/supply-chain-partners.webp"
           alt="Technology partners: AWS, Google, DELL and others"
           className="h-auto w-full max-w-[900px] object-contain"
         />

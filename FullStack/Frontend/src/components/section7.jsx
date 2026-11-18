@@ -170,8 +170,8 @@ function CopyPanel() {
 function ImagePanel() {
   return (
     <div className="tx-image-panel relative w-full h-full flex items-center justify-end overflow-hidden">
-      <img
-        src="/sec7.png"
+      <img loading="lazy" decoding="async"
+        src="/sec7.webp"
         alt="TorchX Suite"
         className="tx-image block"
       />

@@ -135,8 +135,8 @@ export default function CloudInfrastructurePage() {
                 clipPath: "polygon(30% 0, 100% 0, 100% 100%, 0 100%)",
               }}
             />
-            <img
-              src="/cloud-hero.png"
+            <img loading="lazy" decoding="async"
+              src="/cloud-hero.webp"
               alt="Data center with glowing cloud computing hologram"
               className="relative h-[300px] w-full rounded-2xl object-cover shadow-[0_24px_50px_rgba(15,23,42,0.28)] md:h-[340px]"
             />
@@ -148,8 +148,8 @@ export default function CloudInfrastructurePage() {
       <section className="w-full bg-[#f9f8f2] px-4 py-16 md:px-8 md:py-24">
         <div className="grid items-center gap-12 lg:grid-cols-[1fr_1fr] lg:gap-16">
           <div className="mx-auto w-full max-w-[560px]">
-            <img
-              src="/cloud-about.png"
+            <img loading="lazy" decoding="async"
+              src="/cloud-about.webp"
               alt="Hand touching a glowing cloud with connected devices"
               className="h-[260px] w-full rounded-2xl border-[3px] object-cover shadow-[0_20px_40px_rgba(15,23,42,0.25)] md:h-[320px]"
               style={{ borderColor: "#9b0f4f" }}

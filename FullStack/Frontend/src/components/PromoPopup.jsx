@@ -4,7 +4,7 @@ import { X } from "lucide-react";
 
 /* ---------------- Settings (edit these) ---------------- */
 const TITLE = "Get your 14 days free trial now!";
-const IMAGE_SRC = "/torchx-talent-popup.png";
+const IMAGE_SRC = "/torchx-talent-popup.webp";
 const LINK_URL = "https://torchxsuite.com/talent/";
 const CHAT_URL = "https://wa.me/917078377916"; // country code + number, no "+" or spaces
 const CHAT_LABEL = "Chat Now";
@@ -187,7 +187,7 @@ export default function PromoPopup() {
         {/* Poster */}
         <div className="promo-body">
           <div className="promo-poster">
-            <img
+            <img loading="lazy" decoding="async"
               src={IMAGE_SRC}
               alt="TorchX Talent: HR management, free forever. Get started for free."
               className="promo-image"

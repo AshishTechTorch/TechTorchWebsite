@@ -6,9 +6,9 @@ export default function OperationsManagement() {
       {/* ================= HERO ================= */}
 
       <section className="operations-hero">
-        <img
+        <img loading="lazy" decoding="async"
           className="operations-hero-image"
-          src="/OpManagement.png"
+          src="/OpManagement.webp"
           alt="Operations control room"
         />
 
@@ -260,8 +260,8 @@ export default function OperationsManagement() {
         </div>
 
         <div className="resilience-image-wrapper">
-          <img
-            src="/OpManagement1.png"
+          <img loading="lazy" decoding="async"
+            src="/OpManagement1.webp"
             alt="Digital network operations"
             className="resilience-image"
           />

@@ -139,8 +139,8 @@ export default function StrategicPerspective() {
 
               <div className="strategic-image-card">
 
-                <img
-                  src="/OpManagement.png"
+                <img loading="lazy" decoding="async"
+                  src="/OpManagement.webp"
                   alt="Business team working together"
                   className="strategic-image"
                 />

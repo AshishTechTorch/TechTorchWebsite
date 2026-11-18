@@ -1627,7 +1627,7 @@ export default function ExportProtocolPackage() {
 
         <section className="attestation">
           <div className="attestation-person">
-            <img
+            <img loading="lazy" decoding="async"
               src="/EvelynVance.png"
               alt="Dr. Evelyn Vance"
               className="person-image"

@@ -129,7 +129,7 @@ export default function CybersecurityCapabilitiesSection() {
         {/* ================= BANNER IMAGE ================= */}
         <div className="relative mt-7 w-full overflow-hidden rounded-lg sm:mt-8 sm:rounded-xl">
           <img
-            src="/Cryptographic Interface  Security Layers.png"
+            src="/Cryptographic Interface  Security Layers.webp"
             alt="Enterprise layer encryption architecture"
             loading="lazy"
             className="

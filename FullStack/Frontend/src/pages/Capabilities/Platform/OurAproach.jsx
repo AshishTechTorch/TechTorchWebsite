@@ -17,8 +17,8 @@ export default function ConnectedBusinessSection() {
             {/* Image */}
 
             <div className="connected-business-image-card">
-              <img
-                src="/platformhero2.png"
+              <img loading="lazy" decoding="async"
+                src="/platformhero2.webp"
                 alt="TechTorch headquarters building at dusk"
                 className="connected-business-image"
               />

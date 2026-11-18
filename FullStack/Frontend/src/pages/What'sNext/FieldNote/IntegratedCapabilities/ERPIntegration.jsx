@@ -1,6 +1,6 @@
 import React from "react";
 
-const heroImage = "/ERPIntegration.png";
+const heroImage = "/ERPIntegration.webp";
 
 const capabilities = [
   {

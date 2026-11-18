@@ -41,8 +41,8 @@ export default function ProvenImpact() {
 
           <div className="impact-card">
             <div className="impact-image-wrap">
-              <img
-                src="/Proven Impact1.png"
+              <img loading="lazy" decoding="async"
+                src="/Proven Impact1.webp"
                 alt="Manufacturing"
                 className="impact-image"
               />
@@ -72,8 +72,8 @@ export default function ProvenImpact() {
 
           <div className="impact-card">
             <div className="impact-image-wrap">
-              <img
-                src="/Proven Impact2.png"
+              <img loading="lazy" decoding="async"
+                src="/Proven Impact2.webp"
                 alt="Financial Services"
                 className="impact-image"
               />

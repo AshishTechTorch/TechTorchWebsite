@@ -694,8 +694,8 @@ export default function LifecycleGovernance() {
       ========================================================= */}
       <section className="lifecycle-cta">
         {/* Background Image */}
-        <img
-          src="/LifecycleGovernance.png"
+        <img loading="lazy" decoding="async"
+          src="/LifecycleGovernance.webp"
           alt="Development team"
           className="lifecycle-cta-image"
         />

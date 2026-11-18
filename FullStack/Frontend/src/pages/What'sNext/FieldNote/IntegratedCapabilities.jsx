@@ -85,8 +85,8 @@ return ( <div className="min-h-screen w-full bg-[#F7F6F3] flex items-center just
 
     {/* Right Side Image */}
     <div className="relative overflow-hidden rounded-sm aspect-[4/3] md:aspect-[5/4] w-full">
-      <img
-        src="/Executiveboardmeeting.png"
+      <img loading="lazy" decoding="async"
+        src="/Executiveboardmeeting.webp"
         alt="Integrated Capabilities"
         className="w-full h-full object-cover"
       />

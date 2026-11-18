@@ -931,7 +931,7 @@ export default function BenchHiringPage() {
           position: relative;
           width: 100%;
           height: 340px;
-          background-image: url("/benchhiring.png");
+          background-image: url("/benchhiring.webp");
           background-size: cover;
           background-position: center;
         }

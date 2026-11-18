@@ -1,6 +1,6 @@
 import React from "react";
 
-const IMAGE_URL = "/fieldnote.png";
+const IMAGE_URL = "/fieldnote.webp";
 
 export default function TechnologySection() {
   return (

@@ -11,7 +11,7 @@ const MUTED = "#5b5a63";
    IMAGE URL
 ===================================================== */
 
-const HERO_IMAGE = "/healthcarehero.png";
+const HERO_IMAGE = "/healthcarehero.webp";
 
 const trustItems = [
   {

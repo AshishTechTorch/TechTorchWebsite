@@ -7,8 +7,8 @@ export default function LegacyModernization() {
       {/* ================= HERO ================= */}
       <section className="legacy-hero">
 
-        <img
-          src="/Legacy.png"
+        <img loading="lazy" decoding="async"
+          src="/Legacy.webp"
           alt="Legacy Technology"
           className="legacy-hero-image"
         />
@@ -95,7 +95,7 @@ export default function LegacyModernization() {
 
               <div className="architecture-image-wrapper">
 
-                <img
+                <img loading="lazy" decoding="async"
                   src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=900&q=85"
                   alt="Modern Architecture"
                   className="architecture-image"

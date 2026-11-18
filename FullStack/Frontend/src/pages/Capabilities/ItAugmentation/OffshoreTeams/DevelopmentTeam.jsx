@@ -1404,8 +1404,8 @@ export default function DevelopmentConsultation() {
 
               {/* RIGHT IMAGE */}
               <div className="dc-hero-image">
-                <img
-                  src="/DevelopmentTeam.png"
+                <img loading="lazy" decoding="async"
+                  src="/DevelopmentTeam.webp"
                   alt="Development Team"
                 />
               </div>
