@@ -1683,7 +1683,7 @@ export function PurpleHero() {
 
                   {/* Email */}
                   <a
-                    href="mailto:contact@techtorch.solutions"
+                    href="https://mail.google.com/mail/?view=cm&fs=1&to=contact@techtorch.solutions&su=Technology%20Services%20Enquiry"
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Email us"

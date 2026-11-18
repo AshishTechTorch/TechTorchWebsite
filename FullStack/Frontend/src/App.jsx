@@ -1,13 +1,7 @@
 import React, { useEffect, lazy, Suspense } from "react";
 import "./App.css";
 
-import {
-  Routes,
-  Route,
-  Outlet,
-  Navigate,
-  useLocation,
-} from "react-router-dom";
+import { Routes, Route, Outlet, Navigate, useLocation } from "react-router-dom";
 import { adminRoutes } from "./admin/routes.jsx";
 const AccessPage = lazy(() => import("./account/AccessPage.jsx"));
 const CandidateDashboard = lazy(() => import("./account/CandidateDashboard.jsx"));

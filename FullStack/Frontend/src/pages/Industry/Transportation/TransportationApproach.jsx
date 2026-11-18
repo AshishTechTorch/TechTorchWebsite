@@ -1,11 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import {
-  FileSearch,
-  Wand2,
-  ShieldCheck,
-  Headphones,
-  ArrowRight,
-} from "lucide-react";
+import { FileSearch, Wand2, ShieldCheck, Headphones } from "lucide-react";
 
 const WINE = "#7A1F3D";
 const INK = "#1B1B2A";
@@ -18,7 +12,6 @@ const steps = [
     label: "REQUIREMENT ANALYSIS",
     title: "UNDERSTAND",
     body: "Understand your business objectives and technology requirements.",
-    footer: "Phase 01 • Discovery",
   },
   {
     num: "02",
@@ -26,7 +19,6 @@ const steps = [
     label: "SOLUTION ARCHITECTURE",
     title: "DESIGN & DEVELOP",
     body: "Plan and develop the solution around your requirements.",
-    footer: "Phase 02 • Engineering",
   },
   {
     num: "03",
@@ -34,7 +26,6 @@ const steps = [
     label: "QUALITY VERIFICATION",
     title: "TEST & DEPLOY",
     body: "Test the solution and prepare it for implementation.",
-    footer: "Phase 03 • Validation",
   },
   {
     num: "04",
@@ -42,7 +33,6 @@ const steps = [
     label: "CONTINUOUS EVOLUTION",
     title: "SUPPORT & MAINTAIN",
     body: "Provide ongoing support and maintenance as requirements evolve.",
-    footer: "Phase 04 • Lifecycle",
   },
 ];
 
@@ -73,7 +63,7 @@ export default function ConnectedApproachStepsSection() {
       {
         threshold: 0.18,
         rootMargin: "0px 0px -50px 0px",
-      }
+      },
     );
 
     cards.forEach((card) => observer.observe(card));
@@ -244,7 +234,7 @@ export default function ConnectedApproachStepsSection() {
 
           width: 100%;
           height: 100%;
-          min-height: 285px;
+          min-height: 220px;
 
           display: flex;
           flex-direction: column;
@@ -360,7 +350,7 @@ export default function ConnectedApproachStepsSection() {
         ========================================= */
 
         .approach-card-body {
-          margin: 0 0 22px;
+          margin: 0;
 
           color: ${MUTED};
 
@@ -368,44 +358,6 @@ export default function ConnectedApproachStepsSection() {
           font-size: 11.5px;
           font-weight: 400;
           line-height: 1.7;
-        }
-
-        /* =========================================
-           CARD FOOTER
-        ========================================= */
-
-        .approach-card-footer {
-          margin-top: auto;
-
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-
-          padding-top: 13px;
-
-          border-top: 1px solid #ece9e4;
-        }
-
-        .approach-card-footer-text {
-          color: #a9a6b0;
-
-          font-family: "Inter", sans-serif;
-          font-size: 9.5px;
-          font-weight: 500;
-          line-height: 1.4;
-        }
-
-        .approach-card-arrow {
-          color: #c9c4bc;
-
-          transition:
-            transform 0.3s ease,
-            color 0.3s ease;
-        }
-
-        .approach-card:hover .approach-card-arrow {
-          transform: translateX(4px);
-          color: ${WINE};
         }
 
         /* =========================================
@@ -450,7 +402,7 @@ export default function ConnectedApproachStepsSection() {
           }
 
           .approach-card {
-            min-height: 280px;
+            min-height: 220px;
           }
         }
 
@@ -482,7 +434,7 @@ export default function ConnectedApproachStepsSection() {
           }
 
           .approach-card {
-            min-height: 275px;
+            min-height: 220px;
             padding: 19px;
           }
         }
@@ -619,15 +571,13 @@ export default function ConnectedApproachStepsSection() {
             transform: none;
           }
 
-          .approach-icon,
-          .approach-card-arrow {
+          .approach-icon {
             transition: none;
           }
         }
       `}</style>
 
       <div className="connected-approach-container">
-
         {/* =====================================
             SECTION HEADER
         ===================================== */}
@@ -637,14 +587,11 @@ export default function ConnectedApproachStepsSection() {
           OUR APPROACH
         </span>
 
-        <h2 className="approach-heading">
-          From Requirement to Support
-        </h2>
+        <h2 className="approach-heading">From Requirement to Support</h2>
 
         <p className="approach-subheading">
-          A disciplined engineering workflow structured to deliver
-          transparent governance, end-to-end integration, and continuous
-          platform evolution.
+          A disciplined engineering workflow structured to deliver transparent
+          governance, end-to-end integration, and continuous platform evolution.
         </p>
 
         {/* =====================================
@@ -652,88 +599,41 @@ export default function ConnectedApproachStepsSection() {
         ===================================== */}
 
         <div className="approach-cards-wrapper">
-
           <div className="approach-connecting-line" />
 
-          {steps.map(
-            (
-              {
-                num,
-                icon: Icon,
-                label,
-                title,
-                body,
-                footer,
-              },
-              index
-            ) => (
+          {steps.map(({ num, icon: Icon, label, title, body }, index) => (
+            <div key={num} className="approach-card-wrapper">
               <div
-                key={num}
-                className="approach-card-wrapper"
+                ref={(element) => {
+                  cardsRef.current[index] = element;
+                }}
+                data-index={index}
+                className="approach-card"
               >
-                <div
-                  ref={(element) => {
-                    cardsRef.current[index] = element;
-                  }}
-                  data-index={index}
-                  className="approach-card"
-                >
+                {/* CARD TOP */}
 
-                  {/* CARD TOP */}
+                <div className="approach-card-top">
+                  <span className="approach-number">{num}</span>
 
-                  <div className="approach-card-top">
-
-                    <span className="approach-number">
-                      {num}
-                    </span>
-
-                    <span className="approach-icon">
-                      <Icon
-                        size={16}
-                        strokeWidth={1.8}
-                      />
-                    </span>
-
-                  </div>
-
-                  {/* LABEL */}
-
-                  <p className="approach-card-label">
-                    {label}
-                  </p>
-
-                  {/* TITLE */}
-
-                  <h3 className="approach-card-title">
-                    {title}
-                  </h3>
-
-                  {/* BODY */}
-
-                  <p className="approach-card-body">
-                    {body}
-                  </p>
-
-                  {/* FOOTER */}
-
-                  <div className="approach-card-footer">
-
-                    <span className="approach-card-footer-text">
-                      {footer}
-                    </span>
-
-                    <ArrowRight
-                      size={13}
-                      className="approach-card-arrow"
-                    />
-
-                  </div>
-
+                  <span className="approach-icon">
+                    <Icon size={16} strokeWidth={1.8} />
+                  </span>
                 </div>
-              </div>
-            )
-          )}
 
+                {/* LABEL */}
+
+                <p className="approach-card-label">{label}</p>
+
+                {/* TITLE */}
+
+                <h3 className="approach-card-title">{title}</h3>
+
+                {/* BODY */}
+
+                <p className="approach-card-body">{body}</p>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

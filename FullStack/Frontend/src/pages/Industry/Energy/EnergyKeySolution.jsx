@@ -6,7 +6,6 @@ import {
   Users,
   GitBranch,
   Monitor,
-  ArrowRight,
 } from "lucide-react";
 
 const WINE = "#7A1F3D";
@@ -207,7 +206,7 @@ export default function KeySolutionsExploreGridSection() {
         ================================================= */
 
         .key-solution-body {
-          margin: 0 0 22px;
+          margin: 0;
 
           color: ${MUTED};
 
@@ -215,35 +214,6 @@ export default function KeySolutionsExploreGridSection() {
           font-size: 13px;
           font-weight: 400;
           line-height: 1.7;
-        }
-
-        /* =================================================
-           LINK
-        ================================================= */
-
-        .key-solution-link {
-          margin-top: auto;
-
-          display: inline-flex;
-          align-items: center;
-          gap: 6px;
-
-          width: fit-content;
-
-          color: ${WINE};
-
-          font-family: "Inter", Arial, sans-serif;
-          font-size: 12px;
-          font-weight: 600;
-          line-height: 1.4;
-
-          text-decoration: none;
-
-          transition: gap 0.25s ease;
-        }
-
-        .key-solution-card:hover .key-solution-link {
-          gap: 9px;
         }
 
         /* =================================================
@@ -381,10 +351,6 @@ export default function KeySolutionsExploreGridSection() {
             line-height: 1.65;
             margin-bottom: 20px;
           }
-
-          .key-solution-link {
-            font-size: 11.5px;
-          }
         }
 
         /* =================================================
@@ -411,10 +377,6 @@ export default function KeySolutionsExploreGridSection() {
           .key-solution-body {
             font-size: 11.5px;
           }
-
-          .key-solution-link {
-            font-size: 11px;
-          }
         }
 
         /* =================================================
@@ -422,8 +384,7 @@ export default function KeySolutionsExploreGridSection() {
         ================================================= */
 
         @media (prefers-reduced-motion: reduce) {
-          .key-solution-card,
-          .key-solution-link {
+          .key-solution-card {
             transition: none;
           }
 
@@ -435,14 +396,11 @@ export default function KeySolutionsExploreGridSection() {
 
       <section className="key-solutions-section">
         <div className="key-solutions-container">
-
           {/* =================================================
               HEADER
           ================================================= */}
 
-          <p className="key-solutions-eyebrow">
-            KEY SOLUTIONS
-          </p>
+          <p className="key-solutions-eyebrow">KEY SOLUTIONS</p>
 
           <h2 className="key-solutions-heading">
             Technology for Core Business Functions
@@ -454,33 +412,17 @@ export default function KeySolutionsExploreGridSection() {
 
           <div className="key-solutions-grid">
             {cards.map(({ icon: Icon, title, body }) => (
-              <div
-                key={title}
-                className="key-solution-card"
-              >
+              <div key={title} className="key-solution-card">
                 <span className="key-solution-icon">
-                  <Icon
-                    size={18}
-                    strokeWidth={1.8}
-                  />
+                  <Icon size={18} strokeWidth={1.8} />
                 </span>
 
-                <h3 className="key-solution-title">
-                  {title}
-                </h3>
+                <h3 className="key-solution-title">{title}</h3>
 
-                <p className="key-solution-body">
-                  {body}
-                </p>
-
-                <span className="key-solution-link">
-                  Explore Solution
-                  <ArrowRight size={13} />
-                </span>
+                <p className="key-solution-body">{body}</p>
               </div>
             ))}
           </div>
-
         </div>
       </section>
     </>

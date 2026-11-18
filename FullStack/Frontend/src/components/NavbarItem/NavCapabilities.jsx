@@ -270,6 +270,10 @@ function NavCapabilities() {
                                 ? "https://torchxsuite.com/"
                                 : routeFor(title)
                           }
+                          {...(title === "TorchX Suite" ||
+                          title === "TorchX Campus"
+                            ? { target: "_blank", rel: "noopener noreferrer" }
+                            : {})}
                           className="
                             text-[15px] text-gray-800 font-inter
                             leading-[1.35] hover:text-[#8a1538]

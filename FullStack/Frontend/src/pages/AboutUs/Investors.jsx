@@ -167,14 +167,15 @@ export default function InvestorsPage() {
         <div className="grid grid-cols-1 items-center gap-10 md:grid-cols-2 lg:gap-16">
           <div>
             <Eyebrow>Our Perspective on Growth</Eyebrow>
-            <SectionTitle>Building for a Changing Digital Landscape</SectionTitle>
+            <SectionTitle>
+              Building for a Changing Digital Landscape
+            </SectionTitle>
 
             <p className="mt-6 text-[14px] leading-relaxed text-[#5b6b80]">
               The future belongs to businesses that can adapt, innovate, and
-              turn emerging opportunities into practical outcomes. As
-              technology continues to reshape industries, organizations need
-              solutions that support efficiency, flexibility, and long-term
-              development.
+              turn emerging opportunities into practical outcomes. As technology
+              continues to reshape industries, organizations need solutions that
+              support efficiency, flexibility, and long-term development.
             </p>
 
             <p className="mt-4 text-[14px] leading-relaxed text-[#5b6b80]">
@@ -252,8 +253,8 @@ export default function InvestorsPage() {
         <p className="mt-4 max-w-[640px] text-[14px] leading-relaxed text-[#5b6b80]">
           We believe that progress is built through consistent effort, informed
           decisions, and a willingness to improve. Our approach is guided by
-          principles that help connect technology initiatives with real
-          business requirements.
+          principles that help connect technology initiatives with real business
+          requirements.
         </p>
 
         <div className="mt-10 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4 lg:gap-0">
@@ -262,7 +263,11 @@ export default function InvestorsPage() {
               key={title}
               className="lg:border-l lg:border-[#ececf0] lg:px-6 lg:first:border-l-0 lg:first:pl-0 lg:last:pr-0"
             >
-              <Icon size={24} strokeWidth={1.6} className="mb-4 text-[#bf2c78]" />
+              <Icon
+                size={24}
+                strokeWidth={1.6}
+                className="mb-4 text-[#bf2c78]"
+              />
               <h3 className="text-[14px] font-bold leading-snug">{title}</h3>
               <p className="mt-2.5 text-[13px] leading-relaxed text-[#6b7585]">
                 {description}
@@ -286,18 +291,18 @@ export default function InvestorsPage() {
             </p>
             <p className="mt-4 max-w-[620px] text-[14px] leading-relaxed text-[#5b6b80]">
               TechTorch Solutions is committed to handling corporate inquiries
-              through appropriate communication channels and sharing
-              information in accordance with its availability, accuracy, and
-              applicable disclosure requirements.
+              through appropriate communication channels and sharing information
+              in accordance with its availability, accuracy, and applicable
+              disclosure requirements.
             </p>
             <p className="mt-4 max-w-[620px] text-[14px] leading-relaxed text-[#5b6b80]">
-              For inquiries concerning company information, business
-              activities, or potential areas of collaboration, interested
-              parties may contact our team.
+              For inquiries concerning company information, business activities,
+              or potential areas of collaboration, interested parties may
+              contact our team.
             </p>
 
             <a
-              href="/contact"
+              href="/start-conversation"
               className="mt-6 inline-flex items-center gap-2 text-[13px] font-bold text-[#a41c64] transition-colors hover:text-[#730042]"
             >
               Submit a formal corporate inquiry <ArrowRight size={15} />
@@ -316,9 +321,8 @@ export default function InvestorsPage() {
 
             <p className="mt-5 rounded-lg border border-[#eceef2] bg-[#f7f8fa] p-4 text-[12px] leading-relaxed text-[#7a8290]">
               Official financial information, statutory disclosures, ownership
-              details, and investor documents should be included in this
-              section only where applicable, verified, and approved for
-              publication.
+              details, and investor documents should be included in this section
+              only where applicable, verified, and approved for publication.
             </p>
 
             <dl className="mt-3">
@@ -355,9 +359,8 @@ export default function InvestorsPage() {
             </h2>
 
             <p className="mt-6 max-w-[560px] text-[14px] leading-relaxed text-white/80 sm:text-[15px]">
-              We welcome relevant business inquiries, professional
-              discussions, and conversations about technology-driven
-              opportunities.
+              We welcome relevant business inquiries, professional discussions,
+              and conversations about technology-driven opportunities.
             </p>
             <p className="mt-4 max-w-[560px] text-[13px] leading-relaxed text-white/60">
               If you would like to learn more about TechTorch Solutions and its

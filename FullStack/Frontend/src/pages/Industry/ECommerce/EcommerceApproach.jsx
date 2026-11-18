@@ -4,7 +4,6 @@ import {
   LayoutGrid,
   GraduationCap,
   RefreshCw,
-  ArrowRight,
 } from "lucide-react";
 
 const WINE = "#7A1F3D";
@@ -18,7 +17,6 @@ const steps = [
     phase: "PHASE 01 • DISCOVERY",
     title: "Understand",
     body: "Understand your business requirements and e-commerce objectives.",
-    footer: "Scope Alignment",
   },
   {
     num: "02",
@@ -26,7 +24,7 @@ const steps = [
     phase: "PHASE 02 • BUILD",
     title: "Implement",
     body: "Configure and implement the solution around your requirements.",
-    footer: "Production Readiness",
+
   },
   {
     num: "03",
@@ -34,7 +32,7 @@ const steps = [
     phase: "PHASE 03 • ENABLEMENT",
     title: "Train",
     body: "Provide training to help teams work with the e-commerce environment.",
-    footer: "Team Autonomy",
+
   },
   {
     num: "04",
@@ -42,7 +40,7 @@ const steps = [
     phase: "PHASE 04 • EVOLUTION",
     title: "Maintain & Update",
     body: "Continue with maintenance and updates as your requirements evolve.",
-    footer: "Continuous Health",
+
   },
 ];
 
@@ -260,7 +258,7 @@ export default function ImplementationToSupportSection() {
         }
 
         .implementation-card-body {
-          margin: 0 0 24px;
+          margin: 0;
           color: ${MUTED};
           font-family: "Inter", sans-serif;
           font-size: 13px;
@@ -268,37 +266,6 @@ export default function ImplementationToSupportSection() {
           line-height: 1.7;
         }
 
-        /* =========================================
-           CARD FOOTER
-        ========================================= */
-
-        .implementation-card-footer {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          gap: 12px;
-          margin-top: auto;
-          padding-top: 13px;
-          border-top: 1px solid #ece9e4;
-        }
-
-        .implementation-footer-text {
-          color: ${MUTED};
-          font-family: "Inter", sans-serif;
-          font-size: 11px;
-          font-weight: 500;
-          line-height: 1.4;
-        }
-
-        .implementation-arrow {
-          flex-shrink: 0;
-          color: ${WINE};
-          transition: transform 300ms ease;
-        }
-
-        .implementation-card:hover .implementation-arrow {
-          transform: translateX(4px);
-        }
 
         /* =========================================
            TABLET
@@ -508,7 +475,7 @@ export default function ImplementationToSupportSection() {
         {/* Steps */}
         <div className="implementation-grid">
           {steps.map(
-            ({ num, icon: Icon, phase, title, body, footer }, index) => (
+            ({ num, icon: Icon, phase, title, body }, index) => (
               <div
                 key={num}
                 className={`implementation-card ${
@@ -541,19 +508,7 @@ export default function ImplementationToSupportSection() {
                 {/* Body */}
                 <p className="implementation-card-body">{body}</p>
 
-                {/* Footer */}
-                <div className="implementation-card-footer">
-                  <span className="implementation-footer-text">
-                    {footer}
-                  </span>
-
-                  <ArrowRight
-                    className="implementation-arrow"
-                    size={14}
-                    strokeWidth={1.8}
-                    aria-hidden="true"
-                  />
-                </div>
+          
               </div>
             )
           )}
