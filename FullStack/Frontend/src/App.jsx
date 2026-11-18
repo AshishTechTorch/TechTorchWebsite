@@ -1,13 +1,7 @@
 import React, { useEffect } from "react";
 import "./App.css";
 
-import {
-  Routes,
-  Route,
-  Outlet,
-  Navigate,
-  useLocation,
-} from "react-router-dom";
+import { Routes, Route, Outlet, Navigate, useLocation } from "react-router-dom";
 import { adminRoutes } from "./admin/routes.jsx";
 import AccessPage from "./account/AccessPage.jsx";
 import CandidateDashboard from "./account/CandidateDashboard.jsx";
