@@ -17,7 +17,7 @@ exports.syncInquiry = async ({ formType, refId, user, topic, message, details })
         details: { ...details, city: user.city, headline: user.headline },
         status: "new",
       },
-      { upsert: true, new: true, setDefaultsOnInsert: true, runValidators: true }
+      { upsert: true, returnDocument: "after", setDefaultsOnInsert: true, runValidators: true }
     );
   } catch (e) {
     console.error("Inquiry sync failed:", e.message); // yahi terminal mein dikhega

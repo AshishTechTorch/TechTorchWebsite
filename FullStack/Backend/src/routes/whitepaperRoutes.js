@@ -10,10 +10,11 @@ const {
 
 const router = express.Router();
 const authMiddleware = require("../middlewares/auth.middleware");
+const { optionalAuth } = authMiddleware;
 
 router.post("/", authMiddleware, createWhitepaper);
-router.get("/", getAllWhitepapers);
-router.get("/:id", getWhitepaperById);
+router.get("/", optionalAuth, getAllWhitepapers);
+router.get("/:id", optionalAuth, getWhitepaperById);
 router.put("/:id", authMiddleware, updateWhitepaper);
 router.delete("/:id", authMiddleware, deleteWhitepaper);
 

@@ -1,3 +1,4 @@
+const { sendError } = require("../utils/handleError");
 const FinancialConsultation = require(
   "../models/FinancialConsultation.model.js"
 );
@@ -77,11 +78,7 @@ const createFinancialConsultation = async (req, res) => {
       });
     }
 
-    return res.status(500).json({
-      success: false,
-      message:
-        "Failed to submit financial consultation request.",
-    });
+    return sendError(res, error, "Failed to submit financial consultation request.");
   }
 };
 
@@ -109,11 +106,7 @@ const getFinancialConsultations = async (req, res) => {
       error
     );
 
-    return res.status(500).json({
-      success: false,
-      message:
-        "Failed to fetch financial consultation requests.",
-    });
+    return sendError(res, error, "Failed to fetch financial consultation requests.");
   }
 };
 
@@ -146,11 +139,7 @@ const getFinancialConsultationById = async (req, res) => {
       error
     );
 
-    return res.status(500).json({
-      success: false,
-      message:
-        "Failed to fetch financial consultation request.",
-    });
+    return sendError(res, error, "Failed to fetch financial consultation request.");
   }
 };
 
@@ -187,7 +176,7 @@ const updateFinancialConsultationStatus = async (
         req.params.id,
         { status },
         {
-          new: true,
+          returnDocument: "after",
           runValidators: true,
         }
       );
@@ -211,10 +200,7 @@ const updateFinancialConsultationStatus = async (
       error
     );
 
-    return res.status(500).json({
-      success: false,
-      message: "Failed to update status.",
-    });
+    return sendError(res, error, "Failed to update status.");
   }
 };
 
@@ -250,11 +236,7 @@ const deleteFinancialConsultation = async (req, res) => {
       error
     );
 
-    return res.status(500).json({
-      success: false,
-      message:
-        "Failed to delete financial consultation.",
-    });
+    return sendError(res, error, "Failed to delete financial consultation.");
   }
 };
 

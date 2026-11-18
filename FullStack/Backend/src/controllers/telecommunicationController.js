@@ -1,3 +1,4 @@
+const { sendError } = require("../utils/handleError");
 const Telecommunication = require(
   "../models/telecommunication.model"
 );
@@ -83,12 +84,7 @@ const createTelecommunication = async (req, res) => {
       });
     }
 
-    return res.status(500).json({
-      success: false,
-      message:
-        "Failed to submit telecommunication requirements.",
-      error: error.message,
-    });
+    return sendError(res, error, "Failed to submit telecommunication requirements.");
   }
 };
 
@@ -116,12 +112,7 @@ const getTelecommunications = async (req, res) => {
       error
     );
 
-    return res.status(500).json({
-      success: false,
-      message:
-        "Failed to fetch telecommunication requirements.",
-      error: error.message,
-    });
+    return sendError(res, error, "Failed to fetch telecommunication requirements.");
   }
 };
 
@@ -159,12 +150,7 @@ const getTelecommunicationById = async (
       error
     );
 
-    return res.status(500).json({
-      success: false,
-      message:
-        "Failed to fetch telecommunication requirement.",
-      error: error.message,
-    });
+    return sendError(res, error, "Failed to fetch telecommunication requirement.");
   }
 };
 
@@ -201,7 +187,7 @@ const updateTelecommunicationStatus = async (
         req.params.id,
         { status },
         {
-          new: true,
+          returnDocument: "after",
           runValidators: true,
         }
       );
@@ -226,12 +212,7 @@ const updateTelecommunicationStatus = async (
       error
     );
 
-    return res.status(500).json({
-      success: false,
-      message:
-        "Failed to update telecommunication status.",
-      error: error.message,
-    });
+    return sendError(res, error, "Failed to update telecommunication status.");
   }
 };
 
@@ -270,12 +251,7 @@ const deleteTelecommunication = async (
       error
     );
 
-    return res.status(500).json({
-      success: false,
-      message:
-        "Failed to delete telecommunication requirement.",
-      error: error.message,
-    });
+    return sendError(res, error, "Failed to delete telecommunication requirement.");
   }
 };
 

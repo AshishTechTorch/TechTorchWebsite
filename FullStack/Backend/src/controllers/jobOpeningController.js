@@ -1,3 +1,4 @@
+const { sendError } = require("../utils/handleError");
 const JobOpening = require("../models/JobOpening.model");
 
 // CREATE JOB
@@ -13,10 +14,7 @@ const createJobOpening = async (req, res) => {
   } catch (error) {
     console.error("Create Job Error:", error);
 
-    res.status(500).json({
-      success: false,
-      message: error.message || "Failed to create job opening",
-    });
+    sendError(res, error, "Something went wrong");
   }
 };
 
@@ -34,10 +32,7 @@ const getAllJobOpenings = async (req, res) => {
   } catch (error) {
     console.error("Get Jobs Error:", error);
 
-    res.status(500).json({
-      success: false,
-      message: error.message || "Failed to fetch job openings",
-    });
+    sendError(res, error, "Something went wrong");
   }
 };
 
@@ -63,10 +58,7 @@ const getJobOpeningById = async (req, res) => {
   } catch (error) {
     console.error("Get Job Error:", error);
 
-    res.status(500).json({
-      success: false,
-      message: error.message || "Failed to fetch job opening",
-    });
+    sendError(res, error, "Something went wrong");
   }
 };
 
@@ -77,7 +69,7 @@ const updateJobOpening = async (req, res) => {
       req.params.id,
       req.body,
       {
-        new: true,
+        returnDocument: "after",
         runValidators: true,
       }
     );
@@ -97,10 +89,7 @@ const updateJobOpening = async (req, res) => {
   } catch (error) {
     console.error("Update Job Error:", error);
 
-    res.status(500).json({
-      success: false,
-      message: error.message || "Failed to update job opening",
-    });
+    sendError(res, error, "Something went wrong");
   }
 };
 
@@ -125,10 +114,7 @@ const deleteJobOpening = async (req, res) => {
   } catch (error) {
     console.error("Delete Job Error:", error);
 
-    res.status(500).json({
-      success: false,
-      message: error.message || "Failed to delete job opening",
-    });
+    sendError(res, error, "Something went wrong");
   }
 };
 

@@ -1,3 +1,4 @@
+const { sendError } = require("../utils/handleError");
 const OurStory = require("../models/ourstory.model");
 
 // CREATE
@@ -32,11 +33,7 @@ const createOurStory = async (req, res) => {
   } catch (error) {
     console.error("Create Our Story Error:", error);
 
-    return res.status(500).json({
-      success: false,
-      message: "Server error",
-      error: error.message,
-    });
+    return sendError(res, error, "Server error");
   }
 };
 
@@ -55,11 +52,7 @@ const getOurStories = async (req, res) => {
   } catch (error) {
     console.error("Get Our Stories Error:", error);
 
-    return res.status(500).json({
-      success: false,
-      message: "Server error",
-      error: error.message,
-    });
+    return sendError(res, error, "Server error");
   }
 };
 
@@ -82,11 +75,7 @@ const getOurStoryById = async (req, res) => {
   } catch (error) {
     console.error("Get Our Story Error:", error);
 
-    return res.status(500).json({
-      success: false,
-      message: "Server error",
-      error: error.message,
-    });
+    return sendError(res, error, "Server error");
   }
 };
 
@@ -99,7 +88,7 @@ const updateOurStoryStatus = async (req, res) => {
       req.params.id,
       { status },
       {
-        new: true,
+        returnDocument: "after",
         runValidators: true,
       }
     );
@@ -119,11 +108,7 @@ const updateOurStoryStatus = async (req, res) => {
   } catch (error) {
     console.error("Update Our Story Status Error:", error);
 
-    return res.status(500).json({
-      success: false,
-      message: "Server error",
-      error: error.message,
-    });
+    return sendError(res, error, "Server error");
   }
 };
 
@@ -146,11 +131,7 @@ const deleteOurStory = async (req, res) => {
   } catch (error) {
     console.error("Delete Our Story Error:", error);
 
-    return res.status(500).json({
-      success: false,
-      message: "Server error",
-      error: error.message,
-    });
+    return sendError(res, error, "Server error");
   }
 };
 

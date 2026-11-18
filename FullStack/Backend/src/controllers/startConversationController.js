@@ -1,3 +1,4 @@
+const { sendError } = require("../utils/handleError");
 const StartConversation = require("../models/StartConversation.model");
 
 // ==========================================
@@ -51,11 +52,7 @@ const createStartConversation = async (req, res) => {
   } catch (error) {
     console.error("Create Start Conversation Error:", error);
 
-    return res.status(500).json({
-      success: false,
-      message: "Failed to submit enquiry",
-      error: error.message,
-    });
+    return sendError(res, error, "Failed to submit enquiry");
   }
 };
 
@@ -77,11 +74,7 @@ const getStartConversations = async (req, res) => {
   } catch (error) {
     console.error("Get Start Conversations Error:", error);
 
-    return res.status(500).json({
-      success: false,
-      message: "Failed to fetch enquiries",
-      error: error.message,
-    });
+    return sendError(res, error, "Failed to fetch enquiries");
   }
 };
 
@@ -107,11 +100,7 @@ const getStartConversationById = async (req, res) => {
   } catch (error) {
     console.error("Get Start Conversation Error:", error);
 
-    return res.status(500).json({
-      success: false,
-      message: "Failed to fetch enquiry",
-      error: error.message,
-    });
+    return sendError(res, error, "Failed to fetch enquiry");
   }
 };
 
@@ -140,7 +129,7 @@ const updateStartConversationStatus = async (req, res) => {
     const enquiry = await StartConversation.findByIdAndUpdate(
       req.params.id,
       { status },
-      { new: true, runValidators: true }
+      { returnDocument: "after", runValidators: true }
     );
 
     if (!enquiry) {
@@ -158,11 +147,7 @@ const updateStartConversationStatus = async (req, res) => {
   } catch (error) {
     console.error("Update Status Error:", error);
 
-    return res.status(500).json({
-      success: false,
-      message: "Failed to update status",
-      error: error.message,
-    });
+    return sendError(res, error, "Failed to update status");
   }
 };
 
@@ -190,11 +175,7 @@ const deleteStartConversation = async (req, res) => {
   } catch (error) {
     console.error("Delete Start Conversation Error:", error);
 
-    return res.status(500).json({
-      success: false,
-      message: "Failed to delete enquiry",
-      error: error.message,
-    });
+    return sendError(res, error, "Failed to delete enquiry");
   }
 };
 

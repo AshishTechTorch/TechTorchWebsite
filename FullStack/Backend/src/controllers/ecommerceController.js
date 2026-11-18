@@ -1,3 +1,4 @@
+const { sendError } = require("../utils/handleError");
 const Ecommerce = require("../models/ecommerce.model");
 
 // ======================================================
@@ -106,12 +107,7 @@ const createEcommerce = async (req, res) => {
       });
     }
 
-    return res.status(500).json({
-      success: false,
-      message:
-        "Failed to submit E-Commerce enquiry.",
-      error: error.message,
-    });
+    return sendError(res, error, "Failed to submit E-Commerce enquiry.");
   }
 };
 
@@ -139,12 +135,7 @@ const getEcommerces = async (req, res) => {
       error
     );
 
-    return res.status(500).json({
-      success: false,
-      message:
-        "Failed to fetch E-Commerce enquiries.",
-      error: error.message,
-    });
+    return sendError(res, error, "Failed to fetch E-Commerce enquiries.");
   }
 };
 
@@ -177,12 +168,7 @@ const getEcommerceById = async (req, res) => {
       error
     );
 
-    return res.status(500).json({
-      success: false,
-      message:
-        "Failed to fetch E-Commerce enquiry.",
-      error: error.message,
-    });
+    return sendError(res, error, "Failed to fetch E-Commerce enquiry.");
   }
 };
 
@@ -219,7 +205,7 @@ const updateEcommerceStatus = async (
         req.params.id,
         { status },
         {
-          new: true,
+          returnDocument: "after",
           runValidators: true,
         }
       );
@@ -244,12 +230,7 @@ const updateEcommerceStatus = async (
       error
     );
 
-    return res.status(500).json({
-      success: false,
-      message:
-        "Failed to update E-Commerce status.",
-      error: error.message,
-    });
+    return sendError(res, error, "Failed to update E-Commerce status.");
   }
 };
 
@@ -285,12 +266,7 @@ const deleteEcommerce = async (req, res) => {
       error
     );
 
-    return res.status(500).json({
-      success: false,
-      message:
-        "Failed to delete E-Commerce enquiry.",
-      error: error.message,
-    });
+    return sendError(res, error, "Failed to delete E-Commerce enquiry.");
   }
 };
 

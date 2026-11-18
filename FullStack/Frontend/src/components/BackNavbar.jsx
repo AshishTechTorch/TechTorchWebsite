@@ -18,7 +18,7 @@ const BackNavbar = () => {
   if (location.pathname === "/") return null;
 
   return (
-    <div className="sticky top-[80px] z-40 w-full border-b border-gray-200 bg-white/95 backdrop-blur-md">
+    <div className="sticky top-[var(--nav-h,72px)] z-40 w-full border-b border-gray-200 bg-white/95 backdrop-blur-md">
       <div className="flex min-h-[52px] items-center justify-between gap-3 px-4 sm:px-6 md:px-10 lg:px-[100px]">
 
         {/* Back Button */}

@@ -3,7 +3,7 @@ const LatestUpdate = require("../models/LatestUpdate.model");
 const asyncHandler = require("../utils/asyncHandler");
 
 const getAllLatestUpdates = asyncHandler(async (req, res) => {
-  const items = await LatestUpdate.find().sort({ createdAt: -1 });
+  const items = await LatestUpdate.find(req.admin ? {} : { status: { $ne: "draft" } }).sort({ createdAt: -1 });
 
   return res.status(200).json({
     success: true,
@@ -23,6 +23,9 @@ const getLatestUpdateById = asyncHandler(async (req, res) => {
   }
 
   const item = await LatestUpdate.findById(id);
+  if (item && !req.admin && item.status === "draft") {
+    return res.status(404).json({ success: false, message: "Update not found" });
+  }
 
   if (!item) {
     return res.status(404).json({
@@ -62,7 +65,7 @@ const updateLatestUpdate = asyncHandler(async (req, res) => {
     id,
     req.body,
     {
-      new: true,
+      returnDocument: "after",
       runValidators: true,
     }
   );

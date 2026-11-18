@@ -1,3 +1,4 @@
+const { sendError } = require("../utils/handleError");
 const Event = require("../models/Event.model");
 
 // CREATE EVENT
@@ -13,17 +14,14 @@ const createEvent = async (req, res) => {
   } catch (error) {
     console.error("Create Event Error:", error);
 
-    res.status(500).json({
-      success: false,
-      message: error.message || "Failed to create event",
-    });
+    sendError(res, error, "Something went wrong");
   }
 };
 
 // GET ALL EVENTS
 const getAllEvents = async (req, res) => {
   try {
-    const events = await Event.find().sort({
+    const events = await Event.find(req.admin ? {} : { status: { $ne: "draft" } }).sort({
       createdAt: -1,
     });
 
@@ -34,10 +32,7 @@ const getAllEvents = async (req, res) => {
   } catch (error) {
     console.error("Get Events Error:", error);
 
-    res.status(500).json({
-      success: false,
-      message: error.message || "Failed to fetch events",
-    });
+    sendError(res, error, "Something went wrong");
   }
 };
 
@@ -45,6 +40,9 @@ const getAllEvents = async (req, res) => {
 const getEventById = async (req, res) => {
   try {
     const event = await Event.findById(req.params.id);
+    if (event && !req.admin && event.status === "draft") {
+      return res.status(404).json({ success: false, message: "Event not found" });
+    }
 
     if (!event) {
       return res.status(404).json({
@@ -60,10 +58,7 @@ const getEventById = async (req, res) => {
   } catch (error) {
     console.error("Get Event Error:", error);
 
-    res.status(500).json({
-      success: false,
-      message: error.message || "Failed to fetch event",
-    });
+    sendError(res, error, "Something went wrong");
   }
 };
 
@@ -74,7 +69,7 @@ const updateEvent = async (req, res) => {
       req.params.id,
       req.body,
       {
-        new: true,
+        returnDocument: "after",
         runValidators: true,
       }
     );
@@ -94,10 +89,7 @@ const updateEvent = async (req, res) => {
   } catch (error) {
     console.error("Update Event Error:", error);
 
-    res.status(500).json({
-      success: false,
-      message: error.message || "Failed to update event",
-    });
+    sendError(res, error, "Something went wrong");
   }
 };
 
@@ -120,10 +112,7 @@ const deleteEvent = async (req, res) => {
   } catch (error) {
     console.error("Delete Event Error:", error);
 
-    res.status(500).json({
-      success: false,
-      message: error.message || "Failed to delete event",
-    });
+    sendError(res, error, "Something went wrong");
   }
 };
 

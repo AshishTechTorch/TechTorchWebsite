@@ -1,3 +1,4 @@
+const { sendError } = require("../utils/handleError");
 const SecureBusiness = require("../models/SecureBusiness.model");
 
 // ===============================
@@ -47,11 +48,7 @@ const createSecureBusiness = async (req, res) => {
   } catch (error) {
     console.error("Create Secure Business Error:", error);
 
-    return res.status(500).json({
-      success: false,
-      message: "Failed to submit request.",
-      error: error.message,
-    });
+    return sendError(res, error, "Failed to submit request.");
   }
 };
 
@@ -70,11 +67,7 @@ const getSecureBusinesses = async (req, res) => {
   } catch (error) {
     console.error("Get Secure Businesses Error:", error);
 
-    return res.status(500).json({
-      success: false,
-      message: "Failed to fetch secure business requests.",
-      error: error.message,
-    });
+    return sendError(res, error, "Failed to fetch secure business requests.");
   }
 };
 
@@ -99,11 +92,7 @@ const getSecureBusinessById = async (req, res) => {
   } catch (error) {
     console.error("Get Secure Business Error:", error);
 
-    return res.status(500).json({
-      success: false,
-      message: "Failed to fetch request.",
-      error: error.message,
-    });
+    return sendError(res, error, "Failed to fetch request.");
   }
 };
 
@@ -131,7 +120,7 @@ const updateSecureBusinessStatus = async (req, res) => {
     const data = await SecureBusiness.findByIdAndUpdate(
       req.params.id,
       { status },
-      { new: true, runValidators: true }
+      { returnDocument: "after", runValidators: true }
     );
 
     if (!data) {
@@ -149,11 +138,7 @@ const updateSecureBusinessStatus = async (req, res) => {
   } catch (error) {
     console.error("Update Secure Business Status Error:", error);
 
-    return res.status(500).json({
-      success: false,
-      message: "Failed to update status.",
-      error: error.message,
-    });
+    return sendError(res, error, "Failed to update status.");
   }
 };
 
@@ -178,11 +163,7 @@ const deleteSecureBusiness = async (req, res) => {
   } catch (error) {
     console.error("Delete Secure Business Error:", error);
 
-    return res.status(500).json({
-      success: false,
-      message: "Failed to delete request.",
-      error: error.message,
-    });
+    return sendError(res, error, "Failed to delete request.");
   }
 };
 

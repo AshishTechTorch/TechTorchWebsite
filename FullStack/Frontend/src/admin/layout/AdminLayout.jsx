@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { NavLink, Navigate, Outlet, useLocation, useNavigate } from "react-router-dom";
 import {
-  Briefcase, Calendar, FileText, FolderOpen, Inbox, LayoutGrid, LogOut, Megaphone, Menu, UserCog, Users, X,
+  BookOpen, Briefcase, Calendar, FileText, FolderOpen, Inbox, LayoutGrid, LogOut, Megaphone, Menu, UserCheck, UserCog, Users, X,
 } from "lucide-react";
 import { useLogout, useProfile } from "../hooks/useAuth";
 import { useList } from "../hooks/useResource";
@@ -22,6 +22,11 @@ const NAV = [
   { label: "Whitepapers", to: "/whitepapers", icon: FolderOpen, count: "whitepapers" },
   { label: "Latest Updates", to: "/latest-updates", icon: Megaphone, count: "updates" },
   { label: "Queries", to: "/admin-queries", icon: Inbox, queryBadge: true },
+];
+
+const CANDIDATES = [
+  { label: "Candidate Blogs", to: "/candidate-blogs", icon: BookOpen },
+  { label: "Candidate Interests", to: "/candidate-interests", icon: UserCheck },
 ];
 
 function Count({ resource }) {
@@ -116,6 +121,9 @@ export default function AdminLayout() {
           <div className="px-3 pb-1 text-[11px] font-semibold tracking-wider text-stone-400">CONTENT</div>
           {NAV.map(item)}
 
+          <div className="px-3 pb-1 pt-4 text-[11px] font-semibold tracking-wider text-stone-400">CANDIDATES</div>
+          {CANDIDATES.map(item)}
+
           <div className="px-3 pb-1 pt-4 text-[11px] font-semibold tracking-wider text-stone-400">ACCOUNT</div>
           {item({ label: "My Account", to: "/account", icon: UserCog })}
           {me.role === "superadmin" && item({ label: "Admin Accounts", to: "/admin-accounts", icon: Users })}
@@ -137,7 +145,7 @@ export default function AdminLayout() {
         </div>
       </aside>
 
-      <main className="min-h-screen lg:ml-64">
+      <main className="min-h-screen min-w-0 lg:ml-64">
         <Outlet />
       </main>
     </div>

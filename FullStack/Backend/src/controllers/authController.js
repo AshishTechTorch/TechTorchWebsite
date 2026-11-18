@@ -1,3 +1,4 @@
+const crypto = require("crypto");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
 const Admin = require("../models/Admin.model");
@@ -10,7 +11,11 @@ const {
 } = require("../utils/generateToken");
 const { sendEmail } = require("../services/emailService.js");
 
-const generateOtp = () => Math.floor(100000 + Math.random() * 900000).toString();
+// crypto.randomInt is cryptographically secure (Math.random is guessable)
+const generateOtp = () => crypto.randomInt(100000, 1000000).toString();
+
+// Body fields must be plain strings (stops crashes / operator objects like {"$gt":""})
+const isStr = (...vals) => vals.every((v) => typeof v === "string");
 
 const publicAdmin = (a) => ({
   _id: a._id,
@@ -51,6 +56,7 @@ const registerAdmin = asyncHandler(async (req, res) => {
   const { name, email, password } = req.body;
 
   if (!name || !email || !password) return fail(res, 400, "All fields are required");
+  if (!isStr(name, email, password)) return fail(res, 400, "Invalid input");
   if (password.length < 6) return fail(res, 400, "Password must be at least 6 characters");
 
   const existing = await Admin.findOne({ email: email.toLowerCase() });
@@ -82,6 +88,9 @@ const registerCandidate = asyncHandler(async (req, res) => {
   const { name, email, password, phone, city, headline } = req.body;
 
   if (!name || !email || !password) return fail(res, 400, "Name, email and password are required");
+  if (!isStr(name, email, password) || [phone, city, headline].some((v) => v !== undefined && typeof v !== "string")) {
+    return fail(res, 400, "Invalid input");
+  }
   if (password.length < 6) return fail(res, 400, "Password must be at least 6 characters");
 
   const lower = email.toLowerCase().trim();
@@ -116,6 +125,7 @@ const loginAdmin = asyncHandler(async (req, res) => {
   const { email, password } = req.body;
 
   if (!email || !password) return fail(res, 400, "Email and password are required");
+  if (!isStr(email, password)) return fail(res, 400, "Invalid input");
   const lower = email.toLowerCase().trim();
   const cookieAge = { ...cookieOptions(), maxAge: 7 * 24 * 60 * 60 * 1000 };
 
@@ -160,6 +170,7 @@ const loginAdmin = asyncHandler(async (req, res) => {
 const forgotPassword = asyncHandler(async (req, res) => {
   const { email } = req.body;
   if (!email) return fail(res, 400, "Email is required");
+  if (!isStr(email)) return fail(res, 400, "Invalid input");
 
   const admin = await findAccount(email);
   if (!admin) return fail(res, 404, "No account found with this email");
@@ -183,6 +194,7 @@ const forgotPassword = asyncHandler(async (req, res) => {
 const verifyOTP = asyncHandler(async (req, res) => {
   const { email, otp } = req.body;
   if (!email || !otp) return fail(res, 400, "Email and OTP are required");
+  if (!isStr(email) || !["string", "number"].includes(typeof otp)) return fail(res, 400, "Invalid input");
 
   const admin = await findAccount(email);
   if (!admin) return fail(res, 404, "No account found with this email");
@@ -234,6 +246,7 @@ const resetPassword = asyncHandler(async (req, res) => {
   if (!email || !newPassword || !resetToken) {
     return fail(res, 400, "Email, new password and reset token are required");
   }
+  if (!isStr(email, newPassword, resetToken)) return fail(res, 400, "Invalid input");
   if (newPassword.length < 6) return fail(res, 400, "Password must be at least 6 characters");
 
   let decoded;

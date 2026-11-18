@@ -353,9 +353,10 @@ function NavbarInner() {
   useLayoutEffect(() => {
     const measure = () => {
       if (navRef.current) {
-        setNavHeight(
-          navRef.current.getBoundingClientRect().height
-        );
+        const h = navRef.current.getBoundingClientRect().height;
+        setNavHeight(h);
+        // Shared with BackNavbar etc. so sticky bars never hide under the navbar
+        document.documentElement.style.setProperty("--nav-h", `${h}px`);
       }
     };
 
@@ -363,8 +364,16 @@ function NavbarInner() {
 
     window.addEventListener("resize", measure);
 
+    // logo / fonts loading can change the height after first paint
+    let ro;
+    if (typeof ResizeObserver !== "undefined" && navRef.current) {
+      ro = new ResizeObserver(measure);
+      ro.observe(navRef.current);
+    }
+
     return () => {
       window.removeEventListener("resize", measure);
+      ro?.disconnect();
     };
   }, [setNavHeight]);
 

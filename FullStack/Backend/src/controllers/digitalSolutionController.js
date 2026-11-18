@@ -1,3 +1,4 @@
+const { sendError } = require("../utils/handleError");
 const DigitalSolution = require("../models/DigitalSolution.model");
 
 // CREATE
@@ -40,11 +41,7 @@ const createDigitalSolution = async (req, res) => {
   } catch (error) {
     console.error("Create Digital Solution Error:", error);
 
-    return res.status(500).json({
-      success: false,
-      message: "Failed to submit architecture consultation request.",
-      error: error.message,
-    });
+    return sendError(res, error, "Failed to submit architecture consultation request.");
   }
 };
 
@@ -61,11 +58,7 @@ const getDigitalSolutions = async (req, res) => {
       data: solutions,
     });
   } catch (error) {
-    return res.status(500).json({
-      success: false,
-      message: "Failed to fetch architecture consultation requests.",
-      error: error.message,
-    });
+    return sendError(res, error, "Failed to fetch architecture consultation requests.");
   }
 };
 
@@ -86,11 +79,7 @@ const getDigitalSolutionById = async (req, res) => {
       data: solution,
     });
   } catch (error) {
-    return res.status(500).json({
-      success: false,
-      message: "Failed to fetch request.",
-      error: error.message,
-    });
+    return sendError(res, error, "Failed to fetch request.");
   }
 };
 
@@ -117,7 +106,7 @@ const updateDigitalSolutionStatus = async (req, res) => {
       req.params.id,
       { status },
       {
-        new: true,
+        returnDocument: "after",
         runValidators: true,
       }
     );
@@ -135,11 +124,7 @@ const updateDigitalSolutionStatus = async (req, res) => {
       data: solution,
     });
   } catch (error) {
-    return res.status(500).json({
-      success: false,
-      message: "Failed to update status.",
-      error: error.message,
-    });
+    return sendError(res, error, "Failed to update status.");
   }
 };
 
@@ -162,11 +147,7 @@ const deleteDigitalSolution = async (req, res) => {
       message: "Request deleted successfully.",
     });
   } catch (error) {
-    return res.status(500).json({
-      success: false,
-      message: "Failed to delete request.",
-      error: error.message,
-    });
+    return sendError(res, error, "Failed to delete request.");
   }
 };
 

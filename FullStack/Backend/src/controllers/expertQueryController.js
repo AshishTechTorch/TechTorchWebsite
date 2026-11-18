@@ -1,3 +1,4 @@
+const { sendError } = require("../utils/handleError");
 const ExpertQuery = require("../models/ExpertQuery.model");
 
 const createExpertQuery = async (req, res) => {
@@ -23,7 +24,7 @@ const createExpertQuery = async (req, res) => {
       return res.status(400).json({ success: false, message: msg });
     }
     console.error("Expert Query Error:", error);
-    res.status(500).json({ success: false, message: "Failed to submit your request." });
+    sendError(res, error, "Failed to submit your request.");
   }
 };
 

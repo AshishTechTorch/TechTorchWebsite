@@ -1,3 +1,4 @@
+const { sendError } = require("../utils/handleError");
 const Infromation = require("../models/information.model");
 
 // ======================================================
@@ -76,11 +77,7 @@ const createTechnologyEnquiry = async (req, res) => {
       });
     }
 
-    return res.status(500).json({
-      success: false,
-      message: "Failed to submit technology enquiry.",
-      error: error.message,
-    });
+    return sendError(res, error, "Failed to submit technology enquiry.");
   }
 };
 
@@ -107,11 +104,7 @@ const getTechnologyEnquiries = async (req, res) => {
       error
     );
 
-    return res.status(500).json({
-      success: false,
-      message: "Failed to fetch technology enquiries.",
-      error: error.message,
-    });
+    return sendError(res, error, "Failed to fetch technology enquiries.");
   }
 };
 
@@ -144,11 +137,7 @@ const getTechnologyEnquiryById = async (req, res) => {
       error
     );
 
-    return res.status(500).json({
-      success: false,
-      message: "Failed to fetch technology enquiry.",
-      error: error.message,
-    });
+    return sendError(res, error, "Failed to fetch technology enquiry.");
   }
 };
 
@@ -182,7 +171,7 @@ const updateTechnologyEnquiryStatus = async (req, res) => {
         req.params.id,
         { status },
         {
-          new: true,
+          returnDocument: "after",
           runValidators: true,
         }
       );
@@ -205,11 +194,7 @@ const updateTechnologyEnquiryStatus = async (req, res) => {
       error
     );
 
-    return res.status(500).json({
-      success: false,
-      message: "Failed to update enquiry status.",
-      error: error.message,
-    });
+    return sendError(res, error, "Failed to update enquiry status.");
   }
 };
 
@@ -243,11 +228,7 @@ const deleteTechnologyEnquiry = async (req, res) => {
       error
     );
 
-    return res.status(500).json({
-      success: false,
-      message: "Failed to delete technology enquiry.",
-      error: error.message,
-    });
+    return sendError(res, error, "Failed to delete technology enquiry.");
   }
 };
 

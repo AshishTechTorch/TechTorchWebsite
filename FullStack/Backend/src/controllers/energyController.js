@@ -1,3 +1,4 @@
+const { sendError } = require("../utils/handleError");
 const Energy = require("../models/energy.model");
 
 // ======================================================
@@ -98,12 +99,7 @@ const createEnergy = async (req, res) => {
       });
     }
 
-    return res.status(500).json({
-      success: false,
-      message:
-        "Failed to submit consultation enquiry.",
-      error: error.message,
-    });
+    return sendError(res, error, "Failed to submit consultation enquiry.");
   }
 };
 
@@ -130,12 +126,7 @@ const getEnergies = async (req, res) => {
       error
     );
 
-    return res.status(500).json({
-      success: false,
-      message:
-        "Failed to fetch consultations.",
-      error: error.message,
-    });
+    return sendError(res, error, "Failed to fetch consultations.");
   }
 };
 
@@ -168,12 +159,7 @@ const getEnergyById = async (req, res) => {
       error
     );
 
-    return res.status(500).json({
-      success: false,
-      message:
-        "Failed to fetch consultation.",
-      error: error.message,
-    });
+    return sendError(res, error, "Failed to fetch consultation.");
   }
 };
 
@@ -207,7 +193,7 @@ const updateEnergyStatus = async (req, res) => {
         req.params.id,
         { status },
         {
-          new: true,
+          returnDocument: "after",
           runValidators: true,
         }
       );
@@ -231,12 +217,7 @@ const updateEnergyStatus = async (req, res) => {
       error
     );
 
-    return res.status(500).json({
-      success: false,
-      message:
-        "Failed to update consultation status.",
-      error: error.message,
-    });
+    return sendError(res, error, "Failed to update consultation status.");
   }
 };
 
@@ -271,12 +252,7 @@ const deleteEnergy = async (req, res) => {
       error
     );
 
-    return res.status(500).json({
-      success: false,
-      message:
-        "Failed to delete consultation.",
-      error: error.message,
-    });
+    return sendError(res, error, "Failed to delete consultation.");
   }
 };
 

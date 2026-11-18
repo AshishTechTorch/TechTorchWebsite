@@ -84,7 +84,7 @@ const adminList = asyncHandler(async (req, res) => {
 const adminUpdateStatus = asyncHandler(async (req, res) => {
   if (!isId(req.params.id)) return fail(res, 400, "Invalid id");
   if (!STATUSES.includes(req.body.status)) return fail(res, 400, "Invalid status");
-  const doc = await Interest.findByIdAndUpdate(req.params.id, { status: req.body.status }, { new: true })
+  const doc = await Interest.findByIdAndUpdate(req.params.id, { status: req.body.status }, { returnDocument: "after" })
     .populate("candidate", "name email phone city headline");
   if (!doc) return fail(res, 404, "Not found");
   res.json({ success: true, data: doc });

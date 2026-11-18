@@ -1,3 +1,4 @@
+const { sendError } = require("../utils/handleError");
 const InsuranceIntake = require("../models/InsuranceIntake.model");
 
 // ======================================================
@@ -67,10 +68,7 @@ const createInsuranceIntake = async (req, res) => {
       });
     }
 
-    return res.status(500).json({
-      success: false,
-      message: "Failed to submit insurance intake.",
-    });
+    return sendError(res, error, "Failed to submit insurance intake.");
   }
 };
 
@@ -94,10 +92,7 @@ const getInsuranceIntakes = async (req, res) => {
   } catch (error) {
     console.error("Get Insurance Intakes Error:", error);
 
-    return res.status(500).json({
-      success: false,
-      message: "Failed to fetch insurance intakes.",
-    });
+    return sendError(res, error, "Failed to fetch insurance intakes.");
   }
 };
 
@@ -125,10 +120,7 @@ const getInsuranceIntakeById = async (req, res) => {
   } catch (error) {
     console.error("Get Insurance Intake Error:", error);
 
-    return res.status(500).json({
-      success: false,
-      message: "Failed to fetch insurance intake.",
-    });
+    return sendError(res, error, "Failed to fetch insurance intake.");
   }
 };
 
@@ -161,7 +153,7 @@ const updateInsuranceIntakeStatus = async (req, res) => {
       req.params.id,
       { status },
       {
-        new: true,
+        returnDocument: "after",
         runValidators: true,
       }
     );
@@ -181,10 +173,7 @@ const updateInsuranceIntakeStatus = async (req, res) => {
   } catch (error) {
     console.error("Update Insurance Status Error:", error);
 
-    return res.status(500).json({
-      success: false,
-      message: "Failed to update status.",
-    });
+    return sendError(res, error, "Failed to update status.");
   }
 };
 
@@ -213,10 +202,7 @@ const deleteInsuranceIntake = async (req, res) => {
   } catch (error) {
     console.error("Delete Insurance Intake Error:", error);
 
-    return res.status(500).json({
-      success: false,
-      message: "Failed to delete insurance intake.",
-    });
+    return sendError(res, error, "Failed to delete insurance intake.");
   }
 };
 

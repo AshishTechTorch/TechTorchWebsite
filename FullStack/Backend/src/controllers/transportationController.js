@@ -1,3 +1,4 @@
+const { sendError } = require("../utils/handleError");
 const Transportation = require(
   "../models/transportation.model"
 );
@@ -105,12 +106,7 @@ const createTransportation = async (req, res) => {
       });
     }
 
-    return res.status(500).json({
-      success: false,
-      message:
-        "Failed to submit transportation enquiry.",
-      error: error.message,
-    });
+    return sendError(res, error, "Failed to submit transportation enquiry.");
   }
 };
 
@@ -138,12 +134,7 @@ const getTransportations = async (req, res) => {
       error
     );
 
-    return res.status(500).json({
-      success: false,
-      message:
-        "Failed to fetch transportation enquiries.",
-      error: error.message,
-    });
+    return sendError(res, error, "Failed to fetch transportation enquiries.");
   }
 };
 
@@ -181,12 +172,7 @@ const getTransportationById = async (
       error
     );
 
-    return res.status(500).json({
-      success: false,
-      message:
-        "Failed to fetch transportation enquiry.",
-      error: error.message,
-    });
+    return sendError(res, error, "Failed to fetch transportation enquiry.");
   }
 };
 
@@ -223,7 +209,7 @@ const updateTransportationStatus = async (
         req.params.id,
         { status },
         {
-          new: true,
+          returnDocument: "after",
           runValidators: true,
         }
       );
@@ -248,12 +234,7 @@ const updateTransportationStatus = async (
       error
     );
 
-    return res.status(500).json({
-      success: false,
-      message:
-        "Failed to update transportation status.",
-      error: error.message,
-    });
+    return sendError(res, error, "Failed to update transportation status.");
   }
 };
 
@@ -292,12 +273,7 @@ const deleteTransportation = async (
       error
     );
 
-    return res.status(500).json({
-      success: false,
-      message:
-        "Failed to delete transportation enquiry.",
-      error: error.message,
-    });
+    return sendError(res, error, "Failed to delete transportation enquiry.");
   }
 };
 

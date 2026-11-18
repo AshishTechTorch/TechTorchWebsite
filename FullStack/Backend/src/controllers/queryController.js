@@ -1,3 +1,4 @@
+const { sendError } = require("../utils/handleError");
 const mongoose = require("mongoose");
 
 // Har public query/enquiry form ka model yahan register hai.
@@ -135,7 +136,7 @@ const listQueries = async (req, res) => {
     });
   } catch (error) {
     console.error("List Queries Error:", error);
-    res.status(500).json({ success: false, message: "Failed to fetch queries." });
+    sendError(res, error, "Failed to fetch queries.");
   }
 };
 
@@ -168,7 +169,7 @@ const queryStats = async (req, res) => {
     });
   } catch (error) {
     console.error("Query Stats Error:", error);
-    res.status(500).json({ success: false, message: "Failed to fetch query stats." });
+    sendError(res, error, "Failed to fetch query stats.");
   }
 };
 
@@ -185,7 +186,7 @@ const getQuery = async (req, res) => {
     });
   } catch (error) {
     console.error("Get Query Error:", error);
-    res.status(500).json({ success: false, message: "Failed to fetch query." });
+    sendError(res, error, "Failed to fetch query.");
   }
 };
 
@@ -199,13 +200,13 @@ const updateQueryStatus = async (req, res) => {
       return res.status(400).json({ success: false, message: "Invalid status." });
     }
     const doc = await src.model
-      .findByIdAndUpdate(req.params.id, { status }, { new: true, runValidators: true })
+      .findByIdAndUpdate(req.params.id, { status }, { returnDocument: "after", runValidators: true })
       .lean();
     if (!doc) return res.status(404).json({ success: false, message: "Query not found." });
     res.json({ success: true, message: "Status updated.", data: normalize(src, doc) });
   } catch (error) {
     console.error("Update Query Status Error:", error);
-    res.status(500).json({ success: false, message: "Failed to update status." });
+    sendError(res, error, "Failed to update status.");
   }
 };
 
@@ -219,7 +220,7 @@ const deleteQuery = async (req, res) => {
     res.json({ success: true, message: "Query deleted." });
   } catch (error) {
     console.error("Delete Query Error:", error);
-    res.status(500).json({ success: false, message: "Failed to delete query." });
+    sendError(res, error, "Failed to delete query.");
   }
 };
 

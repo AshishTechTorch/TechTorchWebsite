@@ -1,3 +1,4 @@
+const { sendError } = require("../utils/handleError");
 const FmcgConsultation = require(
   "../models/FmcgConsultation.model"
 );
@@ -84,11 +85,7 @@ const createFmcgConsultation = async (req, res) => {
       });
     }
 
-    return res.status(500).json({
-      success: false,
-      message:
-        "Failed to submit FMCG consultation request.",
-    });
+    return sendError(res, error, "Failed to submit FMCG consultation request.");
   }
 };
 
@@ -116,11 +113,7 @@ const getFmcgConsultations = async (req, res) => {
       error
     );
 
-    return res.status(500).json({
-      success: false,
-      message:
-        "Failed to fetch FMCG consultation requests.",
-    });
+    return sendError(res, error, "Failed to fetch FMCG consultation requests.");
   }
 };
 
@@ -152,11 +145,7 @@ const getFmcgConsultationById = async (req, res) => {
       error
     );
 
-    return res.status(500).json({
-      success: false,
-      message:
-        "Failed to fetch FMCG consultation.",
-    });
+    return sendError(res, error, "Failed to fetch FMCG consultation.");
   }
 };
 
@@ -193,7 +182,7 @@ const updateFmcgConsultationStatus = async (
         req.params.id,
         { status },
         {
-          new: true,
+          returnDocument: "after",
           runValidators: true,
         }
       );
@@ -216,10 +205,7 @@ const updateFmcgConsultationStatus = async (
       error
     );
 
-    return res.status(500).json({
-      success: false,
-      message: "Failed to update status.",
-    });
+    return sendError(res, error, "Failed to update status.");
   }
 };
 
@@ -254,10 +240,7 @@ const deleteFmcgConsultation = async (req, res) => {
       error
     );
 
-    return res.status(500).json({
-      success: false,
-      message: "Failed to delete FMCG consultation.",
-    });
+    return sendError(res, error, "Failed to delete FMCG consultation.");
   }
 };
 

@@ -1,3 +1,4 @@
+const { sendError } = require("../utils/handleError");
 const ExploreQuestion = require("../models/ExploreQuestion.model");
 
 // CREATE
@@ -37,11 +38,7 @@ const createExploreQuestion = async (req, res) => {
   } catch (error) {
     console.error("Create Explore Question Error:", error);
 
-    res.status(500).json({
-      success: false,
-      message: "Failed to submit question",
-      error: error.message,
-    });
+    sendError(res, error, "Failed to submit question");
   }
 };
 
@@ -60,11 +57,7 @@ const getExploreQuestions = async (req, res) => {
   } catch (error) {
     console.error("Get Explore Questions Error:", error);
 
-    res.status(500).json({
-      success: false,
-      message: "Failed to fetch questions",
-      error: error.message,
-    });
+    sendError(res, error, "Failed to fetch questions");
   }
 };
 
@@ -87,11 +80,7 @@ const getExploreQuestionById = async (req, res) => {
   } catch (error) {
     console.error("Get Explore Question By ID Error:", error);
 
-    res.status(500).json({
-      success: false,
-      message: "Failed to fetch question",
-      error: error.message,
-    });
+    sendError(res, error, "Failed to fetch question");
   }
 };
 
@@ -118,7 +107,7 @@ const updateExploreQuestionStatus = async (req, res) => {
       req.params.id,
       { status },
       {
-        new: true,
+        returnDocument: "after",
         runValidators: true,
       }
     );
@@ -138,11 +127,7 @@ const updateExploreQuestionStatus = async (req, res) => {
   } catch (error) {
     console.error("Update Status Error:", error);
 
-    res.status(500).json({
-      success: false,
-      message: "Failed to update status",
-      error: error.message,
-    });
+    sendError(res, error, "Failed to update status");
   }
 };
 
@@ -167,11 +152,7 @@ const deleteExploreQuestion = async (req, res) => {
   } catch (error) {
     console.error("Delete Explore Question Error:", error);
 
-    res.status(500).json({
-      success: false,
-      message: "Failed to delete question",
-      error: error.message,
-    });
+    sendError(res, error, "Failed to delete question");
   }
 };
 

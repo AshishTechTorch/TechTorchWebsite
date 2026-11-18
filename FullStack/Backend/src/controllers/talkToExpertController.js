@@ -1,3 +1,4 @@
+const { sendError } = require("../utils/handleError");
 const TalkToExpert = require("../models/TalkToExpert.model");
 
 const createTalkToExpert = async (req, res) => {
@@ -24,7 +25,7 @@ const createTalkToExpert = async (req, res) => {
       return res.status(400).json({ success: false, message: msg });
     }
     console.error("Talk To Expert Error:", error);
-    res.status(500).json({ success: false, message: "Failed to submit request." });
+    sendError(res, error, "Failed to submit request.");
   }
 };
 

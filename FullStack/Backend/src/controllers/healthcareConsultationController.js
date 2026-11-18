@@ -1,3 +1,4 @@
+const { sendError } = require("../utils/handleError");
 const HealthcareConsultation = require(
   "../models/HealthcareConsultation.model"
 );
@@ -81,11 +82,7 @@ const createHealthcareConsultation = async (req, res) => {
       });
     }
 
-    return res.status(500).json({
-      success: false,
-      message:
-        "Failed to submit healthcare consultation request.",
-    });
+    return sendError(res, error, "Failed to submit healthcare consultation request.");
   }
 };
 
@@ -113,11 +110,7 @@ const getHealthcareConsultations = async (req, res) => {
       error
     );
 
-    return res.status(500).json({
-      success: false,
-      message:
-        "Failed to fetch healthcare consultation requests.",
-    });
+    return sendError(res, error, "Failed to fetch healthcare consultation requests.");
   }
 };
 
@@ -150,11 +143,7 @@ const getHealthcareConsultationById = async (req, res) => {
       error
     );
 
-    return res.status(500).json({
-      success: false,
-      message:
-        "Failed to fetch healthcare consultation request.",
-    });
+    return sendError(res, error, "Failed to fetch healthcare consultation request.");
   }
 };
 
@@ -191,7 +180,7 @@ const updateHealthcareConsultationStatus = async (
         req.params.id,
         { status },
         {
-          new: true,
+          returnDocument: "after",
           runValidators: true,
         }
       );
@@ -215,10 +204,7 @@ const updateHealthcareConsultationStatus = async (
       error
     );
 
-    return res.status(500).json({
-      success: false,
-      message: "Failed to update status.",
-    });
+    return sendError(res, error, "Failed to update status.");
   }
 };
 
@@ -254,11 +240,7 @@ const deleteHealthcareConsultation = async (req, res) => {
       error
     );
 
-    return res.status(500).json({
-      success: false,
-      message:
-        "Failed to delete healthcare consultation.",
-    });
+    return sendError(res, error, "Failed to delete healthcare consultation.");
   }
 };
 

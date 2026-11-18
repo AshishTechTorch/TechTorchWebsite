@@ -1,3 +1,4 @@
+const { sendError } = require("../utils/handleError");
 const DataDecision = require("../models/dataDecision.model");
 
 // CREATE
@@ -34,10 +35,7 @@ const createDataDecision = async (req, res) => {
 
     console.error("Create Data Decision Error:", error);
 
-    return res.status(500).json({
-      success: false,
-      message: "Server error",
-    });
+    return sendError(res, error, "Server error");
   }
 };
 
@@ -54,11 +52,7 @@ const getDataDecisions = async (req, res) => {
   } catch (error) {
     console.error("Get Data Decisions Error:", error);
 
-    return res.status(500).json({
-      success: false,
-      message: "Server error",
-      error: error.message,
-    });
+    return sendError(res, error, "Server error");
   }
 };
 
@@ -81,11 +75,7 @@ const getDataDecisionById = async (req, res) => {
   } catch (error) {
     console.error("Get Data Decision Error:", error);
 
-    return res.status(500).json({
-      success: false,
-      message: "Server error",
-      error: error.message,
-    });
+    return sendError(res, error, "Server error");
   }
 };
 
@@ -98,7 +88,7 @@ const updateDataDecisionStatus = async (req, res) => {
       req.params.id,
       { status },
       {
-        new: true,
+        returnDocument: "after",
         runValidators: true,
       }
     );
@@ -118,11 +108,7 @@ const updateDataDecisionStatus = async (req, res) => {
   } catch (error) {
     console.error("Update Status Error:", error);
 
-    return res.status(500).json({
-      success: false,
-      message: "Server error",
-      error: error.message,
-    });
+    return sendError(res, error, "Server error");
   }
 };
 
@@ -145,10 +131,7 @@ const deleteDataDecision = async (req, res) => {
   } catch (error) {
     console.error("Delete Data Decision Error:", error);
 
-    return res.status(500).json({
-      success: false,
-      message: "Server error",
-    });
+    return sendError(res, error, "Server error");
   }
 };
 
