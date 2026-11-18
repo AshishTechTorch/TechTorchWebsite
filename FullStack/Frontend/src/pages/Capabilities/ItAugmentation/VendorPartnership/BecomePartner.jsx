@@ -192,8 +192,8 @@ export default function BecomePartner() {
 
           <div className="bp-hero-image-wrapper">
 
-            <img
-              src="/BecomePartner.png"
+            <img loading="lazy" decoding="async"
+              src="/BecomePartner.webp"
               alt="Technology Partnership"
               className="bp-hero-image"
             />

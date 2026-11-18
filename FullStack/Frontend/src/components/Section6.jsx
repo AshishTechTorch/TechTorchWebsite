@@ -4,32 +4,32 @@ import { Link } from "react-router-dom";
 const CARDS = [
   {
     title: "Platforms",
-    img: "/card1.png",
+    img: "/card1.webp",
     href: "/platform",
   },
   {
     title: "Digital Solutions",
-    img: "/card2.png",
+    img: "/card2.webp",
     href: "/digitalsolution",
   },
   {
     title: "Our Services",
-    img: "/card3.png",
+    img: "/card3.webp",
     href: "/OurService",
   },
   // {
   //   title: "Business Process Outsourcing",
-  //   img: "/card4.png",
+  //   img: "/card4.webp",
   //   href: "/business-process-outsourcing",
   // },
   {
     title: "IT Augmentation Service",
-    img: "/card5.png",
+    img: "/card5.webp",
     href: "/ItAugmentation",
   },
   {
     title: "Artificial Intelligent",
-    img: "/card6.png",
+    img: "/card6.webp",
     href: "/ArtificialIntelligent",
   },
 ];
@@ -45,7 +45,7 @@ function Card({ title, img, href, position }) {
       aria-hidden={Math.abs(position) > 1}
     >
       <div className="cap-card-art">
-        <img
+        <img loading="lazy" decoding="async"
           src={img}
           alt={title}
           className="cap-card-img"

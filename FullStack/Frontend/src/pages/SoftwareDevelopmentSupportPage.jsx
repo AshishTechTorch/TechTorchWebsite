@@ -192,8 +192,8 @@ export default function SoftwareDevelopmentSupportPage() {
 
           <div className="relative mx-auto w-full max-w-[520px] pb-4 pt-4">
             <div className="absolute -right-3 -top-3 h-[92%] w-[92%] rounded-2xl bg-[#f6e9f0]" />
-            <img
-              src="/software-hero.png"
+            <img loading="lazy" decoding="async"
+              src="/software-hero.webp"
               alt="Developer working at a multi-monitor desk"
               className="relative h-[330px] w-full rounded-2xl object-cover shadow-[0_24px_50px_rgba(15,23,42,0.22)] md:h-[380px]"
             />
@@ -209,8 +209,8 @@ export default function SoftwareDevelopmentSupportPage() {
               className="absolute -left-3 -top-3 h-16 w-[40%] rounded-tl-2xl"
               style={{ background: PLUM }}
             />
-            <img
-              src="/software-about.png"
+            <img loading="lazy" decoding="async"
+              src="/software-about.webp"
               alt="Developer working on code in a dark office"
               className="relative h-[250px] w-full rounded-2xl object-cover shadow-[0_20px_40px_rgba(15,23,42,0.22)]"
             />
@@ -351,8 +351,8 @@ export default function SoftwareDevelopmentSupportPage() {
               className="absolute -left-3 top-1/4 h-24 w-6 rounded-l-xl"
               style={{ background: PLUM }}
             />
-            <img
-              src="/software-sectors.png"
+            <img loading="lazy" decoding="async"
+              src="/software-sectors.webp"
               alt="Digital city skyline with cloud network overlay"
               className="relative h-[260px] w-full rounded-2xl object-cover shadow-[0_20px_40px_rgba(15,23,42,0.25)] md:h-[300px]"
             />
@@ -479,8 +479,8 @@ export default function SoftwareDevelopmentSupportPage() {
           </div>
 
           <div className="relative mx-auto w-full max-w-[400px] pb-5 pt-5">
-            <img
-              src="/software-cta.png"
+            <img loading="lazy" decoding="async"
+              src="/software-cta.webp"
               alt="Laptop showing secure software dashboards"
               className="h-[200px] w-full rounded-xl object-cover shadow-xl"
             />

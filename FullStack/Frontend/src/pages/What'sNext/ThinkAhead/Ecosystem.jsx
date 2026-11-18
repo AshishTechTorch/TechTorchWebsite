@@ -25,7 +25,7 @@ export default function EcosystemHeroSection() {
           bg-no-repeat
         "
         style={{
-          backgroundImage: "url('/Ecosystem.png')",
+          backgroundImage: "url('/Ecosystem.webp')",
         }}
       />
 

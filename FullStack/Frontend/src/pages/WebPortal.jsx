@@ -64,31 +64,31 @@ const industries = [
   {
     Icon: GraduationCap,
     title: "Education",
-    image: "/portal-education.png",
+    image: "/portal-education.webp",
     text: "Organize access to institutional information and digital resources.",
   },
   {
     Icon: Plus,
     title: "Healthcare",
-    image: "/portal-healthcare.png",
+    image: "/portal-healthcare.webp",
     text: "Support convenient access to relevant information and services for authorized users.",
   },
   {
     Icon: ShoppingCart,
     title: "E-Commerce",
-    image: "/portal-ecommerce.png",
+    image: "/portal-ecommerce.webp",
     text: "Create accessible digital touchpoints for customer and business interactions.",
   },
   {
     Icon: Settings,
     title: "Manufacturing",
-    image: "/portal-manufacturing.png",
+    image: "/portal-manufacturing.webp",
     text: "Connect users with operational information and business resources.",
   },
   {
     Icon: Building2,
     title: "Finance",
-    image: "/portal-finance.png",
+    image: "/portal-finance.webp",
     text: "Structure access to relevant information and services according to user permissions.",
   },
 ];
@@ -180,8 +180,8 @@ export default function WebPortalsPage() {
               style={{ background: PLUM }}
             />
             <div className="relative rounded-2xl bg-white p-3 shadow-[0_20px_40px_rgba(15,23,42,0.2)]">
-              <img
-                src="/portal-hero.png"
+              <img loading="lazy" decoding="async"
+                src="/portal-hero.webp"
                 alt="Connected web portal dashboard on a laptop"
                 className="h-[280px] w-full rounded-lg object-cover md:h-[320px]"
               />
@@ -218,8 +218,8 @@ export default function WebPortalsPage() {
               className="absolute -bottom-3 -right-3 h-16 w-[30%] rounded-br-2xl"
               style={{ background: PLUM }}
             />
-            <img
-              src="/portal-team.png"
+            <img loading="lazy" decoding="async"
+              src="/portal-team.webp"
               alt="Team reviewing a portal dashboard together"
               className="relative h-[320px] w-full rounded-2xl border-4 border-white object-cover shadow-[0_20px_40px_rgba(15,23,42,0.18)] md:h-[360px]"
             />
@@ -323,7 +323,7 @@ export default function WebPortalsPage() {
                 key={title}
                 className="rounded-xl border border-gray-100 bg-white p-3 shadow-sm"
               >
-                <img
+                <img loading="lazy" decoding="async"
                   src={image}
                   alt=""
                   className="h-[96px] w-full rounded-md object-cover"
@@ -375,8 +375,8 @@ export default function WebPortalsPage() {
         <Eyebrow>Delivering Solutions Powered By</Eyebrow>
 
         {/* Replace this image with your real partner logos */}
-        <img
-          src="/portal-partners.png"
+        <img loading="lazy" decoding="async"
+          src="/portal-partners.webp"
           alt="Technology partners: AWS, Google, DELL and others"
           className="mt-8 h-auto w-full max-w-[1100px] object-contain"
         />

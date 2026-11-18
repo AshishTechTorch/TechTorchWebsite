@@ -177,8 +177,8 @@ export default function ProjectManagementSolutionsPage() {
           {/* Hero visual */}
           <div className="relative mx-auto w-full max-w-[580px] pb-14 pt-16 sm:pl-16">
             <div className="relative rounded-2xl bg-white p-1.5 shadow-[0_24px_50px_rgba(15,23,42,0.22)]">
-              <img
-                src="/project-hero.png"
+              <img loading="lazy" decoding="async"
+                src="/project-hero.webp"
                 alt="Team collaborating around a project board"
                 className="h-[300px] w-full rounded-xl object-cover md:h-[340px]"
               />
@@ -255,8 +255,8 @@ export default function ProjectManagementSolutionsPage() {
         <div className="grid items-center gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
           <div className="relative mx-auto w-full max-w-[520px]">
             <div className="rounded-3xl bg-white p-3 shadow-[0_20px_40px_rgba(15,23,42,0.15)]">
-              <img
-                src="/project-about.png"
+              <img loading="lazy" decoding="async"
+                src="/project-about.webp"
                 alt="Project timeline displayed on a laptop"
                 className="h-[320px] w-full rounded-2xl object-cover md:h-[370px]"
               />

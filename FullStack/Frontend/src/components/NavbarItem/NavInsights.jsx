@@ -8,8 +8,8 @@ import {
   FileText,
   ArrowRight,
 } from "lucide-react";
-import image2 from "../../assets/image2.png";
-import image3 from "../../assets/image3.png";
+import image2 from "../../assets/image2.webp";
+import image3 from "../../assets/image3.webp";
 
 /* Edit the short descriptions freely */
 const links = [

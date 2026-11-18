@@ -8,7 +8,6 @@ export default function BuildOnlineBusinessCtaSection() {
   return (
     <section className="build-online-cta-section">
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
 
         /* =========================================
            SECTION
@@ -374,8 +373,8 @@ export default function BuildOnlineBusinessCtaSection() {
 
       {/* ================= BACKGROUND IMAGE ================= */}
       <div className="build-online-bg">
-        <img
-          src="/ecommerce3.png"
+        <img loading="lazy" decoding="async"
+          src="/ecommerce3.webp"
           alt="Building online business with technology"
         />
       </div>

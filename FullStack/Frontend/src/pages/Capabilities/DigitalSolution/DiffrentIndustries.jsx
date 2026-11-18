@@ -16,7 +16,7 @@ const INDUSTRIES = [
     description:
       "Automated ledger reconciliation, risk modeling pipelines, KYC orchestration, and institutional transactional security compliance.",
     focus: "Bank-Grade Integrity",
-    image: "/banking.png",
+    image: "/banking.webp",
     alt: "Financial analysts working at a trading floor",
   },
   {
@@ -26,7 +26,7 @@ const INDUSTRIES = [
     description:
       "HIPAA-compliant EHR integrations, telehealth routing, bedside staff management, and patient portal lifecycle orchestration.",
     focus: "Zero-Latency Care Data",
-    image: "/healthcare.png",
+    image: "/healthcare.webp",
     alt: "Clinicians reviewing a patient chart in a hospital",
   },
   {
@@ -36,7 +36,7 @@ const INDUSTRIES = [
     description:
       "Shop floor IoT telemetry, automated bill-of-materials scheduling, equipment maintenance prediction, and supplier traceability.",
     focus: "Continuous Throughput",
-    image: "/industrial.png",
+    image: "/industrial.webp",
     alt: "Robotic arm on a manufacturing production line",
   },
   {
@@ -46,7 +46,7 @@ const INDUSTRIES = [
     description:
       "High-concurrency checkout engines, dynamic multi-warehouse catalog sync, personalized merchandising, and returns automation.",
     focus: "Sub-Second Conversion",
-    image: "/retail.png",
+    image: "/retail.webp",
     alt: "Automated fulfillment warehouse with shelving units",
   },
   {
@@ -56,7 +56,7 @@ const INDUSTRIES = [
     description:
       "Dynamic multi-modal route optimization, fleet dispatch telematics, warehouse sorting intelligence, and customs documentation.",
     focus: "Live Transit Transparency",
-    image: "/logistic.png",
+    image: "/logistic.webp",
     alt: "Logistics team monitoring fleet dispatch screens",
   },
   {
@@ -66,7 +66,7 @@ const INDUSTRIES = [
     description:
       "Smart grid asset tracking, billing convergence across millions of subscribers, predictive outage alerts, and field service dispatch.",
     focus: "High-Availability Scale",
-    image: "/energy.png",
+    image: "/energy.webp",
     alt: "Control room operators monitoring energy grid dashboards",
   },
 ];
@@ -170,7 +170,7 @@ export default function IndustriesSection() {
                   {/* ================= IMAGE ================= */}
 
                   <div className="industry-image-wrapper">
-                    <img
+                    <img loading="lazy" decoding="async"
                       src={image}
                       alt={alt}
                       className="industry-image"

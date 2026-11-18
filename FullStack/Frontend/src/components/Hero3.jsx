@@ -114,7 +114,7 @@ export default function Hero3() {
                 `}
               >
                 <img
-                  src="/Sec3.2.png"
+                  src="/Sec3.2.webp"
                   alt="Understand"
                   className="w-full h-auto object-cover"
                 />
@@ -227,7 +227,7 @@ export default function Hero3() {
                 `}
               >
                 <img
-                  src="/Sec3.3.png"
+                  src="/Sec3.3.webp"
                   alt="Build"
                   className="w-full h-auto object-cover"
                 />
@@ -340,7 +340,7 @@ export default function Hero3() {
                 `}
               >
                 <img
-                  src="/Sec3.4.png"
+                  src="/Sec3.4.webp"
                   alt="Grow"
                   className="w-full h-auto object-cover"
                 />
@@ -505,7 +505,7 @@ export default function Hero3() {
               "
             >
               <img
-                src="/Sec3.1.png"
+                src="/Sec3.1.webp"
                 alt="TechTorch Solutions"
                 className="w-full h-full object-cover object-center"
               />

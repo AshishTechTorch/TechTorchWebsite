@@ -14,14 +14,14 @@ const capabilities = [
     title: "ARTIFICIAL INTELLIGENCE",
     description:
       "AI capabilities that allow organizations to explore intelligent solutions without internal maintenance overhead.",
-    image: "/Ai integration.png",
+    image: "/Ai integration.webp",
   },
   {
     number: "03",
     title: "CLOUD INFRASTRUCTURE",
     description:
       "Scalable infrastructure designed to support evolving enterprise IT requirements and high availability.",
-    image: "/Professionalenterprise.png",
+    image: "/Professionalenterprise.webp",
   },
   {
     number: "04",
@@ -36,7 +36,7 @@ const capabilities = [
     title: "SOFTWARE ENGINEERING",
     description:
       "Engineering expertise focused on mission-critical technical and operational requirements.",
-    image: "/Engineering visualization.png",
+    image: "/Engineering visualization.webp",
   },
   {
     number: "06",
@@ -51,7 +51,7 @@ const capabilities = [
   //   title: "BPO SERVICES",
   //   description:
   //     "Technology-enabled operational support designed to improve efficiency and focus on core priorities.",
-  //   image: "/Executiveboardmeeting.png",
+  //   image: "/Executiveboardmeeting.webp",
   // },
   {
     number: "07",
@@ -91,7 +91,7 @@ export default function TechnologyCapabilities() {
           {capabilities.map((item) => (
             <article className="technology-card" key={item.number}>
               <div className="technology-image-wrapper">
-                <img
+                <img loading="lazy" decoding="async"
                   src={item.image}
                   alt={item.title}
                   className="technology-image"

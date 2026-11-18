@@ -223,8 +223,8 @@ case "phone":
           </div>
 
           <div className="contact-hero-image-wrapper">
-            <img
-              src="/StartConversation.png"
+            <img loading="lazy" decoding="async"
+              src="/StartConversation.webp"
               alt="Business conversation"
               className="contact-hero-image"
             />
@@ -830,8 +830,8 @@ case "phone":
 
 
           <div className="question-illustration">
-            <img
-              src="/Question.png"
+            <img loading="lazy" decoding="async"
+              src="/Question.webp"
               alt="Question illustration"
             />
           </div>

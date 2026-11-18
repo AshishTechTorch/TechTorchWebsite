@@ -1,3 +1,4 @@
+const { sendError } = require("../utils/handleError");
 const Needs = require("../models/Needs.model");
 
 // CREATE
@@ -43,11 +44,7 @@ const createNeeds = async (req, res) => {
   } catch (error) {
     console.error("Create Needs Error:", error);
 
-    return res.status(500).json({
-      success: false,
-      message: "Failed to submit enquiry",
-      error: error.message,
-    });
+    return sendError(res, error, "Failed to submit enquiry");
   }
 };
 
@@ -66,11 +63,7 @@ const getNeeds = async (req, res) => {
   } catch (error) {
     console.error("Get Needs Error:", error);
 
-    return res.status(500).json({
-      success: false,
-      message: "Failed to fetch enquiries",
-      error: error.message,
-    });
+    return sendError(res, error, "Failed to fetch enquiries");
   }
 };
 
@@ -93,11 +86,7 @@ const getNeedsById = async (req, res) => {
   } catch (error) {
     console.error("Get Needs By ID Error:", error);
 
-    return res.status(500).json({
-      success: false,
-      message: "Failed to fetch enquiry",
-      error: error.message,
-    });
+    return sendError(res, error, "Failed to fetch enquiry");
   }
 };
 
@@ -124,7 +113,7 @@ const updateNeedsStatus = async (req, res) => {
       req.params.id,
       { status },
       {
-        new: true,
+        returnDocument: "after",
         runValidators: true,
       }
     );
@@ -144,11 +133,7 @@ const updateNeedsStatus = async (req, res) => {
   } catch (error) {
     console.error("Update Needs Status Error:", error);
 
-    return res.status(500).json({
-      success: false,
-      message: "Failed to update status",
-      error: error.message,
-    });
+    return sendError(res, error, "Failed to update status");
   }
 };
 
@@ -171,11 +156,7 @@ const deleteNeeds = async (req, res) => {
   } catch (error) {
     console.error("Delete Needs Error:", error);
 
-    return res.status(500).json({
-      success: false,
-      message: "Failed to delete enquiry",
-      error: error.message,
-    });
+    return sendError(res, error, "Failed to delete enquiry");
   }
 };
 

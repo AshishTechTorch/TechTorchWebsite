@@ -26,7 +26,7 @@ const services = [
       "Digital Transformation Feasibility",
     ],
     cta: "Consult with Architects",
-    image: "/digital solution.png",
+    image: "/digital solution.webp",
   },
   {
     icon: Zap,
@@ -39,7 +39,7 @@ const services = [
       "Pragmatic Enterprise AI Integration",
     ],
     cta: "Explore AI Capabilities",
-    image: "/Ai integration.png",
+    image: "/Ai integration.webp",
   },
   {
     icon: Cloud,
@@ -52,7 +52,7 @@ const services = [
       "24/7 Resilience & Performance Engineering",
     ],
     cta: "Scale Your Cloud",
-    image: "/Analysis.png",
+    image: "/Analysis.webp",
   },
   {
     icon: ShieldCheck,
@@ -65,7 +65,7 @@ const services = [
       "Continuous Monitoring & Incident Protocols",
     ],
     cta: "Review Security Posture",
-    image: "/Security.png",
+    image: "/Security.webp",
   },
   {
     icon: Code2,
@@ -78,7 +78,7 @@ const services = [
       "High-Throughput Performance Engineering",
     ],
     cta: "Explore Engineering Lifecycle",
-    image: "/Enterprise AI command center.png",
+    image: "/Enterprise AI command center.webp",
   },
   {
     icon: Database,
@@ -91,7 +91,7 @@ const services = [
       "SLA-backed 24/7 Technical Support",
     ],
     cta: "Build & Maintain Software",
-    image: "/Modernexecutive.png",
+    image: "/Modernexecutive.webp",
   },
   {
     icon: RefreshCw,
@@ -104,7 +104,7 @@ const services = [
       "Standardized Quality & Governance SLAs",
     ],
     cta: "Optimize Workflows",
-    image: "/Ecosystem.png",
+    image: "/Ecosystem.webp",
   },
   {
     icon: Users,
@@ -117,7 +117,7 @@ const services = [
       "Rapid Deployment & Fast Machine Onboarding",
     ],
     cta: "Access Specialized Talent",
-    image: "/Card4hero.png",
+    image: "/Card4hero.webp",
   },
 ];
 
@@ -135,7 +135,7 @@ function ServiceCard({ service }) {
       ================================================= */}
 
       <div className="service-card-image-wrap">
-        <img
+        <img loading="lazy" decoding="async"
           src={service.image}
           alt={service.title}
           className="service-card-image"

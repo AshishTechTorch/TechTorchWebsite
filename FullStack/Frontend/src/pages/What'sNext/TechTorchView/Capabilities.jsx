@@ -3,28 +3,28 @@ const OFFERINGS = [
     title: "Generative AI Integration",
     description:
       "Deploy secure, fine-tuned LLMs within your corporate firewall to automate content generation, enhance internal knowledge discovery, and streamline complex reporting workflows without compromising data privacy.",
-    image: "/Ai integration.png",
+    image: "/Ai integration.webp",
     alt: "Analyst interacting with a neural network visualization on screen",
   },
   {
     title: "Predictive Analytics",
     description:
       "Harness historical data patterns to forecast market shifts, optimize supply chain logistics, and identify operational bottlenecks before they impact the bottom line. Built on highly interpretable machine learning models.",
-    image: "/Analysis.png",
+    image: "/Analysis.webp",
     alt: "Team reviewing predictive analytics dashboards",
   },
   {
     title: "AI Governance & Security",
     description:
       "Establish comprehensive frameworks for AI transparency, bias mitigation, and regulatory compliance. Our security protocols ensure that model outputs are auditable, explainable, and aligned with corporate standards.",
-    image: "/Security.png",
+    image: "/Security.webp",
     alt: "Security operations team monitoring AI governance dashboards",
   },
   {
     title: "Autonomous Agents",
     description:
       "Develop specialized, role-based AI agents capable of executing multi-step business processes independently. From level-1 IT support resolution to dynamic price optimization, scale operations infinitely.",
-    image: "/agent.png",
+    image: "/agent.webp",
     alt: "Professional configuring an autonomous agent interface on a tablet",
   },
 ];

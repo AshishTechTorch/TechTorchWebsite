@@ -1,35 +1,35 @@
-import React, { useEffect } from "react";
+import React, { useEffect, lazy, Suspense } from "react";
 import "./App.css";
 
 import { Routes, Route, Outlet, Navigate, useLocation } from "react-router-dom";
 import { adminRoutes } from "./admin/routes.jsx";
-import AccessPage from "./account/AccessPage.jsx";
-import CandidateDashboard from "./account/CandidateDashboard.jsx";
-import Careers from "./pages/Careers.jsx";
-import Blogs from "./pages/Blogs.jsx";
-import BlogDetail from "./pages/BlogDetail.jsx";
-import PrivacyPolicy from "./pages/PrivacyPolicy.jsx";
+const AccessPage = lazy(() => import("./account/AccessPage.jsx"));
+const CandidateDashboard = lazy(() => import("./account/CandidateDashboard.jsx"));
+const Careers = lazy(() => import("./pages/Careers.jsx"));
+const Blogs = lazy(() => import("./pages/Blogs.jsx"));
+const BlogDetail = lazy(() => import("./pages/BlogDetail.jsx"));
+const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy.jsx"));
 import FormAuthGuard from "./components/FormAuthGuard.jsx";
 import PermissionGate from "./components/PermissionGate.jsx";
-import TalkToExpert from "./components/TalkToExpert";
-import TechTorchWay from "./pages/TechTorchWay.jsx";
-import CaseStudies from "./pages/CaseStudies.jsx";
-import OperationsManagement from "./pages/What'sNext/FieldNote/IntegratedCapabilities/OpManagement.jsx";
-import CultureInclusion from "./pages/CultureInclusion.jsx";  
-import PeopleManagementPage from "./pages/PeopleManagement.jsx";
-import WebPortalsPage from "./pages/WebPortal.jsx";
-import PaymentManagement from "./pages/PaymentManagement.jsx";
-import HealthcareHospitalManagementPage from "./pages/HealthcareHospitalManagementPage.jsx";
-import CrmSolutionsPage from "./pages/CrmSolutionsPage.jsx";
-import EcommerceSolutionsPage from "./pages/EcommerceSolutionsPage.jsx";
-import ProjectManagementSolutionsPage from "./pages/ProjectManagementSolutionsPage.jsx";
-import AviationManagement from "./pages/Capabilities/DigitalSolution/AviationManagement.jsx";
-import SupplyChainManagement from "./pages/Capabilities/DigitalSolution/SupplyChainManagement.jsx";
-import SoftwareDevelopmentSupportPage from "./pages/SoftwareDevelopmentSupportPage.jsx";
-import ResourceStaffingPage from "./pages/ResourceStaffingPage.jsx";
-import CloudInfrastructurePage from "./pages/CloudInfrastructurePage.jsx";
-import SoftwareEngineeringOutsourcingPage from "./pages/SoftwareEngineeringOutsourcingPage.jsx";
-import ITConsultancyPage from "./pages/ITConsultancyPage.jsx";
+const TalkToExpert = lazy(() => import("./components/TalkToExpert"));
+const TechTorchWay = lazy(() => import("./pages/TechTorchWay.jsx"));
+const CaseStudies = lazy(() => import("./pages/CaseStudies.jsx"));
+const OperationsManagement = lazy(() => import("./pages/What'sNext/FieldNote/IntegratedCapabilities/OpManagement.jsx"));
+const CultureInclusion = lazy(() => import("./pages/CultureInclusion.jsx"));
+const PeopleManagementPage = lazy(() => import("./pages/PeopleManagement.jsx"));
+const WebPortalsPage = lazy(() => import("./pages/WebPortal.jsx"));
+const PaymentManagement = lazy(() => import("./pages/PaymentManagement.jsx"));
+const HealthcareHospitalManagementPage = lazy(() => import("./pages/HealthcareHospitalManagementPage.jsx"));
+const CrmSolutionsPage = lazy(() => import("./pages/CrmSolutionsPage.jsx"));
+const EcommerceSolutionsPage = lazy(() => import("./pages/EcommerceSolutionsPage.jsx"));
+const ProjectManagementSolutionsPage = lazy(() => import("./pages/ProjectManagementSolutionsPage.jsx"));
+const AviationManagement = lazy(() => import("./pages/Capabilities/DigitalSolution/AviationManagement.jsx"));
+const SupplyChainManagement = lazy(() => import("./pages/Capabilities/DigitalSolution/SupplyChainManagement.jsx"));
+const SoftwareDevelopmentSupportPage = lazy(() => import("./pages/SoftwareDevelopmentSupportPage.jsx"));
+const ResourceStaffingPage = lazy(() => import("./pages/ResourceStaffingPage.jsx"));
+const CloudInfrastructurePage = lazy(() => import("./pages/CloudInfrastructurePage.jsx"));
+const SoftwareEngineeringOutsourcingPage = lazy(() => import("./pages/SoftwareEngineeringOutsourcingPage.jsx"));
+const ITConsultancyPage = lazy(() => import("./pages/ITConsultancyPage.jsx"));
 import PromoPopup from "./components/PromoPopup.jsx";
 
 // =================================================
@@ -53,409 +53,409 @@ import Section8 from "./components/section8";
 import Section9 from "./components/section9";
 
 
-import ExploreSolutions from "./pages/ExploreSolutions.jsx";
-import ERP from "./pages/ERP.jsx";
-import ErpSolutions from "./pages/ErpSolutions.jsx";
-import BuildTechTorch from "./pages/BuildTechTorch.jsx";
-import TechnologyServices from "./pages/TechnologyServices.jsx";
-import TorchXSuite from "./pages/TorchXSuite.jsx";
+const ExploreSolutions = lazy(() => import("./pages/ExploreSolutions.jsx"));
+const ERP = lazy(() => import("./pages/ERP.jsx"));
+const ErpSolutions = lazy(() => import("./pages/ErpSolutions.jsx"));
+const BuildTechTorch = lazy(() => import("./pages/BuildTechTorch.jsx"));
+const TechnologyServices = lazy(() => import("./pages/TechnologyServices.jsx"));
+const TorchXSuite = lazy(() => import("./pages/TorchXSuite.jsx"));
 
 // =================================================
 // OUR STORY
 // =================================================
-import PhiosophySection from "./pages/OurStory/PhilosophySection.jsx";
-import EnterpriseHero from "./pages/OurStory/EnterpriseReadiness.jsx";
-import ScaleAtSpeed from "./pages/OurStory/ScaleAtSpeed.jsx";
-import CoreFoundation from "./pages/OurStory/CoreFoundation.jsx";
-import StrategicCapabilities from "./pages/OurStory/StrategicCapabilities.jsx";
-import TransformationForm from "./pages/OurStory/TransformationForm.jsx";
+const PhiosophySection = lazy(() => import("./pages/OurStory/PhilosophySection.jsx"));
+const EnterpriseHero = lazy(() => import("./pages/OurStory/EnterpriseReadiness.jsx"));
+const ScaleAtSpeed = lazy(() => import("./pages/OurStory/ScaleAtSpeed.jsx"));
+const CoreFoundation = lazy(() => import("./pages/OurStory/CoreFoundation.jsx"));
+const StrategicCapabilities = lazy(() => import("./pages/OurStory/StrategicCapabilities.jsx"));
+const TransformationForm = lazy(() => import("./pages/OurStory/TransformationForm.jsx"));
 
 // =================================================
 // KNOW MORE
 // =================================================
-import EnterpriseAcceleration from "./pages/KnowMore/EnterpriseAcceleration.jsx";
-import PracticalIntelligence from "./pages/KnowMore/PracticalIntelligence.jsx";
-import ProvenImpact from "./pages/KnowMore/ProvenImpact.jsx";
-import TransformationReady from "./pages/KnowMore/TransformationReady.jsx";
+const EnterpriseAcceleration = lazy(() => import("./pages/KnowMore/EnterpriseAcceleration.jsx"));
+const PracticalIntelligence = lazy(() => import("./pages/KnowMore/PracticalIntelligence.jsx"));
+const ProvenImpact = lazy(() => import("./pages/KnowMore/ProvenImpact.jsx"));
+const TransformationReady = lazy(() => import("./pages/KnowMore/TransformationReady.jsx"));
 
 // =================================================
 // TECHTORCH VIEW
 // =================================================
-import TechTorchView from "./pages/What'sNext/TechTorchView/TechTorchView.jsx";
-import Philosophy from "./pages/What'sNext/TechTorchView/Philosophy.jsx";
-import Capabilities from "./pages/What'sNext/TechTorchView/Capabilities.jsx";
-import Methodology from "./pages/What'sNext/TechTorchView/DeploymentMethodology.jsx";
+const TechTorchView = lazy(() => import("./pages/What'sNext/TechTorchView/TechTorchView.jsx"));
+const Philosophy = lazy(() => import("./pages/What'sNext/TechTorchView/Philosophy.jsx"));
+const Capabilities = lazy(() => import("./pages/What'sNext/TechTorchView/Capabilities.jsx"));
+const Methodology = lazy(() => import("./pages/What'sNext/TechTorchView/DeploymentMethodology.jsx"));
 // import ReadyScale from "./pages/What'sNext/TechTorchView/ReadyScale.jsx";
 
 // =================================================
 // FIELD NOTE
 // =================================================
-import Banner from "./pages/What'sNext/FieldNote/Banner.jsx";
-import TechnologySection from "./pages/What'sNext/FieldNote/TechnologySection.jsx";
-import ConnectSection from "./pages/What'sNext/FieldNote/ConnectSection.jsx";
-import OperationalAdvantage from "./pages/What'sNext/FieldNote/OperationalAdvantage.jsx";
-import IntegratedCapabilities from "./pages/What'sNext/FieldNote/IntegratedCapabilities.jsx";
+const Banner = lazy(() => import("./pages/What'sNext/FieldNote/Banner.jsx"));
+const TechnologySection = lazy(() => import("./pages/What'sNext/FieldNote/TechnologySection.jsx"));
+const ConnectSection = lazy(() => import("./pages/What'sNext/FieldNote/ConnectSection.jsx"));
+const OperationalAdvantage = lazy(() => import("./pages/What'sNext/FieldNote/OperationalAdvantage.jsx"));
+const IntegratedCapabilities = lazy(() => import("./pages/What'sNext/FieldNote/IntegratedCapabilities.jsx"));
 
 // =================================================
 // INTEGRATED CAPABILITIES
 // =================================================
-import IntegratedCapLayout from "./pages/What'sNext/FieldNote/IntegratedCapabilities/IntegratedCapLayout.jsx";
-import ERPIntegration from "./pages/What'sNext/FieldNote/IntegratedCapabilities/ERPIntegration.jsx";
-import OpManagement from "./pages/What'sNext/FieldNote/IntegratedCapabilities/OpManagement.jsx";
-import DataOrchestration from "./pages/What'sNext/FieldNote/IntegratedCapabilities/DataOrchestration.jsx";
-import Legacy from "./pages/What'sNext/FieldNote/IntegratedCapabilities/Legacy.jsx";
+const IntegratedCapLayout = lazy(() => import("./pages/What'sNext/FieldNote/IntegratedCapabilities/IntegratedCapLayout.jsx"));
+const ERPIntegration = lazy(() => import("./pages/What'sNext/FieldNote/IntegratedCapabilities/ERPIntegration.jsx"));
+const OpManagement = lazy(() => import("./pages/What'sNext/FieldNote/IntegratedCapabilities/OpManagement.jsx"));
+const DataOrchestration = lazy(() => import("./pages/What'sNext/FieldNote/IntegratedCapabilities/DataOrchestration.jsx"));
+const Legacy = lazy(() => import("./pages/What'sNext/FieldNote/IntegratedCapabilities/Legacy.jsx"));
 
 // =================================================
 // THINK AHEAD
 // =================================================
-import ReadSection from "./pages/What'sNext/ThinkAhead/ReadSection.jsx";
-import Technologyarticlesection from "./pages/What'sNext/ThinkAhead/Technologyarticlesection.jsx";
-import EcosystemHeroSection from "./pages/What'sNext/ThinkAhead/Ecosystem.jsx";
-import PerspectiveSection from "./pages/What'sNext/ThinkAhead/Perspectivesection.jsx";
+const ReadSection = lazy(() => import("./pages/What'sNext/ThinkAhead/ReadSection.jsx"));
+const Technologyarticlesection = lazy(() => import("./pages/What'sNext/ThinkAhead/Technologyarticlesection.jsx"));
+const EcosystemHeroSection = lazy(() => import("./pages/What'sNext/ThinkAhead/Ecosystem.jsx"));
+const PerspectiveSection = lazy(() => import("./pages/What'sNext/ThinkAhead/Perspectivesection.jsx"));
 
 // =================================================
 // CYBER SECURITY
 // =================================================
-import WhatsNextSection from "./pages/What'sNext/CyberSecurity/WhatNextSection.jsx";
-import CyberSecurityHeroSection from "./pages/What'sNext/CyberSecurity/CyberSecurityHeroSection.jsx";
-import SecurityCapabilitiesSection from "./pages/What'sNext/CyberSecurity/SecurityCapabilities.jsx";
-import ResiliencePillarsSection from "./pages/What'sNext/CyberSecurity/Resiliencepillarssection.jsx";
-import SecurityOutcomes from "./pages/What'sNext/CyberSecurity/SecurityOutcomes.jsx";
-import SecurityPerspectiveSection from "./pages/What'sNext/CyberSecurity/Securityperspectivesection.jsx";
-import AboutSecurity from "./pages/What'sNext/CyberSecurity/AboutSecurity.jsx";
-import SecurityChallenge from "./pages/What'sNext/CyberSecurity/SecurityChallenge.jsx";
-import EditorialReflection from "./pages/What'sNext/CyberSecurity/EditorialReflection.jsx";
-import OurApproach from "./pages/What'sNext/CyberSecurity/OurApproach.jsx";
-import WhyTechtorch from "./pages/What'sNext/CyberSecurity/WhyTechtorch.jsx";
+const WhatsNextSection = lazy(() => import("./pages/What'sNext/CyberSecurity/WhatNextSection.jsx"));
+const CyberSecurityHeroSection = lazy(() => import("./pages/What'sNext/CyberSecurity/CyberSecurityHeroSection.jsx"));
+const SecurityCapabilitiesSection = lazy(() => import("./pages/What'sNext/CyberSecurity/SecurityCapabilities.jsx"));
+const ResiliencePillarsSection = lazy(() => import("./pages/What'sNext/CyberSecurity/Resiliencepillarssection.jsx"));
+const SecurityOutcomes = lazy(() => import("./pages/What'sNext/CyberSecurity/SecurityOutcomes.jsx"));
+const SecurityPerspectiveSection = lazy(() => import("./pages/What'sNext/CyberSecurity/Securityperspectivesection.jsx"));
+const AboutSecurity = lazy(() => import("./pages/What'sNext/CyberSecurity/AboutSecurity.jsx"));
+const SecurityChallenge = lazy(() => import("./pages/What'sNext/CyberSecurity/SecurityChallenge.jsx"));
+const EditorialReflection = lazy(() => import("./pages/What'sNext/CyberSecurity/EditorialReflection.jsx"));
+const OurApproach = lazy(() => import("./pages/What'sNext/CyberSecurity/OurApproach.jsx"));
+const WhyTechtorch = lazy(() => import("./pages/What'sNext/CyberSecurity/WhyTechtorch.jsx"));
 
 // =================================================
 // SECURE BUSINESS
 // =================================================
-import SecurityInitiative from "./pages/What'sNext/CyberSecurity/SecureBusiness/SecurityInitiative.jsx";
-import ProtocolDelivery from "./pages/What'sNext/CyberSecurity/SecureBusiness/ProtocolDelivery.jsx";
-import SelectionEngine from "./pages/What'sNext/CyberSecurity/SecureBusiness/SelectionEngine.jsx";
-import AdvisoryFramework from "./pages/What'sNext/CyberSecurity/SecureBusiness/AdvisoryFramework.jsx";
+const SecurityInitiative = lazy(() => import("./pages/What'sNext/CyberSecurity/SecureBusiness/SecurityInitiative.jsx"));
+const ProtocolDelivery = lazy(() => import("./pages/What'sNext/CyberSecurity/SecureBusiness/ProtocolDelivery.jsx"));
+const SelectionEngine = lazy(() => import("./pages/What'sNext/CyberSecurity/SecureBusiness/SelectionEngine.jsx"));
+const AdvisoryFramework = lazy(() => import("./pages/What'sNext/CyberSecurity/SecureBusiness/AdvisoryFramework.jsx"));
 
 // =================================================
 // ENGAGEMENT PROTOCOL
 // =================================================
-import ViewEngagementProtocol from "./pages/What'sNext/CyberSecurity/SecureBusiness/EngagementProtocol/ViewEngagementProtocol.jsx";
-import AcceptProceed from "./pages/What'sNext/CyberSecurity/SecureBusiness/EngagementProtocol/AcceptProceed.jsx";
-import ExportProtocolPackage from "./pages/What'sNext/CyberSecurity/SecureBusiness/EngagementProtocol/ExportProtocolPackage.jsx";
+const ViewEngagementProtocol = lazy(() => import("./pages/What'sNext/CyberSecurity/SecureBusiness/EngagementProtocol/ViewEngagementProtocol.jsx"));
+const AcceptProceed = lazy(() => import("./pages/What'sNext/CyberSecurity/SecureBusiness/EngagementProtocol/AcceptProceed.jsx"));
+const ExportProtocolPackage = lazy(() => import("./pages/What'sNext/CyberSecurity/SecureBusiness/EngagementProtocol/ExportProtocolPackage.jsx"));
 
 // =================================================
 // SCHEDULE ADVISORY
 // =================================================
-import AdvisoryDesk from "./pages/What'sNext/CyberSecurity/SecureBusiness/ScheduleAdvisoryBriefing/AdvisoryDesk";
-import DispatchConsole from "./pages/What'sNext/CyberSecurity/SecureBusiness/ScheduleAdvisoryBriefing/DispatchConsole.jsx";
-import TimeboxProtocol from "./pages/What'sNext/CyberSecurity/SecureBusiness/ScheduleAdvisoryBriefing/TimeboxProtocol.jsx";
+const AdvisoryDesk = lazy(() => import("./pages/What'sNext/CyberSecurity/SecureBusiness/ScheduleAdvisoryBriefing/AdvisoryDesk"));
+const DispatchConsole = lazy(() => import("./pages/What'sNext/CyberSecurity/SecureBusiness/ScheduleAdvisoryBriefing/DispatchConsole.jsx"));
+const TimeboxProtocol = lazy(() => import("./pages/What'sNext/CyberSecurity/SecureBusiness/ScheduleAdvisoryBriefing/TimeboxProtocol.jsx"));
 
 // =================================================
 // BUSINESS GROWTH
 // =================================================
-import GrowWithBusinessSection from "./pages/What'sNext/BusinessGrowth/GrowwTechnology.jsx";
-import PurspectiveSection from "./pages/What'sNext/BusinessGrowth/PurspectiveSection.jsx";
-import ArchitectureSection from "./pages/What'sNext/BusinessGrowth/ArchitectureSection.jsx";
-import MethodologySection from "./pages/What'sNext/BusinessGrowth/MethodologySection.jsx";
-import EcosystemCapabilitiesSection from "./pages/What'sNext/BusinessGrowth/EcosystemCapabilities.jsx";
-import TechnologyCapabilities from "./pages/What'sNext/BusinessGrowth/TechnologyCapabilties.jsx";
-import CoreEngineering from "./pages/What'sNext/BusinessGrowth/CoreEngineering.jsx";
-import MarketExpertiseSection from "./pages/What'sNext/BusinessGrowth/MarketExpertise.jsx";
-import InstitutionalCommitmentSection from "./pages/What'sNext/BusinessGrowth/InstitutionalCommitment.jsx";
-import ParadigmSection from "./pages/What'sNext/BusinessGrowth/ParadigmSection.jsx";
+const GrowWithBusinessSection = lazy(() => import("./pages/What'sNext/BusinessGrowth/GrowwTechnology.jsx"));
+const PurspectiveSection = lazy(() => import("./pages/What'sNext/BusinessGrowth/PurspectiveSection.jsx"));
+const ArchitectureSection = lazy(() => import("./pages/What'sNext/BusinessGrowth/ArchitectureSection.jsx"));
+const MethodologySection = lazy(() => import("./pages/What'sNext/BusinessGrowth/MethodologySection.jsx"));
+const EcosystemCapabilitiesSection = lazy(() => import("./pages/What'sNext/BusinessGrowth/EcosystemCapabilities.jsx"));
+const TechnologyCapabilities = lazy(() => import("./pages/What'sNext/BusinessGrowth/TechnologyCapabilties.jsx"));
+const CoreEngineering = lazy(() => import("./pages/What'sNext/BusinessGrowth/CoreEngineering.jsx"));
+const MarketExpertiseSection = lazy(() => import("./pages/What'sNext/BusinessGrowth/MarketExpertise.jsx"));
+const InstitutionalCommitmentSection = lazy(() => import("./pages/What'sNext/BusinessGrowth/InstitutionalCommitment.jsx"));
+const ParadigmSection = lazy(() => import("./pages/What'sNext/BusinessGrowth/ParadigmSection.jsx"));
 
 // =================================================
 // TECH PULSE
 // =================================================
-import DataDecisions from "./pages/What'sNext/TechPulse/DataDecisions.jsx";
-import PerspectiveAnalysis from "./pages/What'sNext/TechPulse/PerspectiveAnalysis.jsx";
-import StrategicInquiry from "./pages/What'sNext/TechPulse/StrategicInquiry.jsx";
-import StructuredMethodology from "./pages/What'sNext/TechPulse/StructuredMethodology.jsx";
-import OperationalImpact from "./pages/What'sNext/TechPulse/OperationalImpact.jsx";
-import Automation from "./pages/What'sNext/TechPulse/Automation.jsx";
-import CrossFunctional from "./pages/What'sNext/TechPulse/CrossFunctional.jsx";
-import Discipline from "./pages/What'sNext/TechPulse/Discipline.jsx";
-import ExecutiveStrategy from "./pages/What'sNext/TechPulse/ExecutiveStrategy.jsx";
+const DataDecisions = lazy(() => import("./pages/What'sNext/TechPulse/DataDecisions.jsx"));
+const PerspectiveAnalysis = lazy(() => import("./pages/What'sNext/TechPulse/PerspectiveAnalysis.jsx"));
+const StrategicInquiry = lazy(() => import("./pages/What'sNext/TechPulse/StrategicInquiry.jsx"));
+const StructuredMethodology = lazy(() => import("./pages/What'sNext/TechPulse/StructuredMethodology.jsx"));
+const OperationalImpact = lazy(() => import("./pages/What'sNext/TechPulse/OperationalImpact.jsx"));
+const Automation = lazy(() => import("./pages/What'sNext/TechPulse/Automation.jsx"));
+const CrossFunctional = lazy(() => import("./pages/What'sNext/TechPulse/CrossFunctional.jsx"));
+const Discipline = lazy(() => import("./pages/What'sNext/TechPulse/Discipline.jsx"));
+const ExecutiveStrategy = lazy(() => import("./pages/What'sNext/TechPulse/ExecutiveStrategy.jsx"));
 
 // =================================================
 // DIGITAL SOLUTIONS
 // =================================================
-import EnterpriseSolution from "./pages/What'sNext/TechPulse/DigitalSolution/Enterprisesolution.jsx";
-import SystemicAgility from "./pages/What'sNext/TechPulse/DigitalSolution/SystemicAgility.jsx";
-import ArchitectureLifecycle from "./pages/What'sNext/TechPulse/DigitalSolution/ArchitectureLifecycle.jsx";
-import ValidatedSystems from "./pages/What'sNext/TechPulse/DigitalSolution/ValidatedSystem.jsx";
+const EnterpriseSolution = lazy(() => import("./pages/What'sNext/TechPulse/DigitalSolution/Enterprisesolution.jsx"));
+const SystemicAgility = lazy(() => import("./pages/What'sNext/TechPulse/DigitalSolution/SystemicAgility.jsx"));
+const ArchitectureLifecycle = lazy(() => import("./pages/What'sNext/TechPulse/DigitalSolution/ArchitectureLifecycle.jsx"));
+const ValidatedSystems = lazy(() => import("./pages/What'sNext/TechPulse/DigitalSolution/ValidatedSystem.jsx"));
 
 // =================================================
 // CAPABILITIES - PLATFORM
 // =================================================
-import Businessplatformshero from "./pages/Capabilities/Platform/Businessplatformshero.jsx";
-import OurAproach from "./pages/Capabilities/Platform/OurAproach.jsx";
-import OurPlatforms from "./pages/Capabilities/Platform/OurPlatforms.jsx";
-import TechTorchPlatform from "./pages/Capabilities/Platform/TechTorchPlatform.jsx";
-import DirectEnterprise from "./pages/Capabilities/Platform/DirectEnterprise.jsx";
+const Businessplatformshero = lazy(() => import("./pages/Capabilities/Platform/Businessplatformshero.jsx"));
+const OurAproach = lazy(() => import("./pages/Capabilities/Platform/OurAproach.jsx"));
+const OurPlatforms = lazy(() => import("./pages/Capabilities/Platform/OurPlatforms.jsx"));
+const TechTorchPlatform = lazy(() => import("./pages/Capabilities/Platform/TechTorchPlatform.jsx"));
+const DirectEnterprise = lazy(() => import("./pages/Capabilities/Platform/DirectEnterprise.jsx"));
 
 // =================================================
 // CAPABILITIES - DIGITAL SOLUTIONS
 // =================================================
-import DigitalSolutionHero from "./pages/Capabilities/DigitalSolution/DigitalSolutionHero.jsx";
-import DigitalTransformation from "./pages/Capabilities/DigitalSolution/DigitalTransformation.jsx";
-import OurDigitalSolution from "./pages/Capabilities/DigitalSolution/OurDigitalSolution.jsx";
-import DiffrentIndustries from "./pages/Capabilities/DigitalSolution/DiffrentIndustries.jsx";
-import ConnectedBusiness from "./pages/Capabilities/DigitalSolution/ConnectedBusiness.jsx";
-import TechTorchTechnology from "./pages/Capabilities/DigitalSolution/TechTorchTechnology.jsx";
-import RequirementReality from "./pages/Capabilities/DigitalSolution/RequirementReality.jsx";
+const DigitalSolutionHero = lazy(() => import("./pages/Capabilities/DigitalSolution/DigitalSolutionHero.jsx"));
+const DigitalTransformation = lazy(() => import("./pages/Capabilities/DigitalSolution/DigitalTransformation.jsx"));
+const OurDigitalSolution = lazy(() => import("./pages/Capabilities/DigitalSolution/OurDigitalSolution.jsx"));
+const DiffrentIndustries = lazy(() => import("./pages/Capabilities/DigitalSolution/DiffrentIndustries.jsx"));
+const ConnectedBusiness = lazy(() => import("./pages/Capabilities/DigitalSolution/ConnectedBusiness.jsx"));
+const TechTorchTechnology = lazy(() => import("./pages/Capabilities/DigitalSolution/TechTorchTechnology.jsx"));
+const RequirementReality = lazy(() => import("./pages/Capabilities/DigitalSolution/RequirementReality.jsx"));
 
 // =================================================
 // CAPABILITIES - OUR SERVICE
 // =================================================
-import OurServiceHero from "./pages/Capabilities/OurService/OurServiceHero.jsx";
-import StrategicPerspective from "./pages/Capabilities/OurService/StrategicPerspective.jsx";
-import PortfolioArchitecture from "./pages/Capabilities/OurService/PortfolioArchitecture.jsx";
-import DeliveryBlueprint from "./pages/Capabilities/OurService/DeliveryBlueprint.jsx";
-import TechnologyRoadmap from "./pages/Capabilities/OurService/TechnologyRoadmap.jsx";
+const OurServiceHero = lazy(() => import("./pages/Capabilities/OurService/OurServiceHero.jsx"));
+const StrategicPerspective = lazy(() => import("./pages/Capabilities/OurService/StrategicPerspective.jsx"));
+const PortfolioArchitecture = lazy(() => import("./pages/Capabilities/OurService/PortfolioArchitecture.jsx"));
+const DeliveryBlueprint = lazy(() => import("./pages/Capabilities/OurService/DeliveryBlueprint.jsx"));
+const TechnologyRoadmap = lazy(() => import("./pages/Capabilities/OurService/TechnologyRoadmap.jsx"));
 
 // =================================================
 // CAPABILITIES - ARTIFICIAL INTELLIGENCE
 // =================================================
-import AiService from "./pages/Capabilities/Ai/AiService.jsx";
-import AiStrategic from "./pages/Capabilities/Ai/AiStrategic.jsx";
-import AiAdvantage from "./pages/Capabilities/Ai/AiAdvantage.jsx";
-import AiEcosystem from "./pages/Capabilities/Ai/AiEcosystem.jsx";
-import AiEcosystemIntegration from "./pages/Capabilities/Ai/AiEcosystemIntegration.jsx";
+const AiService = lazy(() => import("./pages/Capabilities/Ai/AiService.jsx"));
+const AiStrategic = lazy(() => import("./pages/Capabilities/Ai/AiStrategic.jsx"));
+const AiAdvantage = lazy(() => import("./pages/Capabilities/Ai/AiAdvantage.jsx"));
+const AiEcosystem = lazy(() => import("./pages/Capabilities/Ai/AiEcosystem.jsx"));
+const AiEcosystemIntegration = lazy(() => import("./pages/Capabilities/Ai/AiEcosystemIntegration.jsx"));
 
 // =================================================
 // CAPABILITIES - IT AUGMENTATION
 // =================================================
-import ItWorkforceVelocity from "./pages/Capabilities/ItAugmentation/ItWorkforceVelocity.jsx";
-import ItStrategicperspective from "./pages/Capabilities/ItAugmentation/ItStrategicperspective.jsx";
-import ItFlexibleEngagement from "./pages/Capabilities/ItAugmentation/ItFlexibleEngagement.jsx";
-import ItOperational from "./pages/Capabilities/ItAugmentation/ItOperational.jsx";
+const ItWorkforceVelocity = lazy(() => import("./pages/Capabilities/ItAugmentation/ItWorkforceVelocity.jsx"));
+const ItStrategicperspective = lazy(() => import("./pages/Capabilities/ItAugmentation/ItStrategicperspective.jsx"));
+const ItFlexibleEngagement = lazy(() => import("./pages/Capabilities/ItAugmentation/ItFlexibleEngagement.jsx"));
+const ItOperational = lazy(() => import("./pages/Capabilities/ItAugmentation/ItOperational.jsx"));
 
 // =================================================
 // CONTRACT STAFFING
 // =================================================
-import Contracthero from "./pages/Capabilities/ItAugmentation/ContractStaffing/contracthero.jsx";
-import CapabilityAnalysis from "./pages/Capabilities/ItAugmentation/ContractStaffing/CapabilityAnalysis.jsx";
-import Pipeline from "./pages/Capabilities/ItAugmentation/ContractStaffing/Pipeline.jsx";
+const Contracthero = lazy(() => import("./pages/Capabilities/ItAugmentation/ContractStaffing/contracthero.jsx"));
+const CapabilityAnalysis = lazy(() => import("./pages/Capabilities/ItAugmentation/ContractStaffing/CapabilityAnalysis.jsx"));
+const Pipeline = lazy(() => import("./pages/Capabilities/ItAugmentation/ContractStaffing/Pipeline.jsx"));
 
 // =================================================
 // CONTRACT TO HIRE
 // =================================================
-import ContractToHireHero from "./pages/Capabilities/ItAugmentation/ContractToHire/ContractToHireHero.jsx";
-import CthFramework from "./pages/Capabilities/ItAugmentation/ContractToHire/CthFramework.jsx";
-import BuildConfidence from "./pages/Capabilities/ItAugmentation/ContractToHire/BuildConfidence.jsx";
+const ContractToHireHero = lazy(() => import("./pages/Capabilities/ItAugmentation/ContractToHire/ContractToHireHero.jsx"));
+const CthFramework = lazy(() => import("./pages/Capabilities/ItAugmentation/ContractToHire/CthFramework.jsx"));
+const BuildConfidence = lazy(() => import("./pages/Capabilities/ItAugmentation/ContractToHire/BuildConfidence.jsx"));
 
 // =================================================
 // DEDICATED DEVELOPMENT
 // =================================================
-import DdHero from "./pages/Capabilities/ItAugmentation/DedicatedDevelopment/DdHero.jsx";
-import DdOverview from "./pages/Capabilities/ItAugmentation/DedicatedDevelopment/DdOverview.jsx";
-import DdStrenghten from "./pages/Capabilities/ItAugmentation/DedicatedDevelopment/DdStrenghten.jsx";
+const DdHero = lazy(() => import("./pages/Capabilities/ItAugmentation/DedicatedDevelopment/DdHero.jsx"));
+const DdOverview = lazy(() => import("./pages/Capabilities/ItAugmentation/DedicatedDevelopment/DdOverview.jsx"));
+const DdStrenghten = lazy(() => import("./pages/Capabilities/ItAugmentation/DedicatedDevelopment/DdStrenghten.jsx"));
 
 // =================================================
 // REMOTE ENGINEER
 // =================================================
-import ReHero from "./pages/Capabilities/ItAugmentation/RemoteEngineer/ReHero.jsx";
-import CapabilityOverview from "./pages/Capabilities/ItAugmentation/RemoteEngineer/CapabilityOverview.jsx";
-import ReStrengthen from "./pages/Capabilities/ItAugmentation/RemoteEngineer/ReStrengthen.jsx";
+const ReHero = lazy(() => import("./pages/Capabilities/ItAugmentation/RemoteEngineer/ReHero.jsx"));
+const CapabilityOverview = lazy(() => import("./pages/Capabilities/ItAugmentation/RemoteEngineer/CapabilityOverview.jsx"));
+const ReStrengthen = lazy(() => import("./pages/Capabilities/ItAugmentation/RemoteEngineer/ReStrengthen.jsx"));
 
 // =================================================
 // PROJECT BASED HIRING
 // =================================================
-import PbhHero from "./pages/Capabilities/ItAugmentation/ProjectBasedHiring/PbhHero.jsx";
-import PbhExecutive from "./pages/Capabilities/ItAugmentation/ProjectBasedHiring/PbhExecutive.jsx";
-import PbhSpecialized from "./pages/Capabilities/ItAugmentation/ProjectBasedHiring/PbhSpecialized.jsx";
-import PbhProjectForward from "./pages/Capabilities/ItAugmentation/ProjectBasedHiring/PbhProjectForward.jsx";
+const PbhHero = lazy(() => import("./pages/Capabilities/ItAugmentation/ProjectBasedHiring/PbhHero.jsx"));
+const PbhExecutive = lazy(() => import("./pages/Capabilities/ItAugmentation/ProjectBasedHiring/PbhExecutive.jsx"));
+const PbhSpecialized = lazy(() => import("./pages/Capabilities/ItAugmentation/ProjectBasedHiring/PbhSpecialized.jsx"));
+const PbhProjectForward = lazy(() => import("./pages/Capabilities/ItAugmentation/ProjectBasedHiring/PbhProjectForward.jsx"));
 
 // =================================================
 // RESOURCE / BENCH / VENDOR
 // =================================================
-import RrMain from "./pages/Capabilities/ItAugmentation/ResourceReplacement/RrMain.jsx";
-import BhMain from "./pages/Capabilities/ItAugmentation/BenchHiring/BhMain.jsx";
-import VpMain from "./pages/Capabilities/ItAugmentation/VendorPartnership/VpMain.jsx";
-import BecomePartner from "./pages/Capabilities/ItAugmentation/VendorPartnership/BecomePartner.jsx";
+const RrMain = lazy(() => import("./pages/Capabilities/ItAugmentation/ResourceReplacement/RrMain.jsx"));
+const BhMain = lazy(() => import("./pages/Capabilities/ItAugmentation/BenchHiring/BhMain.jsx"));
+const VpMain = lazy(() => import("./pages/Capabilities/ItAugmentation/VendorPartnership/VpMain.jsx"));
+const BecomePartner = lazy(() => import("./pages/Capabilities/ItAugmentation/VendorPartnership/BecomePartner.jsx"));
 
 // =================================================
 // MSP SUPPORT
 // =================================================
-import MSP1 from "./pages/Capabilities/ItAugmentation/MSPSupport/MSP1.jsx";
-import MSP2 from "./pages/Capabilities/ItAugmentation/MSPSupport/MSP2.jsx";
-import MSP3 from "./pages/Capabilities/ItAugmentation/MSPSupport/MSP3.jsx";
-import DiscussPriorities from "./pages/Capabilities/ItAugmentation/MSPSupport/DiscussPriorities.jsx";
-import ConnectMSP from "./pages/Capabilities/ItAugmentation/MSPSupport/ConnectMSP.jsx";
+const MSP1 = lazy(() => import("./pages/Capabilities/ItAugmentation/MSPSupport/MSP1.jsx"));
+const MSP2 = lazy(() => import("./pages/Capabilities/ItAugmentation/MSPSupport/MSP2.jsx"));
+const MSP3 = lazy(() => import("./pages/Capabilities/ItAugmentation/MSPSupport/MSP3.jsx"));
+const DiscussPriorities = lazy(() => import("./pages/Capabilities/ItAugmentation/MSPSupport/DiscussPriorities.jsx"));
+const ConnectMSP = lazy(() => import("./pages/Capabilities/ItAugmentation/MSPSupport/ConnectMSP.jsx"));
 
 // =================================================
 // OFSHORE TEAMS
 // =================================================
-import OffshoreStrategy  from "./pages/Capabilities/ItAugmentation/OffshoreTeams/OffshoreStrategy.jsx";
-import EngagementArchitecture  from "./pages/Capabilities/ItAugmentation/OffshoreTeams/EngagementArchitecture.jsx";
-import LifecycleGovernance  from "./pages/Capabilities/ItAugmentation/OffshoreTeams/LifecycleGovernance.jsx";
-import DevelopmentTeam  from "./pages/Capabilities/ItAugmentation/OffshoreTeams/DevelopmentTeam.jsx";
-import DevelopmentRequirements  from "./pages/Capabilities/ItAugmentation/OffshoreTeams/DevelopmentRequirements.jsx";
+const OffshoreStrategy = lazy(() => import("./pages/Capabilities/ItAugmentation/OffshoreTeams/OffshoreStrategy.jsx"));
+const EngagementArchitecture = lazy(() => import("./pages/Capabilities/ItAugmentation/OffshoreTeams/EngagementArchitecture.jsx"));
+const LifecycleGovernance = lazy(() => import("./pages/Capabilities/ItAugmentation/OffshoreTeams/LifecycleGovernance.jsx"));
+const DevelopmentTeam = lazy(() => import("./pages/Capabilities/ItAugmentation/OffshoreTeams/DevelopmentTeam.jsx"));
+const DevelopmentRequirements = lazy(() => import("./pages/Capabilities/ItAugmentation/OffshoreTeams/DevelopmentRequirements.jsx"));
 
 // =================================================
 // EDUCATION
 // =================================================
 
-import EducationHero from "./pages/Industry/Education/EducationHero.jsx";
-import EducationWork from "./pages/Industry/Education/EducationWork.jsx";
-import EducationTechnology from "./pages/Industry/Education/EducationTechnology.jsx";
-import EducationGrowth from "./pages/Industry/Education/EducationGrowth.jsx";
-import EducationMethodology from "./pages/Industry/Education/EducationMethodology.jsx";
+const EducationHero = lazy(() => import("./pages/Industry/Education/EducationHero.jsx"));
+const EducationWork = lazy(() => import("./pages/Industry/Education/EducationWork.jsx"));
+const EducationTechnology = lazy(() => import("./pages/Industry/Education/EducationTechnology.jsx"));
+const EducationGrowth = lazy(() => import("./pages/Industry/Education/EducationGrowth.jsx"));
+const EducationMethodology = lazy(() => import("./pages/Industry/Education/EducationMethodology.jsx"));
 // import EducationTransform from "./pages/Industry/Education/EducationTransform.jsx";
-import EducationSolutions from "./pages/Industry/Education/EducationSolutions.jsx";
-import ScheduleDiscovery  from "./pages/Industry/Education/ScheduleDiscovery.jsx";
+const EducationSolutions = lazy(() => import("./pages/Industry/Education/EducationSolutions.jsx"));
+const ScheduleDiscovery = lazy(() => import("./pages/Industry/Education/ScheduleDiscovery.jsx"));
 
 // =================================================
 // INSURANCE
 // =================================================
 
-import InsuranceHero from "./pages/Industry/Insurance/InsuranceHero.jsx";
-import InsuranceSolution from "./pages/Industry/Insurance/InsuranceSolution.jsx";
-import ConnectedOperation from "./pages/Industry/Insurance/ConnectedOperations.jsx";
-import InsuranceDigitalTransformation from "./pages/Industry/Insurance/InsuranceDigitalTransformation.jsx";
-import InsuranceCustomer from "./pages/Industry/Insurance/InsuranceCustomer.jsx";
-import InsuranceWhyTt from "./pages/Industry/Insurance/InsuranceWhyTt.jsx";
-import GetInTouch from "./pages/Industry/Insurance/GetInTouch.jsx";
+const InsuranceHero = lazy(() => import("./pages/Industry/Insurance/InsuranceHero.jsx"));
+const InsuranceSolution = lazy(() => import("./pages/Industry/Insurance/InsuranceSolution.jsx"));
+const ConnectedOperation = lazy(() => import("./pages/Industry/Insurance/ConnectedOperations.jsx"));
+const InsuranceDigitalTransformation = lazy(() => import("./pages/Industry/Insurance/InsuranceDigitalTransformation.jsx"));
+const InsuranceCustomer = lazy(() => import("./pages/Industry/Insurance/InsuranceCustomer.jsx"));
+const InsuranceWhyTt = lazy(() => import("./pages/Industry/Insurance/InsuranceWhyTt.jsx"));
+const GetInTouch = lazy(() => import("./pages/Industry/Insurance/GetInTouch.jsx"));
 
 // =================================================
 // FINANCE
 // =================================================
 
-import FinanceHero from "./pages/Industry/Finance/FinanceHero.jsx";
-import FinanceArchitecture from "./pages/Industry/Finance/FinanceArchitecture.jsx";
-import FinanceTechnology from "./pages/Industry/Finance/FinanceTechnology.jsx";
-import FinanceKeyBusiness from "./pages/Industry/Finance/FinanceKeyBusiness.jsx";
-import FinanceFintech from "./pages/Industry/Finance/FinanceFintech.jsx";
-import FinanceNextStep from "./pages/Industry/Finance/FinanceNextStep.jsx";
-import FinanceGetInTouch from "./pages/Industry/Finance/FinanceGetInTouch.jsx";
+const FinanceHero = lazy(() => import("./pages/Industry/Finance/FinanceHero.jsx"));
+const FinanceArchitecture = lazy(() => import("./pages/Industry/Finance/FinanceArchitecture.jsx"));
+const FinanceTechnology = lazy(() => import("./pages/Industry/Finance/FinanceTechnology.jsx"));
+const FinanceKeyBusiness = lazy(() => import("./pages/Industry/Finance/FinanceKeyBusiness.jsx"));
+const FinanceFintech = lazy(() => import("./pages/Industry/Finance/FinanceFintech.jsx"));
+const FinanceNextStep = lazy(() => import("./pages/Industry/Finance/FinanceNextStep.jsx"));
+const FinanceGetInTouch = lazy(() => import("./pages/Industry/Finance/FinanceGetInTouch.jsx"));
 
 // =================================================
 // HEALTHCARE
 // =================================================
 
-import HealthcareHero from "./pages/Industry/Healthcare/HealthcareHero.jsx";
-import HealthcareExplore from "./pages/Industry/Healthcare/HealthcareExplore.jsx";
-import HealthcareTechnology from "./pages/Industry/Healthcare/HealthcareTechnology.jsx";
-import HealthcareOperation from "./pages/Industry/Healthcare/HealthcareOperation.jsx";
-import ExperianceSecurity from "./pages/Industry/Healthcare/ExperianceSecurity.jsx";
-import InsightOperations from "./pages/Industry/Healthcare/InsightOperations.jsx";
-import HealthcareApproach from "./pages/Industry/Healthcare/HealthcareApproach.jsx";
-import TransformationDesk from "./pages/Industry/Healthcare/TransformationDesk.jsx";
+const HealthcareHero = lazy(() => import("./pages/Industry/Healthcare/HealthcareHero.jsx"));
+const HealthcareExplore = lazy(() => import("./pages/Industry/Healthcare/HealthcareExplore.jsx"));
+const HealthcareTechnology = lazy(() => import("./pages/Industry/Healthcare/HealthcareTechnology.jsx"));
+const HealthcareOperation = lazy(() => import("./pages/Industry/Healthcare/HealthcareOperation.jsx"));
+const ExperianceSecurity = lazy(() => import("./pages/Industry/Healthcare/ExperianceSecurity.jsx"));
+const InsightOperations = lazy(() => import("./pages/Industry/Healthcare/InsightOperations.jsx"));
+const HealthcareApproach = lazy(() => import("./pages/Industry/Healthcare/HealthcareApproach.jsx"));
+const TransformationDesk = lazy(() => import("./pages/Industry/Healthcare/TransformationDesk.jsx"));
 
-import HealthcareGetInTouch from "./pages/Industry/Healthcare/HealthcareGetInTouch.jsx";
+const HealthcareGetInTouch = lazy(() => import("./pages/Industry/Healthcare/HealthcareGetInTouch.jsx"));
 
-
-// =================================================
-// INFORMATION TECHNOLOGY
-// =================================================
-import ItHero from "./pages/Industry/InformationTechnology/ItHero.jsx";
-import ItBusiness from "./pages/Industry/InformationTechnology/ItBusiness.jsx";
-import ItService from "./pages/Industry/InformationTechnology/ItService.jsx";
-import ItSoftware from "./pages/Industry/InformationTechnology/ItSoftware.jsx";
-import ItDigitalSolution from "./pages/Industry/InformationTechnology/ItDigitalSolution.jsx";
-import ItInfrastructure from "./pages/Industry/InformationTechnology/ItInfrastructure.jsx";
-import ItApproach from "./pages/Industry/InformationTechnology/ItApproach.jsx";
-import ItTechTorch from "./pages/Industry/InformationTechnology/ItTechTorch.jsx";
-import ItFoundation from "./pages/Industry/InformationTechnology/ItFoundation.jsx";
-import ITGetInTouch from "./pages/Industry/InformationTechnology/ITGetInTouch.jsx";
 
 // =================================================
 // INFORMATION TECHNOLOGY
 // =================================================
+const ItHero = lazy(() => import("./pages/Industry/InformationTechnology/ItHero.jsx"));
+const ItBusiness = lazy(() => import("./pages/Industry/InformationTechnology/ItBusiness.jsx"));
+const ItService = lazy(() => import("./pages/Industry/InformationTechnology/ItService.jsx"));
+const ItSoftware = lazy(() => import("./pages/Industry/InformationTechnology/ItSoftware.jsx"));
+const ItDigitalSolution = lazy(() => import("./pages/Industry/InformationTechnology/ItDigitalSolution.jsx"));
+const ItInfrastructure = lazy(() => import("./pages/Industry/InformationTechnology/ItInfrastructure.jsx"));
+const ItApproach = lazy(() => import("./pages/Industry/InformationTechnology/ItApproach.jsx"));
+const ItTechTorch = lazy(() => import("./pages/Industry/InformationTechnology/ItTechTorch.jsx"));
+const ItFoundation = lazy(() => import("./pages/Industry/InformationTechnology/ItFoundation.jsx"));
+const ITGetInTouch = lazy(() => import("./pages/Industry/InformationTechnology/ITGetInTouch.jsx"));
 
-import ManufacturingHero from "./pages/Industry/Manufacturing/ManufacturingHero.jsx";
-import ManufacturingTechnology from "./pages/Industry/Manufacturing/ManufacturingTechnology.jsx";
-import ManufacturingSolution from "./pages/Industry/Manufacturing/ManufacturingSolution.jsx";
-import ManufacturingErp from "./pages/Industry/Manufacturing/ManufacturingErp.jsx";
-import SoftwareEngineering from "./pages/Industry/Manufacturing/SoftwareEngineering.jsx";
-import ManufacturingApproach from "./pages/Industry/Manufacturing/ManufacturingApproach.jsx";
-import ManufacturingTechTorch from "./pages/Industry/Manufacturing/ManufacturingTechTorch.jsx";
-import ManufacturingGetInTouch from "./pages/Industry/Manufacturing/ManufacturingGetInTouch.jsx";
+// =================================================
+// INFORMATION TECHNOLOGY
+// =================================================
+
+const ManufacturingHero = lazy(() => import("./pages/Industry/Manufacturing/ManufacturingHero.jsx"));
+const ManufacturingTechnology = lazy(() => import("./pages/Industry/Manufacturing/ManufacturingTechnology.jsx"));
+const ManufacturingSolution = lazy(() => import("./pages/Industry/Manufacturing/ManufacturingSolution.jsx"));
+const ManufacturingErp = lazy(() => import("./pages/Industry/Manufacturing/ManufacturingErp.jsx"));
+const SoftwareEngineering = lazy(() => import("./pages/Industry/Manufacturing/SoftwareEngineering.jsx"));
+const ManufacturingApproach = lazy(() => import("./pages/Industry/Manufacturing/ManufacturingApproach.jsx"));
+const ManufacturingTechTorch = lazy(() => import("./pages/Industry/Manufacturing/ManufacturingTechTorch.jsx"));
+const ManufacturingGetInTouch = lazy(() => import("./pages/Industry/Manufacturing/ManufacturingGetInTouch.jsx"));
 
 
 // =================================================
 // TELECOMMUNICATIONS
 // =================================================
 
-import TcHero from "./pages/Industry/Telecommunication/TcHero.jsx";
-import TcTechnology from "./pages/Industry/Telecommunication/TcTechnology.jsx";
-import TcKeySolution from "./pages/Industry/Telecommunication/TcKeySolution.jsx";
-import TcSoftwareEngineer from "./pages/Industry/Telecommunication/TcSoftwareEngineer.jsx";
-import TcService from "./pages/Industry/Telecommunication/TcService.jsx";
-import TcApproach from "./pages/Industry/Telecommunication/TcApproach.jsx";
-import TcGetinTouch from "./pages/Industry/Telecommunication/TcGetInTouch.jsx";
+const TcHero = lazy(() => import("./pages/Industry/Telecommunication/TcHero.jsx"));
+const TcTechnology = lazy(() => import("./pages/Industry/Telecommunication/TcTechnology.jsx"));
+const TcKeySolution = lazy(() => import("./pages/Industry/Telecommunication/TcKeySolution.jsx"));
+const TcSoftwareEngineer = lazy(() => import("./pages/Industry/Telecommunication/TcSoftwareEngineer.jsx"));
+const TcService = lazy(() => import("./pages/Industry/Telecommunication/TcService.jsx"));
+const TcApproach = lazy(() => import("./pages/Industry/Telecommunication/TcApproach.jsx"));
+const TcGetinTouch = lazy(() => import("./pages/Industry/Telecommunication/TcGetInTouch.jsx"));
 
 // =================================================
 // ENERGY
 // =================================================
 
-import EnergyHero from "./pages/Industry/Energy/EnergyHero.jsx";
-import EnergyTechnology from "./pages/Industry/Energy/EnergyTechnology.jsx";
-import EnergyKeySolution from "./pages/Industry/Energy/EnergyKeySolution.jsx";
-import EnergySoftwareEngineering from "./pages/Industry/Energy/EnergySoftwareEngineering.jsx";
-import EnergyTechnologyService from "./pages/Industry/Energy/EnergyTechnologyService.jsx";
-import EnergyApproach from "./pages/Industry/Energy/EnergyApproach.jsx";
-import EnergyGetInTouch from "./pages/Industry/Energy/EnergyGetInTouch.jsx";
+const EnergyHero = lazy(() => import("./pages/Industry/Energy/EnergyHero.jsx"));
+const EnergyTechnology = lazy(() => import("./pages/Industry/Energy/EnergyTechnology.jsx"));
+const EnergyKeySolution = lazy(() => import("./pages/Industry/Energy/EnergyKeySolution.jsx"));
+const EnergySoftwareEngineering = lazy(() => import("./pages/Industry/Energy/EnergySoftwareEngineering.jsx"));
+const EnergyTechnologyService = lazy(() => import("./pages/Industry/Energy/EnergyTechnologyService.jsx"));
+const EnergyApproach = lazy(() => import("./pages/Industry/Energy/EnergyApproach.jsx"));
+const EnergyGetInTouch = lazy(() => import("./pages/Industry/Energy/EnergyGetInTouch.jsx"));
 
 // =================================================
 // TRANSPORTATION
 // =================================================
 
-import TransHero from "./pages/Industry/Transportation/TransHero.jsx";
-import TransportationConnected from "./pages/Industry/Transportation/TransportationConnected.jsx";
-import TransportationSolution from "./pages/Industry/Transportation/TransportationSolution.jsx";
-import TransportationSupplyChain from "./pages/Industry/Transportation/TransportationSupplyChain.jsx";
-import TransportationSoftware from "./pages/Industry/Transportation/TransportationSoftware.jsx";
-import TransportationApproach from "./pages/Industry/Transportation/TransportationApproach.jsx";
-import TransportationEnterprise from "./pages/Industry/Transportation/TransportationEnterprise.jsx";
-import TransportationGetInTouch from "./pages/Industry/Transportation/TransportationGetInTouch.jsx";
+const TransHero = lazy(() => import("./pages/Industry/Transportation/TransHero.jsx"));
+const TransportationConnected = lazy(() => import("./pages/Industry/Transportation/TransportationConnected.jsx"));
+const TransportationSolution = lazy(() => import("./pages/Industry/Transportation/TransportationSolution.jsx"));
+const TransportationSupplyChain = lazy(() => import("./pages/Industry/Transportation/TransportationSupplyChain.jsx"));
+const TransportationSoftware = lazy(() => import("./pages/Industry/Transportation/TransportationSoftware.jsx"));
+const TransportationApproach = lazy(() => import("./pages/Industry/Transportation/TransportationApproach.jsx"));
+const TransportationEnterprise = lazy(() => import("./pages/Industry/Transportation/TransportationEnterprise.jsx"));
+const TransportationGetInTouch = lazy(() => import("./pages/Industry/Transportation/TransportationGetInTouch.jsx"));
 
 // =================================================
 // FMCG
 // =================================================
 
-import FmcgHero from "./pages/Industry/Fmcg/FmcgHero.jsx";
-import FmcgSolution from "./pages/Industry/Fmcg/FmcgSolution.jsx";
-import FmcgOurSolution from "./pages/Industry/Fmcg/FmcgOurSolution.jsx";
-import FmcgManagement from "./pages/Industry/Fmcg/FmcgManagement.jsx";
-import FmcgBusiness from "./pages/Industry/Fmcg/FmcgBusiness.jsx";
-import FmcgSoftwareEngineering from "./pages/Industry/Fmcg/FmcgSoftwareEngineering.jsx";
-import FmcgTechnologyService from "./pages/Industry/Fmcg/FmcgTechnologyService.jsx";
-import FmcgApproach from "./pages/Industry/Fmcg/FmcgApproach.jsx";
-import FmcgGetInTouch from "./pages/Industry/Fmcg/FmcgGetInTouch.jsx";
+const FmcgHero = lazy(() => import("./pages/Industry/Fmcg/FmcgHero.jsx"));
+const FmcgSolution = lazy(() => import("./pages/Industry/Fmcg/FmcgSolution.jsx"));
+const FmcgOurSolution = lazy(() => import("./pages/Industry/Fmcg/FmcgOurSolution.jsx"));
+const FmcgManagement = lazy(() => import("./pages/Industry/Fmcg/FmcgManagement.jsx"));
+const FmcgBusiness = lazy(() => import("./pages/Industry/Fmcg/FmcgBusiness.jsx"));
+const FmcgSoftwareEngineering = lazy(() => import("./pages/Industry/Fmcg/FmcgSoftwareEngineering.jsx"));
+const FmcgTechnologyService = lazy(() => import("./pages/Industry/Fmcg/FmcgTechnologyService.jsx"));
+const FmcgApproach = lazy(() => import("./pages/Industry/Fmcg/FmcgApproach.jsx"));
+const FmcgGetInTouch = lazy(() => import("./pages/Industry/Fmcg/FmcgGetInTouch.jsx"));
 
 // =================================================
 // E-COMMERCE
 // =================================================
-import EcommerceHero from "./pages/Industry/ECommerce/EcommerceHero.jsx";
-import EcommerceEnterprise from "./pages/Industry/ECommerce/EcommerceEnterprise.jsx";
-import EcommerceCapabilities from "./pages/Industry/ECommerce/EcommerceCapabilities.jsx";
-import EcommerceFrontend from "./pages/Industry/ECommerce/EcommerceFrontend.jsx";
-import EcommerceSynergy from "./pages/Industry/ECommerce/EcommerceSynergy.jsx";
-import EcommerceCustom from "./pages/Industry/ECommerce/EcommerceCustom.jsx";
-import EcommerceIntelligence from "./pages/Industry/ECommerce/EcommerceIntelligence.jsx";
-import EcommerceApproach from "./pages/Industry/ECommerce/EcommerceApproach.jsx";
-import EcommerceNextPhase from "./pages/Industry/ECommerce/EcommerceNextPhase.jsx";
-import ECommerceGetInTouch from "./pages/Industry/ECommerce/ECommerceGetInTouch.jsx";
+const EcommerceHero = lazy(() => import("./pages/Industry/ECommerce/EcommerceHero.jsx"));
+const EcommerceEnterprise = lazy(() => import("./pages/Industry/ECommerce/EcommerceEnterprise.jsx"));
+const EcommerceCapabilities = lazy(() => import("./pages/Industry/ECommerce/EcommerceCapabilities.jsx"));
+const EcommerceFrontend = lazy(() => import("./pages/Industry/ECommerce/EcommerceFrontend.jsx"));
+const EcommerceSynergy = lazy(() => import("./pages/Industry/ECommerce/EcommerceSynergy.jsx"));
+const EcommerceCustom = lazy(() => import("./pages/Industry/ECommerce/EcommerceCustom.jsx"));
+const EcommerceIntelligence = lazy(() => import("./pages/Industry/ECommerce/EcommerceIntelligence.jsx"));
+const EcommerceApproach = lazy(() => import("./pages/Industry/ECommerce/EcommerceApproach.jsx"));
+const EcommerceNextPhase = lazy(() => import("./pages/Industry/ECommerce/EcommerceNextPhase.jsx"));
+const ECommerceGetInTouch = lazy(() => import("./pages/Industry/ECommerce/ECommerceGetInTouch.jsx"));
 
-import StartConversation from "./pages/StartConversation/StartConversation.jsx";
-import ExploreQuestions from "./pages/StartConversation/ExploreQuestions.jsx";
-import ConversationToggle from "./pages/StartConversation/ConversationToggle.jsx";
+const StartConversation = lazy(() => import("./pages/StartConversation/StartConversation.jsx"));
+const ExploreQuestions = lazy(() => import("./pages/StartConversation/ExploreQuestions.jsx"));
+const ConversationToggle = lazy(() => import("./pages/StartConversation/ConversationToggle.jsx"));
 
 // =================================================
 // ABOUT US
 // =================================================
 
-import Leadership from "./pages/AboutUs/Leadership.jsx";
-import CompanyOverview from "./pages/AboutUs/CompanyOverview.jsx";
-import Idea from "./pages/AboutUs/Idea.jsx";
-import PartnersEcosystem from "./pages/AboutUs/PartnersEcosystem.jsx";
-import Investors  from "./pages/AboutUs/Investors.jsx";
+const Leadership = lazy(() => import("./pages/AboutUs/Leadership.jsx"));
+const CompanyOverview = lazy(() => import("./pages/AboutUs/CompanyOverview.jsx"));
+const Idea = lazy(() => import("./pages/AboutUs/Idea.jsx"));
+const PartnersEcosystem = lazy(() => import("./pages/AboutUs/PartnersEcosystem.jsx"));
+const Investors = lazy(() => import("./pages/AboutUs/Investors.jsx"));
 
 
-import Media from "./pages/Insights/Media.jsx";
-import OperationsManagementPage from "./pages/OperationsManagementPage.jsx";
+const Media = lazy(() => import("./pages/Insights/Media.jsx"));
+const OperationsManagementPage = lazy(() => import("./pages/OperationsManagementPage.jsx"));
 
 
 // =================================================
@@ -477,6 +477,34 @@ const isPageReload = (() => {
 })();
 
 // The history key of the page the visitor refreshed on
+// Shown while a lazily-loaded page chunk is downloading
+function PageLoader() {
+  return (
+    <div
+      role="status"
+      aria-label="Loading"
+      style={{
+        minHeight: "60vh",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+      }}
+    >
+      <div
+        style={{
+          width: 40,
+          height: 40,
+          borderRadius: "50%",
+          border: "4px solid #e5e7eb",
+          borderTopColor: "#f97316",
+          animation: "tt-spin 0.8s linear infinite",
+        }}
+      />
+      <style>{"@keyframes tt-spin{to{transform:rotate(360deg)}}"}</style>
+    </div>
+  );
+}
+
 let bootKey = null;
 
 function ScrollToTop() {
@@ -1113,6 +1141,7 @@ function App() {
       {/* Always move to top when route changes */}
       <ScrollToTop />
 
+      <Suspense fallback={<PageLoader />}>
       <Routes>
         {/* =================================================
             ALL PAGES USE SAME NAVBAR + FOOTER
@@ -1429,6 +1458,7 @@ function App() {
 
         {/* Tumhare existing routes yahan rahenge */}
       </Routes>
+      </Suspense>
     </>
   );
 }

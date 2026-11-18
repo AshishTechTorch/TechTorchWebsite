@@ -2,6 +2,7 @@ const express = require("express");
 
 const router = express.Router();
 const authMiddleware = require("../middlewares/auth.middleware");
+const { optionalAuth } = authMiddleware;
 
 const {
   createEvent,
@@ -15,10 +16,10 @@ const {
 router.post("/", authMiddleware, createEvent);
 
 // Get All Events
-router.get("/", getAllEvents);
+router.get("/", optionalAuth, getAllEvents);
 
 // Get Event By ID
-router.get("/:id", getEventById);
+router.get("/:id", optionalAuth, getEventById);
 
 // Update Event
 router.put("/:id", authMiddleware, updateEvent);

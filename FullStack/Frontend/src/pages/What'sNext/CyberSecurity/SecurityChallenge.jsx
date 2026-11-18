@@ -112,7 +112,7 @@ export default function DigitalEnvironmentSection() {
           {/* ================= IMAGE + TEXT CARD ================= */}
           <div className="mt-7 w-full overflow-hidden rounded-lg sm:mt-8 sm:rounded-xl">
             <img
-              src="/Secure Software Architecture  Engineering.png"
+              src="/Secure Software Architecture  Engineering.webp"
               alt="Developer working on code across multiple monitors"
               loading="lazy"
               className="

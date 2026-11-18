@@ -10,7 +10,6 @@ export default function FmcgHeroSection() {
   return (
     <section className="fmcg-hero-section">
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
 
         .fmcg-hero-section,
         .fmcg-hero-section * {
@@ -516,7 +515,7 @@ export default function FmcgHeroSection() {
         <div className="fmcg-hero-image-wrapper">
 
           <img
-            src="/fmcghero.png"
+            src="/fmcghero.webp"
             alt="Modern FMCG warehouse and business operations"
             className="fmcg-hero-image"
           />

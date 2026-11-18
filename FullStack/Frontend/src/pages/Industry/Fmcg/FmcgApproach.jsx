@@ -35,7 +35,6 @@ export default function ApproachSection() {
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
 
         /* =====================================================
            MAIN
@@ -778,8 +777,8 @@ export default function ApproachSection() {
 
         <div className="approach-cta">
 
-          <img
-            src="/Diversemodern engineeringteam.png"
+          <img loading="lazy" decoding="async"
+            src="/Diversemodern engineeringteam.webp"
             alt="FMCG business technology and operations"
             className="approach-cta-image"
           />

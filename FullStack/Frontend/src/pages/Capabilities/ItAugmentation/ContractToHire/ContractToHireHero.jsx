@@ -596,7 +596,7 @@ export default function ContractToHireHero() {
           position: absolute;
           inset: 0;
 
-          background-image: url("/cth.png");
+          background-image: url("/cth.webp");
 
           background-size: cover;
           background-position: center;

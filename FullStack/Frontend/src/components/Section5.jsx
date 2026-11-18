@@ -62,7 +62,7 @@ export default function BigVision() {
           height: "850px",
           right: "-500px",
           top: "-80px",
-          backgroundImage: "url('/Section.png')",
+          backgroundImage: "url('/Section.webp')",
           backgroundSize: "contain",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
@@ -275,8 +275,8 @@ export default function BigVision() {
               className={`${reveal} flex flex-col items-center`}
               style={{ transitionDelay: "0.25s" }}
             >
-              <img
-                src="/img.png"
+              <img loading="lazy" decoding="async"
+                src="/img.webp"
                 alt="Siddharth Pathak"
                 className="
                   block
@@ -357,7 +357,7 @@ export default function BigVision() {
               className={`${reveal} flex flex-col items-center`}
               style={{ transitionDelay: "0.45s" }}
             >
-              <img
+              <img loading="lazy" decoding="async"
                 src="/Amit sir.png"
                 alt="Amit Gaur"
                 className="

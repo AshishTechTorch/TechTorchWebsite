@@ -543,7 +543,7 @@ export default function FlexibleTechResourcesHero() {
           position: absolute;
           inset: 0;
 
-          background-image: url("/DeploymentMethodology.png");
+          background-image: url("/DeploymentMethodology.webp");
           background-size: cover;
           background-position: center;
         }

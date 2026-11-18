@@ -123,7 +123,7 @@ export function TechHero() {
           bg-no-repeat
         "
         style={{
-          backgroundImage: "url('/slide1.1.png')",
+          backgroundImage: "url('/slide1.1.webp')",
         }}
       />
 
@@ -1598,8 +1598,8 @@ export function PurpleHero() {
 
   return (
     <section className="relative w-full h-[535px] overflow-hidden bg-[#18001f]">
-      <img
-        src="/slide1.2.png"
+      <img loading="lazy" decoding="async"
+        src="/slide1.2.webp"
         alt="Technology future"
         className="absolute inset-0 w-full h-full object-fill"
       />

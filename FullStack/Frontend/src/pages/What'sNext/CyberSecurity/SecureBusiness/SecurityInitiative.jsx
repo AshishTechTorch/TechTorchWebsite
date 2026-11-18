@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-const initiativeImage = "/SecurityInitiative.png";
+const initiativeImage = "/SecurityInitiative.webp";
 
 export default function Initiative() {
   const navigate = useNavigate();
@@ -235,7 +235,7 @@ export default function Initiative() {
           {/* RIGHT IMAGE */}
           <div className="initiative-image-wrapper">
 
-            <img
+            <img loading="lazy" decoding="async"
               src={initiativeImage}
               alt="Enterprise Security Assessment"
               className="initiative-image"

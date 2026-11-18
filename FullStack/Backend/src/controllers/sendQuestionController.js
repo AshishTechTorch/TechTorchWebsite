@@ -1,3 +1,4 @@
+const { sendError } = require("../utils/handleError");
 const SendQuestion = require("../models/SendQuestion.model");
 
 // CREATE QUESTION
@@ -42,11 +43,7 @@ const createSendQuestion = async (req, res) => {
   } catch (error) {
     console.error("Create Send Question Error:", error);
 
-    return res.status(500).json({
-      success: false,
-      message: "Failed to submit your question.",
-      error: error.message,
-    });
+    return sendError(res, error, "Failed to submit your question.");
   }
 };
 
@@ -65,11 +62,7 @@ const getSendQuestions = async (req, res) => {
   } catch (error) {
     console.error("Get Send Questions Error:", error);
 
-    return res.status(500).json({
-      success: false,
-      message: "Failed to fetch questions.",
-      error: error.message,
-    });
+    return sendError(res, error, "Failed to fetch questions.");
   }
 };
 
@@ -92,11 +85,7 @@ const getSendQuestionById = async (req, res) => {
   } catch (error) {
     console.error("Get Send Question Error:", error);
 
-    return res.status(500).json({
-      success: false,
-      message: "Failed to fetch question.",
-      error: error.message,
-    });
+    return sendError(res, error, "Failed to fetch question.");
   }
 };
 
@@ -123,7 +112,7 @@ const updateSendQuestionStatus = async (req, res) => {
       req.params.id,
       { status },
       {
-        new: true,
+        returnDocument: "after",
         runValidators: true,
       }
     );
@@ -143,11 +132,7 @@ const updateSendQuestionStatus = async (req, res) => {
   } catch (error) {
     console.error("Update Question Status Error:", error);
 
-    return res.status(500).json({
-      success: false,
-      message: "Failed to update question status.",
-      error: error.message,
-    });
+    return sendError(res, error, "Failed to update question status.");
   }
 };
 
@@ -172,11 +157,7 @@ const deleteSendQuestion = async (req, res) => {
   } catch (error) {
     console.error("Delete Question Error:", error);
 
-    return res.status(500).json({
-      success: false,
-      message: "Failed to delete question.",
-      error: error.message,
-    });
+    return sendError(res, error, "Failed to delete question.");
   }
 };
 

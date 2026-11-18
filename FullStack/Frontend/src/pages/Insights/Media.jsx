@@ -20,7 +20,7 @@ export default function Media() {
         "TechTorch Participates in Industry Technology Forum 2024",
       description:
         "Our team shared insights on digital transformation and connected with industry leaders and peers.",
-      image: "/Media2.png",
+      image: "/Media2.webp",
       featured: true,
     },
     {
@@ -30,7 +30,7 @@ export default function Media() {
       title: "TorchX Suite – Smarter Business Management",
       description:
         "Explore how TorchX helps organisations streamline operations and drive growth.",
-      image: "/Media3.png",
+      image: "/Media3.webp",
     },
     {
       id: 3,
@@ -39,7 +39,7 @@ export default function Media() {
       title: "Edufic Era at Education Leaders Summit",
       description:
         "Showcasing our education management platform and its impact.",
-      image: "/Media4.png",
+      image: "/Media4.webp",
     },
     {
       id: 4,
@@ -48,7 +48,7 @@ export default function Media() {
       title: "TechTorch Launches New Features in TorchX Suite",
       description:
         "Latest enhancements to improve productivity and user experience.",
-      image: "/Media5.png",
+      image: "/Media5.webp",
     },
     {
       id: 5,
@@ -57,7 +57,7 @@ export default function Media() {
       title: "Building Stronger Together",
       description:
         "Glimpses from our team events and community initiatives.",
-      image: "/Media6.png",
+      image: "/Media6.webp",
     },
   ];
 
@@ -872,8 +872,8 @@ export default function Media() {
         </div>
 
         <div className="media-hero-visual">
-          <img
-            src="/Media1.png"
+          <img loading="lazy" decoding="async"
+            src="/Media1.webp"
             alt="TechTorch technology team"
           />
         </div>

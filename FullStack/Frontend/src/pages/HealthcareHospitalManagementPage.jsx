@@ -205,8 +205,8 @@ export default function HealthcareHospitalManagementPage() {
 
           {/* Hero visual */}
           <div className="relative mx-auto w-full max-w-[470px] pb-6 pl-0 sm:pl-14">
-            <img
-              src="/healthcare-hero.png"
+            <img loading="lazy" decoding="async"
+              src="/healthcare-hero.webp"
               alt="Doctor holding a tablet in a hospital corridor"
               className="h-[420px] w-full rounded-3xl object-cover shadow-[0_24px_50px_rgba(15,23,42,0.22)] md:h-[480px]"
             />
@@ -281,8 +281,8 @@ export default function HealthcareHospitalManagementPage() {
               className="absolute -left-2 -top-4 hidden h-24 w-[55%] rounded-t-3xl sm:block"
               style={{ background: PLUM }}
             />
-            <img
-              src="/healthcare-ecosystem.png"
+            <img loading="lazy" decoding="async"
+              src="/healthcare-ecosystem.webp"
               alt="Nurses caring for a patient in a hospital room"
               className="relative h-[340px] w-full rounded-2xl object-cover shadow-[0_20px_40px_rgba(15,23,42,0.2)] md:h-[380px]"
             />
@@ -411,8 +411,8 @@ export default function HealthcareHospitalManagementPage() {
               className="absolute -bottom-4 -left-4 hidden h-[60%] w-[65%] rounded-2xl sm:block"
               style={{ background: PLUM }}
             />
-            <img
-              src="/healthcare-portal.png"
+            <img loading="lazy" decoding="async"
+              src="/healthcare-portal.webp"
               alt="Nurse using a tablet with a patient"
               className="relative h-[380px] w-full rounded-2xl object-cover shadow-[0_20px_40px_rgba(15,23,42,0.2)] md:h-[420px]"
             />

@@ -1,3 +1,4 @@
+const { sendError } = require("../utils/handleError");
 const News = require("../models/News.model");
 
 const slugify = (text = "") => {
@@ -76,11 +77,7 @@ const createNews = async (req, res) => {
   } catch (error) {
     console.error("Create News Error:", error);
 
-    return res.status(500).json({
-      success: false,
-      message: "Failed to create news",
-      error: error.message,
-    });
+    return sendError(res, error, "Failed to create news");
   }
 };
 
@@ -99,11 +96,7 @@ const getAllNews = async (req, res) => {
   } catch (error) {
     console.error("Get News Error:", error);
 
-    return res.status(500).json({
-      success: false,
-      message: "Failed to fetch news",
-      error: error.message,
-    });
+    return sendError(res, error, "Failed to fetch news");
   }
 };
 
@@ -127,11 +120,7 @@ const getNewsById = async (req, res) => {
   } catch (error) {
     console.error("Get News By ID Error:", error);
 
-    return res.status(500).json({
-      success: false,
-      message: "Failed to fetch news",
-      error: error.message,
-    });
+    return sendError(res, error, "Failed to fetch news");
   }
 };
 
@@ -155,7 +144,7 @@ const updateNews = async (req, res) => {
       req.params.id,
       updates,
       {
-        new: true,
+        returnDocument: "after",
         runValidators: true,
       }
     );
@@ -175,11 +164,7 @@ const updateNews = async (req, res) => {
   } catch (error) {
     console.error("Update News Error:", error);
 
-    return res.status(500).json({
-      success: false,
-      message: "Failed to update news",
-      error: error.message,
-    });
+    return sendError(res, error, "Failed to update news");
   }
 };
 
@@ -203,11 +188,7 @@ const deleteNews = async (req, res) => {
   } catch (error) {
     console.error("Delete News Error:", error);
 
-    return res.status(500).json({
-      success: false,
-      message: "Failed to delete news",
-      error: error.message,
-    });
+    return sendError(res, error, "Failed to delete news");
   }
 };
 

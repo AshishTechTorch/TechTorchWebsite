@@ -1,3 +1,4 @@
+const { sendError } = require("../utils/handleError");
 const Inquiry = require("../models/Inquiry.model");
 
 const FORM_LABELS = {
@@ -42,7 +43,7 @@ const createInquiry = async (req, res) => {
       return res.status(400).json({ success: false, message: messages[0] || "Validation failed.", errors: messages });
     }
     console.error("Create Inquiry Error:", error);
-    return res.status(500).json({ success: false, message: "Failed to submit your request." });
+    return sendError(res, error, "Failed to submit your request.");
   }
 };
 

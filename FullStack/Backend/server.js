@@ -5,6 +5,7 @@ const cors = require("cors");
 const cookieParser = require("cookie-parser");
 const { connectDB } = require("./src/config/db");
 const errorMiddleware = require("./src/middlewares/error.middleware.js");
+const sanitizeBody = require("./src/middlewares/sanitize");
 const authRoutes = require("./src/routes/authRoutes");
 const adminRoutes = require("./src/routes/adminRoutes");
 const newsRoutes = require("./src/routes/newsRoutes");
@@ -79,6 +80,7 @@ const expertQueryRoutes = require("./src/routes/expertQueryRoutes");
 const talkToExpertRoutes = require("./src/routes/talktoExpertRoutes");
 
 const app = express();
+app.disable("x-powered-by");
 app.set("trust proxy", 1);
 
 
@@ -89,14 +91,23 @@ const allowedOrigins = (process.env.CLIENT_URL || "http://localhost:5173")
   .map((o) => o.trim().replace(/\/$/, ""));
 
 app.use(cors({
-  origin: (origin, cb) =>
-    !origin || allowedOrigins.includes(origin)
-      ? cb(null, true)
-      : cb(new Error("Not allowed by CORS")),
+  // Unknown origins simply get no CORS headers (browser blocks them) instead of a 500 error
+  origin: (origin, cb) => cb(null, !origin || allowedOrigins.includes(origin)),
   credentials: true,
 }));
 
+// Basic security headers
+app.use((req, res, next) => {
+  res.set({
+    "X-Content-Type-Options": "nosniff",
+    "X-Frame-Options": "DENY",
+    "Referrer-Policy": "strict-origin-when-cross-origin",
+  });
+  next();
+});
+
 app.use(express.json({ limit: "2mb" }));
+app.use(sanitizeBody);
 app.use(cookieParser());
 app.get("/", (req, res) => {
   res.send("TechTorch Backend is running");

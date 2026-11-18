@@ -57,25 +57,25 @@ const institutions = [
   {
     label: "Schools",
     body: "Support academics, attendance, communication and everyday classroom operations.",
-    image: "/Education2.png",
+    image: "/Education2.webp",
     alt: "Students working at a school library",
   },
   {
     label: "Colleges",
     body: "Manage academic and administrative requirements, registration, and courses with ease.",
-    image: "/college.png",
+    image: "/college.webp",
     alt: "College students studying together",
   },
   {
     label: "Universities",
     body: "Connect multiple departments, research functions and complex academic structures.",
-    image: "/rrmain.png",
+    image: "/rrmain.webp",
     alt: "University laboratory and lecture environment",
   },
   {
     label: "Multi-Campus Institutions",
     body: "Bring centralized visibility and synchronized coordination across all regional locations.",
-    image: "/campus.png",
+    image: "/campus.webp",
     alt: "Students walking through a university campus",
   },
 ];
@@ -146,7 +146,6 @@ export default function MethodologyAndInstitutionsSections() {
   return (
     <div className="methodology-page">
       <style>{`
-        @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap");
 
         .methodology-page {
           --wine: ${WINE};

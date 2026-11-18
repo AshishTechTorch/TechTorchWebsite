@@ -283,8 +283,8 @@ export default function VendorPartnershipPage() {
             <div className="vendor-image-card">
 
               <div className="vendor-image-wrap">
-                <img
-                  src="/vendor.png"
+                <img loading="lazy" decoding="async"
+                  src="/vendor.webp"
                   alt="Vendor Partnership"
                 />
 
@@ -406,8 +406,8 @@ export default function VendorPartnershipPage() {
             </div>
 
             <div className="vendor-impact-image">
-              <img
-                src="/BecomePartner.png"
+              <img loading="lazy" decoding="async"
+                src="/BecomePartner.webp"
                 alt="Enterprise Collaboration"
               />
             </div>

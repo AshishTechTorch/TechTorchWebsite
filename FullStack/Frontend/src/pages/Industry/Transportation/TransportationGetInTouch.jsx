@@ -2035,9 +2035,9 @@ export default function TransportationGetInTouch() {
 
             <div className="transport-image-wrapper">
 
-              <img
+              <img loading="lazy" decoding="async"
                 className="transport-image"
-                src="/TransportationGetInTouch.png"
+                src="/TransportationGetInTouch.webp"
                 alt="Transportation technology consultation"
               />
 

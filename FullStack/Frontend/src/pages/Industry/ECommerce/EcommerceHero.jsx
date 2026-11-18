@@ -13,7 +13,6 @@ export default function EcommerceHeroSection() {
   return (
     <section className="ecommerce-hero-section">
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
 
         /* =========================================
            SECTION
@@ -626,7 +625,7 @@ export default function EcommerceHeroSection() {
         <div className="ecommerce-hero-image-area">
           <div className="ecommerce-hero-image-container">
             <img
-              src="/ecommerce1.png"
+              src="/ecommerce1.webp"
               alt="E-commerce team working together"
               className="ecommerce-hero-image"
             />

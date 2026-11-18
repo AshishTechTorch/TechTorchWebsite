@@ -173,7 +173,6 @@ export default function DigitalExperienceAndApproachSections() {
   return (
     <section className="digital-experience-section">
       <style>{`
-        @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap");
 
         .digital-experience-section {
           width: 100%;
@@ -816,8 +815,8 @@ export default function DigitalExperienceAndApproachSections() {
       <div className="digital-main-container">
         <div className="digital-experience-grid">
           <div className="digital-image-area">
-            <img
-              src="/DevelopmentTeam.png"
+            <img loading="lazy" decoding="async"
+              src="/DevelopmentTeam.webp"
               alt="Digital customer experience"
               className="digital-main-image"
             />

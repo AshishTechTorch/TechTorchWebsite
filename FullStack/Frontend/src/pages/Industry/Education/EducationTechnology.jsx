@@ -13,7 +13,7 @@ const WINE = "#7A1F3D";
 const INK = "#1B1B2A";
 const MUTED = "#5b5a63";
 
-const EDUCATION_WORK_IMAGE = "/college.png";
+const EDUCATION_WORK_IMAGE = "/college.webp";
 
 const personas = [
   {
@@ -810,7 +810,7 @@ export default function PeopleAndWorkSections() {
           {/* IMAGE */}
 
           <div className="education-work-image-wrapper">
-            <img
+            <img loading="lazy" decoding="async"
               src={EDUCATION_WORK_IMAGE}
               alt="Two colleagues reviewing records"
               className="education-work-image"

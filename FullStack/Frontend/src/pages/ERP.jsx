@@ -102,7 +102,7 @@ export function ErpHero() {
           bg-no-repeat
         "
         style={{
-          backgroundImage: "url('/slide21.png')",
+          backgroundImage: "url('/slide21.webp')",
         }}
       />
 
@@ -614,8 +614,8 @@ export function ERPApproach() {
                 xl:max-w-[445px]
               "
             >
-              <img
-                src="/Hero02Slide02.png"
+              <img loading="lazy" decoding="async"
+                src="/Hero02Slide02.webp"
                 alt="ERP Approach"
                 className="
                   block
@@ -1238,8 +1238,8 @@ export function PracticalERPPath() {
             2xl:w-[270px]
           "
         >
-          <img
-            src="/TorchX Suite.png"
+          <img loading="lazy" decoding="async"
+            src="/TorchX Suite.webp"
             alt="TorchX Suite"
             className="
               block
@@ -1293,9 +1293,9 @@ export function PracticalERPPath() {
             2xl:w-[74%]
           "
         >
-          <img
+          <img loading="lazy" decoding="async"
             id="8f14dd"
-            src="/Slide2.2.png"
+            src="/Slide2.2.webp"
             alt="TorchX ERP platform"
             className="
               block
@@ -1645,7 +1645,7 @@ export function TechHero() {
           bg-center
         "
         style={{
-          backgroundImage: "url('/slide25.png')",
+          backgroundImage: "url('/slide25.webp')",
         }}
       />
 

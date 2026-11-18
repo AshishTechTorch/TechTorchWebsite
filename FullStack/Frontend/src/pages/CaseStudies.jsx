@@ -38,7 +38,7 @@ const caseStudies = [
   {
     no: 1,
     title: "Case Study 1: E-Commerce Transformation",
-    image: "/case-study-1.png",
+    image: "/case-study-1.webp",
     challenge:
       "A retail client struggled with an outdated online store, leading to poor user experience, high cart abandonment rates, and stagnant sales growth. They needed a solution that would modernize their e-commerce platform and improve customer engagement.",
     solution:
@@ -55,7 +55,7 @@ const caseStudies = [
   {
     no: 2,
     title: "Case Study 2: Streamlined Project Management",
-    image: "/case-study-2.png",
+    image: "/case-study-2.webp",
     challenge:
       "An IT services company faced difficulties in managing multiple projects simultaneously, resulting in missed deadlines and resource conflicts. They required a more efficient way to monitor progress and collaborate across teams.",
     solution:
@@ -72,7 +72,7 @@ const caseStudies = [
   {
     no: 3,
     title: "Case Study 3: Enhanced Marketing ROI",
-    image: "/case-study-3.png",
+    image: "/case-study-3.webp",
     challenge:
       "A marketing agency was struggling with low engagement rates in their campaigns and inefficient use of marketing resources. They needed a solution to streamline their marketing efforts and maximize ROI.",
     solution:
@@ -89,7 +89,7 @@ const caseStudies = [
   {
     no: 4,
     title: "Case Study 4: Operational Efficiency in Supply Chain",
-    image: "/case-study-4.png",
+    image: "/case-study-4.webp",
     challenge:
       "A logistics company faced challenges in inventory management and delivery schedules, leading to increased costs and customer dissatisfaction. They needed a solution to optimize their supply chain processes.",
     solution:
@@ -162,8 +162,8 @@ export default function CaseStudies() {
             </p>
           </div>
 
-          <img
-            src="/case-studies-hero.png"
+          <img loading="lazy" decoding="async"
+            src="/case-studies-hero.webp"
             alt="Team reviewing a project on a laptop"
             className="h-auto w-full rounded-xl object-cover shadow-[0_20px_40px_rgba(15,23,42,0.18)]"
           />
@@ -241,7 +241,7 @@ export default function CaseStudies() {
               key={c.no}
               className="flex flex-col overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm sm:flex-row"
             >
-              <img
+              <img loading="lazy" decoding="async"
                 src={c.image}
                 alt=""
                 className="h-[220px] w-full object-cover sm:h-auto sm:w-[200px] sm:shrink-0"

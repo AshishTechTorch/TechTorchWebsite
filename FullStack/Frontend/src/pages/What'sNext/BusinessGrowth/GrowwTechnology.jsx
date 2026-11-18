@@ -102,7 +102,7 @@ export default function GrowWithBusinessSection() {
             <div className="relative w-full overflow-hidden rounded-xl bg-slate-100 shadow-sm sm:rounded-2xl">
               {/* ================= MAIN IMAGE ================= */}
               <img
-                src="/DeploymentMethodology.png"
+                src="/DeploymentMethodology.webp"
                 alt="Executive briefing presentation"
                 loading="lazy"
                 className="block h-[300px] w-full object-cover object-center sm:h-[340px] md:h-[380px] lg:h-[400px] xl:h-[430px]"

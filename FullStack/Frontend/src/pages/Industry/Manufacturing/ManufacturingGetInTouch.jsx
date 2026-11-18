@@ -188,7 +188,6 @@ export default function ManufacturingGetInTouch() {
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
 
         :root {
           --mfg-beetroot: #730042;
@@ -1428,8 +1427,8 @@ export default function ManufacturingGetInTouch() {
 
                   <div className="mfg-image-wrapper">
 
-                    <img
-                      src="/ManufacturingGetInTouch.png"
+                    <img loading="lazy" decoding="async"
+                      src="/ManufacturingGetInTouch.webp"
                       alt="Manufacturing technology"
                       className="mfg-image"
                     />

@@ -131,7 +131,6 @@ export default function FinancialContact() {
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
 
         /* ================================
            SUCCESS DIALOG
@@ -1504,8 +1503,8 @@ export default function FinancialContact() {
             {/* IMAGE */}
 
             <div className="financial-image-card">
-              <img
-                src="/FinanceGetInTouch.png"
+              <img loading="lazy" decoding="async"
+                src="/FinanceGetInTouch.webp"
                 alt="Financial technology architecture team"
                 className="financial-image"
               />

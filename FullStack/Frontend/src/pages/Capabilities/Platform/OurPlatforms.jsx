@@ -88,8 +88,8 @@ export default function OurPlatformsSection() {
                   {/* Main Image */}
 
                   <div className="platform-main-image">
-                    <img
-                      src="/desktop.png"
+                    <img loading="lazy" decoding="async"
+                      src="/desktop.webp"
                       alt="TorchX Suite dashboard on a laptop"
                     />
                   </div>
@@ -97,8 +97,8 @@ export default function OurPlatformsSection() {
                   {/* Phone */}
 
                   <div className="platform-phone">
-                    <img
-                      src="/phone.png"
+                    <img loading="lazy" decoding="async"
+                      src="/phone.webp"
                       alt="TorchX Suite mobile app"
                     />
                   </div>
@@ -154,8 +154,8 @@ export default function OurPlatformsSection() {
 
               <div className="platform-image-area platform-academy-area">
                 <div className="platform-academy-image-wrap">
-                  <img
-                    src="/desktop2.png"
+                  <img loading="lazy" decoding="async"
+                    src="/desktop2.webp"
                     alt="TorchX Academy dashboard on a desktop monitor"
                   />
                 </div>

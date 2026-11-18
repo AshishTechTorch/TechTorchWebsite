@@ -7,7 +7,7 @@ const WINE = "#7A1F3D";
 const INK = "#1B1B2A";
 const MUTED = "#5b5a63";
 
-const HERO_IMAGE = "/manufacturinghero.png";
+const HERO_IMAGE = "/manufacturinghero.webp";
 
 export default function ManufacturingHeroSection() {
   const navigate = useNavigate();
@@ -15,7 +15,6 @@ export default function ManufacturingHeroSection() {
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
 
         .manufacturing-hero {
           width: 100%;

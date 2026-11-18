@@ -23,7 +23,7 @@ export default function CyberSecurityHeroSection() {
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
           backgroundImage:
-            "url('/Card4hero.png')",
+            "url('/Card4hero.webp')",
         }}
       />
 

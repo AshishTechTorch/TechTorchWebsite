@@ -175,7 +175,7 @@ export default function ReadyForNextThreatSection() {
         >
           <div className="relative overflow-hidden rounded-lg sm:rounded-xl">
             <img
-              src="/Senior cybersecurity advisors consulting around a digital holographic security display.png"
+              src="/Senior cybersecurity advisors consulting around a digital holographic security display.webp"
               alt="Executive cyber advisory session"
               loading="lazy"
               className="

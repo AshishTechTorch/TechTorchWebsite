@@ -156,8 +156,8 @@ export default function PeopleManagementPage() {
               className="absolute -right-3 bottom-10 top-10 hidden w-[55%] rounded-3xl sm:block"
               style={{ background: PLUM }}
             />
-            <img
-              src="/people-hero.png"
+            <img loading="lazy" decoding="async"
+              src="/people-hero.webp"
               alt="Team collaborating in a modern office"
               className="relative h-[260px] w-full rounded-2xl border-4 border-white object-cover shadow-[0_20px_40px_rgba(15,23,42,0.2)] md:h-[300px]"
             />
@@ -192,8 +192,8 @@ export default function PeopleManagementPage() {
               className="absolute -left-3 -top-3 h-20 w-[40%] rounded-tl-2xl"
               style={{ background: PLUM }}
             />
-            <img
-              src="/people-meeting.png"
+            <img loading="lazy" decoding="async"
+              src="/people-meeting.webp"
               alt="HR strategy presentation in a meeting room"
               className="relative h-[340px] w-full rounded-2xl border-4 border-white object-cover shadow-[0_20px_40px_rgba(15,23,42,0.18)] md:h-[380px]"
             />
@@ -270,8 +270,8 @@ export default function PeopleManagementPage() {
       <section className="w-full bg-[#f8fafc] px-4 py-16 md:px-8 md:py-20">
         <div className="grid items-center gap-12 lg:grid-cols-[0.75fr_1.25fr] lg:gap-14">
           <div className="relative mx-auto w-full max-w-[360px]">
-            <img
-              src="/people-office.png"
+            <img loading="lazy" decoding="async"
+              src="/people-office.webp"
               alt="HR professional reviewing workforce analytics"
               className="h-[330px] w-full rounded-2xl border-4 border-white object-cover shadow-[0_20px_40px_rgba(15,23,42,0.18)]"
             />
@@ -363,8 +363,8 @@ export default function PeopleManagementPage() {
         <Eyebrow>Delivering Solutions Powered By</Eyebrow>
 
         {/* Replace this image with your real partner logos */}
-        <img
-          src="/people-partners.png"
+        <img loading="lazy" decoding="async"
+          src="/people-partners.webp"
           alt="Technology partners: AWS, Google, Cloud, DELL and others"
           className="mt-8 h-auto w-full max-w-[1000px] object-contain"
         />

@@ -76,8 +76,8 @@ export default function DataDecisions() {
       <section className="data-decisions-hero">
         {/* HERO IMAGE */}
 
-        <img
-          src="/DataDecisions.png"
+        <img loading="lazy" decoding="async"
+          src="/DataDecisions.webp"
           alt="Data and Decision Making"
           className="data-decisions-hero-image"
         />

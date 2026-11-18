@@ -11,9 +11,9 @@ import {
 } from "lucide-react";
 
 const IMAGES = {
-  handshake: "/PartnersEcosystem1.png",
-  network: "/PartnersEcosystem2.png",
-  building: "/PartnersEcosystem3.png",
+  handshake: "/PartnersEcosystem1.webp",
+  network: "/PartnersEcosystem2.webp",
+  building: "/PartnersEcosystem3.webp",
 };
 
 const OPPORTUNITIES = [
@@ -116,7 +116,7 @@ export default function PartnersEcosystem() {
             </p>
           </div>
           <div className="pe-hero-image-wrap relative min-w-0">
-            <img
+            <img loading="lazy" decoding="async"
               src={IMAGES.handshake}
               alt="Technology-enabled business handshake"
               className="pe-hero-image aspect-[3/2] w-full max-w-full rounded-xl object-cover object-center shadow-xl"
@@ -146,7 +146,7 @@ export default function PartnersEcosystem() {
               business relationships.
             </p>
           </div>
-          <img
+          <img loading="lazy" decoding="async"
             src={IMAGES.network}
             alt="Professionals collaborating around a glowing digital structure"
             className="w-full max-w-[90%] aspect-[3/2] rounded-2xl object-cover object-center shadow-xl md:order-last"
@@ -242,7 +242,7 @@ export default function PartnersEcosystem() {
             ref={formRef}
             className="grid grid-cols-1 overflow-hidden rounded-2xl bg-white shadow-2xl sm:grid-cols-[0.8fr_1fr]"
           >
-            <img
+            <img loading="lazy" decoding="async"
               src={IMAGES.building}
               alt="Modern illuminated corporate office building"
               className="h-[180px] w-full max-w-full object-cover object-[58%_center] sm:h-full sm:min-h-[320px] lg:min-h-[420px]"

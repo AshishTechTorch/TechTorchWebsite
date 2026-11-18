@@ -11,7 +11,7 @@ import {
   Heart,
   ArrowRight,
 } from "lucide-react";
-import megaMenuImage from "../../assets/image1.png";
+import megaMenuImage from "../../assets/image1.webp";
 
 /* Edit the short descriptions freely */
 const links = [

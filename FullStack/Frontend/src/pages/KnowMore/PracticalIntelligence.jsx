@@ -6,8 +6,8 @@ export default function PracticalIntelligence() {
       <div className="practical-intelligence-card">
         {/* ================= LEFT IMAGE ================= */}
         <div className="practical-image-wrap">
-          <img
-            src="/Practical Intelligence.png"
+          <img loading="lazy" decoding="async"
+            src="/Practical Intelligence.webp"
             alt="AI and Analytics"
             className="practical-image"
           />

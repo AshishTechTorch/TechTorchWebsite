@@ -1,3 +1,4 @@
+const { sendError } = require("../utils/handleError");
 const GeneralEnquiry = require(
   "../models/GeneralEnquiry.model"
 );
@@ -79,10 +80,7 @@ const createGeneralEnquiry = async (req, res) => {
       });
     }
 
-    return res.status(500).json({
-      success: false,
-      message: "Failed to submit enquiry.",
-    });
+    return sendError(res, error, "Failed to submit enquiry.");
   }
 };
 
@@ -106,10 +104,7 @@ const getGeneralEnquiries = async (req, res) => {
   } catch (error) {
     console.error("Get General Enquiries Error:", error);
 
-    return res.status(500).json({
-      success: false,
-      message: "Failed to fetch enquiries.",
-    });
+    return sendError(res, error, "Failed to fetch enquiries.");
   }
 };
 
@@ -139,10 +134,7 @@ const getGeneralEnquiryById = async (req, res) => {
   } catch (error) {
     console.error("Get General Enquiry Error:", error);
 
-    return res.status(500).json({
-      success: false,
-      message: "Failed to fetch enquiry.",
-    });
+    return sendError(res, error, "Failed to fetch enquiry.");
   }
 };
 
@@ -175,7 +167,7 @@ const updateGeneralEnquiryStatus = async (req, res) => {
       req.params.id,
       { status },
       {
-        new: true,
+        returnDocument: "after",
         runValidators: true,
       }
     );
@@ -198,10 +190,7 @@ const updateGeneralEnquiryStatus = async (req, res) => {
       error
     );
 
-    return res.status(500).json({
-      success: false,
-      message: "Failed to update enquiry status.",
-    });
+    return sendError(res, error, "Failed to update enquiry status.");
   }
 };
 
@@ -231,10 +220,7 @@ const deleteGeneralEnquiry = async (req, res) => {
   } catch (error) {
     console.error("Delete General Enquiry Error:", error);
 
-    return res.status(500).json({
-      success: false,
-      message: "Failed to delete enquiry.",
-    });
+    return sendError(res, error, "Failed to delete enquiry.");
   }
 };
 

@@ -117,8 +117,8 @@ export default function SoftwareEngineeringOutsourcingPage() {
               className="absolute -left-4 top-1/4 h-24 w-8 rounded-l-xl"
               style={{ background: PLUM }}
             />
-            <img
-              src="/se-hero.png"
+            <img loading="lazy" decoding="async"
+              src="/se-hero.webp"
               alt="Laptop displaying code with glowing cloud and app icons"
               className="relative h-[300px] w-full rounded-2xl object-cover shadow-[0_24px_50px_rgba(15,23,42,0.28)] md:h-[340px]"
             />
@@ -131,8 +131,8 @@ export default function SoftwareEngineeringOutsourcingPage() {
         <div className="grid items-center gap-12 lg:grid-cols-[1fr_1fr] lg:gap-16">
           <div className="mx-auto w-full max-w-[560px]">
             <div className="rounded-3xl bg-[#ead8df] p-2 shadow-[0_20px_40px_rgba(15,23,42,0.18)]">
-              <img
-                src="/se-about.png"
+              <img loading="lazy" decoding="async"
+                src="/se-about.webp"
                 alt="Developer typing on a laptop with a glowing cloud circuit overlay"
                 className="h-[260px] w-full rounded-2xl object-cover md:h-[320px]"
               />

@@ -8,7 +8,7 @@ import { MOBILE_MENU, routeFor } from "./NavbarItem/navRoutes";
 
 import { useMe, useSignOut } from "../account/useAccount";
 
-import logo from "../assets/TechTorchLogo.png";
+import logo from "../assets/TechTorchLogo.webp";
 
 import { NavMenuProvider, useNavMenu } from "./NavbarItem/NavMenuContext";
 
@@ -17,7 +17,7 @@ import NavCapabilities from "./NavbarItem/NavCapabilities";
 import NavIndustries from "./NavbarItem/NavIndustries";
 import NavInsights from "./NavbarItem/NavInsights";
 import NavCareers from "./NavbarItem/NavCareers";
-import NavSearch from "./NavbarItem/NavSearch";
+import SearchOverlay from "./NavbarItem/SearchOverlay";
 
 // =====================================================
 // SEARCH ICON
@@ -247,31 +247,16 @@ function MobileMenu({ navHeight, close }) {
                   <ul className="bg-gray-50 pb-2">
                     {item.children.map((c) => (
                       <li key={c}>
-                        {c === "TorchX Suite" || c === "TorchX Campus" ? (
-                          <a
-                            href="https://torchxsuite.com/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            onClick={() => {
-                              setOpenKey(null);
-                              close();
-                            }}
-                            className="block px-10 py-2.5 text-[15px] text-gray-700 no-underline hover:text-[#8a1538]"
-                          >
-                            {c}
-                          </a>
-                        ) : (
-                          <Link
-                            to={routeFor(c)}
-                            onClick={() => {
-                              setOpenKey(null);
-                              close();
-                            }}
-                            className="block px-10 py-2.5 text-[15px] text-gray-700 no-underline hover:text-[#8a1538]"
-                          >
-                            {c}
-                          </Link>
-                        )}
+                        <Link
+                          to={routeFor(c)}
+                          onClick={() => {
+                            setOpenKey(null);
+                            close();
+                          }}
+                          className="block px-10 py-2.5 text-[15px] text-gray-700 no-underline hover:text-[#8a1538]"
+                        >
+                          {c}
+                        </Link>
                       </li>
                     ))}
                   </ul>
@@ -301,6 +286,7 @@ function NavbarInner() {
   const location = useLocation();
 
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
 
   // Prevent hover-based reopening immediately after navigation.
   const [hoverLocked, setHoverLocked] = useState(false);
@@ -326,7 +312,10 @@ function NavbarInner() {
   useLayoutEffect(() => {
     const measure = () => {
       if (navRef.current) {
-        setNavHeight(navRef.current.getBoundingClientRect().height);
+        const h = navRef.current.getBoundingClientRect().height;
+        setNavHeight(h);
+        // Shared with BackNavbar etc. so sticky bars never hide under the navbar
+        document.documentElement.style.setProperty("--nav-h", `${h}px`);
       }
     };
 
@@ -334,8 +323,16 @@ function NavbarInner() {
 
     window.addEventListener("resize", measure);
 
+    // logo / fonts loading can change the height after first paint
+    let ro;
+    if (typeof ResizeObserver !== "undefined" && navRef.current) {
+      ro = new ResizeObserver(measure);
+      ro.observe(navRef.current);
+    }
+
     return () => {
       window.removeEventListener("resize", measure);
+      ro?.disconnect();
     };
   }, [setNavHeight]);
 
@@ -543,10 +540,19 @@ function NavbarInner() {
 
         {/* SEARCH AND ACCOUNT */}
         <div className="hidden lg:flex items-center gap-4">
-          <NavSearch
-            onOpen={() => setActiveMenu(null)}
-            onNavigate={closeAllMenus}
-          />
+          <button
+            type="button"
+            aria-label="Search"
+            onClick={() => {
+              setActiveMenu(null);
+              setSearchOpen(true);
+            }}
+            className="flex items-center justify-center bg-transparent border-none cursor-pointer p-0"
+          >
+            <SearchIcon />
+          </button>
+
+          {searchOpen && <SearchOverlay onClose={() => setSearchOpen(false)} />}
           <AccountButton onNavigate={closeAllMenus} />
         </div>
 

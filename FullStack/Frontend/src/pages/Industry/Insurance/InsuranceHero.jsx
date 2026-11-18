@@ -52,7 +52,7 @@ export default function InsuranceHeroBgSection() {
           width: 100%;
           height: 100%;
 
-          background-image: url("/Insurance.png");
+          background-image: url("/Insurance.webp");
           background-size: cover;
           background-position: center center;
           background-repeat: no-repeat;

@@ -1072,8 +1072,8 @@ export default function OffshoreDevelopmentTeams() {
               {/* RIGHT IMAGE */}
               <div className="offshore-hero-visual">
                 <div className="offshore-image-card">
-                  <img
-                    src="/OffshoreStrategy.png"
+                  <img loading="lazy" decoding="async"
+                    src="/OffshoreStrategy.webp"
                     alt="Offshore development team"
                   />
 

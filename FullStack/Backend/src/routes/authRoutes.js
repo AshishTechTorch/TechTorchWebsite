@@ -3,6 +3,11 @@ const express = require("express");
 const router = express.Router();
 
 const protect = require("../middlewares/protect");
+const rateLimit = require("../middlewares/rateLimit");
+
+const loginLimiter = rateLimit({ windowMs: 15 * 60 * 1000, max: 10, message: "Too many login attempts. Please try again in 15 minutes." });
+const otpLimiter = rateLimit({ windowMs: 15 * 60 * 1000, max: 10, message: "Too many attempts. Please try again in 15 minutes." });
+const signupLimiter = rateLimit({ windowMs: 60 * 60 * 1000, max: 10, message: "Too many sign-up attempts. Please try again later." });
 const authMiddleware = require("../middlewares/auth.middleware");
 const { requireSuperadmin } = authMiddleware;
 
@@ -28,13 +33,13 @@ const {
 
 // ================= AUTH ROUTES =================
 
-router.post("/register", registerAdmin);
-router.post("/register-candidate", registerCandidate);
+router.post("/register", signupLimiter, registerAdmin);
+router.post("/register-candidate", signupLimiter, registerCandidate);
 
-router.post("/login", loginAdmin);
-router.post("/forgot-password", forgotPassword);
-router.post("/verify-otp", verifyOTP);
-router.post("/reset-password", resetPassword);
+router.post("/login", loginLimiter, loginAdmin);
+router.post("/forgot-password", otpLimiter, forgotPassword);
+router.post("/verify-otp", otpLimiter, verifyOTP);
+router.post("/reset-password", otpLimiter, resetPassword);
 router.post("/logout", logoutAdmin);
 
 // Get logged-in admin or candidate

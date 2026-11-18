@@ -359,7 +359,7 @@ export default function ITAugmentationHero() {
 
           border-radius: 11px;
 
-          background-image: url("/DeploymentMethodology.png");
+          background-image: url("/DeploymentMethodology.webp");
           background-size: cover;
           background-position: center;
 

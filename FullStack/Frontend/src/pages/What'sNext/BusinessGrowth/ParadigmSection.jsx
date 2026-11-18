@@ -63,8 +63,8 @@ export default function ParadigmSection() {
 
         {/* Image (no crop) */}
         <div className="relative mx-auto mt-2 w-full max-w-[420px] overflow-hidden rounded-lg sm:mt-3 sm:max-w-[460px] sm:rounded-xl md:max-w-[480px] lg:max-w-[520px]">
-          <img
-            src="/Senior cybersecurity advisors consulting around a digital holographic security display.png"
+          <img loading="lazy" decoding="async"
+            src="/Senior cybersecurity advisors consulting around a digital holographic security display.webp"
             alt="Executives discussing enterprise architecture"
             className="block h-auto w-full"
           />

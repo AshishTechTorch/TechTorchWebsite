@@ -144,7 +144,6 @@ export default function TelecommunicationsGetInTouch() {
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
 
         :root {
           --tc-beetroot: #730042;
@@ -1239,8 +1238,8 @@ export default function TelecommunicationsGetInTouch() {
 
             <div className="tc-image-card">
 
-              <img
-                src="/TcGetInTouch.png"
+              <img loading="lazy" decoding="async"
+                src="/TcGetInTouch.webp"
                 alt="Telecommunications technology consultation"
               />
 

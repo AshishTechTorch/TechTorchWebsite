@@ -142,8 +142,8 @@ export default function ITConsultancyPage() {
               className="absolute -right-1 top-8 bottom-12 w-3 rounded-r-xl"
               style={{ background: PLUM }}
             />
-            <img
-              src="/it-consultancy-hero.png"
+            <img loading="lazy" decoding="async"
+              src="/it-consultancy-hero.webp"
               alt="Business leader presenting a cloud ecosystem and digital transformation"
               className="relative h-[300px] w-full rounded-2xl border-4 border-white object-cover shadow-[0_24px_50px_rgba(15,23,42,0.28)] md:h-[340px]"
             />
@@ -164,8 +164,8 @@ export default function ITConsultancyPage() {
               className="absolute -right-2 bottom-0 h-10 w-24 rounded-br-2xl"
               style={{ background: PLUM }}
             />
-            <img
-              src="/it-consultancy-about.png"
+            <img loading="lazy" decoding="async"
+              src="/it-consultancy-about.webp"
               alt="Laptop showing a global technology infrastructure map"
               className="relative h-[260px] w-full rounded-2xl border-2 border-white object-cover shadow-[0_20px_40px_rgba(15,23,42,0.25)] md:h-[320px]"
             />

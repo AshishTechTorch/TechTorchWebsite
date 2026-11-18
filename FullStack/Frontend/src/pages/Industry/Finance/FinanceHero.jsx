@@ -649,7 +649,7 @@ export default function FinancialHeroSection() {
           />
 
           <img
-            src="/financehero.png"
+            src="/financehero.webp"
             alt="Financial technology solutions"
             className="financial-image"
           />

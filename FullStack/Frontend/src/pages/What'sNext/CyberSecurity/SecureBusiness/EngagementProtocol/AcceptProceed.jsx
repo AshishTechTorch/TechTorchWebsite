@@ -1656,7 +1656,7 @@ function Architect({
 
     <div className="architect">
 
-      <img
+      <img loading="lazy" decoding="async"
         src={image}
         alt={name}
       />

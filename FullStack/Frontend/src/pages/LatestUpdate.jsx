@@ -493,7 +493,7 @@ export default function LatestUpdateConsole() {
  
               {form.image.trim() && !imgBroken ? (
                 <div className="border border-stone-200 rounded-lg overflow-hidden bg-stone-50 h-40">
-                  <img
+                  <img loading="lazy" decoding="async"
                     src={form.image}
                     alt="Cover preview"
                     onError={() => setImgBroken(true)}
@@ -557,7 +557,7 @@ export default function LatestUpdateConsole() {
  
                     {r.image ? (
                       <div className="h-32 rounded-lg overflow-hidden bg-stone-100">
-                        <img src={r.image} alt="" className="w-full h-full object-cover" />
+                        <img loading="lazy" decoding="async" src={r.image} alt="" className="w-full h-full object-cover" />
                       </div>
                     ) : null}
  

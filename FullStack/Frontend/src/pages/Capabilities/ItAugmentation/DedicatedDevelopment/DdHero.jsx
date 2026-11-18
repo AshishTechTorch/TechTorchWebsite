@@ -136,7 +136,7 @@ export default function DedicatedTeamPodHero() {
               <div
                 className="dedicated-team-image-bg"
                 style={{
-                  backgroundImage: "url('/dd.png')",
+                  backgroundImage: "url('/dd.webp')",
                 }}
               />
 

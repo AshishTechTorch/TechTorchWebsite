@@ -605,8 +605,8 @@ export default function FinanceTechnologyHeroSection() {
 
         <div className="finance-technology-image-wrapper">
 
-          <img
-            src="/financetechnology.png"
+          <img loading="lazy" decoding="async"
+            src="/financetechnology.webp"
             alt="Financial technology dashboard"
             className="finance-technology-image"
           />

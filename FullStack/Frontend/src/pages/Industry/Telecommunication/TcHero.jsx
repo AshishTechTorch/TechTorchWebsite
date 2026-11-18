@@ -14,7 +14,6 @@ export default function TelecomHeroSection() {
     <>
       <style>
         {`
-          @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
 
           .telecom-hero {
             font-family: "Inter", sans-serif;
@@ -429,7 +428,7 @@ export default function TelecomHeroSection() {
               "
             >
               <img
-                src="/telecommunication.png"
+                src="/telecommunication.webp"
                 alt="Telecommunications technology solutions"
                 className="
                   w-full

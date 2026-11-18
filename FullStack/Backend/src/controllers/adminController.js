@@ -8,7 +8,7 @@ const fail = (res, code, message) =>
 
 const validId = (id) => mongoose.Types.ObjectId.isValid(id);
 
-const SAFE = "-password -otp -otpExpiry";
+const SAFE = "-password -otp -otpExpiry -otpAttempts";
 
 // Only a superadmin may touch other admins; anyone may touch themselves.
 const canManage = (req, id) =>
@@ -55,7 +55,7 @@ const updateAdmin = asyncHandler(async (req, res) => {
   }
 
   const updated = await Admin.findByIdAndUpdate(id, updates, {
-    new: true,
+    returnDocument: "after",
     runValidators: true,
   }).select(SAFE);
 

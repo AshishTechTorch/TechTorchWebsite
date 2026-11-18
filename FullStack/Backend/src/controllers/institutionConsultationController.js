@@ -1,3 +1,4 @@
+const { sendError } = require("../utils/handleError");
 const InstitutionConsultation = require("../models/InstitutionConsultation.model");
 
 // ======================================================
@@ -90,11 +91,7 @@ const createInstitutionConsultation = async (req, res) => {
       });
     }
 
-    return res.status(500).json({
-      success: false,
-      message:
-        "Something went wrong while submitting the consultation request.",
-    });
+    return sendError(res, error, "Something went wrong while submitting the consultation request.");
   }
 };
 
@@ -122,10 +119,7 @@ const getInstitutionConsultations = async (req, res) => {
       error
     );
 
-    return res.status(500).json({
-      success: false,
-      message: "Failed to fetch consultation requests.",
-    });
+    return sendError(res, error, "Failed to fetch consultation requests.");
   }
 };
 
@@ -157,10 +151,7 @@ const getInstitutionConsultationById = async (req, res) => {
       error
     );
 
-    return res.status(500).json({
-      success: false,
-      message: "Failed to fetch consultation request.",
-    });
+    return sendError(res, error, "Failed to fetch consultation request.");
   }
 };
 
@@ -194,7 +185,7 @@ const updateConsultationStatus = async (req, res) => {
         req.params.id,
         { status },
         {
-          new: true,
+          returnDocument: "after",
           runValidators: true,
         }
       );
@@ -217,10 +208,7 @@ const updateConsultationStatus = async (req, res) => {
       error
     );
 
-    return res.status(500).json({
-      success: false,
-      message: "Failed to update consultation status.",
-    });
+    return sendError(res, error, "Failed to update consultation status.");
   }
 };
 
@@ -254,10 +242,7 @@ const deleteInstitutionConsultation = async (req, res) => {
       error
     );
 
-    return res.status(500).json({
-      success: false,
-      message: "Failed to delete consultation request.",
-    });
+    return sendError(res, error, "Failed to delete consultation request.");
   }
 };
 

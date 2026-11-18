@@ -10,7 +10,7 @@ Inbox,
 X,
 } from "lucide-react";
 import { useQueryStats } from "../admin/hooks/useQueries";
-import logo from "../../public/logo.png?url";
+import logo from "../../public/logo.webp?url";
 import {
 getNews,
 getJobs,
@@ -347,7 +347,7 @@ aria-label="Main navigation"
 {/* LOGO                                                              */}
 {/* ================================================================ */}
 <div className="ttsb-logo">
-<img
+<img loading="lazy" decoding="async"
 src={logo}
 alt="TechTorch"
 className="ttsb-logo-img"

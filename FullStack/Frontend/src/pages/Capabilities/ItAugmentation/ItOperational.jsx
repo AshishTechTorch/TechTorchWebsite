@@ -563,7 +563,7 @@ export default function IntegratedResourcing() {
 
           overflow: hidden;
 
-          background-image: url("/Professionalmodern.png");
+          background-image: url("/Professionalmodern.webp");
           background-size: cover;
           background-position: center;
         }

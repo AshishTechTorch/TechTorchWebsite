@@ -123,7 +123,7 @@ export default function Philosophy() {
           "
         >
           <img
-            src="/philosophy.png"
+            src="/philosophy.webp"
             alt="Business leader reviewing data visualizations in a modern office"
             loading="lazy"
             className="
