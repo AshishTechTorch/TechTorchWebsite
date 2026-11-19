@@ -4,6 +4,8 @@ import { ArrowLeft, Clock } from "lucide-react";
 import { ErrorBox, PageLoader } from "../components/ui";
 import { formatDate } from "../admin/utils/india";
 import { usePublishedBlog } from "../account/useAccount";
+import { useSeo } from "../seo/Seo.jsx";
+import { SITE } from "../seo/seoConfig.js";
 
 const readTime = (text = "") => Math.max(1, Math.round(text.trim().split(/\s+/).length / 200));
 const initials = (name = "") => name.split(" ").map((w) => w[0]).slice(0, 2).join("").toUpperCase() || "T";
@@ -11,6 +13,29 @@ const initials = (name = "") => name.split(" ").map((w) => w[0]).slice(0, 2).joi
 export default function BlogDetail() {
   const { id } = useParams();
   const { data: blog, isLoading, error, refetch } = usePublishedBlog(id);
+
+  // SEO: real title/description/image + BlogPosting schema for each blog
+  const plain = (blog?.content || "").replace(/\s+/g, " ").trim();
+  useSeo(
+    blog
+      ? {
+          title: `${blog.title} | TechTorch Blog`,
+          description: plain.slice(0, 155) || "Read this article on the TechTorch blog.",
+          type: "article",
+          ...(/^https?:\/\//.test(blog.coverImage || "") ? { image: blog.coverImage } : {}),
+          imageAlt: blog.title,
+          jsonLd: {
+            "@context": "https://schema.org",
+            "@type": "BlogPosting",
+            headline: blog.title,
+            description: plain.slice(0, 155),
+            author: { "@type": "Person", name: blog.authorName || SITE.name },
+            datePublished: blog.publishedAt || blog.createdAt,
+            publisher: { "@type": "Organization", name: SITE.name },
+          },
+        }
+      : null
+  );
 
   return (
     <div className="bg-stone-50">
@@ -46,7 +71,7 @@ export default function BlogDetail() {
                 loading="lazy"
                 decoding="async"
                 src={blog.coverImage}
-                alt=""
+                alt={blog.title || ""}
                 className="mt-8 aspect-[16/9] w-full rounded-2xl object-cover shadow-lg"
                 onError={(e) => (e.currentTarget.style.display = "none")}
               />

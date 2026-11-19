@@ -262,7 +262,7 @@ export default function EngagementProtocol() {
             </div>
 
             <Person
-              image="/EvelynVance.png"
+              image="/EvelynVance.webp"
               name="Dr. Evelyn Vance"
               role="LEAD PARTNER"
               credential="CISSP, CISM · ex-DRPA Cyber Fellow"
@@ -270,7 +270,7 @@ export default function EngagementProtocol() {
             />
 
             <Person
-              image="/MarcusChen.png"
+              image="/MarcusChen.webp"
               name="Marcus Chen"
               role="PRINCIPAL"
               credential="Cloud Security Alliance (CSA) Fellow"

@@ -84,7 +84,7 @@ const industries = [
     body: "Manage payments related to bookings and customer services.",
   },
   {
-    image: "/PaymentIndustry4.png",
+    image: "/PaymentIndustry4.webp",
     icon: HeartPulse,
     title: "Healthcare",
     body: "Support payment records and related workflows.",

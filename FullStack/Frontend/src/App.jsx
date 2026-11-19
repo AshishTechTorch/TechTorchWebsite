@@ -31,6 +31,8 @@ const CloudInfrastructurePage = lazy(() => import("./pages/CloudInfrastructurePa
 const SoftwareEngineeringOutsourcingPage = lazy(() => import("./pages/SoftwareEngineeringOutsourcingPage.jsx"));
 const ITConsultancyPage = lazy(() => import("./pages/ITConsultancyPage.jsx"));
 import PromoPopup from "./components/PromoPopup.jsx";
+import Seo from "./seo/Seo.jsx";
+const NotFound = lazy(() => import("./pages/NotFound.jsx"));
 
 // =================================================
 // COMMON COMPONENTS
@@ -1143,6 +1145,9 @@ function App() {
       {/* Always move to top when route changes */}
       <ScrollToTop />
 
+      {/* SEO: title / description / canonical / OG tags for every route */}
+      <Seo />
+
       <Suspense fallback={<PageLoader />}>
       <Routes>
         {/* =================================================
@@ -1451,7 +1456,10 @@ function App() {
           element={<Navigate to="/admin-dashboard" replace />}
         />
         <Route path="/login" element={<Navigate to="/signin" replace />} />
-        <Route path="*" element={<Navigate to="/" replace />} />
+        {/* Unknown URL -> real "Page not found" page (noindex) instead of redirecting to Home */}
+        <Route element={<MainLayout />}>
+          <Route path="*" element={<NotFound />} />
+        </Route>
 
         {/* Tumhare existing routes yahan rahenge */}
       </Routes>

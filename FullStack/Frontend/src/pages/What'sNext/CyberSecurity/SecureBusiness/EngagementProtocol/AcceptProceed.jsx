@@ -472,14 +472,14 @@ export default function SecurityIntake() {
             </div>
 
             <Architect
-              image="/EvelynVance.png"
+              image="/EvelynVance.webp"
               name="Dr. Evelyn Vance"
               title="Principal Director · Chief Cyber Architect"
               credential="CISSP · ex-DRPA Fellow · Cloud Enclave Lead"
             />
 
             <Architect
-              image="/MarcusChen.png"
+              image="/MarcusChen.webp"
               name="Marcus Chen"
               title="VP, Autonomous Threat Defense"
               credential="Zero-Trust Mesh · AI Agent Red Teaming"
