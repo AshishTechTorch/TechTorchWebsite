@@ -467,7 +467,7 @@ export function ERPApproach() {
               md:order-1
             "
           >
-            <h1
+            <h2
               className="
                 font-['Plus_Jakarta_Sans']
                 text-[26px]
@@ -487,7 +487,7 @@ export function ERPApproach() {
               <span className="text-[#730042]">
                 Works as One
               </span>
-            </h1>
+            </h2>
 
             <p
               className="
@@ -1383,7 +1383,7 @@ export function PracticalERPPath() {
               HEADING
           ====================================================== */}
 
-          <h1
+          <h2
             id="41gxzm"
             className="
               pr-[115px]
@@ -1417,7 +1417,7 @@ export function PracticalERPPath() {
           >
             A Practical Path to{" "}
             <span className="text-[#850052]">ERP</span>
-          </h1>
+          </h2>
 
           {/* =====================================================
               DESCRIPTION
@@ -1685,7 +1685,7 @@ export function TechHero() {
 
         {/* ================= HEADING ================= */}
 
-        <h1
+        <h2
           className="
             text-white
             font-semibold
@@ -1715,7 +1715,7 @@ export function TechHero() {
           Ready to Bring Your
           <br />
           Business Together?
-        </h1>
+        </h2>
 
 
         {/* ================= DESCRIPTION ================= */}

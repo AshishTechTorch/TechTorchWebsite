@@ -565,11 +565,13 @@ function ScrollToTop() {
 function MainLayout() {
   return (
     <div className="min-h-screen flex flex-col">
+
       {/* Login restriction for public forms */}
       <FormAuthGuard />
 
       {/* { TorchX Talent promo pop-up } */}
       <PromoPopup />
+
       {/* NAVBAR */}
       <Navbar />
       
@@ -1191,10 +1193,7 @@ function App() {
           />
           <Route path="/investors" element={<Investors />} />
           <Route path="/aviation-management" element={<AviationManagement />} />
-          <Route
-            path="/supply-chain-management"
-            element={<SupplyChainManagement />}
-          />
+          
           <Route
             path="/software-development-support"
             element={<SoftwareDevelopmentSupportPage />}
@@ -1421,8 +1420,6 @@ function App() {
           {/* ================= LEADERSHIP ================= */}
 
           <Route path="/leadership" element={<AboutUs />} />
-
-          <Route path="/company-overview" element={<CompanyOverview />} />
 
           <Route path="/idea" element={<Idea />} />
 

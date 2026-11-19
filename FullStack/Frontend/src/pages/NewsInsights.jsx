@@ -1568,7 +1568,7 @@ export default function TechTorchCMS() {
               {previewData.meta && (
                 <div className="text-xs text-stone-400 mb-2">{previewData.meta}</div>
               )}
-              <h1 className="text-2xl font-semibold mb-2 text-stone-900">{previewData.title}</h1>
+              <h2 className="text-2xl font-semibold mb-2 text-stone-900">{previewData.title}</h2>
               {previewData.subtitle && (
                 <p className="text-stone-500 text-sm mb-4">{previewData.subtitle}</p>
               )}
