@@ -295,7 +295,6 @@ function NavCapabilities() {
                   flex flex-col items-end text-right min-h-[200px]
                 "
               >
-<<<<<<< HEAD
                 <img
                   src="/AICapabilities.webp"
                   alt="AI capabilities: understand language, work with images, process speech, analyze data, automate tasks, solve problems, generate content and make predictions"
@@ -304,9 +303,6 @@ function NavCapabilities() {
                     rounded-xl border border-gray-100 shadow-sm
                   "
                 />
-=======
-                
->>>>>>> 312616d63911491a230f60052d2165976617a5ce
               </div>
             </div>
           </div>

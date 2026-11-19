@@ -287,10 +287,6 @@ function NavbarInner() {
 
   const [mobileOpen, setMobileOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
-<<<<<<< HEAD
-
-=======
->>>>>>> 312616d63911491a230f60052d2165976617a5ce
   // Prevent hover-based reopening immediately after navigation.
   const [hoverLocked, setHoverLocked] = useState(false);
 
@@ -543,34 +539,19 @@ function NavbarInner() {
 
         {/* SEARCH AND ACCOUNT */}
         <div className="hidden lg:flex items-center gap-4">
-<<<<<<< HEAD
           <button
             type="button"
             aria-label="Search"
-=======
-          {/* SEARCH BUTTON */}
-          <button
-            type="button"
-            aria-label="Open website search"
->>>>>>> 312616d63911491a230f60052d2165976617a5ce
             onClick={() => {
               setActiveMenu(null);
               setSearchOpen(true);
             }}
-<<<<<<< HEAD
             className="flex items-center justify-center bg-transparent border-none cursor-pointer p-0"
           >
             <SearchIcon />
           </button>
 
           {searchOpen && <SearchOverlay onClose={() => setSearchOpen(false)} />}
-=======
-            className="flex items-center justify-center bg-transparent border-none cursor-pointer p-1"
-          >
-            <Search size={22} strokeWidth={2} className="text-[#8a0048]" />
-          </button>
-
->>>>>>> 312616d63911491a230f60052d2165976617a5ce
           <AccountButton onNavigate={closeAllMenus} />
         </div>
 
