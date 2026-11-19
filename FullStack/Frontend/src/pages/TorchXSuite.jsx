@@ -387,9 +387,9 @@ export function ConnectedPlatformSection() {
   return (
     <section className="connected-platform-section">
       <div className="connected-platform-content">
-        <h1>
+        <h2>
           One <span>Connected Platform</span> for a Better Way of Working
-        </h1>
+        </h2>
 
         <p>
           As businesses grow, managing different departments, teams and
@@ -773,11 +773,11 @@ export function ConnectedExperienceSection() {
 
       {/* ================= RIGHT CONTENT ================= */}
       <div className="connected-content">
-        <h1>
+        <h2>
           Everything Your Teams Need.
           <br />
           One <span>Connected Experience.</span>
-        </h1>
+        </h2>
 
         <p>
           TorchX Suite brings Talent, Engage, Finance, Pay and Inventory
@@ -1383,7 +1383,7 @@ export function BringBusinessTogetherSection() {
 
         {/* TEXT CONTENT */}
         <div className="business-text">
-          <h1>Bring Your Business Together</h1>
+          <h2>Bring Your Business Together</h2>
 
           <p>
             Your business shouldn't have to depend on disconnected systems to

@@ -384,7 +384,7 @@ export function WithPurpose() {
           >
             {/* HEADING */}
 
-            <h1
+            <h2
               className="
                 font-['Plus_Jakarta_Sans']
                 text-[25px]
@@ -400,7 +400,7 @@ export function WithPurpose() {
               Building Technology
               <br />
               With Purpose
-            </h1>
+            </h2>
 
             {/* LEFT TEXT */}
 
@@ -1615,13 +1615,13 @@ export function PurpleHero() {
       <div className="relative z-10 min-h-[600px] w-full flex items-center">
         <div className="w-full px-4 sm:px-6 md:px-10 lg:px-[100px]">
           <div className="max-w-[600px] text-white">
-            <h1 className="font-['Plus_Jakarta_Sans'] font-semibold text-[30px] sm:text-[34px] md:text-[34px] lg:text-[36px] leading-[1.08] tracking-tight -translate-y-10">
+            <h2 className="font-['Plus_Jakarta_Sans'] font-semibold text-[30px] sm:text-[34px] md:text-[34px] lg:text-[36px] leading-[1.08] tracking-tight -translate-y-10">
               Let’s Turn Your Next
               <br />
               Challenge Into an
               <br />
               Opportunity
-            </h1>
+            </h2>
 
             <p className="relative -top-4 mt-7 max-w-[540px] font-['Inter'] text-[15px] sm:text-[16px] md:text-[16px] lg:text-[16px] leading-[1.4] text-white/85">
               Whether you're looking to modernize,

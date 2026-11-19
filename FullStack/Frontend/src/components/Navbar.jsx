@@ -2,7 +2,7 @@ import React, { useLayoutEffect, useEffect, useRef, useState } from "react";
 
 import { Link, useNavigate, useLocation } from "react-router-dom";
 
-import { ChevronDown, LogOut, UserRound } from "lucide-react";
+import { ChevronDown, LogOut, UserRound, Search } from "lucide-react";
 
 import { MOBILE_MENU, routeFor } from "./NavbarItem/navRoutes";
 
@@ -17,7 +17,7 @@ import NavCapabilities from "./NavbarItem/NavCapabilities";
 import NavIndustries from "./NavbarItem/NavIndustries";
 import NavInsights from "./NavbarItem/NavInsights";
 import NavCareers from "./NavbarItem/NavCareers";
-import NavSearch from "./NavbarItem/NavSearch";
+import SearchOverlay from "./NavbarItem/SearchOverlay";
 
 // =====================================================
 // SEARCH ICON
@@ -301,7 +301,7 @@ function NavbarInner() {
   const location = useLocation();
 
   const [mobileOpen, setMobileOpen] = useState(false);
-
+  const [searchOpen, setSearchOpen] = useState(false);
   // Prevent hover-based reopening immediately after navigation.
   const [hoverLocked, setHoverLocked] = useState(false);
 
@@ -543,10 +543,19 @@ function NavbarInner() {
 
         {/* SEARCH AND ACCOUNT */}
         <div className="hidden lg:flex items-center gap-4">
-          <NavSearch
-            onOpen={() => setActiveMenu(null)}
-            onNavigate={closeAllMenus}
-          />
+          {/* SEARCH BUTTON */}
+          <button
+            type="button"
+            aria-label="Open website search"
+            onClick={() => {
+              setActiveMenu(null);
+              setSearchOpen(true);
+            }}
+            className="flex items-center justify-center bg-transparent border-none cursor-pointer p-1"
+          >
+            <Search size={22} strokeWidth={2} className="text-[#8a0048]" />
+          </button>
+
           <AccountButton onNavigate={closeAllMenus} />
         </div>
 
@@ -568,6 +577,9 @@ function NavbarInner() {
         {mobileOpen && (
           <MobileMenu navHeight={navHeight} close={closeAllMenus} />
         )}
+
+        {/* WEBSITE SEARCH OVERLAY */}
+        {searchOpen && <SearchOverlay onClose={() => setSearchOpen(false)} />}
       </nav>
 
       {/* NAVBAR SPACER */}

@@ -96,7 +96,8 @@ export function SoftwareDevelopmentHero() {
     {
       label: "Email Us",
       Icon: Mail,
-      href: "mailto:contact@techtorch.solutions",
+      href: "https://mail.google.com/mail/?view=cm&fs=1&to=contact@techtorch.solutions&su=Software%20Development%20Enquiry",
+      external: true,
     },
   ];
 
@@ -414,11 +415,11 @@ export function SoftwareThatWorks() {
 
             {/* HEADING */}
 
-            <h1 className="software-works-heading">
+            <h2 className="software-works-heading">
               Software That Works
               <br />
               For <span>Your Business</span>
-            </h1>
+            </h2>
 
             {/* FIRST PARAGRAPH */}
 
@@ -1848,10 +1849,10 @@ export function StructuredApproachSection() {
             HEADING
         ================================================= */}
 
-        <h1>
+        <h2>
           A Structured Approach to{" "}
           <span>Software Development</span>
-        </h1>
+        </h2>
 
         {/* =================================================
             INTRO
@@ -2377,11 +2378,11 @@ export function SoftwareGrowthSection() {
       <div className="software-growth-container">
         {/* ================= TEXT ================= */}
         <div className="software-growth-text">
-          <h1>
+          <h2>
             Software That Can Grow
             <br />
             With <span>Your Business</span>
-          </h1>
+          </h2>
 
           <p>
             Business requirements don't stay the same.
@@ -3125,7 +3126,8 @@ export function BusinessChallengeSection() {
     {
       label: "Email Us",
       Icon: Mail,
-      href: "mailto:contact@techtorch.solutions",
+      href: "https://mail.google.com/mail/?view=cm&fs=1&to=contact@techtorch.solutions&su=Software%20Development%20Enquiry",
+      external: true,
     },
   ];
 
@@ -3135,11 +3137,11 @@ export function BusinessChallengeSection() {
 
         {/* ================= TEXT CONTENT ================= */}
         <div className="business-challenge-content">
-          <h1 className="business-challenge-heading">
+          <h2 className="business-challenge-heading">
             Have a Business
             <br />
             Challenge to Solve
-          </h1>
+          </h2>
 
           <p className="business-challenge-paragraph">
             Whether you're planning a new application, modernizing an existing

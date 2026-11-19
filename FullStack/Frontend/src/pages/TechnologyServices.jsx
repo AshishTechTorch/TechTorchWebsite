@@ -1440,7 +1440,7 @@ export function LetsConnect() {
           </p>
 
           {/* MAIN HEADING */}
-          <h1
+          <h2
             className="
               -translate-y-6
               text-[25px]
@@ -1460,7 +1460,7 @@ export function LetsConnect() {
             "
           >
             LET'S BUILD WHAT'S NEXT
-          </h1>
+          </h2>
 
           {/* QUESTION */}
           <h2
