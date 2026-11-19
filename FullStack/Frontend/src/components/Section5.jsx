@@ -358,7 +358,7 @@ export default function BigVision() {
               style={{ transitionDelay: "0.45s" }}
             >
               <img loading="lazy" decoding="async"
-                src="/Amit sir.png"
+                src="/AmitSir.webp"
                 alt="Amit Gaur"
                 className="
                   block
