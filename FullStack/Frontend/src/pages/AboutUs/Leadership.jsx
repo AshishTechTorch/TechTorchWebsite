@@ -19,7 +19,7 @@ const leaders = [
   {
     img: amitImg,
     name: "Amit Gaur",
-    role: "Administrative Director",
+    role: "Chief Operating Officer",
     text: "Overseeing organizational governance, corporate infrastructure, and administrative efficiency.",
     href: "https://www.linkedin.com/in/amit-gaur-4754a278/",
   },

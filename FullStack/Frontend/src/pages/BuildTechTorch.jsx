@@ -96,7 +96,8 @@ export function SoftwareDevelopmentHero() {
     {
       label: "Email Us",
       Icon: Mail,
-      href: "mailto:contact@techtorch.solutions",
+      href: "https://mail.google.com/mail/?view=cm&fs=1&to=contact@techtorch.solutions&su=Software%20Development%20Enquiry",
+      external: true,
     },
   ];
 
@@ -3125,7 +3126,8 @@ export function BusinessChallengeSection() {
     {
       label: "Email Us",
       Icon: Mail,
-      href: "mailto:contact@techtorch.solutions",
+      href: "https://mail.google.com/mail/?view=cm&fs=1&to=contact@techtorch.solutions&su=Software%20Development%20Enquiry",
+      external: true,
     },
   ];
 
