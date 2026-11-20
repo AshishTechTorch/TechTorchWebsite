@@ -3,14 +3,16 @@ import "./App.css";
 
 import { Routes, Route, Outlet, Navigate, useLocation } from "react-router-dom";
 import { adminRoutes } from "./admin/routes.jsx";
+import FormAuthGuard from "./components/FormAuthGuard.jsx";
+import PermissionGate from "./components/PermissionGate.jsx";
+
 const AccessPage = lazy(() => import("./account/AccessPage.jsx"));
 const CandidateDashboard = lazy(() => import("./account/CandidateDashboard.jsx"));
 const Careers = lazy(() => import("./pages/Careers.jsx"));
 const Blogs = lazy(() => import("./pages/Blogs.jsx"));
 const BlogDetail = lazy(() => import("./pages/BlogDetail.jsx"));
 const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy.jsx"));
-import FormAuthGuard from "./components/FormAuthGuard.jsx";
-import PermissionGate from "./components/PermissionGate.jsx";
+
 const TalkToExpert = lazy(() => import("./components/TalkToExpert"));
 const TechTorchWay = lazy(() => import("./pages/TechTorchWay.jsx"));
 const CaseStudies = lazy(() => import("./pages/CaseStudies.jsx"));
