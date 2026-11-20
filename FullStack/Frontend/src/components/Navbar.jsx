@@ -4,8 +4,6 @@ import { Link, useNavigate, useLocation } from "react-router-dom";
 
 import { ChevronDown, LogOut, UserRound, Search } from "lucide-react";
 
-import { MOBILE_MENU, routeFor } from "./NavbarItem/navRoutes";
-
 import { useMe, useSignOut } from "../account/useAccount";
 
 import logo from "../assets/TechTorchLogo.webp";
@@ -18,6 +16,8 @@ import NavIndustries from "./NavbarItem/NavIndustries";
 import NavInsights from "./NavbarItem/NavInsights";
 import NavCareers from "./NavbarItem/NavCareers";
 import SearchOverlay from "./NavbarItem/SearchOverlay";
+import NavProducts from "./NavbarItem/NavProduct";
+import { MOBILE_MENU, routeFor, PLATFORM_URLS } from "./NavbarItem/navRoutes";
 
 // =====================================================
 // SEARCH ICON
@@ -512,6 +512,10 @@ function NavbarInner() {
 
           <li>
             <NavCapabilities />
+          </li>
+
+          <li>
+            <NavProducts />
           </li>
 
           <li>

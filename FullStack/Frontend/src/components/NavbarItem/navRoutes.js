@@ -69,6 +69,19 @@ export const ROUTES = {
 
 export const routeFor = (label) => ROUTES[label] || "/";
 
+// One place for every TorchX product link (used by the Product menu, desktop + mobile).
+// Change a link here and both menus follow.
+export const PLATFORM_URLS = {
+  "TorchX Talent": "https://torchxsuite.com/talent/",
+  "TorchX Finance": "https://torchxsuite.com/",
+  "TorchX Suite": "https://torchxsuite.com/",
+  "TorchX Engage": "https://torchxsuite.com/",
+  "TorchX Inventory": "https://torchxsuite.com/",
+  "TorchX Pay": "https://torchxsuite.com/",
+  "TorchX Spark": "https://torchxsuite.com/spark/",
+  "TorchX Sync": "https://torchxsuite.com/sync/",
+};
+
 // Tree used by the mobile menu
 export const MOBILE_MENU = [
   { label: "About Us", children: ["Company Overview", "Leadership", "Idea", "Investors", "Partners Ecosystem", "News", "Customer Centricity"] },
@@ -79,6 +92,14 @@ export const MOBILE_MENU = [
       "IT Consultancy", "Artificial Intelligence (AaaS)", "Cyber Security", "Resource and Staffing", "TorchX Suite",
     ],
   },
+   {
+    label: "Product",
+    children: [
+      "TorchX Talent", "TorchX Finance", "TorchX Suite", "TorchX Engage",
+      "TorchX Inventory", "TorchX Pay", "TorchX Spark", "TorchX Sync",
+    ],
+  },
+  
   {
     label: "Industries",
     children: ["Finance", "Education", "Healthcare", "Manufacturing", "Information Technology", "Insurance", "Energy", "FMCG", "Transportation", "Telecommunications"],
