@@ -101,7 +101,7 @@ export default function FinalCtaSection() {
 
           <div className="final-cta-image-card">
             <img
-              src="/desktop3.webp"
+              src="/desktop3.jpeg"
               alt="Executive office overlooking a city skyline at dusk"
               className="final-cta-image"
             />
