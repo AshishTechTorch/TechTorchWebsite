@@ -1,7 +1,3 @@
-
-Fullstack/*.zip
-.env
-TechTorch
-demoFullStack/Frontend/Frontend-Build.zip
-
-FullStack/Frontend/Frontend-Build.zip
+# Generated frontend ZIP files
+**/Frontend-Build.zip
+**/Frontend-Under-30MB.zip
