@@ -3,46 +3,41 @@ import { Link } from "react-router-dom";
 
 const slides = [
   {
-    image: "/Slide1.webp",
+    image: "/Slide1.png",
     headline: "Turning Business Challenges Into Digital Possibilities",
-    body:
-      "We bring technology, business processes and people together to create practical digital solutions that help businesses work smarter and grow with confidence.",
+    body: "We bring technology, business processes and people together to create practical digital solutions that help businesses work smarter and grow with confidence.",
     ctaText: "EXPLORE OUR SOLUTIONS",
     ctaHref: "/explore-solutions",
     focus: "center",
   },
   {
-    image: "/Slide2.webp",
+    image: "/Slide2.png",
     headline: "One Connected System for Your Business",
-    body:
-      "From custom applications to enterprise platforms, we create software that fits the way your business works today—and gives you room to grow tomorrow.",
+    body: "From custom applications to enterprise platforms, we create software that fits the way your business works today—and gives you room to grow tomorrow.",
     ctaText: "EXPLORE ERP",
     ctaHref: "/explore-erp",
     focus: "65% 40%",
   },
   {
-    image: "/Slide3.webp",
+    image: "/Slide3.png",
     headline: "Software Built Around Your Business",
-    body:
-      "From custom applications to enterprise platforms, we create software that fits the way your business works today—and gives you room to grow tomorrow.",
+    body: "From custom applications to enterprise platforms, we create software that fits the way your business works today—and gives you room to grow tomorrow.",
     ctaText: "BUILD WITH TECHTORCH",
     ctaHref: "/build-with-techtorch",
     focus: "70% 50%",
   },
   {
-    image: "/Slide4.webp",
+    image: "/Slide4.png",
     headline: "Technology That Keeps You Ready for What’s Next",
-    body:
-      "From AI and cloud to cybersecurity, we help businesses adopt modern technology with the reliability, security and flexibility they need to grow.",
+    body: "From AI and cloud to cybersecurity, we help businesses adopt modern technology with the reliability, security and flexibility they need to grow.",
     ctaText: "EXPLORE TECHNOLOGY SERVICES",
     ctaHref: "/explore-services",
     focus: "100% 45%",
   },
   {
-    image: "/Slide6.webp",
+    image: "/Slide6.png",
     headline: "Everything Your Business Needs, Working Together",
-    body:
-      "TorchX Suite brings key business functions into one connected platform, helping teams manage people, customers, finance and operations with greater clarity.",
+    body: "TorchX Suite brings key business functions into one connected platform, helping teams manage people, customers, finance and operations with greater clarity.",
     ctaText: "EXPLORE TORCHX SUITE",
     ctaHref: "/explore-torchXsuite",
     focus: "100% 40%",
@@ -68,8 +63,6 @@ const Hero = () => {
     return () => clearInterval(timer);
   }, []);
 
-  const active = slides[current];
-
   return (
     <section
       className="techtorch-hero"
@@ -88,8 +81,6 @@ const Hero = () => {
           }`}
           style={{ objectPosition: slide.focus }}
           decoding="async"
-          loading={index === 0 ? "eager" : "lazy"}
-          fetchPriority={index === 0 ? "high" : "auto"}
         />
       ))}
 
@@ -98,26 +89,45 @@ const Hero = () => {
       <div className="techtorch-hero__layout">
         {/* Content */}
         <div className="techtorch-hero__content-area">
-          <div key={current} className="techtorch-hero__content">
-            <h1>{active.headline}</h1>
+          <div className="techtorch-hero__stack">
+            {slides.map((slide, index) => {
+              const isActive = index === current;
+              const Heading = isActive ? "h1" : "div";
 
-            <p>{active.body}</p>
+              return (
+                <div
+                  key={slide.image}
+                  className={`techtorch-hero__content ${
+                    isActive ? "is-active" : ""
+                  }`}
+                  aria-hidden={isActive ? undefined : "true"}
+                >
+                  <Heading className="techtorch-hero__h1">
+                    {slide.headline}
+                  </Heading>
 
-            {active.ctaHref.startsWith("/") ? (
-              <Link
-                to={active.ctaHref}
-                className="techtorch-hero__cta"
-              >
-                {active.ctaText}
-              </Link>
-            ) : (
-              <a
-                href={active.ctaHref}
-                className="techtorch-hero__cta"
-              >
-                {active.ctaText}
-              </a>
-            )}
+                  <p>{slide.body}</p>
+
+                  {slide.ctaHref.startsWith("/") ? (
+                    <Link
+                      to={slide.ctaHref}
+                      className="techtorch-hero__cta"
+                      tabIndex={isActive ? 0 : -1}
+                    >
+                      {slide.ctaText}
+                    </Link>
+                  ) : (
+                    <a
+                      href={slide.ctaHref}
+                      className="techtorch-hero__cta"
+                      tabIndex={isActive ? 0 : -1}
+                    >
+                      {slide.ctaText}
+                    </a>
+                  )}
+                </div>
+              );
+            })}
           </div>
         </div>
 
@@ -255,7 +265,37 @@ const Hero = () => {
           animation: techtorchHeroFadeIn 500ms ease both;
         }
 
-        .techtorch-hero h1 {
+        .techtorch-hero .techtorch-hero__stack {
+          display: grid;
+          width: 100%;
+          min-width: 0;
+        }
+
+        /* All slides share one cell, so the block is as tall as the
+           longest slide and never changes height between slides */
+        .techtorch-hero .techtorch-hero__stack > .techtorch-hero__content {
+          grid-area: 1 / 1;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          visibility: hidden;
+          opacity: 0;
+          animation: none;
+        }
+
+        /* the button sits on the same line on every slide */
+        .techtorch-hero .techtorch-hero__stack .techtorch-hero__cta {
+          margin-top: auto;
+        }
+
+        .techtorch-hero .techtorch-hero__stack > .techtorch-hero__content.is-active {
+          visibility: visible;
+          opacity: 1;
+          animation: techtorchHeroFadeIn 500ms ease both;
+        }
+
+        .techtorch-hero h1,
+        .techtorch-hero .techtorch-hero__h1 {
           margin: 0 0 32px;
           font-family: "Plus Jakarta Sans", sans-serif;
           font-size: 38px;
@@ -410,7 +450,8 @@ const Hero = () => {
             max-width: 480px;
           }
 
-          .techtorch-hero h1 {
+          .techtorch-hero h1,
+        .techtorch-hero .techtorch-hero__h1 {
             font-size: 36px;
             margin-bottom: 26px;
           }
@@ -444,7 +485,8 @@ const Hero = () => {
             max-width: 520px;
           }
 
-          .techtorch-hero h1 {
+          .techtorch-hero h1,
+        .techtorch-hero .techtorch-hero__h1 {
             font-size: clamp(28px, 4.6vw, 34px);
             line-height: 1.18;
             margin-bottom: 24px;
@@ -486,7 +528,8 @@ const Hero = () => {
             padding: 44px 0 30px;
           }
 
-          .techtorch-hero h1 {
+          .techtorch-hero h1,
+        .techtorch-hero .techtorch-hero__h1 {
             font-size: 28px;
             line-height: 1.2;
             margin-bottom: 22px;
@@ -523,7 +566,8 @@ const Hero = () => {
 
         /* Small mobile */
         @media (max-width: 359px) {
-          .techtorch-hero h1 {
+          .techtorch-hero h1,
+        .techtorch-hero .techtorch-hero__h1 {
             font-size: 25px;
           }
 
@@ -533,6 +577,9 @@ const Hero = () => {
         }
 
         @media (prefers-reduced-motion: reduce) {
+          .techtorch-hero .techtorch-hero__stack > .techtorch-hero__content.is-active {
+            animation: none;
+          }
           .techtorch-hero .techtorch-hero__content {
             animation: none;
           }
