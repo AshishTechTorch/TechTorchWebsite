@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useState, useRef, useEffect, useCallback } from "react";
+import megaImage from "../../assets/image1.webp";
 import {
   Users,
   Wallet,
@@ -146,6 +147,7 @@ function NavProduct() {
 
       {isOpen && (
         <div
+          data-nav-mega-menu
           style={{ top: navBottom }}
           onMouseEnter={openMenu}
           onMouseLeave={closeMenu}
@@ -210,6 +212,16 @@ function NavProduct() {
                 }}
                 className="relative min-h-[320px] flex-1 overflow-hidden rounded-2xl"
               >
+                <img
+                  src={megaImage}
+                  alt=""
+                  className="absolute inset-0 h-full w-full object-cover"
+                  style={{ height: "100%", width: "100%", maxWidth: "none" }}
+                />
+                <div
+                  className="absolute inset-0"
+                  style={{ background: "linear-gradient(to top, rgba(42,6,18,0.85) 0%, rgba(138,21,56,0.35) 60%, rgba(138,21,56,0.1) 100%)" }}
+                />
                 <div className="relative flex h-full min-h-[320px] flex-col justify-between p-6 text-white">
                   <span className="w-fit rounded-full bg-white/15 px-3 py-1 font-plus-jakarta text-[11px] font-semibold uppercase tracking-[0.1em] backdrop-blur">
                     Featured

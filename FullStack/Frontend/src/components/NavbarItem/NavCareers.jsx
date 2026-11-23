@@ -104,6 +104,7 @@ function NavCareers() {
 
       {isOpen && (
         <div
+          data-nav-mega-menu
           style={{ top: navBottom }}
           onMouseEnter={openMenu}
           onMouseLeave={closeMenu}
@@ -162,6 +163,7 @@ function NavCareers() {
                   src={image4}
                   alt=""
                   className="absolute inset-0 h-full w-full object-cover"
+                  style={{ height: "100%", width: "100%", maxWidth: "none" }}
                 />
                 <div
                   className="absolute inset-0"
@@ -196,6 +198,7 @@ function NavCareers() {
                   src={image5}
                   alt=""
                   className="absolute inset-0 h-full w-full object-cover"
+                  style={{ height: "100%", width: "100%", maxWidth: "none" }}
                 />
                 <div
                   className="absolute inset-0"
