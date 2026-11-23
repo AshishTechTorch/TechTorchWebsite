@@ -2,7 +2,7 @@ import React, { useLayoutEffect, useEffect, useRef, useState } from "react";
 
 import { Link, useNavigate, useLocation } from "react-router-dom";
 
-import { ChevronDown, LogOut, UserRound, Search } from "lucide-react";
+import { ChevronDown, LogOut, UserRound } from "lucide-react";
 
 import { useMe, useSignOut } from "../account/useAccount";
 
@@ -17,7 +17,35 @@ import NavInsights from "./NavbarItem/NavInsights";
 import NavCareers from "./NavbarItem/NavCareers";
 import SearchOverlay from "./NavbarItem/SearchOverlay";
 import NavProducts from "./NavbarItem/NavProduct";
-import { MOBILE_MENU, routeFor, PLATFORM_URLS } from "./NavbarItem/navRoutes";
+import { MOBILE_MENU, routeFor } from "./NavbarItem/navRoutes";
+
+// =====================================================
+// DESKTOP NAV LINK SIZING
+// -----------------------------------------------------
+// One place controls the size of every top-level link (About Us,
+// Capabilities, Product ...). It also overrides the fixed text size
+// inside the NavXxx components, but leaves the mega-menu panels alone.
+//   1024px+  -> 14px   (laptops, tight)
+//   1280px+  -> 15px
+//   1536px+  -> 16px
+// =====================================================
+
+const NAV_LINKS_CSS = `
+.tt-nav-links { font-size: 14px; line-height: 1.2; }
+@media (min-width: 1280px) { .tt-nav-links { font-size: 15px; } }
+@media (min-width: 1536px) { .tt-nav-links { font-size: 16px; } }
+
+.tt-nav-links :is(a, button, span, p):not(
+  [data-nav-mega-menu] *,
+  [data-mega-menu] *,
+  [role="menu"] *,
+  [role="dialog"] *
+) {
+  font-size: inherit !important;
+  font-weight: 500;
+  white-space: nowrap;
+}
+`;
 
 // =====================================================
 // SEARCH ICON
@@ -27,7 +55,7 @@ function SearchIcon() {
   return (
     <svg
       width="20"
-      height="60"
+      height="20"
       viewBox="0 0 24 24"
       fill="none"
       stroke="#222"
@@ -98,7 +126,7 @@ function AccountButton({ onNavigate }) {
       <Link
         to="/signin"
         onClick={onNavigate}
-        className="rounded-full bg-[#780042] px-5 py-2 text-[15px] font-medium text-white no-underline transition hover:opacity-90"
+        className="whitespace-nowrap rounded-full bg-[#780042] px-5 py-2 text-[14px] xl:text-[15px] font-medium text-white no-underline transition hover:opacity-90"
       >
         Sign in
       </Link>
@@ -128,7 +156,7 @@ function AccountButton({ onNavigate }) {
         onClick={() => setOpen((v) => !v)}
         aria-haspopup="menu"
         aria-expanded={open}
-        className="flex items-center gap-2 rounded-full border border-gray-300 px-3 py-1.5 text-[15px] text-gray-900 hover:bg-gray-50"
+        className="flex items-center gap-2 rounded-full border border-gray-300 px-3 py-1.5 text-[14px] xl:text-[15px] text-gray-900 hover:bg-gray-50"
       >
         <UserRound size={17} />
 
@@ -219,7 +247,7 @@ function MobileMenu({ navHeight, close }) {
               <Link
                 to={item.to}
                 onClick={close}
-                className="block px-6 py-4 text-[17px] text-gray-900 no-underline hover:bg-gray-50 hover:text-[#8a1538]"
+                className="block px-6 py-4 text-[16px] text-gray-900 no-underline hover:bg-gray-50 hover:text-[#8a1538]"
               >
                 {item.label}
               </Link>
@@ -231,7 +259,7 @@ function MobileMenu({ navHeight, close }) {
                   onClick={() =>
                     setOpenKey(openKey === item.label ? null : item.label)
                   }
-                  className="flex w-full items-center justify-between px-6 py-4 text-left text-[17px] text-gray-900 hover:bg-gray-50"
+                  className="flex w-full items-center justify-between px-6 py-4 text-left text-[16px] text-gray-900 hover:bg-gray-50"
                 >
                   {item.label}
 
@@ -473,38 +501,40 @@ function NavbarInner() {
   }, [setActiveMenu]);
 
   const topLink =
-    "text-[17px] text-gray-900 no-underline transition-colors duration-200 hover:text-[#8a1538]";
+    "whitespace-nowrap text-gray-900 no-underline transition-colors duration-200 hover:text-[#8a1538]";
 
   return (
     <>
+      <style>{NAV_LINKS_CSS}</style>
+
       <nav
         ref={navRef}
         style={{
           fontFamily: "Plus Jakarta Sans, 'Times New Roman', serif",
         }}
-        className="fixed top-0 left-0 w-full z-[1000] flex items-center justify-between px-4 sm:px-6 lg:px-10 py-2.5 lg:py-3 border-b border-gray-200 bg-white"
+        className="fixed top-0 left-0 w-full z-[1000] flex items-center gap-4 xl:gap-8 px-4 sm:px-6 lg:px-6 xl:px-10 py-2.5 lg:py-3 border-b border-gray-200 bg-white"
       >
-        {/* LOGO */}
+        {/* LOGO (never shrinks, always keeps a gap from the links) */}
         <Link
           to="/"
           aria-label="TechTorch Solutions home"
           onClick={closeAllMenus}
-          className="flex items-center gap-2.5"
+          className="flex shrink-0 items-center gap-2.5 lg:mr-2 xl:mr-4"
         >
           <img
             src={logo}
             alt="TechTorch Solutions"
-            className="h-12 sm:h-13 lg:h-13 w-auto"
+            className="h-11 sm:h-12 w-auto"
           />
         </Link>
 
-        {/* DESKTOP MENU */}
+        {/* DESKTOP MENU: takes the free space between logo and actions, links stay centered */}
         <ul
           onMouseLeave={() => {
             setActiveMenu(null);
             setHoverLocked(false);
           }}
-          className="hidden lg:flex items-center gap-8 xl:gap-12 list-none ml-auto mr-6 xl:mr-10"
+          className="tt-nav-links hidden lg:flex flex-1 min-w-0 items-center justify-center gap-4 xl:gap-7 2xl:gap-9 list-none m-0 p-0"
         >
           <li>
             <NavAboutUs />
@@ -542,7 +572,7 @@ function NavbarInner() {
         </ul>
 
         {/* SEARCH AND ACCOUNT */}
-        <div className="hidden lg:flex items-center gap-4">
+        <div className="hidden lg:flex shrink-0 items-center gap-3 xl:gap-4">
           <button
             type="button"
             aria-label="Search"
@@ -550,12 +580,11 @@ function NavbarInner() {
               setActiveMenu(null);
               setSearchOpen(true);
             }}
-            className="flex items-center justify-center bg-transparent border-none cursor-pointer p-0"
+            className="flex items-center justify-center bg-transparent border-none cursor-pointer p-1"
           >
             <SearchIcon />
           </button>
 
-          {searchOpen && <SearchOverlay onClose={() => setSearchOpen(false)} />}
           <AccountButton onNavigate={closeAllMenus} />
         </div>
 
@@ -568,7 +597,7 @@ function NavbarInner() {
             setActiveMenu(null);
             setMobileOpen((v) => !v);
           }}
-          className="lg:hidden flex items-center justify-center bg-transparent border-none cursor-pointer p-1"
+          className="lg:hidden ml-auto flex items-center justify-center bg-transparent border-none cursor-pointer p-1"
         >
           <MenuIcon open={mobileOpen} />
         </button>
@@ -578,7 +607,7 @@ function NavbarInner() {
           <MobileMenu navHeight={navHeight} close={closeAllMenus} />
         )}
 
-        {/* WEBSITE SEARCH OVERLAY */}
+        {/* WEBSITE SEARCH OVERLAY (single instance for desktop + mobile) */}
         {searchOpen && <SearchOverlay onClose={() => setSearchOpen(false)} />}
       </nav>
 
