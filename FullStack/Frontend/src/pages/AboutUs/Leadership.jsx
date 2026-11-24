@@ -4,7 +4,7 @@ import heroBg from "/leadership.webp";
 import visionImg from "/meetingroom.webp";
 import siddharthImg from "/Sidhhart.webp";
 import amitImg from "/AmitSir.webp";
-import riyaImg from "/Riyamishra.webp";
+import riyaImg from "/Riya.webp";
 import anshikaImg from "/anshika.webp";
 import futureBg from "/future.webp";
 
@@ -27,7 +27,7 @@ const leaders = [
 
 const serviceTeam = [
   {
-    img: "/Riyamishra.webp",
+    img: "/Riya.webp",
     name: "Riya Mishra",
     role: "Director of Human Resource",
     text: "Leading talent management, employee engagement, workplace culture, and people strategy across the organization.",
