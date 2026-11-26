@@ -158,9 +158,10 @@ function NavAboutUs() {
           className="fixed left-0 right-0 w-full max-h-[85vh] overflow-y-auto
           bg-white shadow-2xl z-[9999] border-t border-gray-100"
         >
-          <div className="grid gap-10 px-[6%] py-12 lg:grid-cols-[1fr_minmax(320px,32%)] lg:gap-14">
+          {/* minmax(0,1fr) lets the left column shrink instead of being pushed wider by its content */}
+          <div className="grid gap-10 px-[6%] py-12 lg:grid-cols-[minmax(0,1fr)_minmax(320px,32%)] lg:gap-14">
             {/* ================= LEFT: LINKS ================= */}
-            <div>
+            <div className="min-w-0">
               <p className="m-0 mb-2 text-[11px] font-bold uppercase tracking-[0.14em] text-[#8a1538]">
                 About Us
               </p>
@@ -171,13 +172,14 @@ function NavAboutUs() {
                 Our story, our leaders and the partners behind our work.
               </p>
 
-              <div className="grid gap-4 sm:grid-cols-2">
+              {/* minmax(0,1fr) columns: cards can never grow past their column */}
+              <div className="grid gap-4 sm:grid-cols-[repeat(2,minmax(0,1fr))]">
                 {links.map(({ title, text, Icon }) => (
                   <Link
                     key={title}
                     to={getLinkPath(title)}
                     onClick={handleLinkClick}
-                    className="group flex items-start gap-4 rounded-xl border border-gray-100 
+                    className="group flex min-w-0 items-start gap-4 rounded-xl border border-gray-100 
                     bg-white p-5 no-underline transition-all duration-200 
                     hover:border-[#8a1538]/30 hover:bg-[#fdf5f8] hover:shadow-md"
                   >
@@ -186,14 +188,27 @@ function NavAboutUs() {
                     </span>
 
                     <span className="min-w-0 flex-1">
-                      <span className="flex items-center justify-between gap-2 font-plus-jakarta text-[16px] font-semibold text-gray-900 group-hover:text-[#8a1538]">
+                      <span
+                        className="flex items-center justify-between gap-2 font-plus-jakarta text-[16px] font-semibold text-gray-900 group-hover:text-[#8a1538]"
+                        style={{ whiteSpace: "normal" }}
+                      >
                         {title}
                         <ArrowRight
                           size={16}
                           className="shrink-0 -translate-x-1 opacity-0 transition-all duration-200 group-hover:translate-x-0 group-hover:opacity-100"
                         />
                       </span>
-                      <span className="mt-1 block font-inter text-[13px] leading-[1.5] text-gray-500">
+                      <span
+                        className="mt-1 block font-inter text-[13px] leading-[1.5] text-gray-500"
+                        style={{
+                          whiteSpace: "normal",
+                          overflowWrap: "break-word",
+                          display: "-webkit-box",
+                          WebkitLineClamp: 2,
+                          WebkitBoxOrient: "vertical",
+                          overflow: "hidden",
+                        }}
+                      >
                         {text}
                       </span>
                     </span>
@@ -203,7 +218,7 @@ function NavAboutUs() {
             </div>
 
             {/* ================= RIGHT: FEATURED CARD ================= */}
-            <div className="flex flex-col">
+            <div className="flex min-w-0 flex-col">
               <div className="relative min-h-[320px] flex-1 overflow-hidden rounded-2xl">
                 <img
                   src={megaMenuImage}
