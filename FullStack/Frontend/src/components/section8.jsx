@@ -48,48 +48,42 @@ const industries = [
   {
     id: "fmcg",
     title: "FMCG",
-    description:
-      "Connected solutions for smarter movement and operations.",
+    description: "Connected solutions for smarter movement and operations.",
     image: "/FMCG 2 [Vectorized].svg",
     path: "/industries/fmcg",
   },
   {
     id: "it",
     title: "Information Technology",
-    description:
-      "Digital capabilities built to accelerate innovation.",
+    description: "Digital capabilities built to accelerate innovation.",
     image: "/Information-Technology 2 [Vectorized].svg",
     path: "/industries/information-technology",
   },
   {
     id: "energy",
     title: "Energy",
-    description:
-      "Technology for efficient, evolving energy ecosystems.",
+    description: "Technology for efficient, evolving energy ecosystems.",
     image: "/Energy 3 [Vectorized] (1).svg",
     path: "/industries/energy",
   },
   {
     id: "telecommunications",
     title: "Telecommunications",
-    description:
-      "Scalable solution for connected experiences.",
+    description: "Scalable solution for connected experiences.",
     image: "/Telecommunications 2 [Vectorized].svg",
     path: "/industries/telecommunications",
   },
   {
     id: "transportation",
     title: "Transportation",
-    description:
-      "Connected solutions for smarter movement and operations.",
+    description: "Connected solutions for smarter movement and operations.",
     image: "/Transportation 2 [Vectorized].svg",
     path: "/industries/transportation",
   },
   {
     id: "E-Commerce",
     title: "E-Commerce",
-    description:
-      "Scalable experiences for a connected marketplace.",
+    description: "Scalable experiences for a connected marketplace.",
     image: "/TechTorch_E-Commerce_Icon 1.svg",
     path: "/industries/e-commerce",
   },
@@ -102,12 +96,10 @@ const industries = [
 function IndustryImage({ src, alt, hovered }) {
   return (
     <div className="industry-image-wrapper">
-      <img loading="lazy" decoding="async"
+      <img
         src={src}
         alt={alt}
-        className={`industry-image ${
-          hovered ? "industry-image-hovered" : ""
-        }`}
+        className={`industry-image ${hovered ? "industry-image-hovered" : ""}`}
       />
     </div>
   );
@@ -123,39 +115,28 @@ function Card({ item }) {
   return (
     <Link
       to={item.path}
-      className={`industry-card ${
-        hovered ? "industry-card-hovered" : ""
-      }`}
+      className={`industry-card ${hovered ? "industry-card-hovered" : ""}`}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
       {/* IMAGE */}
 
       <div className="industry-icon-box">
-        <IndustryImage
-          src={item.image}
-          alt={item.title}
-          hovered={hovered}
-        />
+        <IndustryImage src={item.image} alt={item.title} hovered={hovered} />
       </div>
 
       {/* TITLE */}
 
-      <h3 className="industry-title">
-        {item.title}
-      </h3>
+      <h3 className="industry-title">{item.title}</h3>
 
       {/* DESCRIPTION */}
 
-      <p className="industry-description">
-        {item.description}
-      </p>
+      <p className="industry-description">{item.description}</p>
 
       {/* LINK */}
 
       <span className="industry-link">
-        Explore Industry
-
+        Explore {item.title}
         <svg
           viewBox="0 0 24 24"
           width="16"
@@ -169,12 +150,7 @@ function Card({ item }) {
             hovered ? "industry-arrow-hovered" : ""
           }`}
         >
-          <line
-            x1="5"
-            y1="12"
-            x2="19"
-            y2="12"
-          />
+          <line x1="5" y1="12" x2="19" y2="12" />
 
           <polyline points="12 5 19 12 12 19" />
         </svg>
@@ -206,33 +182,23 @@ export default function IndustriesCarousel() {
     const updateCardWidth = () => {
       if (!trackRef.current) return;
 
-      const card =
-        trackRef.current.querySelector(".industry-card");
+      const card = trackRef.current.querySelector(".industry-card");
 
       if (!card) return;
 
-      const styles =
-        window.getComputedStyle(card);
+      const styles = window.getComputedStyle(card);
 
-      const marginRight =
-        parseFloat(styles.marginRight) || 0;
+      const marginRight = parseFloat(styles.marginRight) || 0;
 
-      cardWidthRef.current =
-        card.offsetWidth + marginRight;
+      cardWidthRef.current = card.offsetWidth + marginRight;
     };
 
     updateCardWidth();
 
-    window.addEventListener(
-      "resize",
-      updateCardWidth
-    );
+    window.addEventListener("resize", updateCardWidth);
 
     return () => {
-      window.removeEventListener(
-        "resize",
-        updateCardWidth
-      );
+      window.removeEventListener("resize", updateCardWidth);
     };
   }, []);
 
@@ -246,17 +212,14 @@ export default function IndustriesCarousel() {
     setPaused(true);
 
     setPosition((prev) => {
-      const next =
-        prev - cardWidthRef.current;
+      const next = prev - cardWidthRef.current;
 
       return next;
     });
 
-    trackRef.current.style.transition =
-      "transform 0.55s ease";
+    trackRef.current.style.transition = "transform 0.55s ease";
 
-    trackRef.current.style.transform =
-      `translateX(${position - cardWidthRef.current}px)`;
+    trackRef.current.style.transform = `translateX(${position - cardWidthRef.current}px)`;
   };
 
   /* =====================================================
@@ -269,17 +232,14 @@ export default function IndustriesCarousel() {
     setPaused(true);
 
     setPosition((prev) => {
-      const next =
-        prev + cardWidthRef.current;
+      const next = prev + cardWidthRef.current;
 
       return next;
     });
 
-    trackRef.current.style.transition =
-      "transform 0.55s ease";
+    trackRef.current.style.transition = "transform 0.55s ease";
 
-    trackRef.current.style.transform =
-      `translateX(${position + cardWidthRef.current}px)`;
+    trackRef.current.style.transform = `translateX(${position + cardWidthRef.current}px)`;
   };
 
   /* =====================================================
@@ -303,22 +263,17 @@ export default function IndustriesCarousel() {
 
         setPosition(currentPosition);
 
-        track.style.transform =
-          `translateX(${currentPosition}px)`;
+        track.style.transform = `translateX(${currentPosition}px)`;
       }
 
-      animationRef.current =
-        requestAnimationFrame(animate);
+      animationRef.current = requestAnimationFrame(animate);
     };
 
-    animationRef.current =
-      requestAnimationFrame(animate);
+    animationRef.current = requestAnimationFrame(animate);
 
     return () => {
       if (animationRef.current) {
-        cancelAnimationFrame(
-          animationRef.current
-        );
+        cancelAnimationFrame(animationRef.current);
       }
     };
   }, [paused]);
@@ -332,32 +287,26 @@ export default function IndustriesCarousel() {
 
     if (!track) return;
 
-    const totalWidth =
-      industries.length *
-      cardWidthRef.current;
+    const totalWidth = industries.length * cardWidthRef.current;
 
     if (Math.abs(position) >= totalWidth) {
-      const newPosition =
-        position + totalWidth;
+      const newPosition = position + totalWidth;
 
       setPosition(newPosition);
 
       track.style.transition = "none";
 
-      track.style.transform =
-        `translateX(${newPosition}px)`;
+      track.style.transform = `translateX(${newPosition}px)`;
     }
 
     if (position > 0) {
-      const newPosition =
-        position - totalWidth;
+      const newPosition = position - totalWidth;
 
       setPosition(newPosition);
 
       track.style.transition = "none";
 
-      track.style.transform =
-        `translateX(${newPosition}px)`;
+      track.style.transform = `translateX(${newPosition}px)`;
     }
   }, [position]);
 
@@ -365,10 +314,7 @@ export default function IndustriesCarousel() {
      DUPLICATE CARDS
   ===================================================== */
 
-  const loopItems = [
-    ...industries,
-    ...industries,
-  ];
+  const loopItems = [...industries, ...industries];
 
   return (
     <section
