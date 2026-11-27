@@ -28,6 +28,8 @@ const leaders = [
 const serviceTeam = [
   {
     img: "/Riya.webp",
+    zoom: 1.6,
+    zoomOrigin: "60% 10%", // <- this comma was missing
     name: "Riya Mishra",
     role: "Director of Human Resource",
     text: "Leading talent management, employee engagement, workplace culture, and people strategy across the organization.",
@@ -199,7 +201,16 @@ function PersonCard({ p, onReadMore }) {
   return (
     <article className="lp-card">
       <div className="lp-card__img">
-        <img src={p.img} alt={p.name} loading="lazy" />
+        <img src={p.img} alt={p.name} loading="lazy" 
+          style={
+            p.zoom
+              ? {
+                  transform: `scale(${p.zoom})`,
+                  transformOrigin: p.zoomOrigin || "center top",
+              }
+            : undefined
+          }
+        />
       </div>
 
       <div className="lp-card__body">
